@@ -1,10 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/iCal/src-gen" creationIcons="false" editDirectory="/iCal.edit/src-gen"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/iCal/src-gen" creationIcons="false" editDirectory="/iCal.edit/src-gen"
     editorDirectory="/iCal.editor/src-gen" modelPluginID="iCal" modelName="ICal" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>iCal.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="ICal" disposableProviderFactory="true" ecorePackage="iCal.ecore#/"/>
+  <genPackages prefix="ICal" disposableProviderFactory="true" ecorePackage="iCal.ecore#/">
+    <genDataTypes ecoreDataType="iCal.ecore#//String"/>
+    <genDataTypes ecoreDataType="iCal.ecore#//Integer"/>
+    <genDataTypes ecoreDataType="iCal.ecore#//Float"/>
+    <genClasses ecoreClass="iCal.ecore#//iCalFormat">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//iCalFormat/calendar"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="iCal.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//Component/nestedComponent"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//EventC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/transp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/geo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//ToDoC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/completed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/geo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//Calendar">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//Calendar/prodid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//Calendar/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//Calendar/calscale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//Calendar/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//Calendar/x_prop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//Calendar/iana_prop"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="iCal.ecore#//ComponentAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/dtstart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/created"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/last_mod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/organizer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/seq"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/summary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/recurid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//ComponentAction/opt"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//JournalC"/>
+    <genClasses ecoreClass="iCal.ecore#//VacationC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/dtstart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/organizer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/contact"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/dtend"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/attendee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/freebusy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/rstatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/x_prop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/iana_prop"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="iCal.ecore#//ComponentRequired">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentRequired/dtstamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentRequired/uid"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//TimeZoneC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//TimeZoneC/tzid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//TimeZoneC/last_mod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//TimeZoneC/tzurl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//TimeZoneC/standardc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//TimeZoneC/daylightc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//TimeZoneC/x_prop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//TimeZoneC/iana_prop"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//tzprop">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzprop/dtstart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzprop/tzoffseto"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzprop/tzoffsetfrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzprop/rrule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//tzprop/opt"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//AlarmC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//AlarmC/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//AlarmC/trigger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//AlarmC/x_prop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//AlarmC/iana_prop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//AlarmC/attach"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//AlarmC/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//AlarmC/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//AlarmC/time"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//ComponentAlarmTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAlarmTime/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAlarmTime/repeat"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//ComponentAlarmAudioProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAlarmAudioProperty/attach"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//ComponentAlarmDispProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAlarmDispProperty/description"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//ComponentAlarmEmailProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAlarmEmailProperty/attendee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAlarmEmailProperty/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAlarmEmailProperty/attach"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="iCal.ecore#//AlarmType"/>
+    <genClasses ecoreClass="iCal.ecore#//ComponentActionOptionalProperties">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/rrule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/attach"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/attendee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/categories"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/contact"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/exdate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/rstatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/related"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/resources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/rdate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/x_prop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentActionOptionalProperties/iana_prop"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//tzpropOptional">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzpropOptional/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzpropOptional/rdate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzpropOptional/tzname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzpropOptional/x_prop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzpropOptional/iana_prop"/>
+    </genClasses>
+  </genPackages>
 </genmodel:GenModel>

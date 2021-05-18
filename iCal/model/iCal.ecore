@@ -1,3 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="iCal" nsURI="http://www.example.org/iCal" nsPrefix="iCal"/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="iCal" nsURI="http://www.example.org/iCal" nsPrefix="iCal">
+  <eClassifiers xsi:type="ecore:EClass" name="iCalFormat">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calendar" lowerBound="1"
+        eType="#//Calendar" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestedComponent" upperBound="-1"
+        eType="#//Component" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventC" eSuperTypes="#//ComponentAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transp" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="geo" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ToDoC" eSuperTypes="#//ComponentAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="completed" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="geo" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Calendar" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prodid" lowerBound="1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" lowerBound="1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="calscale" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x_prop" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iana_prop" upperBound="-1"
+        eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentAction" abstract="true" eSuperTypes="#//ComponentRequired">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtstart" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="created" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="last_mod" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="organizer" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seq" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recurid" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opt" upperBound="-1" eType="#//ComponentActionOptionalProperties"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JournalC" eSuperTypes="#//ComponentAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VacationC" eSuperTypes="#//ComponentRequired">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtstart" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="organizer" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contact" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtend" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attendee" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="freebusy" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rstatus" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x_prop" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iana_prop" upperBound="-1"
+        eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentRequired" abstract="true" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtstamp" lowerBound="1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" lowerBound="1" eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeZoneC" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tzid" lowerBound="1" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="last_mod" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tzurl" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="standardc" upperBound="-1"
+        eType="#//tzprop" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="daylightc" upperBound="-1"
+        eType="#//tzprop" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x_prop" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iana_prop" upperBound="-1"
+        eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="tzprop">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtstart" lowerBound="1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tzoffseto" lowerBound="1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tzoffsetfrom" lowerBound="1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rrule" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opt" upperBound="-1" eType="#//tzpropOptional"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlarmC" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" lowerBound="1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trigger" lowerBound="1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x_prop" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iana_prop" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attach" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//AlarmType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="#//ComponentAlarmTime"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentAlarmTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeat" eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentAlarmAudioProperty" eSuperTypes="#//AlarmType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attach" eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentAlarmDispProperty" eSuperTypes="#//AlarmType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentAlarmEmailProperty" eSuperTypes="#//AlarmType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attendee" lowerBound="1"
+        upperBound="-1" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attach" upperBound="-1"
+        eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlarmType" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.Integer"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Float" instanceClassName="java.lang.Float"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentActionOptionalProperties">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rrule" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attach" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attendee" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="categories" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contact" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exdate" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rstatus" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="related" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resources" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rdate" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x_prop" upperBound="-1"
+        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iana_prop" upperBound="-1"
+        eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="tzpropOptional">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rdate" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tzname" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x_prop" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iana_prop" eType="#//String"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated iCal -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="iCal.presentation.ICalModelWizardID"
+            name="%_UI_ICalModelWizard_label"
+            class="iCal.presentation.ICalModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ICalModelFile.gif">
+         <description>%_UI_ICalModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated iCal -->
+      <editor
+            id="iCal.presentation.ICalEditorID"
+            name="%_UI_ICalEditor_label"
+            icon="icons/full/obj16/ICalModelFile.gif"
+            extensions="ical"
+            class="iCal.presentation.ICalEditor"
+            contributorClass="iCal.presentation.ICalActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
