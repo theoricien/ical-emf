@@ -23,7 +23,19 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link iCal.ComponentAction#getSummary <em>Summary</em>}</li>
  *   <li>{@link iCal.ComponentAction#getUrl <em>Url</em>}</li>
  *   <li>{@link iCal.ComponentAction#getRecurid <em>Recurid</em>}</li>
- *   <li>{@link iCal.ComponentAction#getOpt <em>Opt</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getRrule <em>Rrule</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getAttach <em>Attach</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getAttendee <em>Attendee</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getCategories <em>Categories</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getComment <em>Comment</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getContact <em>Contact</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getExdate <em>Exdate</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getRstatus <em>Rstatus</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getRelated <em>Related</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getResources <em>Resources</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getRdate <em>Rdate</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getX_prop <em>Xprop</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getIana_prop <em>Iana prop</em>}</li>
  * </ul>
  *
  * @see iCal.ICalPackage#getComponentAction()
@@ -252,15 +264,159 @@ public interface ComponentAction extends ComponentRequired {
 	void setRecurid(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Opt</b></em>' containment reference list.
-	 * The list contents are of type {@link iCal.ComponentActionOptionalProperties}.
+	 * Returns the value of the '<em><b>Rrule</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Opt</em>' containment reference list.
-	 * @see iCal.ICalPackage#getComponentAction_Opt()
-	 * @model containment="true"
+	 * @return the value of the '<em>Rrule</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Rrule()
+	 * @model dataType="iCal.String"
 	 * @generated
 	 */
-	EList<ComponentActionOptionalProperties> getOpt();
+	EList<String> getRrule();
+
+	/**
+	 * Returns the value of the '<em><b>Attach</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attach</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Attach()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getAttach();
+
+	/**
+	 * Returns the value of the '<em><b>Attendee</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attendee</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Attendee()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getAttendee();
+
+	/**
+	 * Returns the value of the '<em><b>Categories</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Categories</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Categories()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getCategories();
+
+	/**
+	 * Returns the value of the '<em><b>Comment</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comment</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Comment()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getComment();
+
+	/**
+	 * Returns the value of the '<em><b>Contact</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contact</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Contact()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getContact();
+
+	/**
+	 * Returns the value of the '<em><b>Exdate</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Exdate</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Exdate()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getExdate();
+
+	/**
+	 * Returns the value of the '<em><b>Rstatus</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rstatus</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Rstatus()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getRstatus();
+
+	/**
+	 * Returns the value of the '<em><b>Related</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Related</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Related()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getRelated();
+
+	/**
+	 * Returns the value of the '<em><b>Resources</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Resources</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Resources()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getResources();
+
+	/**
+	 * Returns the value of the '<em><b>Rdate</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rdate</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Rdate()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getRdate();
+
+	/**
+	 * Returns the value of the '<em><b>Xprop</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Xprop</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_X_prop()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getX_prop();
+
+	/**
+	 * Returns the value of the '<em><b>Iana prop</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Iana prop</em>' attribute list.
+	 * @see iCal.ICalPackage#getComponentAction_Iana_prop()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	EList<String> getIana_prop();
 
 } // ComponentAction

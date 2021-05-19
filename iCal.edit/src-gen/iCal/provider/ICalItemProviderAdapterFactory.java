@@ -372,29 +372,6 @@ public class ICalItemProviderAdapterFactory extends ICalAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link iCal.ComponentActionOptionalProperties} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComponentActionOptionalPropertiesItemProvider componentActionOptionalPropertiesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link iCal.ComponentActionOptionalProperties}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createComponentActionOptionalPropertiesAdapter() {
-		if (componentActionOptionalPropertiesItemProvider == null) {
-			componentActionOptionalPropertiesItemProvider = new ComponentActionOptionalPropertiesItemProvider(this);
-		}
-
-		return componentActionOptionalPropertiesItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link iCal.tzpropOptional} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -548,8 +525,6 @@ public class ICalItemProviderAdapterFactory extends ICalAdapterFactory
 			componentAlarmDispPropertyItemProvider.dispose();
 		if (componentAlarmEmailPropertyItemProvider != null)
 			componentAlarmEmailPropertyItemProvider.dispose();
-		if (componentActionOptionalPropertiesItemProvider != null)
-			componentActionOptionalPropertiesItemProvider.dispose();
 		if (tzpropOptionalItemProvider != null)
 			tzpropOptionalItemProvider.dispose();
 	}

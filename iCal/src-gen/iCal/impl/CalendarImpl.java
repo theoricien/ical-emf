@@ -3,19 +3,25 @@
 package iCal.impl;
 
 import iCal.Calendar;
+import iCal.Component;
 import iCal.ICalPackage;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,11 +37,12 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link iCal.impl.CalendarImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link iCal.impl.CalendarImpl#getX_prop <em>Xprop</em>}</li>
  *   <li>{@link iCal.impl.CalendarImpl#getIana_prop <em>Iana prop</em>}</li>
+ *   <li>{@link iCal.impl.CalendarImpl#getComponent <em>Component</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CalendarImpl extends ComponentImpl implements Calendar {
+public class CalendarImpl extends MinimalEObjectImpl.Container implements Calendar {
 	/**
 	 * The default value of the '{@link #getProdid() <em>Prodid</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -135,6 +142,16 @@ public class CalendarImpl extends ComponentImpl implements Calendar {
 	 * @ordered
 	 */
 	protected EList<String> iana_prop;
+
+	/**
+	 * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Component> component;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,6 +297,33 @@ public class CalendarImpl extends ComponentImpl implements Calendar {
 	 * @generated
 	 */
 	@Override
+	public EList<Component> getComponent() {
+		if (component == null) {
+			component = new EObjectContainmentEList<Component>(Component.class, this, ICalPackage.CALENDAR__COMPONENT);
+		}
+		return component;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ICalPackage.CALENDAR__COMPONENT:
+			return ((InternalEList<?>) getComponent()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ICalPackage.CALENDAR__PRODID:
@@ -294,6 +338,8 @@ public class CalendarImpl extends ComponentImpl implements Calendar {
 			return getX_prop();
 		case ICalPackage.CALENDAR__IANA_PROP:
 			return getIana_prop();
+		case ICalPackage.CALENDAR__COMPONENT:
+			return getComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -327,6 +373,10 @@ public class CalendarImpl extends ComponentImpl implements Calendar {
 			getIana_prop().clear();
 			getIana_prop().addAll((Collection<? extends String>) newValue);
 			return;
+		case ICalPackage.CALENDAR__COMPONENT:
+			getComponent().clear();
+			getComponent().addAll((Collection<? extends Component>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -357,6 +407,9 @@ public class CalendarImpl extends ComponentImpl implements Calendar {
 		case ICalPackage.CALENDAR__IANA_PROP:
 			getIana_prop().clear();
 			return;
+		case ICalPackage.CALENDAR__COMPONENT:
+			getComponent().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -381,6 +434,8 @@ public class CalendarImpl extends ComponentImpl implements Calendar {
 			return x_prop != null && !x_prop.isEmpty();
 		case ICalPackage.CALENDAR__IANA_PROP:
 			return iana_prop != null && !iana_prop.isEmpty();
+		case ICalPackage.CALENDAR__COMPONENT:
+			return component != null && !component.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

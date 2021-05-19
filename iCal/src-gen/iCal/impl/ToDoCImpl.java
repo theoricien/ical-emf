@@ -2,14 +2,24 @@
  */
 package iCal.impl;
 
+import iCal.AlarmC;
 import iCal.ICalPackage;
 import iCal.ToDoC;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link iCal.impl.ToDoCImpl#getGeo <em>Geo</em>}</li>
  *   <li>{@link iCal.impl.ToDoCImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link iCal.impl.ToDoCImpl#getDuration <em>Duration</em>}</li>
+ *   <li>{@link iCal.impl.ToDoCImpl#getAlarmc <em>Alarmc</em>}</li>
  * </ul>
  *
  * @generated
@@ -149,6 +160,16 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 	 * @ordered
 	 */
 	protected String duration = DURATION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAlarmc() <em>Alarmc</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlarmc()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AlarmC> alarmc;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -318,6 +339,33 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 	 * @generated
 	 */
 	@Override
+	public EList<AlarmC> getAlarmc() {
+		if (alarmc == null) {
+			alarmc = new EObjectContainmentEList<AlarmC>(AlarmC.class, this, ICalPackage.TO_DO_C__ALARMC);
+		}
+		return alarmc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ICalPackage.TO_DO_C__ALARMC:
+			return ((InternalEList<?>) getAlarmc()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ICalPackage.TO_DO_C__COMPLETED:
@@ -332,6 +380,8 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 			return getLocation();
 		case ICalPackage.TO_DO_C__DURATION:
 			return getDuration();
+		case ICalPackage.TO_DO_C__ALARMC:
+			return getAlarmc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -341,6 +391,7 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -361,6 +412,10 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 			return;
 		case ICalPackage.TO_DO_C__DURATION:
 			setDuration((String) newValue);
+			return;
+		case ICalPackage.TO_DO_C__ALARMC:
+			getAlarmc().clear();
+			getAlarmc().addAll((Collection<? extends AlarmC>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -392,6 +447,9 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 		case ICalPackage.TO_DO_C__DURATION:
 			setDuration(DURATION_EDEFAULT);
 			return;
+		case ICalPackage.TO_DO_C__ALARMC:
+			getAlarmc().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -416,6 +474,8 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 			return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
 		case ICalPackage.TO_DO_C__DURATION:
 			return DURATION_EDEFAULT == null ? duration != null : !DURATION_EDEFAULT.equals(duration);
+		case ICalPackage.TO_DO_C__ALARMC:
+			return alarmc != null && !alarmc.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

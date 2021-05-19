@@ -139,15 +139,6 @@ public interface ICalFactory extends EFactory {
 	ComponentAlarmEmailProperty createComponentAlarmEmailProperty();
 
 	/**
-	 * Returns a new object of class '<em>Component Action Optional Properties</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Action Optional Properties</em>'.
-	 * @generated
-	 */
-	ComponentActionOptionalProperties createComponentActionOptionalProperties();
-
-	/**
 	 * Returns a new object of class '<em>tzprop Optional</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

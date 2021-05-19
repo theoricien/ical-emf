@@ -2,6 +2,8 @@
  */
 package iCal;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Event C</b></em>'.
@@ -17,6 +19,7 @@ package iCal;
  *   <li>{@link iCal.EventC#getGeo <em>Geo</em>}</li>
  *   <li>{@link iCal.EventC#getLocation <em>Location</em>}</li>
  *   <li>{@link iCal.EventC#getDuration <em>Duration</em>}</li>
+ *   <li>{@link iCal.EventC#getAlarmc <em>Alarmc</em>}</li>
  * </ul>
  *
  * @see iCal.ICalPackage#getEventC()
@@ -155,5 +158,17 @@ public interface EventC extends ComponentAction {
 	 * @generated
 	 */
 	void setDuration(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Alarmc</b></em>' containment reference list.
+	 * The list contents are of type {@link iCal.AlarmC}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Alarmc</em>' containment reference list.
+	 * @see iCal.ICalPackage#getEventC_Alarmc()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AlarmC> getAlarmc();
 
 } // EventC

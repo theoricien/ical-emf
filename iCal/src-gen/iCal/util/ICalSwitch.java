@@ -110,8 +110,6 @@ public class ICalSwitch<T> extends Switch<T> {
 			Calendar calendar = (Calendar) theEObject;
 			T result = caseCalendar(calendar);
 			if (result == null)
-				result = caseComponent(calendar);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -221,13 +219,6 @@ public class ICalSwitch<T> extends Switch<T> {
 		case ICalPackage.ALARM_TYPE: {
 			AlarmType alarmType = (AlarmType) theEObject;
 			T result = caseAlarmType(alarmType);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ICalPackage.COMPONENT_ACTION_OPTIONAL_PROPERTIES: {
-			ComponentActionOptionalProperties componentActionOptionalProperties = (ComponentActionOptionalProperties) theEObject;
-			T result = caseComponentActionOptionalProperties(componentActionOptionalProperties);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -496,21 +487,6 @@ public class ICalSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAlarmType(AlarmType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component Action Optional Properties</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component Action Optional Properties</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseComponentActionOptionalProperties(ComponentActionOptionalProperties object) {
 		return null;
 	}
 

@@ -4,6 +4,8 @@ package iCal;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Calendar</b></em>'.
@@ -19,13 +21,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link iCal.Calendar#getMethod <em>Method</em>}</li>
  *   <li>{@link iCal.Calendar#getX_prop <em>Xprop</em>}</li>
  *   <li>{@link iCal.Calendar#getIana_prop <em>Iana prop</em>}</li>
+ *   <li>{@link iCal.Calendar#getComponent <em>Component</em>}</li>
  * </ul>
  *
  * @see iCal.ICalPackage#getCalendar()
  * @model
  * @generated
  */
-public interface Calendar extends Component {
+public interface Calendar extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Prodid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -137,5 +140,17 @@ public interface Calendar extends Component {
 	 * @generated
 	 */
 	EList<String> getIana_prop();
+
+	/**
+	 * Returns the value of the '<em><b>Component</b></em>' containment reference list.
+	 * The list contents are of type {@link iCal.Component}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component</em>' containment reference list.
+	 * @see iCal.ICalPackage#getCalendar_Component()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<Component> getComponent();
 
 } // Calendar

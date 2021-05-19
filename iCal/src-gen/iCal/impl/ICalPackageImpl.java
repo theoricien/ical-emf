@@ -7,7 +7,6 @@ import iCal.AlarmType;
 import iCal.Calendar;
 import iCal.Component;
 import iCal.ComponentAction;
-import iCal.ComponentActionOptionalProperties;
 import iCal.ComponentAlarmAudioProperty;
 import iCal.ComponentAlarmDispProperty;
 import iCal.ComponentAlarmEmailProperty;
@@ -163,13 +162,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentActionOptionalPropertiesEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass tzpropOptionalEClass = null;
 
 	/**
@@ -293,16 +285,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_NestedComponent() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getEventC() {
 		return eventCEClass;
 	}
@@ -365,6 +347,16 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	@Override
 	public EAttribute getEventC_Duration() {
 		return (EAttribute) eventCEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEventC_Alarmc() {
+		return (EReference) eventCEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -443,6 +435,16 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getToDoC_Alarmc() {
+		return (EReference) toDoCEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCalendar() {
 		return calendarEClass;
 	}
@@ -505,6 +507,16 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	@Override
 	public EAttribute getCalendar_Iana_prop() {
 		return (EAttribute) calendarEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCalendar_Component() {
+		return (EReference) calendarEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -623,8 +635,128 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponentAction_Opt() {
-		return (EReference) componentActionEClass.getEStructuralFeatures().get(10);
+	public EAttribute getComponentAction_Rrule() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Attach() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Attendee() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Categories() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Comment() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Contact() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Exdate() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Rstatus() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Related() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Resources() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Rdate() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_X_prop() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Iana_prop() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -1143,146 +1275,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getComponentActionOptionalProperties() {
-		return componentActionOptionalPropertiesEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Rrule() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Attach() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Attendee() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Categories() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Comment() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Contact() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Exdate() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Rstatus() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Related() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Resources() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Rdate() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_X_prop() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentActionOptionalProperties_Iana_prop() {
-		return (EAttribute) componentActionOptionalPropertiesEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass gettzpropOptional() {
 		return tzpropOptionalEClass;
 	}
@@ -1401,7 +1393,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		createEReference(iCalFormatEClass, ICAL_FORMAT__CALENDAR);
 
 		componentEClass = createEClass(COMPONENT);
-		createEReference(componentEClass, COMPONENT__NESTED_COMPONENT);
 
 		eventCEClass = createEClass(EVENT_C);
 		createEAttribute(eventCEClass, EVENT_C__TRANSP);
@@ -1410,6 +1401,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		createEAttribute(eventCEClass, EVENT_C__GEO);
 		createEAttribute(eventCEClass, EVENT_C__LOCATION);
 		createEAttribute(eventCEClass, EVENT_C__DURATION);
+		createEReference(eventCEClass, EVENT_C__ALARMC);
 
 		toDoCEClass = createEClass(TO_DO_C);
 		createEAttribute(toDoCEClass, TO_DO_C__COMPLETED);
@@ -1418,6 +1410,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		createEAttribute(toDoCEClass, TO_DO_C__GEO);
 		createEAttribute(toDoCEClass, TO_DO_C__LOCATION);
 		createEAttribute(toDoCEClass, TO_DO_C__DURATION);
+		createEReference(toDoCEClass, TO_DO_C__ALARMC);
 
 		calendarEClass = createEClass(CALENDAR);
 		createEAttribute(calendarEClass, CALENDAR__PRODID);
@@ -1426,6 +1419,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		createEAttribute(calendarEClass, CALENDAR__METHOD);
 		createEAttribute(calendarEClass, CALENDAR__XPROP);
 		createEAttribute(calendarEClass, CALENDAR__IANA_PROP);
+		createEReference(calendarEClass, CALENDAR__COMPONENT);
 
 		componentActionEClass = createEClass(COMPONENT_ACTION);
 		createEAttribute(componentActionEClass, COMPONENT_ACTION__DTSTART);
@@ -1438,7 +1432,19 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		createEAttribute(componentActionEClass, COMPONENT_ACTION__SUMMARY);
 		createEAttribute(componentActionEClass, COMPONENT_ACTION__URL);
 		createEAttribute(componentActionEClass, COMPONENT_ACTION__RECURID);
-		createEReference(componentActionEClass, COMPONENT_ACTION__OPT);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__RRULE);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__ATTACH);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__ATTENDEE);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__CATEGORIES);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__COMMENT);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__CONTACT);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__EXDATE);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__RSTATUS);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__RELATED);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__RESOURCES);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__RDATE);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__XPROP);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__IANA_PROP);
 
 		journalCEClass = createEClass(JOURNAL_C);
 
@@ -1502,21 +1508,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 
 		alarmTypeEClass = createEClass(ALARM_TYPE);
 
-		componentActionOptionalPropertiesEClass = createEClass(COMPONENT_ACTION_OPTIONAL_PROPERTIES);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__RRULE);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__ATTACH);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__ATTENDEE);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__CATEGORIES);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__COMMENT);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__CONTACT);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__EXDATE);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__RSTATUS);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__RELATED);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__RESOURCES);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__RDATE);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__XPROP);
-		createEAttribute(componentActionOptionalPropertiesEClass, COMPONENT_ACTION_OPTIONAL_PROPERTIES__IANA_PROP);
-
 		tzpropOptionalEClass = createEClass(TZPROP_OPTIONAL);
 		createEAttribute(tzpropOptionalEClass, TZPROP_OPTIONAL__COMMENT);
 		createEAttribute(tzpropOptionalEClass, TZPROP_OPTIONAL__RDATE);
@@ -1561,7 +1552,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		// Add supertypes to classes
 		eventCEClass.getESuperTypes().add(this.getComponentAction());
 		toDoCEClass.getESuperTypes().add(this.getComponentAction());
-		calendarEClass.getESuperTypes().add(this.getComponent());
 		componentActionEClass.getESuperTypes().add(this.getComponentRequired());
 		journalCEClass.getESuperTypes().add(this.getComponentAction());
 		vacationCEClass.getESuperTypes().add(this.getComponentRequired());
@@ -1581,9 +1571,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponent_NestedComponent(), this.getComponent(), null, "nestedComponent", null, 0, -1,
-				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventCEClass, EventC.class, "EventC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEventC_Transp(), this.getString(), "transp", null, 0, 1, EventC.class, !IS_TRANSIENT,
@@ -1598,6 +1585,9 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventC_Duration(), this.getString(), "duration", null, 0, 1, EventC.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventC_Alarmc(), this.getAlarmC(), null, "alarmc", null, 0, -1, EventC.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(toDoCEClass, ToDoC.class, "ToDoC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getToDoC_Completed(), this.getString(), "completed", null, 0, 1, ToDoC.class, !IS_TRANSIENT,
@@ -1612,6 +1602,9 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getToDoC_Duration(), this.getString(), "duration", null, 0, 1, ToDoC.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getToDoC_Alarmc(), this.getAlarmC(), null, "alarmc", null, 0, -1, ToDoC.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(calendarEClass, Calendar.class, "Calendar", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1627,6 +1620,9 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCalendar_Iana_prop(), this.getString(), "iana_prop", null, 0, -1, Calendar.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCalendar_Component(), this.getComponent(), null, "component", null, 1, -1, Calendar.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentActionEClass, ComponentAction.class, "ComponentAction", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1650,9 +1646,35 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentAction_Recurid(), this.getString(), "recurid", null, 0, 1, ComponentAction.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentAction_Opt(), this.getComponentActionOptionalProperties(), null, "opt", null, 0, -1,
-				ComponentAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Rrule(), this.getString(), "rrule", null, 0, -1, ComponentAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Attach(), this.getString(), "attach", null, 0, -1, ComponentAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Attendee(), this.getString(), "attendee", null, 0, -1, ComponentAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Categories(), this.getString(), "categories", null, 0, -1,
+				ComponentAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Comment(), this.getString(), "comment", null, 0, -1, ComponentAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Contact(), this.getString(), "contact", null, 0, -1, ComponentAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Exdate(), this.getString(), "exdate", null, 0, -1, ComponentAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Rstatus(), this.getString(), "rstatus", null, 0, -1, ComponentAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Related(), this.getString(), "related", null, 0, -1, ComponentAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Resources(), this.getString(), "resources", null, 0, -1,
+				ComponentAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Rdate(), this.getString(), "rdate", null, 0, -1, ComponentAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_X_prop(), this.getString(), "x_prop", null, 0, -1, ComponentAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Iana_prop(), this.getString(), "iana_prop", null, 0, -1,
+				ComponentAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(journalCEClass, JournalC.class, "JournalC", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1775,48 +1797,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 
 		initEClass(alarmTypeEClass, AlarmType.class, "AlarmType", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(componentActionOptionalPropertiesEClass, ComponentActionOptionalProperties.class,
-				"ComponentActionOptionalProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentActionOptionalProperties_Rrule(), this.getString(), "rrule", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Attach(), this.getString(), "attach", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Attendee(), this.getString(), "attendee", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Categories(), this.getString(), "categories", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Comment(), this.getString(), "comment", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Contact(), this.getString(), "contact", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Exdate(), this.getString(), "exdate", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Rstatus(), this.getString(), "rstatus", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Related(), this.getString(), "related", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Resources(), this.getString(), "resources", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Rdate(), this.getString(), "rdate", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_X_prop(), this.getString(), "x_prop", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentActionOptionalProperties_Iana_prop(), this.getString(), "iana_prop", null, 0, -1,
-				ComponentActionOptionalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tzpropOptionalEClass, tzpropOptional.class, "tzpropOptional", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

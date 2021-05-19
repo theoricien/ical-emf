@@ -105,22 +105,13 @@ public interface ICalPackage extends EPackage {
 	int COMPONENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Nested Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__NESTED_COMPONENT = 0;
-
-	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = 1;
+	int COMPONENT_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -140,15 +131,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	int COMPONENT_REQUIRED = 8;
-
-	/**
-	 * The feature id for the '<em><b>Nested Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_REQUIRED__NESTED_COMPONENT = COMPONENT__NESTED_COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
@@ -195,15 +177,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	int COMPONENT_ACTION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Nested Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION__NESTED_COMPONENT = COMPONENT_REQUIRED__NESTED_COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
@@ -314,13 +287,121 @@ public interface ICalPackage extends EPackage {
 	int COMPONENT_ACTION__RECURID = COMPONENT_REQUIRED_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Opt</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Rrule</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__OPT = COMPONENT_REQUIRED_FEATURE_COUNT + 10;
+	int COMPONENT_ACTION__RRULE = COMPONENT_REQUIRED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Attach</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__ATTACH = COMPONENT_REQUIRED_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Attendee</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__ATTENDEE = COMPONENT_REQUIRED_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Categories</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__CATEGORIES = COMPONENT_REQUIRED_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__COMMENT = COMPONENT_REQUIRED_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__CONTACT = COMPONENT_REQUIRED_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Exdate</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__EXDATE = COMPONENT_REQUIRED_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Rstatus</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__RSTATUS = COMPONENT_REQUIRED_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Related</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__RELATED = COMPONENT_REQUIRED_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Resources</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__RESOURCES = COMPONENT_REQUIRED_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Rdate</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__RDATE = COMPONENT_REQUIRED_FEATURE_COUNT + 20;
+
+	/**
+	 * The feature id for the '<em><b>Xprop</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__XPROP = COMPONENT_REQUIRED_FEATURE_COUNT + 21;
+
+	/**
+	 * The feature id for the '<em><b>Iana prop</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__IANA_PROP = COMPONENT_REQUIRED_FEATURE_COUNT + 22;
 
 	/**
 	 * The number of structural features of the '<em>Component Action</em>' class.
@@ -329,7 +410,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION_FEATURE_COUNT = COMPONENT_REQUIRED_FEATURE_COUNT + 11;
+	int COMPONENT_ACTION_FEATURE_COUNT = COMPONENT_REQUIRED_FEATURE_COUNT + 23;
 
 	/**
 	 * The number of operations of the '<em>Component Action</em>' class.
@@ -349,15 +430,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	int EVENT_C = 2;
-
-	/**
-	 * The feature id for the '<em><b>Nested Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_C__NESTED_COMPONENT = COMPONENT_ACTION__NESTED_COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
@@ -468,13 +540,121 @@ public interface ICalPackage extends EPackage {
 	int EVENT_C__RECURID = COMPONENT_ACTION__RECURID;
 
 	/**
-	 * The feature id for the '<em><b>Opt</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Rrule</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_C__OPT = COMPONENT_ACTION__OPT;
+	int EVENT_C__RRULE = COMPONENT_ACTION__RRULE;
+
+	/**
+	 * The feature id for the '<em><b>Attach</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__ATTACH = COMPONENT_ACTION__ATTACH;
+
+	/**
+	 * The feature id for the '<em><b>Attendee</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__ATTENDEE = COMPONENT_ACTION__ATTENDEE;
+
+	/**
+	 * The feature id for the '<em><b>Categories</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__CATEGORIES = COMPONENT_ACTION__CATEGORIES;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__COMMENT = COMPONENT_ACTION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__CONTACT = COMPONENT_ACTION__CONTACT;
+
+	/**
+	 * The feature id for the '<em><b>Exdate</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__EXDATE = COMPONENT_ACTION__EXDATE;
+
+	/**
+	 * The feature id for the '<em><b>Rstatus</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__RSTATUS = COMPONENT_ACTION__RSTATUS;
+
+	/**
+	 * The feature id for the '<em><b>Related</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__RELATED = COMPONENT_ACTION__RELATED;
+
+	/**
+	 * The feature id for the '<em><b>Resources</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__RESOURCES = COMPONENT_ACTION__RESOURCES;
+
+	/**
+	 * The feature id for the '<em><b>Rdate</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__RDATE = COMPONENT_ACTION__RDATE;
+
+	/**
+	 * The feature id for the '<em><b>Xprop</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__XPROP = COMPONENT_ACTION__XPROP;
+
+	/**
+	 * The feature id for the '<em><b>Iana prop</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__IANA_PROP = COMPONENT_ACTION__IANA_PROP;
 
 	/**
 	 * The feature id for the '<em><b>Transp</b></em>' attribute.
@@ -531,13 +711,22 @@ public interface ICalPackage extends EPackage {
 	int EVENT_C__DURATION = COMPONENT_ACTION_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Alarmc</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Event C</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_C_FEATURE_COUNT = COMPONENT_ACTION_FEATURE_COUNT + 6;
+	int EVENT_C_FEATURE_COUNT = COMPONENT_ACTION_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Event C</em>' class.
@@ -557,15 +746,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	int TO_DO_C = 3;
-
-	/**
-	 * The feature id for the '<em><b>Nested Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TO_DO_C__NESTED_COMPONENT = COMPONENT_ACTION__NESTED_COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
@@ -676,13 +856,121 @@ public interface ICalPackage extends EPackage {
 	int TO_DO_C__RECURID = COMPONENT_ACTION__RECURID;
 
 	/**
-	 * The feature id for the '<em><b>Opt</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Rrule</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TO_DO_C__OPT = COMPONENT_ACTION__OPT;
+	int TO_DO_C__RRULE = COMPONENT_ACTION__RRULE;
+
+	/**
+	 * The feature id for the '<em><b>Attach</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__ATTACH = COMPONENT_ACTION__ATTACH;
+
+	/**
+	 * The feature id for the '<em><b>Attendee</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__ATTENDEE = COMPONENT_ACTION__ATTENDEE;
+
+	/**
+	 * The feature id for the '<em><b>Categories</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__CATEGORIES = COMPONENT_ACTION__CATEGORIES;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__COMMENT = COMPONENT_ACTION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__CONTACT = COMPONENT_ACTION__CONTACT;
+
+	/**
+	 * The feature id for the '<em><b>Exdate</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__EXDATE = COMPONENT_ACTION__EXDATE;
+
+	/**
+	 * The feature id for the '<em><b>Rstatus</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__RSTATUS = COMPONENT_ACTION__RSTATUS;
+
+	/**
+	 * The feature id for the '<em><b>Related</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__RELATED = COMPONENT_ACTION__RELATED;
+
+	/**
+	 * The feature id for the '<em><b>Resources</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__RESOURCES = COMPONENT_ACTION__RESOURCES;
+
+	/**
+	 * The feature id for the '<em><b>Rdate</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__RDATE = COMPONENT_ACTION__RDATE;
+
+	/**
+	 * The feature id for the '<em><b>Xprop</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__XPROP = COMPONENT_ACTION__XPROP;
+
+	/**
+	 * The feature id for the '<em><b>Iana prop</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__IANA_PROP = COMPONENT_ACTION__IANA_PROP;
 
 	/**
 	 * The feature id for the '<em><b>Completed</b></em>' attribute.
@@ -739,13 +1027,22 @@ public interface ICalPackage extends EPackage {
 	int TO_DO_C__DURATION = COMPONENT_ACTION_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Alarmc</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>To Do C</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TO_DO_C_FEATURE_COUNT = COMPONENT_ACTION_FEATURE_COUNT + 6;
+	int TO_DO_C_FEATURE_COUNT = COMPONENT_ACTION_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>To Do C</em>' class.
@@ -767,22 +1064,13 @@ public interface ICalPackage extends EPackage {
 	int CALENDAR = 4;
 
 	/**
-	 * The feature id for the '<em><b>Nested Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALENDAR__NESTED_COMPONENT = COMPONENT__NESTED_COMPONENT;
-
-	/**
 	 * The feature id for the '<em><b>Prodid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALENDAR__PRODID = COMPONENT_FEATURE_COUNT + 0;
+	int CALENDAR__PRODID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -791,7 +1079,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALENDAR__VERSION = COMPONENT_FEATURE_COUNT + 1;
+	int CALENDAR__VERSION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Calscale</b></em>' attribute.
@@ -800,7 +1088,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALENDAR__CALSCALE = COMPONENT_FEATURE_COUNT + 2;
+	int CALENDAR__CALSCALE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Method</b></em>' attribute.
@@ -809,7 +1097,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALENDAR__METHOD = COMPONENT_FEATURE_COUNT + 3;
+	int CALENDAR__METHOD = 3;
 
 	/**
 	 * The feature id for the '<em><b>Xprop</b></em>' attribute list.
@@ -818,7 +1106,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALENDAR__XPROP = COMPONENT_FEATURE_COUNT + 4;
+	int CALENDAR__XPROP = 4;
 
 	/**
 	 * The feature id for the '<em><b>Iana prop</b></em>' attribute list.
@@ -827,7 +1115,16 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALENDAR__IANA_PROP = COMPONENT_FEATURE_COUNT + 5;
+	int CALENDAR__IANA_PROP = 5;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALENDAR__COMPONENT = 6;
 
 	/**
 	 * The number of structural features of the '<em>Calendar</em>' class.
@@ -836,7 +1133,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALENDAR_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 6;
+	int CALENDAR_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Calendar</em>' class.
@@ -845,7 +1142,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALENDAR_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
+	int CALENDAR_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link iCal.impl.JournalCImpl <em>Journal C</em>}' class.
@@ -856,15 +1153,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	int JOURNAL_C = 6;
-
-	/**
-	 * The feature id for the '<em><b>Nested Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOURNAL_C__NESTED_COMPONENT = COMPONENT_ACTION__NESTED_COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
@@ -975,13 +1263,121 @@ public interface ICalPackage extends EPackage {
 	int JOURNAL_C__RECURID = COMPONENT_ACTION__RECURID;
 
 	/**
-	 * The feature id for the '<em><b>Opt</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Rrule</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOURNAL_C__OPT = COMPONENT_ACTION__OPT;
+	int JOURNAL_C__RRULE = COMPONENT_ACTION__RRULE;
+
+	/**
+	 * The feature id for the '<em><b>Attach</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__ATTACH = COMPONENT_ACTION__ATTACH;
+
+	/**
+	 * The feature id for the '<em><b>Attendee</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__ATTENDEE = COMPONENT_ACTION__ATTENDEE;
+
+	/**
+	 * The feature id for the '<em><b>Categories</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__CATEGORIES = COMPONENT_ACTION__CATEGORIES;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__COMMENT = COMPONENT_ACTION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__CONTACT = COMPONENT_ACTION__CONTACT;
+
+	/**
+	 * The feature id for the '<em><b>Exdate</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__EXDATE = COMPONENT_ACTION__EXDATE;
+
+	/**
+	 * The feature id for the '<em><b>Rstatus</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__RSTATUS = COMPONENT_ACTION__RSTATUS;
+
+	/**
+	 * The feature id for the '<em><b>Related</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__RELATED = COMPONENT_ACTION__RELATED;
+
+	/**
+	 * The feature id for the '<em><b>Resources</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__RESOURCES = COMPONENT_ACTION__RESOURCES;
+
+	/**
+	 * The feature id for the '<em><b>Rdate</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__RDATE = COMPONENT_ACTION__RDATE;
+
+	/**
+	 * The feature id for the '<em><b>Xprop</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__XPROP = COMPONENT_ACTION__XPROP;
+
+	/**
+	 * The feature id for the '<em><b>Iana prop</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__IANA_PROP = COMPONENT_ACTION__IANA_PROP;
 
 	/**
 	 * The number of structural features of the '<em>Journal C</em>' class.
@@ -1010,15 +1406,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	int VACATION_C = 7;
-
-	/**
-	 * The feature id for the '<em><b>Nested Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VACATION_C__NESTED_COMPONENT = COMPONENT_REQUIRED__NESTED_COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
@@ -1164,15 +1551,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	int TIME_ZONE_C = 9;
-
-	/**
-	 * The feature id for the '<em><b>Nested Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_ZONE_C__NESTED_COMPONENT = COMPONENT__NESTED_COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Tzid</b></em>' attribute.
@@ -1337,15 +1715,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	int ALARM_C = 11;
-
-	/**
-	 * The feature id for the '<em><b>Nested Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALARM_C__NESTED_COMPONENT = COMPONENT__NESTED_COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -1641,151 +2010,6 @@ public interface ICalPackage extends EPackage {
 	int COMPONENT_ALARM_EMAIL_PROPERTY_OPERATION_COUNT = ALARM_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link iCal.impl.ComponentActionOptionalPropertiesImpl <em>Component Action Optional Properties</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see iCal.impl.ComponentActionOptionalPropertiesImpl
-	 * @see iCal.impl.ICalPackageImpl#getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES = 17;
-
-	/**
-	 * The feature id for the '<em><b>Rrule</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__RRULE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Attach</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__ATTACH = 1;
-
-	/**
-	 * The feature id for the '<em><b>Attendee</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__ATTENDEE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Categories</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__CATEGORIES = 3;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__COMMENT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Contact</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__CONTACT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Exdate</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__EXDATE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Rstatus</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__RSTATUS = 7;
-
-	/**
-	 * The feature id for the '<em><b>Related</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__RELATED = 8;
-
-	/**
-	 * The feature id for the '<em><b>Resources</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__RESOURCES = 9;
-
-	/**
-	 * The feature id for the '<em><b>Rdate</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__RDATE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Xprop</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__XPROP = 11;
-
-	/**
-	 * The feature id for the '<em><b>Iana prop</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES__IANA_PROP = 12;
-
-	/**
-	 * The number of structural features of the '<em>Component Action Optional Properties</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES_FEATURE_COUNT = 13;
-
-	/**
-	 * The number of operations of the '<em>Component Action Optional Properties</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION_OPTIONAL_PROPERTIES_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link iCal.impl.tzpropOptionalImpl <em>tzprop Optional</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1793,7 +2017,7 @@ public interface ICalPackage extends EPackage {
 	 * @see iCal.impl.ICalPackageImpl#gettzpropOptional()
 	 * @generated
 	 */
-	int TZPROP_OPTIONAL = 18;
+	int TZPROP_OPTIONAL = 17;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1866,7 +2090,7 @@ public interface ICalPackage extends EPackage {
 	 * @see iCal.impl.ICalPackageImpl#getString()
 	 * @generated
 	 */
-	int STRING = 19;
+	int STRING = 18;
 
 	/**
 	 * The meta object id for the '<em>Integer</em>' data type.
@@ -1876,7 +2100,7 @@ public interface ICalPackage extends EPackage {
 	 * @see iCal.impl.ICalPackageImpl#getInteger()
 	 * @generated
 	 */
-	int INTEGER = 20;
+	int INTEGER = 19;
 
 	/**
 	 * The meta object id for the '<em>Float</em>' data type.
@@ -1886,7 +2110,7 @@ public interface ICalPackage extends EPackage {
 	 * @see iCal.impl.ICalPackageImpl#getFloat()
 	 * @generated
 	 */
-	int FLOAT = 21;
+	int FLOAT = 20;
 
 	/**
 	 * Returns the meta object for class '{@link iCal.iCalFormat <em>iCal Format</em>}'.
@@ -1918,17 +2142,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponent();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link iCal.Component#getNestedComponent <em>Nested Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Nested Component</em>'.
-	 * @see iCal.Component#getNestedComponent()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_NestedComponent();
 
 	/**
 	 * Returns the meta object for class '{@link iCal.EventC <em>Event C</em>}'.
@@ -2007,6 +2220,17 @@ public interface ICalPackage extends EPackage {
 	EAttribute getEventC_Duration();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link iCal.EventC#getAlarmc <em>Alarmc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Alarmc</em>'.
+	 * @see iCal.EventC#getAlarmc()
+	 * @see #getEventC()
+	 * @generated
+	 */
+	EReference getEventC_Alarmc();
+
+	/**
 	 * Returns the meta object for class '{@link iCal.ToDoC <em>To Do C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2083,6 +2307,17 @@ public interface ICalPackage extends EPackage {
 	EAttribute getToDoC_Duration();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link iCal.ToDoC#getAlarmc <em>Alarmc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Alarmc</em>'.
+	 * @see iCal.ToDoC#getAlarmc()
+	 * @see #getToDoC()
+	 * @generated
+	 */
+	EReference getToDoC_Alarmc();
+
+	/**
 	 * Returns the meta object for class '{@link iCal.Calendar <em>Calendar</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2157,6 +2392,17 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCalendar_Iana_prop();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link iCal.Calendar#getComponent <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Component</em>'.
+	 * @see iCal.Calendar#getComponent()
+	 * @see #getCalendar()
+	 * @generated
+	 */
+	EReference getCalendar_Component();
 
 	/**
 	 * Returns the meta object for class '{@link iCal.ComponentAction <em>Component Action</em>}'.
@@ -2279,15 +2525,147 @@ public interface ICalPackage extends EPackage {
 	EAttribute getComponentAction_Recurid();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link iCal.ComponentAction#getOpt <em>Opt</em>}'.
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getRrule <em>Rrule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Opt</em>'.
-	 * @see iCal.ComponentAction#getOpt()
+	 * @return the meta object for the attribute list '<em>Rrule</em>'.
+	 * @see iCal.ComponentAction#getRrule()
 	 * @see #getComponentAction()
 	 * @generated
 	 */
-	EReference getComponentAction_Opt();
+	EAttribute getComponentAction_Rrule();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getAttach <em>Attach</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Attach</em>'.
+	 * @see iCal.ComponentAction#getAttach()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Attach();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getAttendee <em>Attendee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Attendee</em>'.
+	 * @see iCal.ComponentAction#getAttendee()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Attendee();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getCategories <em>Categories</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Categories</em>'.
+	 * @see iCal.ComponentAction#getCategories()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Categories();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Comment</em>'.
+	 * @see iCal.ComponentAction#getComment()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Comment();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getContact <em>Contact</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Contact</em>'.
+	 * @see iCal.ComponentAction#getContact()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Contact();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getExdate <em>Exdate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Exdate</em>'.
+	 * @see iCal.ComponentAction#getExdate()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Exdate();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getRstatus <em>Rstatus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Rstatus</em>'.
+	 * @see iCal.ComponentAction#getRstatus()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Rstatus();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getRelated <em>Related</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Related</em>'.
+	 * @see iCal.ComponentAction#getRelated()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Related();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getResources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Resources</em>'.
+	 * @see iCal.ComponentAction#getResources()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Resources();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getRdate <em>Rdate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Rdate</em>'.
+	 * @see iCal.ComponentAction#getRdate()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Rdate();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getX_prop <em>Xprop</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Xprop</em>'.
+	 * @see iCal.ComponentAction#getX_prop()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_X_prop();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link iCal.ComponentAction#getIana_prop <em>Iana prop</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Iana prop</em>'.
+	 * @see iCal.ComponentAction#getIana_prop()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Iana_prop();
 
 	/**
 	 * Returns the meta object for class '{@link iCal.JournalC <em>Journal C</em>}'.
@@ -2840,159 +3218,6 @@ public interface ICalPackage extends EPackage {
 	EClass getAlarmType();
 
 	/**
-	 * Returns the meta object for class '{@link iCal.ComponentActionOptionalProperties <em>Component Action Optional Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Component Action Optional Properties</em>'.
-	 * @see iCal.ComponentActionOptionalProperties
-	 * @generated
-	 */
-	EClass getComponentActionOptionalProperties();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getRrule <em>Rrule</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Rrule</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getRrule()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Rrule();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getAttach <em>Attach</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Attach</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getAttach()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Attach();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getAttendee <em>Attendee</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Attendee</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getAttendee()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Attendee();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getCategories <em>Categories</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Categories</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getCategories()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Categories();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getComment <em>Comment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Comment</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getComment()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Comment();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getContact <em>Contact</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Contact</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getContact()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Contact();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getExdate <em>Exdate</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Exdate</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getExdate()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Exdate();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getRstatus <em>Rstatus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Rstatus</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getRstatus()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Rstatus();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getRelated <em>Related</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Related</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getRelated()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Related();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getResources <em>Resources</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Resources</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getResources()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Resources();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getRdate <em>Rdate</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Rdate</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getRdate()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Rdate();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getX_prop <em>Xprop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Xprop</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getX_prop()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_X_prop();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link iCal.ComponentActionOptionalProperties#getIana_prop <em>Iana prop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Iana prop</em>'.
-	 * @see iCal.ComponentActionOptionalProperties#getIana_prop()
-	 * @see #getComponentActionOptionalProperties()
-	 * @generated
-	 */
-	EAttribute getComponentActionOptionalProperties_Iana_prop();
-
-	/**
 	 * Returns the meta object for class '{@link iCal.tzpropOptional <em>tzprop Optional</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3142,14 +3367,6 @@ public interface ICalPackage extends EPackage {
 		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>Nested Component</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__NESTED_COMPONENT = eINSTANCE.getComponent_NestedComponent();
-
-		/**
 		 * The meta object literal for the '{@link iCal.impl.EventCImpl <em>Event C</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3206,6 +3423,14 @@ public interface ICalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EVENT_C__DURATION = eINSTANCE.getEventC_Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Alarmc</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT_C__ALARMC = eINSTANCE.getEventC_Alarmc();
 
 		/**
 		 * The meta object literal for the '{@link iCal.impl.ToDoCImpl <em>To Do C</em>}' class.
@@ -3266,6 +3491,14 @@ public interface ICalPackage extends EPackage {
 		EAttribute TO_DO_C__DURATION = eINSTANCE.getToDoC_Duration();
 
 		/**
+		 * The meta object literal for the '<em><b>Alarmc</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TO_DO_C__ALARMC = eINSTANCE.getToDoC_Alarmc();
+
+		/**
 		 * The meta object literal for the '{@link iCal.impl.CalendarImpl <em>Calendar</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3322,6 +3555,14 @@ public interface ICalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CALENDAR__IANA_PROP = eINSTANCE.getCalendar_Iana_prop();
+
+		/**
+		 * The meta object literal for the '<em><b>Component</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CALENDAR__COMPONENT = eINSTANCE.getCalendar_Component();
 
 		/**
 		 * The meta object literal for the '{@link iCal.impl.ComponentActionImpl <em>Component Action</em>}' class.
@@ -3414,12 +3655,108 @@ public interface ICalPackage extends EPackage {
 		EAttribute COMPONENT_ACTION__RECURID = eINSTANCE.getComponentAction_Recurid();
 
 		/**
-		 * The meta object literal for the '<em><b>Opt</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Rrule</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_ACTION__OPT = eINSTANCE.getComponentAction_Opt();
+		EAttribute COMPONENT_ACTION__RRULE = eINSTANCE.getComponentAction_Rrule();
+
+		/**
+		 * The meta object literal for the '<em><b>Attach</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__ATTACH = eINSTANCE.getComponentAction_Attach();
+
+		/**
+		 * The meta object literal for the '<em><b>Attendee</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__ATTENDEE = eINSTANCE.getComponentAction_Attendee();
+
+		/**
+		 * The meta object literal for the '<em><b>Categories</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__CATEGORIES = eINSTANCE.getComponentAction_Categories();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__COMMENT = eINSTANCE.getComponentAction_Comment();
+
+		/**
+		 * The meta object literal for the '<em><b>Contact</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__CONTACT = eINSTANCE.getComponentAction_Contact();
+
+		/**
+		 * The meta object literal for the '<em><b>Exdate</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__EXDATE = eINSTANCE.getComponentAction_Exdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Rstatus</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__RSTATUS = eINSTANCE.getComponentAction_Rstatus();
+
+		/**
+		 * The meta object literal for the '<em><b>Related</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__RELATED = eINSTANCE.getComponentAction_Related();
+
+		/**
+		 * The meta object literal for the '<em><b>Resources</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__RESOURCES = eINSTANCE.getComponentAction_Resources();
+
+		/**
+		 * The meta object literal for the '<em><b>Rdate</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__RDATE = eINSTANCE.getComponentAction_Rdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Xprop</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__XPROP = eINSTANCE.getComponentAction_X_prop();
+
+		/**
+		 * The meta object literal for the '<em><b>Iana prop</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__IANA_PROP = eINSTANCE.getComponentAction_Iana_prop();
 
 		/**
 		 * The meta object literal for the '{@link iCal.impl.JournalCImpl <em>Journal C</em>}' class.
@@ -3850,131 +4187,6 @@ public interface ICalPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ALARM_TYPE = eINSTANCE.getAlarmType();
-
-		/**
-		 * The meta object literal for the '{@link iCal.impl.ComponentActionOptionalPropertiesImpl <em>Component Action Optional Properties</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see iCal.impl.ComponentActionOptionalPropertiesImpl
-		 * @see iCal.impl.ICalPackageImpl#getComponentActionOptionalProperties()
-		 * @generated
-		 */
-		EClass COMPONENT_ACTION_OPTIONAL_PROPERTIES = eINSTANCE.getComponentActionOptionalProperties();
-
-		/**
-		 * The meta object literal for the '<em><b>Rrule</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__RRULE = eINSTANCE.getComponentActionOptionalProperties_Rrule();
-
-		/**
-		 * The meta object literal for the '<em><b>Attach</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__ATTACH = eINSTANCE
-				.getComponentActionOptionalProperties_Attach();
-
-		/**
-		 * The meta object literal for the '<em><b>Attendee</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__ATTENDEE = eINSTANCE
-				.getComponentActionOptionalProperties_Attendee();
-
-		/**
-		 * The meta object literal for the '<em><b>Categories</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__CATEGORIES = eINSTANCE
-				.getComponentActionOptionalProperties_Categories();
-
-		/**
-		 * The meta object literal for the '<em><b>Comment</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__COMMENT = eINSTANCE
-				.getComponentActionOptionalProperties_Comment();
-
-		/**
-		 * The meta object literal for the '<em><b>Contact</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__CONTACT = eINSTANCE
-				.getComponentActionOptionalProperties_Contact();
-
-		/**
-		 * The meta object literal for the '<em><b>Exdate</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__EXDATE = eINSTANCE
-				.getComponentActionOptionalProperties_Exdate();
-
-		/**
-		 * The meta object literal for the '<em><b>Rstatus</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__RSTATUS = eINSTANCE
-				.getComponentActionOptionalProperties_Rstatus();
-
-		/**
-		 * The meta object literal for the '<em><b>Related</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__RELATED = eINSTANCE
-				.getComponentActionOptionalProperties_Related();
-
-		/**
-		 * The meta object literal for the '<em><b>Resources</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__RESOURCES = eINSTANCE
-				.getComponentActionOptionalProperties_Resources();
-
-		/**
-		 * The meta object literal for the '<em><b>Rdate</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__RDATE = eINSTANCE.getComponentActionOptionalProperties_Rdate();
-
-		/**
-		 * The meta object literal for the '<em><b>Xprop</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__XPROP = eINSTANCE
-				.getComponentActionOptionalProperties_X_prop();
-
-		/**
-		 * The meta object literal for the '<em><b>Iana prop</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION_OPTIONAL_PROPERTIES__IANA_PROP = eINSTANCE
-				.getComponentActionOptionalProperties_Iana_prop();
 
 		/**
 		 * The meta object literal for the '{@link iCal.impl.tzpropOptionalImpl <em>tzprop Optional</em>}' class.

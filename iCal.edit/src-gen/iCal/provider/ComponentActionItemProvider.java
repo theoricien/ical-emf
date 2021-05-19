@@ -3,7 +3,6 @@
 package iCal.provider;
 
 import iCal.ComponentAction;
-import iCal.ICalFactory;
 import iCal.ICalPackage;
 
 import java.util.Collection;
@@ -11,8 +10,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -57,6 +54,19 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 			addSummaryPropertyDescriptor(object);
 			addUrlPropertyDescriptor(object);
 			addRecuridPropertyDescriptor(object);
+			addRrulePropertyDescriptor(object);
+			addAttachPropertyDescriptor(object);
+			addAttendeePropertyDescriptor(object);
+			addCategoriesPropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
+			addContactPropertyDescriptor(object);
+			addExdatePropertyDescriptor(object);
+			addRstatusPropertyDescriptor(object);
+			addRelatedPropertyDescriptor(object);
+			addResourcesPropertyDescriptor(object);
+			addRdatePropertyDescriptor(object);
+			addX_propPropertyDescriptor(object);
+			addIana_propPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -222,33 +232,211 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Rrule feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ICalPackage.Literals.COMPONENT_ACTION__OPT);
-		}
-		return childrenFeatures;
+	protected void addRrulePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_rrule_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_rrule_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__RRULE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Attach feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
+	protected void addAttachPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_attach_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_attach_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__ATTACH, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
 
-		return super.getChildFeature(object, child);
+	/**
+	 * This adds a property descriptor for the Attendee feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttendeePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_attendee_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_attendee_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__ATTENDEE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Categories feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCategoriesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_categories_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_categories_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__CATEGORIES, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Comment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_comment_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_comment_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__COMMENT, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Contact feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContactPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_contact_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_contact_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__CONTACT, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Exdate feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addExdatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_exdate_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_exdate_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__EXDATE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rstatus feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRstatusPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_rstatus_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_rstatus_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__RSTATUS, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Related feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRelatedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_related_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_related_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__RELATED, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Resources feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResourcesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_resources_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_resources_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__RESOURCES, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rdate feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRdatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_rdate_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_rdate_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__RDATE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Xprop feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addX_propPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_x_prop_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_x_prop_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__XPROP, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Iana prop feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIana_propPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_iana_prop_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_iana_prop_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__IANA_PROP, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -296,10 +484,20 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 		case ICalPackage.COMPONENT_ACTION__SUMMARY:
 		case ICalPackage.COMPONENT_ACTION__URL:
 		case ICalPackage.COMPONENT_ACTION__RECURID:
+		case ICalPackage.COMPONENT_ACTION__RRULE:
+		case ICalPackage.COMPONENT_ACTION__ATTACH:
+		case ICalPackage.COMPONENT_ACTION__ATTENDEE:
+		case ICalPackage.COMPONENT_ACTION__CATEGORIES:
+		case ICalPackage.COMPONENT_ACTION__COMMENT:
+		case ICalPackage.COMPONENT_ACTION__CONTACT:
+		case ICalPackage.COMPONENT_ACTION__EXDATE:
+		case ICalPackage.COMPONENT_ACTION__RSTATUS:
+		case ICalPackage.COMPONENT_ACTION__RELATED:
+		case ICalPackage.COMPONENT_ACTION__RESOURCES:
+		case ICalPackage.COMPONENT_ACTION__RDATE:
+		case ICalPackage.COMPONENT_ACTION__XPROP:
+		case ICalPackage.COMPONENT_ACTION__IANA_PROP:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case ICalPackage.COMPONENT_ACTION__OPT:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -315,9 +513,6 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(ICalPackage.Literals.COMPONENT_ACTION__OPT,
-				ICalFactory.eINSTANCE.createComponentActionOptionalProperties()));
 	}
 
 }

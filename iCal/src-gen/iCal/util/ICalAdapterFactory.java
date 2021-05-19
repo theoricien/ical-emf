@@ -152,11 +152,6 @@ public class ICalAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseComponentActionOptionalProperties(ComponentActionOptionalProperties object) {
-			return createComponentActionOptionalPropertiesAdapter();
-		}
-
-		@Override
 		public Adapter casetzpropOptional(tzpropOptional object) {
 			return createtzpropOptionalAdapter();
 		}
@@ -415,20 +410,6 @@ public class ICalAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAlarmTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link iCal.ComponentActionOptionalProperties <em>Component Action Optional Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see iCal.ComponentActionOptionalProperties
-	 * @generated
-	 */
-	public Adapter createComponentActionOptionalPropertiesAdapter() {
 		return null;
 	}
 

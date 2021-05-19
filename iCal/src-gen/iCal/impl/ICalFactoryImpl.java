@@ -82,8 +82,6 @@ public class ICalFactoryImpl extends EFactoryImpl implements ICalFactory {
 			return createComponentAlarmDispProperty();
 		case ICalPackage.COMPONENT_ALARM_EMAIL_PROPERTY:
 			return createComponentAlarmEmailProperty();
-		case ICalPackage.COMPONENT_ACTION_OPTIONAL_PROPERTIES:
-			return createComponentActionOptionalProperties();
 		case ICalPackage.TZPROP_OPTIONAL:
 			return createtzpropOptional();
 		default:
@@ -270,17 +268,6 @@ public class ICalFactoryImpl extends EFactoryImpl implements ICalFactory {
 	public ComponentAlarmEmailProperty createComponentAlarmEmailProperty() {
 		ComponentAlarmEmailPropertyImpl componentAlarmEmailProperty = new ComponentAlarmEmailPropertyImpl();
 		return componentAlarmEmailProperty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ComponentActionOptionalProperties createComponentActionOptionalProperties() {
-		ComponentActionOptionalPropertiesImpl componentActionOptionalProperties = new ComponentActionOptionalPropertiesImpl();
-		return componentActionOptionalProperties;
 	}
 
 	/**
