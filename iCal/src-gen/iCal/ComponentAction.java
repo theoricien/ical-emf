@@ -36,6 +36,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link iCal.ComponentAction#getRdate <em>Rdate</em>}</li>
  *   <li>{@link iCal.ComponentAction#getX_prop <em>Xprop</em>}</li>
  *   <li>{@link iCal.ComponentAction#getIana_prop <em>Iana prop</em>}</li>
+ *   <li>{@link iCal.ComponentAction#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see iCal.ICalPackage#getComponentAction()
@@ -418,5 +419,27 @@ public interface ComponentAction extends ComponentRequired {
 	 * @generated
 	 */
 	EList<String> getIana_prop();
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see iCal.ICalPackage#getComponentAction_Description()
+	 * @model dataType="iCal.String"
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link iCal.ComponentAction#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
 
 } // ComponentAction

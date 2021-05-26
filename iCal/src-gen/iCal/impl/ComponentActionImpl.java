@@ -48,6 +48,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link iCal.impl.ComponentActionImpl#getRdate <em>Rdate</em>}</li>
  *   <li>{@link iCal.impl.ComponentActionImpl#getX_prop <em>Xprop</em>}</li>
  *   <li>{@link iCal.impl.ComponentActionImpl#getIana_prop <em>Iana prop</em>}</li>
+ *   <li>{@link iCal.impl.ComponentActionImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -382,6 +383,26 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 	 * @ordered
 	 */
 	protected EList<String> iana_prop;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -815,6 +836,30 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 	 * @generated
 	 */
 	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.COMPONENT_ACTION__DESCRIPTION,
+					oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ICalPackage.COMPONENT_ACTION__DTSTART:
@@ -863,6 +908,8 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 			return getX_prop();
 		case ICalPackage.COMPONENT_ACTION__IANA_PROP:
 			return getIana_prop();
+		case ICalPackage.COMPONENT_ACTION__DESCRIPTION:
+			return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -958,6 +1005,9 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 			getIana_prop().clear();
 			getIana_prop().addAll((Collection<? extends String>) newValue);
 			return;
+		case ICalPackage.COMPONENT_ACTION__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1039,6 +1089,9 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 		case ICalPackage.COMPONENT_ACTION__IANA_PROP:
 			getIana_prop().clear();
 			return;
+		case ICalPackage.COMPONENT_ACTION__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1097,6 +1150,8 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 			return x_prop != null && !x_prop.isEmpty();
 		case ICalPackage.COMPONENT_ACTION__IANA_PROP:
 			return iana_prop != null && !iana_prop.isEmpty();
+		case ICalPackage.COMPONENT_ACTION__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1158,6 +1213,8 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 		result.append(x_prop);
 		result.append(", iana_prop: ");
 		result.append(iana_prop);
+		result.append(", description: ");
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}

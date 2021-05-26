@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link iCal.iCalFormat#getCalendar <em>Calendar</em>}</li>
+ *   <li>{@link iCal.iCalFormat#getFileName <em>File Name</em>}</li>
  * </ul>
  *
  * @see iCal.ICalPackage#getiCalFormat()
@@ -42,5 +43,27 @@ public interface iCalFormat extends EObject {
 	 * @generated
 	 */
 	void setCalendar(Calendar value);
+
+	/**
+	 * Returns the value of the '<em><b>File Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>File Name</em>' attribute.
+	 * @see #setFileName(String)
+	 * @see iCal.ICalPackage#getiCalFormat_FileName()
+	 * @model dataType="iCal.String" required="true"
+	 * @generated
+	 */
+	String getFileName();
+
+	/**
+	 * Sets the value of the '{@link iCal.iCalFormat#getFileName <em>File Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>File Name</em>' attribute.
+	 * @see #getFileName()
+	 * @generated
+	 */
+	void setFileName(String value);
 
 } // iCalFormat

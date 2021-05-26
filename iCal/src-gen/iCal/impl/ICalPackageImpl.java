@@ -275,6 +275,16 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getiCalFormat_FileName() {
+		return (EAttribute) iCalFormatEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getComponent() {
 		return componentEClass;
 	}
@@ -305,7 +315,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEventC_Description() {
+	public EAttribute getEventC_Priority() {
 		return (EAttribute) eventCEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -315,7 +325,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEventC_Priority() {
+	public EAttribute getEventC_Geo() {
 		return (EAttribute) eventCEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -325,7 +335,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEventC_Geo() {
+	public EAttribute getEventC_Location() {
 		return (EAttribute) eventCEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -335,7 +345,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEventC_Location() {
+	public EAttribute getEventC_Duration() {
 		return (EAttribute) eventCEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -345,18 +355,8 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEventC_Duration() {
-		return (EAttribute) eventCEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getEventC_Alarmc() {
-		return (EReference) eventCEClass.getEStructuralFeatures().get(6);
+		return (EReference) eventCEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -385,7 +385,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getToDoC_Description() {
+	public EAttribute getToDoC_Priority() {
 		return (EAttribute) toDoCEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -395,7 +395,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getToDoC_Priority() {
+	public EAttribute getToDoC_Geo() {
 		return (EAttribute) toDoCEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -405,7 +405,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getToDoC_Geo() {
+	public EAttribute getToDoC_Location() {
 		return (EAttribute) toDoCEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -415,7 +415,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getToDoC_Location() {
+	public EAttribute getToDoC_Duration() {
 		return (EAttribute) toDoCEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -425,18 +425,8 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getToDoC_Duration() {
-		return (EAttribute) toDoCEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getToDoC_Alarmc() {
-		return (EReference) toDoCEClass.getEStructuralFeatures().get(6);
+		return (EReference) toDoCEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -757,6 +747,16 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	@Override
 	public EAttribute getComponentAction_Iana_prop() {
 		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentAction_Description() {
+		return (EAttribute) componentActionEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -1391,12 +1391,12 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		// Create classes and their features
 		iCalFormatEClass = createEClass(ICAL_FORMAT);
 		createEReference(iCalFormatEClass, ICAL_FORMAT__CALENDAR);
+		createEAttribute(iCalFormatEClass, ICAL_FORMAT__FILE_NAME);
 
 		componentEClass = createEClass(COMPONENT);
 
 		eventCEClass = createEClass(EVENT_C);
 		createEAttribute(eventCEClass, EVENT_C__TRANSP);
-		createEAttribute(eventCEClass, EVENT_C__DESCRIPTION);
 		createEAttribute(eventCEClass, EVENT_C__PRIORITY);
 		createEAttribute(eventCEClass, EVENT_C__GEO);
 		createEAttribute(eventCEClass, EVENT_C__LOCATION);
@@ -1405,7 +1405,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 
 		toDoCEClass = createEClass(TO_DO_C);
 		createEAttribute(toDoCEClass, TO_DO_C__COMPLETED);
-		createEAttribute(toDoCEClass, TO_DO_C__DESCRIPTION);
 		createEAttribute(toDoCEClass, TO_DO_C__PRIORITY);
 		createEAttribute(toDoCEClass, TO_DO_C__GEO);
 		createEAttribute(toDoCEClass, TO_DO_C__LOCATION);
@@ -1445,6 +1444,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		createEAttribute(componentActionEClass, COMPONENT_ACTION__RDATE);
 		createEAttribute(componentActionEClass, COMPONENT_ACTION__XPROP);
 		createEAttribute(componentActionEClass, COMPONENT_ACTION__IANA_PROP);
+		createEAttribute(componentActionEClass, COMPONENT_ACTION__DESCRIPTION);
 
 		journalCEClass = createEClass(JOURNAL_C);
 
@@ -1568,6 +1568,8 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		initEReference(getiCalFormat_Calendar(), this.getCalendar(), null, "calendar", null, 1, 1, iCalFormat.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getiCalFormat_FileName(), this.getString(), "fileName", null, 1, 1, iCalFormat.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1575,8 +1577,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		initEClass(eventCEClass, EventC.class, "EventC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEventC_Transp(), this.getString(), "transp", null, 0, 1, EventC.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEventC_Description(), this.getString(), "description", null, 0, 1, EventC.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventC_Priority(), this.getString(), "priority", null, 0, 1, EventC.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventC_Geo(), this.getString(), "geo", null, 0, 1, EventC.class, !IS_TRANSIENT, !IS_VOLATILE,
@@ -1591,8 +1591,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 
 		initEClass(toDoCEClass, ToDoC.class, "ToDoC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getToDoC_Completed(), this.getString(), "completed", null, 0, 1, ToDoC.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getToDoC_Description(), this.getString(), "description", null, 0, 1, ToDoC.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getToDoC_Priority(), this.getString(), "priority", null, 0, 1, ToDoC.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1673,6 +1671,9 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		initEAttribute(getComponentAction_X_prop(), this.getString(), "x_prop", null, 0, -1, ComponentAction.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentAction_Iana_prop(), this.getString(), "iana_prop", null, 0, -1,
+				ComponentAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentAction_Description(), this.getString(), "description", null, 0, 1,
 				ComponentAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 

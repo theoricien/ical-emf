@@ -12,7 +12,7 @@
          point="org.eclipse.ui.commands">
       <command
             id="iCal.ui.GenerateiCal"
-            name="GeniCal">
+            name="GenerateICalandar">
       </command>
    </extension>
    <extension
@@ -24,8 +24,21 @@
                label="Generate iCal Format">
             <command
                   commandId="iCal.ui.GenerateiCal"
-                  label="Generate"
+                  label="Generate.iCal"
                   style="push">
+               <visibleWhen
+                     checkEnabled="true">
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false"
+                           operator="and">
+                        <adapt
+                              type="iCal.iCalFormat">
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
             </command>
          </menu>
       </menuContribution>

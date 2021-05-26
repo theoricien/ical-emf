@@ -4,11 +4,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="iCalFormat">
     <eStructuralFeatures xsi:type="ecore:EReference" name="calendar" lowerBound="1"
         eType="#//Calendar" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" lowerBound="1"
+        eType="#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="EventC" eSuperTypes="#//ComponentAction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transp" eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="geo" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//String"/>
@@ -19,7 +20,6 @@
   <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EClass" name="ToDoC" eSuperTypes="#//ComponentAction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="completed" eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="geo" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//String"/>
@@ -78,6 +78,7 @@
         eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iana_prop" upperBound="-1"
         eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JournalC" eSuperTypes="#//ComponentAction"/>
   <eClassifiers xsi:type="ecore:EClass" name="VacationC" eSuperTypes="#//ComponentRequired">

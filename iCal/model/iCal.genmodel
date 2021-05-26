@@ -13,11 +13,11 @@
     <genDataTypes ecoreDataType="iCal.ecore#//Float"/>
     <genClasses ecoreClass="iCal.ecore#//iCalFormat">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//iCalFormat/calendar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//iCalFormat/fileName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="iCal.ecore#//Component"/>
     <genClasses ecoreClass="iCal.ecore#//EventC">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/transp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/priority"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/geo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/location"/>
@@ -26,7 +26,6 @@
     </genClasses>
     <genClasses ecoreClass="iCal.ecore#//ToDoC">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/completed"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/priority"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/geo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/location"/>
@@ -66,6 +65,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/rdate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/x_prop"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/iana_prop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/description"/>
     </genClasses>
     <genClasses ecoreClass="iCal.ecore#//JournalC"/>
     <genClasses ecoreClass="iCal.ecore#//VacationC">

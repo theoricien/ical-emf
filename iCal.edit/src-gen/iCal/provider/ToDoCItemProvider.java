@@ -48,7 +48,6 @@ public class ToDoCItemProvider extends ComponentActionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addCompletedPropertyDescriptor(object);
-			addDescriptionPropertyDescriptor(object);
 			addPriorityPropertyDescriptor(object);
 			addGeoPropertyDescriptor(object);
 			addLocationPropertyDescriptor(object);
@@ -70,22 +69,6 @@ public class ToDoCItemProvider extends ComponentActionItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_ToDoC_completed_feature",
 								"_UI_ToDoC_type"),
 						ICalPackage.Literals.TO_DO_C__COMPLETED, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Description feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ToDoC_description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ToDoC_description_feature",
-								"_UI_ToDoC_type"),
-						ICalPackage.Literals.TO_DO_C__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -226,7 +209,6 @@ public class ToDoCItemProvider extends ComponentActionItemProvider {
 
 		switch (notification.getFeatureID(ToDoC.class)) {
 		case ICalPackage.TO_DO_C__COMPLETED:
-		case ICalPackage.TO_DO_C__DESCRIPTION:
 		case ICalPackage.TO_DO_C__PRIORITY:
 		case ICalPackage.TO_DO_C__GEO:
 		case ICalPackage.TO_DO_C__LOCATION:

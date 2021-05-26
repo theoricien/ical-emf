@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link iCal.EventC#getTransp <em>Transp</em>}</li>
- *   <li>{@link iCal.EventC#getDescription <em>Description</em>}</li>
  *   <li>{@link iCal.EventC#getPriority <em>Priority</em>}</li>
  *   <li>{@link iCal.EventC#getGeo <em>Geo</em>}</li>
  *   <li>{@link iCal.EventC#getLocation <em>Location</em>}</li>
@@ -48,28 +47,6 @@ public interface EventC extends ComponentAction {
 	 * @generated
 	 */
 	void setTransp(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(String)
-	 * @see iCal.ICalPackage#getEventC_Description()
-	 * @model dataType="iCal.String"
-	 * @generated
-	 */
-	String getDescription();
-
-	/**
-	 * Sets the value of the '{@link iCal.EventC#getDescription <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
-	 * @generated
-	 */
-	void setDescription(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Priority</b></em>' attribute.

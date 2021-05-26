@@ -77,13 +77,22 @@ public interface ICalPackage extends EPackage {
 	int ICAL_FORMAT__CALENDAR = 0;
 
 	/**
+	 * The feature id for the '<em><b>File Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICAL_FORMAT__FILE_NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>iCal Format</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICAL_FORMAT_FEATURE_COUNT = 1;
+	int ICAL_FORMAT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>iCal Format</em>' class.
@@ -404,13 +413,22 @@ public interface ICalPackage extends EPackage {
 	int COMPONENT_ACTION__IANA_PROP = COMPONENT_REQUIRED_FEATURE_COUNT + 22;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__DESCRIPTION = COMPONENT_REQUIRED_FEATURE_COUNT + 23;
+
+	/**
 	 * The number of structural features of the '<em>Component Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION_FEATURE_COUNT = COMPONENT_REQUIRED_FEATURE_COUNT + 23;
+	int COMPONENT_ACTION_FEATURE_COUNT = COMPONENT_REQUIRED_FEATURE_COUNT + 24;
 
 	/**
 	 * The number of operations of the '<em>Component Action</em>' class.
@@ -657,6 +675,15 @@ public interface ICalPackage extends EPackage {
 	int EVENT_C__IANA_PROP = COMPONENT_ACTION__IANA_PROP;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__DESCRIPTION = COMPONENT_ACTION__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Transp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -666,22 +693,13 @@ public interface ICalPackage extends EPackage {
 	int EVENT_C__TRANSP = COMPONENT_ACTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_C__DESCRIPTION = COMPONENT_ACTION_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_C__PRIORITY = COMPONENT_ACTION_FEATURE_COUNT + 2;
+	int EVENT_C__PRIORITY = COMPONENT_ACTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Geo</b></em>' attribute.
@@ -690,7 +708,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_C__GEO = COMPONENT_ACTION_FEATURE_COUNT + 3;
+	int EVENT_C__GEO = COMPONENT_ACTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -699,7 +717,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_C__LOCATION = COMPONENT_ACTION_FEATURE_COUNT + 4;
+	int EVENT_C__LOCATION = COMPONENT_ACTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -708,7 +726,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_C__DURATION = COMPONENT_ACTION_FEATURE_COUNT + 5;
+	int EVENT_C__DURATION = COMPONENT_ACTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Alarmc</b></em>' containment reference list.
@@ -717,7 +735,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 6;
+	int EVENT_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Event C</em>' class.
@@ -726,7 +744,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_C_FEATURE_COUNT = COMPONENT_ACTION_FEATURE_COUNT + 7;
+	int EVENT_C_FEATURE_COUNT = COMPONENT_ACTION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Event C</em>' class.
@@ -973,6 +991,15 @@ public interface ICalPackage extends EPackage {
 	int TO_DO_C__IANA_PROP = COMPONENT_ACTION__IANA_PROP;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__DESCRIPTION = COMPONENT_ACTION__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Completed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -982,22 +1009,13 @@ public interface ICalPackage extends EPackage {
 	int TO_DO_C__COMPLETED = COMPONENT_ACTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TO_DO_C__DESCRIPTION = COMPONENT_ACTION_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TO_DO_C__PRIORITY = COMPONENT_ACTION_FEATURE_COUNT + 2;
+	int TO_DO_C__PRIORITY = COMPONENT_ACTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Geo</b></em>' attribute.
@@ -1006,7 +1024,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TO_DO_C__GEO = COMPONENT_ACTION_FEATURE_COUNT + 3;
+	int TO_DO_C__GEO = COMPONENT_ACTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -1015,7 +1033,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TO_DO_C__LOCATION = COMPONENT_ACTION_FEATURE_COUNT + 4;
+	int TO_DO_C__LOCATION = COMPONENT_ACTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -1024,7 +1042,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TO_DO_C__DURATION = COMPONENT_ACTION_FEATURE_COUNT + 5;
+	int TO_DO_C__DURATION = COMPONENT_ACTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Alarmc</b></em>' containment reference list.
@@ -1033,7 +1051,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TO_DO_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 6;
+	int TO_DO_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>To Do C</em>' class.
@@ -1042,7 +1060,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TO_DO_C_FEATURE_COUNT = COMPONENT_ACTION_FEATURE_COUNT + 7;
+	int TO_DO_C_FEATURE_COUNT = COMPONENT_ACTION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>To Do C</em>' class.
@@ -1378,6 +1396,15 @@ public interface ICalPackage extends EPackage {
 	 * @ordered
 	 */
 	int JOURNAL_C__IANA_PROP = COMPONENT_ACTION__IANA_PROP;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__DESCRIPTION = COMPONENT_ACTION__DESCRIPTION;
 
 	/**
 	 * The number of structural features of the '<em>Journal C</em>' class.
@@ -2134,6 +2161,17 @@ public interface ICalPackage extends EPackage {
 	EReference getiCalFormat_Calendar();
 
 	/**
+	 * Returns the meta object for the attribute '{@link iCal.iCalFormat#getFileName <em>File Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>File Name</em>'.
+	 * @see iCal.iCalFormat#getFileName()
+	 * @see #getiCalFormat()
+	 * @generated
+	 */
+	EAttribute getiCalFormat_FileName();
+
+	/**
 	 * Returns the meta object for class '{@link iCal.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2163,17 +2201,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEventC_Transp();
-
-	/**
-	 * Returns the meta object for the attribute '{@link iCal.EventC#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see iCal.EventC#getDescription()
-	 * @see #getEventC()
-	 * @generated
-	 */
-	EAttribute getEventC_Description();
 
 	/**
 	 * Returns the meta object for the attribute '{@link iCal.EventC#getPriority <em>Priority</em>}'.
@@ -2250,17 +2277,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getToDoC_Completed();
-
-	/**
-	 * Returns the meta object for the attribute '{@link iCal.ToDoC#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see iCal.ToDoC#getDescription()
-	 * @see #getToDoC()
-	 * @generated
-	 */
-	EAttribute getToDoC_Description();
 
 	/**
 	 * Returns the meta object for the attribute '{@link iCal.ToDoC#getPriority <em>Priority</em>}'.
@@ -2666,6 +2682,17 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComponentAction_Iana_prop();
+
+	/**
+	 * Returns the meta object for the attribute '{@link iCal.ComponentAction#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see iCal.ComponentAction#getDescription()
+	 * @see #getComponentAction()
+	 * @generated
+	 */
+	EAttribute getComponentAction_Description();
 
 	/**
 	 * Returns the meta object for class '{@link iCal.JournalC <em>Journal C</em>}'.
@@ -3357,6 +3384,14 @@ public interface ICalPackage extends EPackage {
 		EReference ICAL_FORMAT__CALENDAR = eINSTANCE.getiCalFormat_Calendar();
 
 		/**
+		 * The meta object literal for the '<em><b>File Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ICAL_FORMAT__FILE_NAME = eINSTANCE.getiCalFormat_FileName();
+
+		/**
 		 * The meta object literal for the '{@link iCal.impl.ComponentImpl <em>Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3383,14 +3418,6 @@ public interface ICalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EVENT_C__TRANSP = eINSTANCE.getEventC_Transp();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EVENT_C__DESCRIPTION = eINSTANCE.getEventC_Description();
 
 		/**
 		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
@@ -3449,14 +3476,6 @@ public interface ICalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TO_DO_C__COMPLETED = eINSTANCE.getToDoC_Completed();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TO_DO_C__DESCRIPTION = eINSTANCE.getToDoC_Description();
 
 		/**
 		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
@@ -3757,6 +3776,14 @@ public interface ICalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPONENT_ACTION__IANA_PROP = eINSTANCE.getComponentAction_Iana_prop();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ACTION__DESCRIPTION = eINSTANCE.getComponentAction_Description();
 
 		/**
 		 * The meta object literal for the '{@link iCal.impl.JournalCImpl <em>Journal C</em>}' class.

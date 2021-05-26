@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link iCal.ToDoC#getCompleted <em>Completed</em>}</li>
- *   <li>{@link iCal.ToDoC#getDescription <em>Description</em>}</li>
  *   <li>{@link iCal.ToDoC#getPriority <em>Priority</em>}</li>
  *   <li>{@link iCal.ToDoC#getGeo <em>Geo</em>}</li>
  *   <li>{@link iCal.ToDoC#getLocation <em>Location</em>}</li>
@@ -48,28 +47,6 @@ public interface ToDoC extends ComponentAction {
 	 * @generated
 	 */
 	void setCompleted(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(String)
-	 * @see iCal.ICalPackage#getToDoC_Description()
-	 * @model dataType="iCal.String"
-	 * @generated
-	 */
-	String getDescription();
-
-	/**
-	 * Sets the value of the '{@link iCal.ToDoC#getDescription <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
-	 * @generated
-	 */
-	void setDescription(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Priority</b></em>' attribute.

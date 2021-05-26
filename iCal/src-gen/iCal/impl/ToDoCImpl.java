@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link iCal.impl.ToDoCImpl#getCompleted <em>Completed</em>}</li>
- *   <li>{@link iCal.impl.ToDoCImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link iCal.impl.ToDoCImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link iCal.impl.ToDoCImpl#getGeo <em>Geo</em>}</li>
  *   <li>{@link iCal.impl.ToDoCImpl#getLocation <em>Location</em>}</li>
@@ -60,26 +59,6 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 	 * @ordered
 	 */
 	protected String completed = COMPLETED_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
@@ -220,30 +199,6 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 	 * @generated
 	 */
 	@Override
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.TO_DO_C__DESCRIPTION, oldDescription,
-					description));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getPriority() {
 		return priority;
 	}
@@ -370,8 +325,6 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 		switch (featureID) {
 		case ICalPackage.TO_DO_C__COMPLETED:
 			return getCompleted();
-		case ICalPackage.TO_DO_C__DESCRIPTION:
-			return getDescription();
 		case ICalPackage.TO_DO_C__PRIORITY:
 			return getPriority();
 		case ICalPackage.TO_DO_C__GEO:
@@ -397,9 +350,6 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 		switch (featureID) {
 		case ICalPackage.TO_DO_C__COMPLETED:
 			setCompleted((String) newValue);
-			return;
-		case ICalPackage.TO_DO_C__DESCRIPTION:
-			setDescription((String) newValue);
 			return;
 		case ICalPackage.TO_DO_C__PRIORITY:
 			setPriority((String) newValue);
@@ -432,9 +382,6 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 		case ICalPackage.TO_DO_C__COMPLETED:
 			setCompleted(COMPLETED_EDEFAULT);
 			return;
-		case ICalPackage.TO_DO_C__DESCRIPTION:
-			setDescription(DESCRIPTION_EDEFAULT);
-			return;
 		case ICalPackage.TO_DO_C__PRIORITY:
 			setPriority(PRIORITY_EDEFAULT);
 			return;
@@ -464,8 +411,6 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 		switch (featureID) {
 		case ICalPackage.TO_DO_C__COMPLETED:
 			return COMPLETED_EDEFAULT == null ? completed != null : !COMPLETED_EDEFAULT.equals(completed);
-		case ICalPackage.TO_DO_C__DESCRIPTION:
-			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case ICalPackage.TO_DO_C__PRIORITY:
 			return PRIORITY_EDEFAULT == null ? priority != null : !PRIORITY_EDEFAULT.equals(priority);
 		case ICalPackage.TO_DO_C__GEO:
@@ -493,8 +438,6 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (completed: ");
 		result.append(completed);
-		result.append(", description: ");
-		result.append(description);
 		result.append(", priority: ");
 		result.append(priority);
 		result.append(", geo: ");

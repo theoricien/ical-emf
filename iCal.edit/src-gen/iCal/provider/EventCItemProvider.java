@@ -48,7 +48,6 @@ public class EventCItemProvider extends ComponentActionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTranspPropertyDescriptor(object);
-			addDescriptionPropertyDescriptor(object);
 			addPriorityPropertyDescriptor(object);
 			addGeoPropertyDescriptor(object);
 			addLocationPropertyDescriptor(object);
@@ -69,22 +68,6 @@ public class EventCItemProvider extends ComponentActionItemProvider {
 						getResourceLocator(), getString("_UI_EventC_transp_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_EventC_transp_feature", "_UI_EventC_type"),
 						ICalPackage.Literals.EVENT_C__TRANSP, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Description feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_EventC_description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_EventC_description_feature",
-								"_UI_EventC_type"),
-						ICalPackage.Literals.EVENT_C__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -228,7 +211,6 @@ public class EventCItemProvider extends ComponentActionItemProvider {
 
 		switch (notification.getFeatureID(EventC.class)) {
 		case ICalPackage.EVENT_C__TRANSP:
-		case ICalPackage.EVENT_C__DESCRIPTION:
 		case ICalPackage.EVENT_C__PRIORITY:
 		case ICalPackage.EVENT_C__GEO:
 		case ICalPackage.EVENT_C__LOCATION:

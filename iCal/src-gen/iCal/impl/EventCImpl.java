@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link iCal.impl.EventCImpl#getTransp <em>Transp</em>}</li>
- *   <li>{@link iCal.impl.EventCImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link iCal.impl.EventCImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link iCal.impl.EventCImpl#getGeo <em>Geo</em>}</li>
  *   <li>{@link iCal.impl.EventCImpl#getLocation <em>Location</em>}</li>
@@ -60,26 +59,6 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 	 * @ordered
 	 */
 	protected String transp = TRANSP_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
@@ -219,30 +198,6 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 	 * @generated
 	 */
 	@Override
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.EVENT_C__DESCRIPTION, oldDescription,
-					description));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getPriority() {
 		return priority;
 	}
@@ -369,8 +324,6 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 		switch (featureID) {
 		case ICalPackage.EVENT_C__TRANSP:
 			return getTransp();
-		case ICalPackage.EVENT_C__DESCRIPTION:
-			return getDescription();
 		case ICalPackage.EVENT_C__PRIORITY:
 			return getPriority();
 		case ICalPackage.EVENT_C__GEO:
@@ -396,9 +349,6 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 		switch (featureID) {
 		case ICalPackage.EVENT_C__TRANSP:
 			setTransp((String) newValue);
-			return;
-		case ICalPackage.EVENT_C__DESCRIPTION:
-			setDescription((String) newValue);
 			return;
 		case ICalPackage.EVENT_C__PRIORITY:
 			setPriority((String) newValue);
@@ -431,9 +381,6 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 		case ICalPackage.EVENT_C__TRANSP:
 			setTransp(TRANSP_EDEFAULT);
 			return;
-		case ICalPackage.EVENT_C__DESCRIPTION:
-			setDescription(DESCRIPTION_EDEFAULT);
-			return;
 		case ICalPackage.EVENT_C__PRIORITY:
 			setPriority(PRIORITY_EDEFAULT);
 			return;
@@ -463,8 +410,6 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 		switch (featureID) {
 		case ICalPackage.EVENT_C__TRANSP:
 			return TRANSP_EDEFAULT == null ? transp != null : !TRANSP_EDEFAULT.equals(transp);
-		case ICalPackage.EVENT_C__DESCRIPTION:
-			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case ICalPackage.EVENT_C__PRIORITY:
 			return PRIORITY_EDEFAULT == null ? priority != null : !PRIORITY_EDEFAULT.equals(priority);
 		case ICalPackage.EVENT_C__GEO:
@@ -492,8 +437,6 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (transp: ");
 		result.append(transp);
-		result.append(", description: ");
-		result.append(description);
 		result.append(", priority: ");
 		result.append(priority);
 		result.append(", geo: ");

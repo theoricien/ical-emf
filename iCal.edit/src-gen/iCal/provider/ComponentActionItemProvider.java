@@ -67,6 +67,7 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 			addRdatePropertyDescriptor(object);
 			addX_propPropertyDescriptor(object);
 			addIana_propPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -440,6 +441,22 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComponentAction_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_description_feature",
+								"_UI_ComponentAction_type"),
+						ICalPackage.Literals.COMPONENT_ACTION__DESCRIPTION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -497,6 +514,7 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 		case ICalPackage.COMPONENT_ACTION__RDATE:
 		case ICalPackage.COMPONENT_ACTION__XPROP:
 		case ICalPackage.COMPONENT_ACTION__IANA_PROP:
+		case ICalPackage.COMPONENT_ACTION__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

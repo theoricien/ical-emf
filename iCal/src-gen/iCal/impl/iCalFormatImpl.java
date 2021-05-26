@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link iCal.impl.iCalFormatImpl#getCalendar <em>Calendar</em>}</li>
+ *   <li>{@link iCal.impl.iCalFormatImpl#getFileName <em>File Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +39,25 @@ public class iCalFormatImpl extends MinimalEObjectImpl.Container implements iCal
 	 * @ordered
 	 */
 	protected Calendar calendar;
+
+	/**
+	 * The default value of the '{@link #getFileName() <em>File Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFileName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FILE_NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getFileName() <em>File Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFileName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String fileName = FILE_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,6 +136,30 @@ public class iCalFormatImpl extends MinimalEObjectImpl.Container implements iCal
 	 * @generated
 	 */
 	@Override
+	public String getFileName() {
+		return fileName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFileName(String newFileName) {
+		String oldFileName = fileName;
+		fileName = newFileName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.ICAL_FORMAT__FILE_NAME, oldFileName,
+					fileName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ICalPackage.ICAL_FORMAT__CALENDAR:
@@ -134,6 +178,8 @@ public class iCalFormatImpl extends MinimalEObjectImpl.Container implements iCal
 		switch (featureID) {
 		case ICalPackage.ICAL_FORMAT__CALENDAR:
 			return getCalendar();
+		case ICalPackage.ICAL_FORMAT__FILE_NAME:
+			return getFileName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,6 +194,9 @@ public class iCalFormatImpl extends MinimalEObjectImpl.Container implements iCal
 		switch (featureID) {
 		case ICalPackage.ICAL_FORMAT__CALENDAR:
 			setCalendar((Calendar) newValue);
+			return;
+		case ICalPackage.ICAL_FORMAT__FILE_NAME:
+			setFileName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -164,6 +213,9 @@ public class iCalFormatImpl extends MinimalEObjectImpl.Container implements iCal
 		case ICalPackage.ICAL_FORMAT__CALENDAR:
 			setCalendar((Calendar) null);
 			return;
+		case ICalPackage.ICAL_FORMAT__FILE_NAME:
+			setFileName(FILE_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -178,8 +230,27 @@ public class iCalFormatImpl extends MinimalEObjectImpl.Container implements iCal
 		switch (featureID) {
 		case ICalPackage.ICAL_FORMAT__CALENDAR:
 			return calendar != null;
+		case ICalPackage.ICAL_FORMAT__FILE_NAME:
+			return FILE_NAME_EDEFAULT == null ? fileName != null : !FILE_NAME_EDEFAULT.equals(fileName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (fileName: ");
+		result.append(fileName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //iCalFormatImpl
