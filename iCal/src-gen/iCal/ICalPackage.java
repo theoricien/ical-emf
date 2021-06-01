@@ -160,13 +160,22 @@ public interface ICalPackage extends EPackage {
 	int COMPONENT_REQUIRED__UID = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Dtstart</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_REQUIRED__DTSTART = COMPONENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Component Required</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_REQUIRED_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
+	int COMPONENT_REQUIRED_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Component Required</em>' class.
@@ -206,13 +215,13 @@ public interface ICalPackage extends EPackage {
 	int COMPONENT_ACTION__UID = COMPONENT_REQUIRED__UID;
 
 	/**
-	 * The feature id for the '<em><b>Dtstart</b></em>' attribute.
+	 * The feature id for the '<em><b>Dtstart</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__DTSTART = COMPONENT_REQUIRED_FEATURE_COUNT + 0;
+	int COMPONENT_ACTION__DTSTART = COMPONENT_REQUIRED__DTSTART;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -221,7 +230,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__CLASS = COMPONENT_REQUIRED_FEATURE_COUNT + 1;
+	int COMPONENT_ACTION__CLASS = COMPONENT_REQUIRED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Created</b></em>' attribute.
@@ -230,7 +239,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__CREATED = COMPONENT_REQUIRED_FEATURE_COUNT + 2;
+	int COMPONENT_ACTION__CREATED = COMPONENT_REQUIRED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Last mod</b></em>' attribute.
@@ -239,7 +248,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__LAST_MOD = COMPONENT_REQUIRED_FEATURE_COUNT + 3;
+	int COMPONENT_ACTION__LAST_MOD = COMPONENT_REQUIRED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Organizer</b></em>' attribute.
@@ -248,7 +257,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__ORGANIZER = COMPONENT_REQUIRED_FEATURE_COUNT + 4;
+	int COMPONENT_ACTION__ORGANIZER = COMPONENT_REQUIRED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Seq</b></em>' attribute.
@@ -257,7 +266,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__SEQ = COMPONENT_REQUIRED_FEATURE_COUNT + 5;
+	int COMPONENT_ACTION__SEQ = COMPONENT_REQUIRED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
@@ -266,7 +275,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__STATUS = COMPONENT_REQUIRED_FEATURE_COUNT + 6;
+	int COMPONENT_ACTION__STATUS = COMPONENT_REQUIRED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -275,7 +284,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__SUMMARY = COMPONENT_REQUIRED_FEATURE_COUNT + 7;
+	int COMPONENT_ACTION__SUMMARY = COMPONENT_REQUIRED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -284,7 +293,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__URL = COMPONENT_REQUIRED_FEATURE_COUNT + 8;
+	int COMPONENT_ACTION__URL = COMPONENT_REQUIRED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Recurid</b></em>' attribute.
@@ -293,7 +302,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__RECURID = COMPONENT_REQUIRED_FEATURE_COUNT + 9;
+	int COMPONENT_ACTION__RECURID = COMPONENT_REQUIRED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Rrule</b></em>' attribute list.
@@ -302,7 +311,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__RRULE = COMPONENT_REQUIRED_FEATURE_COUNT + 10;
+	int COMPONENT_ACTION__RRULE = COMPONENT_REQUIRED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Attach</b></em>' attribute list.
@@ -311,7 +320,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__ATTACH = COMPONENT_REQUIRED_FEATURE_COUNT + 11;
+	int COMPONENT_ACTION__ATTACH = COMPONENT_REQUIRED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Attendee</b></em>' attribute list.
@@ -320,7 +329,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__ATTENDEE = COMPONENT_REQUIRED_FEATURE_COUNT + 12;
+	int COMPONENT_ACTION__ATTENDEE = COMPONENT_REQUIRED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Categories</b></em>' attribute list.
@@ -329,7 +338,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__CATEGORIES = COMPONENT_REQUIRED_FEATURE_COUNT + 13;
+	int COMPONENT_ACTION__CATEGORIES = COMPONENT_REQUIRED_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute list.
@@ -338,7 +347,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__COMMENT = COMPONENT_REQUIRED_FEATURE_COUNT + 14;
+	int COMPONENT_ACTION__COMMENT = COMPONENT_REQUIRED_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Contact</b></em>' attribute list.
@@ -347,7 +356,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__CONTACT = COMPONENT_REQUIRED_FEATURE_COUNT + 15;
+	int COMPONENT_ACTION__CONTACT = COMPONENT_REQUIRED_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Exdate</b></em>' attribute list.
@@ -356,7 +365,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__EXDATE = COMPONENT_REQUIRED_FEATURE_COUNT + 16;
+	int COMPONENT_ACTION__EXDATE = COMPONENT_REQUIRED_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Rstatus</b></em>' attribute list.
@@ -365,7 +374,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__RSTATUS = COMPONENT_REQUIRED_FEATURE_COUNT + 17;
+	int COMPONENT_ACTION__RSTATUS = COMPONENT_REQUIRED_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Related</b></em>' attribute list.
@@ -374,7 +383,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__RELATED = COMPONENT_REQUIRED_FEATURE_COUNT + 18;
+	int COMPONENT_ACTION__RELATED = COMPONENT_REQUIRED_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Resources</b></em>' attribute list.
@@ -383,7 +392,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__RESOURCES = COMPONENT_REQUIRED_FEATURE_COUNT + 19;
+	int COMPONENT_ACTION__RESOURCES = COMPONENT_REQUIRED_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Rdate</b></em>' attribute list.
@@ -392,7 +401,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__RDATE = COMPONENT_REQUIRED_FEATURE_COUNT + 20;
+	int COMPONENT_ACTION__RDATE = COMPONENT_REQUIRED_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Xprop</b></em>' attribute list.
@@ -401,7 +410,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__XPROP = COMPONENT_REQUIRED_FEATURE_COUNT + 21;
+	int COMPONENT_ACTION__XPROP = COMPONENT_REQUIRED_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Iana prop</b></em>' attribute list.
@@ -410,7 +419,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__IANA_PROP = COMPONENT_REQUIRED_FEATURE_COUNT + 22;
+	int COMPONENT_ACTION__IANA_PROP = COMPONENT_REQUIRED_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -419,7 +428,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION__DESCRIPTION = COMPONENT_REQUIRED_FEATURE_COUNT + 23;
+	int COMPONENT_ACTION__DESCRIPTION = COMPONENT_REQUIRED_FEATURE_COUNT + 22;
 
 	/**
 	 * The number of structural features of the '<em>Component Action</em>' class.
@@ -428,7 +437,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ACTION_FEATURE_COUNT = COMPONENT_REQUIRED_FEATURE_COUNT + 24;
+	int COMPONENT_ACTION_FEATURE_COUNT = COMPONENT_REQUIRED_FEATURE_COUNT + 23;
 
 	/**
 	 * The number of operations of the '<em>Component Action</em>' class.
@@ -468,7 +477,7 @@ public interface ICalPackage extends EPackage {
 	int EVENT_C__UID = COMPONENT_ACTION__UID;
 
 	/**
-	 * The feature id for the '<em><b>Dtstart</b></em>' attribute.
+	 * The feature id for the '<em><b>Dtstart</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -720,22 +729,22 @@ public interface ICalPackage extends EPackage {
 	int EVENT_C__LOCATION = COMPONENT_ACTION_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_C__DURATION = COMPONENT_ACTION_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Alarmc</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 5;
+	int EVENT_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Dtend</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__DTEND = COMPONENT_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Event C</em>' class.
@@ -784,7 +793,7 @@ public interface ICalPackage extends EPackage {
 	int TO_DO_C__UID = COMPONENT_ACTION__UID;
 
 	/**
-	 * The feature id for the '<em><b>Dtstart</b></em>' attribute.
+	 * The feature id for the '<em><b>Dtstart</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1036,22 +1045,22 @@ public interface ICalPackage extends EPackage {
 	int TO_DO_C__LOCATION = COMPONENT_ACTION_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TO_DO_C__DURATION = COMPONENT_ACTION_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Alarmc</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TO_DO_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 5;
+	int TO_DO_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Dtend</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__DTEND = COMPONENT_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>To Do C</em>' class.
@@ -1191,7 +1200,7 @@ public interface ICalPackage extends EPackage {
 	int JOURNAL_C__UID = COMPONENT_ACTION__UID;
 
 	/**
-	 * The feature id for the '<em><b>Dtstart</b></em>' attribute.
+	 * The feature id for the '<em><b>Dtstart</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1453,13 +1462,13 @@ public interface ICalPackage extends EPackage {
 	int VACATION_C__UID = COMPONENT_REQUIRED__UID;
 
 	/**
-	 * The feature id for the '<em><b>Dtstart</b></em>' attribute.
+	 * The feature id for the '<em><b>Dtstart</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__DTSTART = COMPONENT_REQUIRED_FEATURE_COUNT + 0;
+	int VACATION_C__DTSTART = COMPONENT_REQUIRED__DTSTART;
 
 	/**
 	 * The feature id for the '<em><b>Organizer</b></em>' attribute.
@@ -1468,7 +1477,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__ORGANIZER = COMPONENT_REQUIRED_FEATURE_COUNT + 1;
+	int VACATION_C__ORGANIZER = COMPONENT_REQUIRED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -1477,7 +1486,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__URL = COMPONENT_REQUIRED_FEATURE_COUNT + 2;
+	int VACATION_C__URL = COMPONENT_REQUIRED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Contact</b></em>' attribute.
@@ -1486,7 +1495,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__CONTACT = COMPONENT_REQUIRED_FEATURE_COUNT + 3;
+	int VACATION_C__CONTACT = COMPONENT_REQUIRED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Dtend</b></em>' attribute.
@@ -1495,7 +1504,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__DTEND = COMPONENT_REQUIRED_FEATURE_COUNT + 4;
+	int VACATION_C__DTEND = COMPONENT_REQUIRED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Attendee</b></em>' attribute list.
@@ -1504,7 +1513,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__ATTENDEE = COMPONENT_REQUIRED_FEATURE_COUNT + 5;
+	int VACATION_C__ATTENDEE = COMPONENT_REQUIRED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute list.
@@ -1513,7 +1522,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__COMMENT = COMPONENT_REQUIRED_FEATURE_COUNT + 6;
+	int VACATION_C__COMMENT = COMPONENT_REQUIRED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Freebusy</b></em>' attribute list.
@@ -1522,7 +1531,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__FREEBUSY = COMPONENT_REQUIRED_FEATURE_COUNT + 7;
+	int VACATION_C__FREEBUSY = COMPONENT_REQUIRED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Rstatus</b></em>' attribute list.
@@ -1531,7 +1540,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__RSTATUS = COMPONENT_REQUIRED_FEATURE_COUNT + 8;
+	int VACATION_C__RSTATUS = COMPONENT_REQUIRED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Xprop</b></em>' attribute list.
@@ -1540,7 +1549,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__XPROP = COMPONENT_REQUIRED_FEATURE_COUNT + 9;
+	int VACATION_C__XPROP = COMPONENT_REQUIRED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Iana prop</b></em>' attribute list.
@@ -1549,7 +1558,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__IANA_PROP = COMPONENT_REQUIRED_FEATURE_COUNT + 10;
+	int VACATION_C__IANA_PROP = COMPONENT_REQUIRED_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Vacation C</em>' class.
@@ -1558,7 +1567,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C_FEATURE_COUNT = COMPONENT_REQUIRED_FEATURE_COUNT + 11;
+	int VACATION_C_FEATURE_COUNT = COMPONENT_REQUIRED_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Vacation C</em>' class.
@@ -2110,6 +2119,199 @@ public interface ICalPackage extends EPackage {
 	int TZPROP_OPTIONAL_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link iCal.impl.DateTImpl <em>Date T</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see iCal.impl.DateTImpl
+	 * @see iCal.impl.ICalPackageImpl#getDateT()
+	 * @generated
+	 */
+	int DATE_T = 18;
+
+	/**
+	 * The feature id for the '<em><b>Day</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T__DAY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Day name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T__DAY_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Month</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T__MONTH = 2;
+
+	/**
+	 * The feature id for the '<em><b>Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T__YEAR = 3;
+
+	/**
+	 * The feature id for the '<em><b>Hours</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T__HOURS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Minutes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T__MINUTES = 5;
+
+	/**
+	 * The feature id for the '<em><b>Seconds</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T__SECONDS = 6;
+
+	/**
+	 * The number of structural features of the '<em>Date T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T_FEATURE_COUNT = 7;
+
+	/**
+	 * The number of operations of the '<em>Date T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link iCal.impl.AMonthTImpl <em>AMonth T</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see iCal.impl.AMonthTImpl
+	 * @see iCal.impl.ICalPackageImpl#getAMonthT()
+	 * @generated
+	 */
+	int AMONTH_T = 20;
+
+	/**
+	 * The number of structural features of the '<em>AMonth T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMONTH_T_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>AMonth T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMONTH_T_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link iCal.impl.MonthTImpl <em>Month T</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see iCal.impl.MonthTImpl
+	 * @see iCal.impl.ICalPackageImpl#getMonthT()
+	 * @generated
+	 */
+	int MONTH_T = 19;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONTH_T__VALUE = AMONTH_T_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Month T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONTH_T_FEATURE_COUNT = AMONTH_T_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Month T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONTH_T_OPERATION_COUNT = AMONTH_T_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link iCal.impl.MonthNameTImpl <em>Month Name T</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see iCal.impl.MonthNameTImpl
+	 * @see iCal.impl.ICalPackageImpl#getMonthNameT()
+	 * @generated
+	 */
+	int MONTH_NAME_T = 21;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONTH_NAME_T__VALUE = AMONTH_T_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Month Name T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONTH_NAME_T_FEATURE_COUNT = AMONTH_T_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Month Name T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONTH_NAME_T_OPERATION_COUNT = AMONTH_T_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>String</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2117,7 +2319,7 @@ public interface ICalPackage extends EPackage {
 	 * @see iCal.impl.ICalPackageImpl#getString()
 	 * @generated
 	 */
-	int STRING = 18;
+	int STRING = 22;
 
 	/**
 	 * The meta object id for the '<em>Integer</em>' data type.
@@ -2127,7 +2329,7 @@ public interface ICalPackage extends EPackage {
 	 * @see iCal.impl.ICalPackageImpl#getInteger()
 	 * @generated
 	 */
-	int INTEGER = 19;
+	int INTEGER = 23;
 
 	/**
 	 * The meta object id for the '<em>Float</em>' data type.
@@ -2137,7 +2339,7 @@ public interface ICalPackage extends EPackage {
 	 * @see iCal.impl.ICalPackageImpl#getFloat()
 	 * @generated
 	 */
-	int FLOAT = 20;
+	int FLOAT = 24;
 
 	/**
 	 * Returns the meta object for class '{@link iCal.iCalFormat <em>iCal Format</em>}'.
@@ -2236,17 +2438,6 @@ public interface ICalPackage extends EPackage {
 	EAttribute getEventC_Location();
 
 	/**
-	 * Returns the meta object for the attribute '{@link iCal.EventC#getDuration <em>Duration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Duration</em>'.
-	 * @see iCal.EventC#getDuration()
-	 * @see #getEventC()
-	 * @generated
-	 */
-	EAttribute getEventC_Duration();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link iCal.EventC#getAlarmc <em>Alarmc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2256,6 +2447,17 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEventC_Alarmc();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link iCal.EventC#getDtend <em>Dtend</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Dtend</em>'.
+	 * @see iCal.EventC#getDtend()
+	 * @see #getEventC()
+	 * @generated
+	 */
+	EReference getEventC_Dtend();
 
 	/**
 	 * Returns the meta object for class '{@link iCal.ToDoC <em>To Do C</em>}'.
@@ -2312,17 +2514,6 @@ public interface ICalPackage extends EPackage {
 	EAttribute getToDoC_Location();
 
 	/**
-	 * Returns the meta object for the attribute '{@link iCal.ToDoC#getDuration <em>Duration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Duration</em>'.
-	 * @see iCal.ToDoC#getDuration()
-	 * @see #getToDoC()
-	 * @generated
-	 */
-	EAttribute getToDoC_Duration();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link iCal.ToDoC#getAlarmc <em>Alarmc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2332,6 +2523,17 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getToDoC_Alarmc();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link iCal.ToDoC#getDtend <em>Dtend</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Dtend</em>'.
+	 * @see iCal.ToDoC#getDtend()
+	 * @see #getToDoC()
+	 * @generated
+	 */
+	EReference getToDoC_Dtend();
 
 	/**
 	 * Returns the meta object for class '{@link iCal.Calendar <em>Calendar</em>}'.
@@ -2429,17 +2631,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponentAction();
-
-	/**
-	 * Returns the meta object for the attribute '{@link iCal.ComponentAction#getDtstart <em>Dtstart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Dtstart</em>'.
-	 * @see iCal.ComponentAction#getDtstart()
-	 * @see #getComponentAction()
-	 * @generated
-	 */
-	EAttribute getComponentAction_Dtstart();
 
 	/**
 	 * Returns the meta object for the attribute '{@link iCal.ComponentAction#getClass_ <em>Class</em>}'.
@@ -2715,17 +2906,6 @@ public interface ICalPackage extends EPackage {
 	EClass getVacationC();
 
 	/**
-	 * Returns the meta object for the attribute '{@link iCal.VacationC#getDtstart <em>Dtstart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Dtstart</em>'.
-	 * @see iCal.VacationC#getDtstart()
-	 * @see #getVacationC()
-	 * @generated
-	 */
-	EAttribute getVacationC_Dtstart();
-
-	/**
 	 * Returns the meta object for the attribute '{@link iCal.VacationC#getOrganizer <em>Organizer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2866,6 +3046,17 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComponentRequired_Uid();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link iCal.ComponentRequired#getDtstart <em>Dtstart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Dtstart</em>'.
+	 * @see iCal.ComponentRequired#getDtstart()
+	 * @see #getComponentRequired()
+	 * @generated
+	 */
+	EReference getComponentRequired_Dtstart();
 
 	/**
 	 * Returns the meta object for class '{@link iCal.TimeZoneC <em>Time Zone C</em>}'.
@@ -3310,6 +3501,145 @@ public interface ICalPackage extends EPackage {
 	EAttribute gettzpropOptional_Iana_prop();
 
 	/**
+	 * Returns the meta object for class '{@link iCal.DateT <em>Date T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Date T</em>'.
+	 * @see iCal.DateT
+	 * @generated
+	 */
+	EClass getDateT();
+
+	/**
+	 * Returns the meta object for the attribute '{@link iCal.DateT#getDay <em>Day</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Day</em>'.
+	 * @see iCal.DateT#getDay()
+	 * @see #getDateT()
+	 * @generated
+	 */
+	EAttribute getDateT_Day();
+
+	/**
+	 * Returns the meta object for the attribute '{@link iCal.DateT#getDay_name <em>Day name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Day name</em>'.
+	 * @see iCal.DateT#getDay_name()
+	 * @see #getDateT()
+	 * @generated
+	 */
+	EAttribute getDateT_Day_name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link iCal.DateT#getMonth <em>Month</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Month</em>'.
+	 * @see iCal.DateT#getMonth()
+	 * @see #getDateT()
+	 * @generated
+	 */
+	EReference getDateT_Month();
+
+	/**
+	 * Returns the meta object for the attribute '{@link iCal.DateT#getYear <em>Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Year</em>'.
+	 * @see iCal.DateT#getYear()
+	 * @see #getDateT()
+	 * @generated
+	 */
+	EAttribute getDateT_Year();
+
+	/**
+	 * Returns the meta object for the attribute '{@link iCal.DateT#getHours <em>Hours</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hours</em>'.
+	 * @see iCal.DateT#getHours()
+	 * @see #getDateT()
+	 * @generated
+	 */
+	EAttribute getDateT_Hours();
+
+	/**
+	 * Returns the meta object for the attribute '{@link iCal.DateT#getMinutes <em>Minutes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Minutes</em>'.
+	 * @see iCal.DateT#getMinutes()
+	 * @see #getDateT()
+	 * @generated
+	 */
+	EAttribute getDateT_Minutes();
+
+	/**
+	 * Returns the meta object for the attribute '{@link iCal.DateT#getSeconds <em>Seconds</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Seconds</em>'.
+	 * @see iCal.DateT#getSeconds()
+	 * @see #getDateT()
+	 * @generated
+	 */
+	EAttribute getDateT_Seconds();
+
+	/**
+	 * Returns the meta object for class '{@link iCal.MonthT <em>Month T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Month T</em>'.
+	 * @see iCal.MonthT
+	 * @generated
+	 */
+	EClass getMonthT();
+
+	/**
+	 * Returns the meta object for the attribute '{@link iCal.MonthT#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see iCal.MonthT#getValue()
+	 * @see #getMonthT()
+	 * @generated
+	 */
+	EAttribute getMonthT_Value();
+
+	/**
+	 * Returns the meta object for class '{@link iCal.AMonthT <em>AMonth T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>AMonth T</em>'.
+	 * @see iCal.AMonthT
+	 * @generated
+	 */
+	EClass getAMonthT();
+
+	/**
+	 * Returns the meta object for class '{@link iCal.MonthNameT <em>Month Name T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Month Name T</em>'.
+	 * @see iCal.MonthNameT
+	 * @generated
+	 */
+	EClass getMonthNameT();
+
+	/**
+	 * Returns the meta object for the attribute '{@link iCal.MonthNameT#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see iCal.MonthNameT#getValue()
+	 * @see #getMonthNameT()
+	 * @generated
+	 */
+	EAttribute getMonthNameT_Value();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3444,20 +3774,20 @@ public interface ICalPackage extends EPackage {
 		EAttribute EVENT_C__LOCATION = eINSTANCE.getEventC_Location();
 
 		/**
-		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EVENT_C__DURATION = eINSTANCE.getEventC_Duration();
-
-		/**
 		 * The meta object literal for the '<em><b>Alarmc</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference EVENT_C__ALARMC = eINSTANCE.getEventC_Alarmc();
+
+		/**
+		 * The meta object literal for the '<em><b>Dtend</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT_C__DTEND = eINSTANCE.getEventC_Dtend();
 
 		/**
 		 * The meta object literal for the '{@link iCal.impl.ToDoCImpl <em>To Do C</em>}' class.
@@ -3502,20 +3832,20 @@ public interface ICalPackage extends EPackage {
 		EAttribute TO_DO_C__LOCATION = eINSTANCE.getToDoC_Location();
 
 		/**
-		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TO_DO_C__DURATION = eINSTANCE.getToDoC_Duration();
-
-		/**
 		 * The meta object literal for the '<em><b>Alarmc</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference TO_DO_C__ALARMC = eINSTANCE.getToDoC_Alarmc();
+
+		/**
+		 * The meta object literal for the '<em><b>Dtend</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TO_DO_C__DTEND = eINSTANCE.getToDoC_Dtend();
 
 		/**
 		 * The meta object literal for the '{@link iCal.impl.CalendarImpl <em>Calendar</em>}' class.
@@ -3592,14 +3922,6 @@ public interface ICalPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPONENT_ACTION = eINSTANCE.getComponentAction();
-
-		/**
-		 * The meta object literal for the '<em><b>Dtstart</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_ACTION__DTSTART = eINSTANCE.getComponentAction_Dtstart();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -3806,14 +4128,6 @@ public interface ICalPackage extends EPackage {
 		EClass VACATION_C = eINSTANCE.getVacationC();
 
 		/**
-		 * The meta object literal for the '<em><b>Dtstart</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VACATION_C__DTSTART = eINSTANCE.getVacationC_Dtstart();
-
-		/**
 		 * The meta object literal for the '<em><b>Organizer</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3918,6 +4232,14 @@ public interface ICalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPONENT_REQUIRED__UID = eINSTANCE.getComponentRequired_Uid();
+
+		/**
+		 * The meta object literal for the '<em><b>Dtstart</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_REQUIRED__DTSTART = eINSTANCE.getComponentRequired_Dtstart();
 
 		/**
 		 * The meta object literal for the '{@link iCal.impl.TimeZoneCImpl <em>Time Zone C</em>}' class.
@@ -4264,6 +4586,118 @@ public interface ICalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TZPROP_OPTIONAL__IANA_PROP = eINSTANCE.gettzpropOptional_Iana_prop();
+
+		/**
+		 * The meta object literal for the '{@link iCal.impl.DateTImpl <em>Date T</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see iCal.impl.DateTImpl
+		 * @see iCal.impl.ICalPackageImpl#getDateT()
+		 * @generated
+		 */
+		EClass DATE_T = eINSTANCE.getDateT();
+
+		/**
+		 * The meta object literal for the '<em><b>Day</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_T__DAY = eINSTANCE.getDateT_Day();
+
+		/**
+		 * The meta object literal for the '<em><b>Day name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_T__DAY_NAME = eINSTANCE.getDateT_Day_name();
+
+		/**
+		 * The meta object literal for the '<em><b>Month</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATE_T__MONTH = eINSTANCE.getDateT_Month();
+
+		/**
+		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_T__YEAR = eINSTANCE.getDateT_Year();
+
+		/**
+		 * The meta object literal for the '<em><b>Hours</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_T__HOURS = eINSTANCE.getDateT_Hours();
+
+		/**
+		 * The meta object literal for the '<em><b>Minutes</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_T__MINUTES = eINSTANCE.getDateT_Minutes();
+
+		/**
+		 * The meta object literal for the '<em><b>Seconds</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_T__SECONDS = eINSTANCE.getDateT_Seconds();
+
+		/**
+		 * The meta object literal for the '{@link iCal.impl.MonthTImpl <em>Month T</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see iCal.impl.MonthTImpl
+		 * @see iCal.impl.ICalPackageImpl#getMonthT()
+		 * @generated
+		 */
+		EClass MONTH_T = eINSTANCE.getMonthT();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MONTH_T__VALUE = eINSTANCE.getMonthT_Value();
+
+		/**
+		 * The meta object literal for the '{@link iCal.impl.AMonthTImpl <em>AMonth T</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see iCal.impl.AMonthTImpl
+		 * @see iCal.impl.ICalPackageImpl#getAMonthT()
+		 * @generated
+		 */
+		EClass AMONTH_T = eINSTANCE.getAMonthT();
+
+		/**
+		 * The meta object literal for the '{@link iCal.impl.MonthNameTImpl <em>Month Name T</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see iCal.impl.MonthNameTImpl
+		 * @see iCal.impl.ICalPackageImpl#getMonthNameT()
+		 * @generated
+		 */
+		EClass MONTH_NAME_T = eINSTANCE.getMonthNameT();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MONTH_NAME_T__VALUE = eINSTANCE.getMonthNameT_Value();
 
 		/**
 		 * The meta object literal for the '<em>String</em>' data type.

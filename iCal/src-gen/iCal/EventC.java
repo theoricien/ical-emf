@@ -17,8 +17,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link iCal.EventC#getPriority <em>Priority</em>}</li>
  *   <li>{@link iCal.EventC#getGeo <em>Geo</em>}</li>
  *   <li>{@link iCal.EventC#getLocation <em>Location</em>}</li>
- *   <li>{@link iCal.EventC#getDuration <em>Duration</em>}</li>
  *   <li>{@link iCal.EventC#getAlarmc <em>Alarmc</em>}</li>
+ *   <li>{@link iCal.EventC#getDtend <em>Dtend</em>}</li>
  * </ul>
  *
  * @see iCal.ICalPackage#getEventC()
@@ -115,28 +115,6 @@ public interface EventC extends ComponentAction {
 	void setLocation(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Duration</em>' attribute.
-	 * @see #setDuration(String)
-	 * @see iCal.ICalPackage#getEventC_Duration()
-	 * @model dataType="iCal.String"
-	 * @generated
-	 */
-	String getDuration();
-
-	/**
-	 * Sets the value of the '{@link iCal.EventC#getDuration <em>Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Duration</em>' attribute.
-	 * @see #getDuration()
-	 * @generated
-	 */
-	void setDuration(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Alarmc</b></em>' containment reference list.
 	 * The list contents are of type {@link iCal.AlarmC}.
 	 * <!-- begin-user-doc -->
@@ -147,5 +125,27 @@ public interface EventC extends ComponentAction {
 	 * @generated
 	 */
 	EList<AlarmC> getAlarmc();
+
+	/**
+	 * Returns the value of the '<em><b>Dtend</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dtend</em>' containment reference.
+	 * @see #setDtend(DateT)
+	 * @see iCal.ICalPackage#getEventC_Dtend()
+	 * @model containment="true"
+	 * @generated
+	 */
+	DateT getDtend();
+
+	/**
+	 * Sets the value of the '{@link iCal.EventC#getDtend <em>Dtend</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dtend</em>' containment reference.
+	 * @see #getDtend()
+	 * @generated
+	 */
+	void setDtend(DateT value);
 
 } // EventC

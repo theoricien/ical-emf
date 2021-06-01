@@ -36,7 +36,7 @@ public interface Calendar extends EObject {
 	 * @return the value of the '<em>Prodid</em>' attribute.
 	 * @see #setProdid(String)
 	 * @see iCal.ICalPackage#getCalendar_Prodid()
-	 * @model dataType="iCal.String" required="true"
+	 * @model dataType="iCal.String"
 	 * @generated
 	 */
 	String getProdid();
@@ -58,7 +58,7 @@ public interface Calendar extends EObject {
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see iCal.ICalPackage#getCalendar_Version()
-	 * @model dataType="iCal.String" required="true"
+	 * @model dataType="iCal.String"
 	 * @generated
 	 */
 	String getVersion();

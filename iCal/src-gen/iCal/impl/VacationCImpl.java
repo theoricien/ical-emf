@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link iCal.impl.VacationCImpl#getDtstart <em>Dtstart</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getOrganizer <em>Organizer</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getContact <em>Contact</em>}</li>
@@ -41,26 +40,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * @generated
  */
 public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
-	/**
-	 * The default value of the '{@link #getDtstart() <em>Dtstart</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDtstart()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DTSTART_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDtstart() <em>Dtstart</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDtstart()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dtstart = DTSTART_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getOrganizer() <em>Organizer</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -218,30 +197,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 	@Override
 	protected EClass eStaticClass() {
 		return ICalPackage.Literals.VACATION_C;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getDtstart() {
-		return dtstart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDtstart(String newDtstart) {
-		String oldDtstart = dtstart;
-		dtstart = newDtstart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.VACATION_C__DTSTART, oldDtstart,
-					dtstart));
 	}
 
 	/**
@@ -424,8 +379,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ICalPackage.VACATION_C__DTSTART:
-			return getDtstart();
 		case ICalPackage.VACATION_C__ORGANIZER:
 			return getOrganizer();
 		case ICalPackage.VACATION_C__URL:
@@ -459,9 +412,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ICalPackage.VACATION_C__DTSTART:
-			setDtstart((String) newValue);
-			return;
 		case ICalPackage.VACATION_C__ORGANIZER:
 			setOrganizer((String) newValue);
 			return;
@@ -510,9 +460,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ICalPackage.VACATION_C__DTSTART:
-			setDtstart(DTSTART_EDEFAULT);
-			return;
 		case ICalPackage.VACATION_C__ORGANIZER:
 			setOrganizer(ORGANIZER_EDEFAULT);
 			return;
@@ -555,8 +502,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ICalPackage.VACATION_C__DTSTART:
-			return DTSTART_EDEFAULT == null ? dtstart != null : !DTSTART_EDEFAULT.equals(dtstart);
 		case ICalPackage.VACATION_C__ORGANIZER:
 			return ORGANIZER_EDEFAULT == null ? organizer != null : !ORGANIZER_EDEFAULT.equals(organizer);
 		case ICalPackage.VACATION_C__URL:
@@ -592,9 +537,7 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dtstart: ");
-		result.append(dtstart);
-		result.append(", organizer: ");
+		result.append(" (organizer: ");
 		result.append(organizer);
 		result.append(", url: ");
 		result.append(url);

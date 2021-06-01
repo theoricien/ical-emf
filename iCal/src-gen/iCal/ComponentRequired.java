@@ -13,6 +13,7 @@ package iCal;
  * <ul>
  *   <li>{@link iCal.ComponentRequired#getDtstamp <em>Dtstamp</em>}</li>
  *   <li>{@link iCal.ComponentRequired#getUid <em>Uid</em>}</li>
+ *   <li>{@link iCal.ComponentRequired#getDtstart <em>Dtstart</em>}</li>
  * </ul>
  *
  * @see iCal.ICalPackage#getComponentRequired()
@@ -27,7 +28,7 @@ public interface ComponentRequired extends Component {
 	 * @return the value of the '<em>Dtstamp</em>' attribute.
 	 * @see #setDtstamp(String)
 	 * @see iCal.ICalPackage#getComponentRequired_Dtstamp()
-	 * @model dataType="iCal.String" required="true"
+	 * @model dataType="iCal.String"
 	 * @generated
 	 */
 	String getDtstamp();
@@ -49,7 +50,7 @@ public interface ComponentRequired extends Component {
 	 * @return the value of the '<em>Uid</em>' attribute.
 	 * @see #setUid(String)
 	 * @see iCal.ICalPackage#getComponentRequired_Uid()
-	 * @model dataType="iCal.String" required="true"
+	 * @model dataType="iCal.String"
 	 * @generated
 	 */
 	String getUid();
@@ -63,5 +64,27 @@ public interface ComponentRequired extends Component {
 	 * @generated
 	 */
 	void setUid(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Dtstart</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dtstart</em>' containment reference.
+	 * @see #setDtstart(DateT)
+	 * @see iCal.ICalPackage#getComponentRequired_Dtstart()
+	 * @model containment="true"
+	 * @generated
+	 */
+	DateT getDtstart();
+
+	/**
+	 * Sets the value of the '{@link iCal.ComponentRequired#getDtstart <em>Dtstart</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dtstart</em>' containment reference.
+	 * @see #getDtstart()
+	 * @generated
+	 */
+	void setDtstart(DateT value);
 
 } // ComponentRequired

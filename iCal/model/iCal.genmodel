@@ -21,16 +21,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/priority"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/geo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/location"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//EventC/duration"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//EventC/alarmc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//EventC/dtend"/>
     </genClasses>
     <genClasses ecoreClass="iCal.ecore#//ToDoC">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/completed"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/priority"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/geo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/location"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ToDoC/duration"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//ToDoC/alarmc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//ToDoC/dtend"/>
     </genClasses>
     <genClasses ecoreClass="iCal.ecore#//Calendar">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//Calendar/prodid"/>
@@ -42,7 +42,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//Calendar/component"/>
     </genClasses>
     <genClasses image="false" ecoreClass="iCal.ecore#//ComponentAction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/dtstart"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/class"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/created"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentAction/last_mod"/>
@@ -69,7 +68,6 @@
     </genClasses>
     <genClasses ecoreClass="iCal.ecore#//JournalC"/>
     <genClasses ecoreClass="iCal.ecore#//VacationC">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/dtstart"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/organizer"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/url"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//VacationC/contact"/>
@@ -84,6 +82,7 @@
     <genClasses image="false" ecoreClass="iCal.ecore#//ComponentRequired">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentRequired/dtstamp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//ComponentRequired/uid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//ComponentRequired/dtstart"/>
     </genClasses>
     <genClasses ecoreClass="iCal.ecore#//TimeZoneC">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//TimeZoneC/tzid"/>
@@ -133,6 +132,22 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzpropOptional/tzname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzpropOptional/x_prop"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//tzpropOptional/iana_prop"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//DateT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/day"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/day_name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//DateT/month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/year"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/minutes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/seconds"/>
+    </genClasses>
+    <genClasses ecoreClass="iCal.ecore#//MonthT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//MonthT/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="iCal.ecore#//AMonthT"/>
+    <genClasses ecoreClass="iCal.ecore#//MonthNameT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//MonthNameT/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

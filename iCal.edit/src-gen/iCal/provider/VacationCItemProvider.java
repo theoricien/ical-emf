@@ -44,7 +44,6 @@ public class VacationCItemProvider extends ComponentRequiredItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDtstartPropertyDescriptor(object);
 			addOrganizerPropertyDescriptor(object);
 			addUrlPropertyDescriptor(object);
 			addContactPropertyDescriptor(object);
@@ -57,22 +56,6 @@ public class VacationCItemProvider extends ComponentRequiredItemProvider {
 			addIana_propPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Dtstart feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDtstartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_VacationC_dtstart_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_VacationC_dtstart_feature",
-								"_UI_VacationC_type"),
-						ICalPackage.Literals.VACATION_C__DTSTART, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -281,7 +264,6 @@ public class VacationCItemProvider extends ComponentRequiredItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(VacationC.class)) {
-		case ICalPackage.VACATION_C__DTSTART:
 		case ICalPackage.VACATION_C__ORGANIZER:
 		case ICalPackage.VACATION_C__URL:
 		case ICalPackage.VACATION_C__CONTACT:

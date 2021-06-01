@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iCal:iCalFormat xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iCal="http://www.example.org/iCal" fileName="calendrier">
+  <calendar prodid="jasmine.benfredj@yahoo.fr" version="2.0" method="PUBLISH">
+    <component xsi:type="iCal:EventC" dtstamp="20210601T100000Z" uid="123456789@example.com" dtstart="20210531T100000Z" class="PUBLIC" summary="Exam"/>
+  </calendar>
+</iCal:iCalFormat>

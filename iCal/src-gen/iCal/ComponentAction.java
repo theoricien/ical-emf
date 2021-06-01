@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link iCal.ComponentAction#getDtstart <em>Dtstart</em>}</li>
  *   <li>{@link iCal.ComponentAction#getClass_ <em>Class</em>}</li>
  *   <li>{@link iCal.ComponentAction#getCreated <em>Created</em>}</li>
  *   <li>{@link iCal.ComponentAction#getLast_mod <em>Last mod</em>}</li>
@@ -44,28 +43,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface ComponentAction extends ComponentRequired {
-	/**
-	 * Returns the value of the '<em><b>Dtstart</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dtstart</em>' attribute.
-	 * @see #setDtstart(String)
-	 * @see iCal.ICalPackage#getComponentAction_Dtstart()
-	 * @model dataType="iCal.String"
-	 * @generated
-	 */
-	String getDtstart();
-
-	/**
-	 * Sets the value of the '{@link iCal.ComponentAction#getDtstart <em>Dtstart</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dtstart</em>' attribute.
-	 * @see #getDtstart()
-	 * @generated
-	 */
-	void setDtstart(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->

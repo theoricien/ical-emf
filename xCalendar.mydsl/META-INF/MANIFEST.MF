@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: xCalendar.mydsl
+Bundle-ManifestVersion: 2
+Bundle-Name: xCalendar.mydsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: xCalendar.mydsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: iCal,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: xCalendar.formatting2,
+ xCalendar.parser.antlr.internal,
+ xCalendar.scoping,
+ xCalendar.generator,
+ xCalendar.services,
+ xCalendar.serializer,
+ xCalendar.parser.antlr,
+ xCalendar.validation,
+ xCalendar
+Import-Package: org.apache.log4j

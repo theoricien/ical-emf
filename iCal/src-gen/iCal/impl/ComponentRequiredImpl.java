@@ -3,12 +3,15 @@
 package iCal.impl;
 
 import iCal.ComponentRequired;
+import iCal.DateT;
 import iCal.ICalPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -21,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link iCal.impl.ComponentRequiredImpl#getDtstamp <em>Dtstamp</em>}</li>
  *   <li>{@link iCal.impl.ComponentRequiredImpl#getUid <em>Uid</em>}</li>
+ *   <li>{@link iCal.impl.ComponentRequiredImpl#getDtstart <em>Dtstart</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,6 +69,16 @@ public abstract class ComponentRequiredImpl extends ComponentImpl implements Com
 	 * @ordered
 	 */
 	protected String uid = UID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDtstart() <em>Dtstart</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDtstart()
+	 * @generated
+	 * @ordered
+	 */
+	protected DateT dtstart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,12 +152,80 @@ public abstract class ComponentRequiredImpl extends ComponentImpl implements Com
 	 * @generated
 	 */
 	@Override
+	public DateT getDtstart() {
+		return dtstart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDtstart(DateT newDtstart, NotificationChain msgs) {
+		DateT oldDtstart = dtstart;
+		dtstart = newDtstart;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ICalPackage.COMPONENT_REQUIRED__DTSTART, oldDtstart, newDtstart);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDtstart(DateT newDtstart) {
+		if (newDtstart != dtstart) {
+			NotificationChain msgs = null;
+			if (dtstart != null)
+				msgs = ((InternalEObject) dtstart).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - ICalPackage.COMPONENT_REQUIRED__DTSTART, null, msgs);
+			if (newDtstart != null)
+				msgs = ((InternalEObject) newDtstart).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - ICalPackage.COMPONENT_REQUIRED__DTSTART, null, msgs);
+			msgs = basicSetDtstart(newDtstart, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.COMPONENT_REQUIRED__DTSTART, newDtstart,
+					newDtstart));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ICalPackage.COMPONENT_REQUIRED__DTSTART:
+			return basicSetDtstart(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ICalPackage.COMPONENT_REQUIRED__DTSTAMP:
 			return getDtstamp();
 		case ICalPackage.COMPONENT_REQUIRED__UID:
 			return getUid();
+		case ICalPackage.COMPONENT_REQUIRED__DTSTART:
+			return getDtstart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,6 +243,9 @@ public abstract class ComponentRequiredImpl extends ComponentImpl implements Com
 			return;
 		case ICalPackage.COMPONENT_REQUIRED__UID:
 			setUid((String) newValue);
+			return;
+		case ICalPackage.COMPONENT_REQUIRED__DTSTART:
+			setDtstart((DateT) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,6 +265,9 @@ public abstract class ComponentRequiredImpl extends ComponentImpl implements Com
 		case ICalPackage.COMPONENT_REQUIRED__UID:
 			setUid(UID_EDEFAULT);
 			return;
+		case ICalPackage.COMPONENT_REQUIRED__DTSTART:
+			setDtstart((DateT) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -196,6 +284,8 @@ public abstract class ComponentRequiredImpl extends ComponentImpl implements Com
 			return DTSTAMP_EDEFAULT == null ? dtstamp != null : !DTSTAMP_EDEFAULT.equals(dtstamp);
 		case ICalPackage.COMPONENT_REQUIRED__UID:
 			return UID_EDEFAULT == null ? uid != null : !UID_EDEFAULT.equals(uid);
+		case ICalPackage.COMPONENT_REQUIRED__DTSTART:
+			return dtstart != null;
 		}
 		return super.eIsSet(featureID);
 	}

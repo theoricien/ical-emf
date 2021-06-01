@@ -157,6 +157,26 @@ public class ICalAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseDateT(DateT object) {
+			return createDateTAdapter();
+		}
+
+		@Override
+		public Adapter caseMonthT(MonthT object) {
+			return createMonthTAdapter();
+		}
+
+		@Override
+		public Adapter caseAMonthT(AMonthT object) {
+			return createAMonthTAdapter();
+		}
+
+		@Override
+		public Adapter caseMonthNameT(MonthNameT object) {
+			return createMonthNameTAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -424,6 +444,62 @@ public class ICalAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createtzpropOptionalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link iCal.DateT <em>Date T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see iCal.DateT
+	 * @generated
+	 */
+	public Adapter createDateTAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link iCal.MonthT <em>Month T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see iCal.MonthT
+	 * @generated
+	 */
+	public Adapter createMonthTAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link iCal.AMonthT <em>AMonth T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see iCal.AMonthT
+	 * @generated
+	 */
+	public Adapter createAMonthTAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link iCal.MonthNameT <em>Month Name T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see iCal.MonthNameT
+	 * @generated
+	 */
+	public Adapter createMonthNameTAdapter() {
 		return null;
 	}
 

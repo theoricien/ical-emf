@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link iCal.impl.ComponentActionImpl#getDtstart <em>Dtstart</em>}</li>
  *   <li>{@link iCal.impl.ComponentActionImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link iCal.impl.ComponentActionImpl#getCreated <em>Created</em>}</li>
  *   <li>{@link iCal.impl.ComponentActionImpl#getLast_mod <em>Last mod</em>}</li>
@@ -54,26 +53,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * @generated
  */
 public abstract class ComponentActionImpl extends ComponentRequiredImpl implements ComponentAction {
-	/**
-	 * The default value of the '{@link #getDtstart() <em>Dtstart</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDtstart()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DTSTART_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDtstart() <em>Dtstart</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDtstart()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dtstart = DTSTART_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -421,30 +400,6 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 	@Override
 	protected EClass eStaticClass() {
 		return ICalPackage.Literals.COMPONENT_ACTION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getDtstart() {
-		return dtstart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDtstart(String newDtstart) {
-		String oldDtstart = dtstart;
-		dtstart = newDtstart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.COMPONENT_ACTION__DTSTART, oldDtstart,
-					dtstart));
 	}
 
 	/**
@@ -862,8 +817,6 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ICalPackage.COMPONENT_ACTION__DTSTART:
-			return getDtstart();
 		case ICalPackage.COMPONENT_ACTION__CLASS:
 			return getClass_();
 		case ICalPackage.COMPONENT_ACTION__CREATED:
@@ -923,9 +876,6 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ICalPackage.COMPONENT_ACTION__DTSTART:
-			setDtstart((String) newValue);
-			return;
 		case ICalPackage.COMPONENT_ACTION__CLASS:
 			setClass((String) newValue);
 			return;
@@ -1020,9 +970,6 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ICalPackage.COMPONENT_ACTION__DTSTART:
-			setDtstart(DTSTART_EDEFAULT);
-			return;
 		case ICalPackage.COMPONENT_ACTION__CLASS:
 			setClass(CLASS_EDEFAULT);
 			return;
@@ -1104,8 +1051,6 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ICalPackage.COMPONENT_ACTION__DTSTART:
-			return DTSTART_EDEFAULT == null ? dtstart != null : !DTSTART_EDEFAULT.equals(dtstart);
 		case ICalPackage.COMPONENT_ACTION__CLASS:
 			return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
 		case ICalPackage.COMPONENT_ACTION__CREATED:
@@ -1167,9 +1112,7 @@ public abstract class ComponentActionImpl extends ComponentRequiredImpl implemen
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dtstart: ");
-		result.append(dtstart);
-		result.append(", class: ");
+		result.append(" (class: ");
 		result.append(class_);
 		result.append(", created: ");
 		result.append(created);

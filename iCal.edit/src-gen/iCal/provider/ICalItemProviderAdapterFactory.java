@@ -395,6 +395,75 @@ public class ICalItemProviderAdapterFactory extends ICalAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link iCal.DateT} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DateTItemProvider dateTItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link iCal.DateT}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDateTAdapter() {
+		if (dateTItemProvider == null) {
+			dateTItemProvider = new DateTItemProvider(this);
+		}
+
+		return dateTItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link iCal.MonthT} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MonthTItemProvider monthTItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link iCal.MonthT}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMonthTAdapter() {
+		if (monthTItemProvider == null) {
+			monthTItemProvider = new MonthTItemProvider(this);
+		}
+
+		return monthTItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link iCal.MonthNameT} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MonthNameTItemProvider monthNameTItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link iCal.MonthNameT}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMonthNameTAdapter() {
+		if (monthNameTItemProvider == null) {
+			monthNameTItemProvider = new MonthNameTItemProvider(this);
+		}
+
+		return monthNameTItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -527,6 +596,12 @@ public class ICalItemProviderAdapterFactory extends ICalAdapterFactory
 			componentAlarmEmailPropertyItemProvider.dispose();
 		if (tzpropOptionalItemProvider != null)
 			tzpropOptionalItemProvider.dispose();
+		if (dateTItemProvider != null)
+			dateTItemProvider.dispose();
+		if (monthTItemProvider != null)
+			monthTItemProvider.dispose();
+		if (monthNameTItemProvider != null)
+			monthNameTItemProvider.dispose();
 	}
 
 }

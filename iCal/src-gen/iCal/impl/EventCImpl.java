@@ -3,6 +3,7 @@
 package iCal.impl;
 
 import iCal.AlarmC;
+import iCal.DateT;
 import iCal.EventC;
 import iCal.ICalPackage;
 
@@ -33,8 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link iCal.impl.EventCImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link iCal.impl.EventCImpl#getGeo <em>Geo</em>}</li>
  *   <li>{@link iCal.impl.EventCImpl#getLocation <em>Location</em>}</li>
- *   <li>{@link iCal.impl.EventCImpl#getDuration <em>Duration</em>}</li>
  *   <li>{@link iCal.impl.EventCImpl#getAlarmc <em>Alarmc</em>}</li>
+ *   <li>{@link iCal.impl.EventCImpl#getDtend <em>Dtend</em>}</li>
  * </ul>
  *
  * @generated
@@ -121,26 +122,6 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 	protected String location = LOCATION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDuration()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DURATION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDuration()
-	 * @generated
-	 * @ordered
-	 */
-	protected String duration = DURATION_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getAlarmc() <em>Alarmc</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,6 +130,16 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 	 * @ordered
 	 */
 	protected EList<AlarmC> alarmc;
+
+	/**
+	 * The cached value of the '{@link #getDtend() <em>Dtend</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDtend()
+	 * @generated
+	 * @ordered
+	 */
+	protected DateT dtend;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,30 +260,6 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 	 * @generated
 	 */
 	@Override
-	public String getDuration() {
-		return duration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDuration(String newDuration) {
-		String oldDuration = duration;
-		duration = newDuration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.EVENT_C__DURATION, oldDuration,
-					duration));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<AlarmC> getAlarmc() {
 		if (alarmc == null) {
 			alarmc = new EObjectContainmentEList<AlarmC>(AlarmC.class, this, ICalPackage.EVENT_C__ALARMC);
@@ -306,10 +273,63 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 	 * @generated
 	 */
 	@Override
+	public DateT getDtend() {
+		return dtend;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDtend(DateT newDtend, NotificationChain msgs) {
+		DateT oldDtend = dtend;
+		dtend = newDtend;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ICalPackage.EVENT_C__DTEND,
+					oldDtend, newDtend);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDtend(DateT newDtend) {
+		if (newDtend != dtend) {
+			NotificationChain msgs = null;
+			if (dtend != null)
+				msgs = ((InternalEObject) dtend).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - ICalPackage.EVENT_C__DTEND, null, msgs);
+			if (newDtend != null)
+				msgs = ((InternalEObject) newDtend).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - ICalPackage.EVENT_C__DTEND, null, msgs);
+			msgs = basicSetDtend(newDtend, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.EVENT_C__DTEND, newDtend, newDtend));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ICalPackage.EVENT_C__ALARMC:
 			return ((InternalEList<?>) getAlarmc()).basicRemove(otherEnd, msgs);
+		case ICalPackage.EVENT_C__DTEND:
+			return basicSetDtend(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -330,10 +350,10 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 			return getGeo();
 		case ICalPackage.EVENT_C__LOCATION:
 			return getLocation();
-		case ICalPackage.EVENT_C__DURATION:
-			return getDuration();
 		case ICalPackage.EVENT_C__ALARMC:
 			return getAlarmc();
+		case ICalPackage.EVENT_C__DTEND:
+			return getDtend();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -359,12 +379,12 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 		case ICalPackage.EVENT_C__LOCATION:
 			setLocation((String) newValue);
 			return;
-		case ICalPackage.EVENT_C__DURATION:
-			setDuration((String) newValue);
-			return;
 		case ICalPackage.EVENT_C__ALARMC:
 			getAlarmc().clear();
 			getAlarmc().addAll((Collection<? extends AlarmC>) newValue);
+			return;
+		case ICalPackage.EVENT_C__DTEND:
+			setDtend((DateT) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -390,11 +410,11 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 		case ICalPackage.EVENT_C__LOCATION:
 			setLocation(LOCATION_EDEFAULT);
 			return;
-		case ICalPackage.EVENT_C__DURATION:
-			setDuration(DURATION_EDEFAULT);
-			return;
 		case ICalPackage.EVENT_C__ALARMC:
 			getAlarmc().clear();
+			return;
+		case ICalPackage.EVENT_C__DTEND:
+			setDtend((DateT) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -416,10 +436,10 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 			return GEO_EDEFAULT == null ? geo != null : !GEO_EDEFAULT.equals(geo);
 		case ICalPackage.EVENT_C__LOCATION:
 			return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
-		case ICalPackage.EVENT_C__DURATION:
-			return DURATION_EDEFAULT == null ? duration != null : !DURATION_EDEFAULT.equals(duration);
 		case ICalPackage.EVENT_C__ALARMC:
 			return alarmc != null && !alarmc.isEmpty();
+		case ICalPackage.EVENT_C__DTEND:
+			return dtend != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -443,8 +463,6 @@ public class EventCImpl extends ComponentActionImpl implements EventC {
 		result.append(geo);
 		result.append(", location: ");
 		result.append(location);
-		result.append(", duration: ");
-		result.append(duration);
 		result.append(')');
 		return result.toString();
 	}

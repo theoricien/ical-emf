@@ -44,7 +44,6 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDtstartPropertyDescriptor(object);
 			addClassPropertyDescriptor(object);
 			addCreatedPropertyDescriptor(object);
 			addLast_modPropertyDescriptor(object);
@@ -70,22 +69,6 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Dtstart feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDtstartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ComponentAction_dtstart_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ComponentAction_dtstart_feature",
-								"_UI_ComponentAction_type"),
-						ICalPackage.Literals.COMPONENT_ACTION__DTSTART, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -491,7 +474,6 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentAction.class)) {
-		case ICalPackage.COMPONENT_ACTION__DTSTART:
 		case ICalPackage.COMPONENT_ACTION__CLASS:
 		case ICalPackage.COMPONENT_ACTION__CREATED:
 		case ICalPackage.COMPONENT_ACTION__LAST_MOD:

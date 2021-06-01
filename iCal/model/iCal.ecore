@@ -13,9 +13,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="geo" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alarmc" upperBound="-1"
         eType="#//AlarmC" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dtend" eType="#//DateT"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EClass" name="ToDoC" eSuperTypes="#//ComponentAction">
@@ -23,15 +24,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="geo" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alarmc" upperBound="-1"
         eType="#//AlarmC" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dtend" eType="#//DateT"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Calendar">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prodid" lowerBound="1"
-        eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" lowerBound="1"
-        eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prodid" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="calscale" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x_prop" upperBound="-1"
@@ -42,7 +42,6 @@
         upperBound="-1" eType="#//Component" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentAction" abstract="true" eSuperTypes="#//ComponentRequired">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtstart" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="created" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="last_mod" eType="#//String"/>
@@ -82,7 +81,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JournalC" eSuperTypes="#//ComponentAction"/>
   <eClassifiers xsi:type="ecore:EClass" name="VacationC" eSuperTypes="#//ComponentRequired">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtstart" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="organizer" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contact" eType="#//String"/>
@@ -101,9 +99,10 @@
         eType="#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentRequired" abstract="true" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtstamp" lowerBound="1"
-        eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" lowerBound="1" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtstamp" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dtstart" eType="#//DateT"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeZoneC" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tzid" lowerBound="1" eType="#//String"/>
@@ -173,5 +172,22 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tzname" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x_prop" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iana_prop" eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DateT">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" lowerBound="1" eType="#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day_name" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="month" lowerBound="1" eType="#//AMonthT"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hours" eType="#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minutes" eType="#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seconds" eType="#//Integer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MonthT" eSuperTypes="#//AMonthT">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//Integer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AMonthT" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MonthNameT" eSuperTypes="#//AMonthT">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//String"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link iCal.VacationC#getDtstart <em>Dtstart</em>}</li>
  *   <li>{@link iCal.VacationC#getOrganizer <em>Organizer</em>}</li>
  *   <li>{@link iCal.VacationC#getUrl <em>Url</em>}</li>
  *   <li>{@link iCal.VacationC#getContact <em>Contact</em>}</li>
@@ -31,28 +30,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface VacationC extends ComponentRequired {
-	/**
-	 * Returns the value of the '<em><b>Dtstart</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dtstart</em>' attribute.
-	 * @see #setDtstart(String)
-	 * @see iCal.ICalPackage#getVacationC_Dtstart()
-	 * @model dataType="iCal.String"
-	 * @generated
-	 */
-	String getDtstart();
-
-	/**
-	 * Sets the value of the '{@link iCal.VacationC#getDtstart <em>Dtstart</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dtstart</em>' attribute.
-	 * @see #getDtstart()
-	 * @generated
-	 */
-	void setDtstart(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Organizer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
