@@ -129,7 +129,7 @@ public class ToDoCItemProvider extends ComponentActionItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ICalPackage.Literals.TO_DO_C__ALARMC);
-			childrenFeatures.add(ICalPackage.Literals.TO_DO_C__DTEND);
+			childrenFeatures.add(ICalPackage.Literals.TO_DO_C__DUE);
 		}
 		return childrenFeatures;
 	}
@@ -176,7 +176,7 @@ public class ToDoCItemProvider extends ComponentActionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ToDoC) object).getDtstamp();
+		String label = ((ToDoC) object).getUid();
 		return label == null || label.length() == 0 ? getString("_UI_ToDoC_type")
 				: getString("_UI_ToDoC_type") + " " + label;
 	}
@@ -200,7 +200,7 @@ public class ToDoCItemProvider extends ComponentActionItemProvider {
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case ICalPackage.TO_DO_C__ALARMC:
-		case ICalPackage.TO_DO_C__DTEND:
+		case ICalPackage.TO_DO_C__DUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -222,7 +222,7 @@ public class ToDoCItemProvider extends ComponentActionItemProvider {
 				.add(createChildParameter(ICalPackage.Literals.TO_DO_C__ALARMC, ICalFactory.eINSTANCE.createAlarmC()));
 
 		newChildDescriptors
-				.add(createChildParameter(ICalPackage.Literals.TO_DO_C__DTEND, ICalFactory.eINSTANCE.createDateT()));
+				.add(createChildParameter(ICalPackage.Literals.TO_DO_C__DUE, ICalFactory.eINSTANCE.createDateT()));
 	}
 
 	/**
@@ -237,7 +237,7 @@ public class ToDoCItemProvider extends ComponentActionItemProvider {
 		Object childObject = child;
 
 		boolean qualify = childFeature == ICalPackage.Literals.COMPONENT_REQUIRED__DTSTART
-				|| childFeature == ICalPackage.Literals.TO_DO_C__DTEND;
+				|| childFeature == ICalPackage.Literals.TO_DO_C__DUE;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2",

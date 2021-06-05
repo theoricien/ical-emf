@@ -34,7 +34,7 @@ public interface DateT extends EObject {
 	 * @return the value of the '<em>Day</em>' attribute.
 	 * @see #setDay(Integer)
 	 * @see iCal.ICalPackage#getDateT_Day()
-	 * @model dataType="iCal.Integer" required="true"
+	 * @model dataType="iCal.Integer"
 	 * @generated
 	 */
 	Integer getDay();

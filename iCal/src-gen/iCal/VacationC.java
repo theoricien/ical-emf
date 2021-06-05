@@ -16,13 +16,13 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link iCal.VacationC#getOrganizer <em>Organizer</em>}</li>
  *   <li>{@link iCal.VacationC#getUrl <em>Url</em>}</li>
  *   <li>{@link iCal.VacationC#getContact <em>Contact</em>}</li>
- *   <li>{@link iCal.VacationC#getDtend <em>Dtend</em>}</li>
  *   <li>{@link iCal.VacationC#getAttendee <em>Attendee</em>}</li>
  *   <li>{@link iCal.VacationC#getComment <em>Comment</em>}</li>
  *   <li>{@link iCal.VacationC#getFreebusy <em>Freebusy</em>}</li>
  *   <li>{@link iCal.VacationC#getRstatus <em>Rstatus</em>}</li>
  *   <li>{@link iCal.VacationC#getX_prop <em>Xprop</em>}</li>
  *   <li>{@link iCal.VacationC#getIana_prop <em>Iana prop</em>}</li>
+ *   <li>{@link iCal.VacationC#getDtend <em>Dtend</em>}</li>
  * </ul>
  *
  * @see iCal.ICalPackage#getVacationC()
@@ -97,26 +97,26 @@ public interface VacationC extends ComponentRequired {
 	void setContact(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Dtend</b></em>' attribute.
+	 * Returns the value of the '<em><b>Dtend</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dtend</em>' attribute.
-	 * @see #setDtend(String)
+	 * @return the value of the '<em>Dtend</em>' containment reference.
+	 * @see #setDtend(DateT)
 	 * @see iCal.ICalPackage#getVacationC_Dtend()
-	 * @model dataType="iCal.String"
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getDtend();
+	DateT getDtend();
 
 	/**
-	 * Sets the value of the '{@link iCal.VacationC#getDtend <em>Dtend</em>}' attribute.
+	 * Sets the value of the '{@link iCal.VacationC#getDtend <em>Dtend</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dtend</em>' attribute.
+	 * @param value the new value of the '<em>Dtend</em>' containment reference.
 	 * @see #getDtend()
 	 * @generated
 	 */
-	void setDtend(String value);
+	void setDtend(DateT value);
 
 	/**
 	 * Returns the value of the '<em><b>Attendee</b></em>' attribute list.

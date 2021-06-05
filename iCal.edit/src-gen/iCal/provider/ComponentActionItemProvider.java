@@ -457,7 +457,7 @@ public class ComponentActionItemProvider extends ComponentRequiredItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentAction) object).getDtstamp();
+		String label = ((ComponentAction) object).getUid();
 		return label == null || label.length() == 0 ? getString("_UI_ComponentAction_type")
 				: getString("_UI_ComponentAction_type") + " " + label;
 	}

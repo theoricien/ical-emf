@@ -73,7 +73,7 @@ public class JournalCItemProvider extends ComponentActionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((JournalC) object).getDtstamp();
+		String label = ((JournalC) object).getUid();
 		return label == null || label.length() == 0 ? getString("_UI_JournalC_type")
 				: getString("_UI_JournalC_type") + " " + label;
 	}

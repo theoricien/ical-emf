@@ -26,7 +26,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alarmc" upperBound="-1"
         eType="#//AlarmC" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dtend" eType="#//DateT"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="due" lowerBound="1" eType="#//DateT"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Calendar">
@@ -84,7 +84,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="organizer" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contact" eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtend" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attendee" upperBound="-1"
         eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" upperBound="-1"
@@ -97,11 +96,14 @@
         eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iana_prop" upperBound="-1"
         eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dtend" eType="#//DateT"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentRequired" abstract="true" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtstamp" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dtstart" eType="#//DateT"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dtstamp" eType="#//DateT"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeZoneC" eSuperTypes="#//Component">
@@ -174,7 +176,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iana_prop" eType="#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DateT">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" lowerBound="1" eType="#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="day_name" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="month" lowerBound="1" eType="#//AMonthT"
         containment="true"/>

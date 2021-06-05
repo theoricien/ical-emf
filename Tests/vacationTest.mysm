@@ -1,0 +1,36 @@
+Enregistrer sous: "EventExemple"
+EventC{
+	Date: Lundi 7 Mars 2021 a 12 heure 30 et 01s
+	Fin: Mardi 30 Juillet 2021 a 13h 21 et 03s
+	Objet: "Devoir"
+	Organisateur: "Yasmine"
+	Commentaire: "Xtext est Genial"
+	Lieu: "Valbonne"
+	Categories: "Soft Eng","Matser1"
+	Relier a: "Une Realation","Une Autre Realation"
+	Classe: CONFIDENTIAL
+	Status: En cours
+	Contact: "Maxime Jerome","Yasmine BenFredj"
+	Invites: "yasmine.ben-fredj@etu.unice.fr","maxime.jerome@etu.unice.fr"
+	Alarmes: 
+		AlarmC{
+			Trigger: "trigger"
+				Action: "action"
+				Type: 
+					ComponentAlarmDispProperty{
+						Description: "description"
+					}
+		},
+		AlarmC{
+			Trigger: "trigger2"
+				Action: "action2"
+				Type: 
+					ComponentAlarmEmailProperty{
+						Invites{"mailto:yasmine.ben-fredj@etu.unice.fr"}
+						Attachements{"CID:https://icalendar.org/iCalendar-RFC-5545/3-8-1-1-attachment.html"}
+						Description: "description2"
+					}
+		}
+	
+}
+

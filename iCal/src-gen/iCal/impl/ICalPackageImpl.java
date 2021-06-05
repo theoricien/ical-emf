@@ -457,7 +457,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getToDoC_Dtend() {
+	public EReference getToDoC_Due() {
 		return (EReference) toDoCEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -837,8 +837,8 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVacationC_Dtend() {
-		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(3);
+	public EReference getVacationC_Dtend() {
+		return (EReference) vacationCEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -848,7 +848,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 */
 	@Override
 	public EAttribute getVacationC_Attendee() {
-		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -858,7 +858,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 */
 	@Override
 	public EAttribute getVacationC_Comment() {
-		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -868,7 +868,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 */
 	@Override
 	public EAttribute getVacationC_Freebusy() {
-		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -878,7 +878,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 */
 	@Override
 	public EAttribute getVacationC_Rstatus() {
-		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -888,7 +888,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 */
 	@Override
 	public EAttribute getVacationC_X_prop() {
-		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -898,7 +898,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 */
 	@Override
 	public EAttribute getVacationC_Iana_prop() {
-		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(9);
+		return (EAttribute) vacationCEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -917,8 +917,8 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getComponentRequired_Dtstamp() {
-		return (EAttribute) componentRequiredEClass.getEStructuralFeatures().get(0);
+	public EReference getComponentRequired_Dtstamp() {
+		return (EReference) componentRequiredEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -928,7 +928,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 */
 	@Override
 	public EAttribute getComponentRequired_Uid() {
-		return (EAttribute) componentRequiredEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) componentRequiredEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -938,7 +938,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 */
 	@Override
 	public EReference getComponentRequired_Dtstart() {
-		return (EReference) componentRequiredEClass.getEStructuralFeatures().get(2);
+		return (EReference) componentRequiredEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1561,7 +1561,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		createEAttribute(toDoCEClass, TO_DO_C__GEO);
 		createEAttribute(toDoCEClass, TO_DO_C__LOCATION);
 		createEReference(toDoCEClass, TO_DO_C__ALARMC);
-		createEReference(toDoCEClass, TO_DO_C__DTEND);
+		createEReference(toDoCEClass, TO_DO_C__DUE);
 
 		calendarEClass = createEClass(CALENDAR);
 		createEAttribute(calendarEClass, CALENDAR__PRODID);
@@ -1603,18 +1603,18 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		createEAttribute(vacationCEClass, VACATION_C__ORGANIZER);
 		createEAttribute(vacationCEClass, VACATION_C__URL);
 		createEAttribute(vacationCEClass, VACATION_C__CONTACT);
-		createEAttribute(vacationCEClass, VACATION_C__DTEND);
 		createEAttribute(vacationCEClass, VACATION_C__ATTENDEE);
 		createEAttribute(vacationCEClass, VACATION_C__COMMENT);
 		createEAttribute(vacationCEClass, VACATION_C__FREEBUSY);
 		createEAttribute(vacationCEClass, VACATION_C__RSTATUS);
 		createEAttribute(vacationCEClass, VACATION_C__XPROP);
 		createEAttribute(vacationCEClass, VACATION_C__IANA_PROP);
+		createEReference(vacationCEClass, VACATION_C__DTEND);
 
 		componentRequiredEClass = createEClass(COMPONENT_REQUIRED);
-		createEAttribute(componentRequiredEClass, COMPONENT_REQUIRED__DTSTAMP);
 		createEAttribute(componentRequiredEClass, COMPONENT_REQUIRED__UID);
 		createEReference(componentRequiredEClass, COMPONENT_REQUIRED__DTSTART);
+		createEReference(componentRequiredEClass, COMPONENT_REQUIRED__DTSTAMP);
 
 		timeZoneCEClass = createEClass(TIME_ZONE_C);
 		createEAttribute(timeZoneCEClass, TIME_ZONE_C__TZID);
@@ -1772,7 +1772,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		initEReference(getToDoC_Alarmc(), this.getAlarmC(), null, "alarmc", null, 0, -1, ToDoC.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getToDoC_Dtend(), this.getDateT(), null, "dtend", null, 0, 1, ToDoC.class, !IS_TRANSIENT,
+		initEReference(getToDoC_Due(), this.getDateT(), null, "due", null, 1, 1, ToDoC.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
@@ -1858,8 +1858,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVacationC_Contact(), this.getString(), "contact", null, 0, 1, VacationC.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVacationC_Dtend(), this.getString(), "dtend", null, 0, 1, VacationC.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVacationC_Attendee(), this.getString(), "attendee", null, 0, -1, VacationC.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVacationC_Comment(), this.getString(), "comment", null, 0, -1, VacationC.class, !IS_TRANSIENT,
@@ -1872,14 +1870,18 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVacationC_Iana_prop(), this.getString(), "iana_prop", null, 0, -1, VacationC.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVacationC_Dtend(), this.getDateT(), null, "dtend", null, 0, 1, VacationC.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(componentRequiredEClass, ComponentRequired.class, "ComponentRequired", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentRequired_Dtstamp(), this.getString(), "dtstamp", null, 0, 1, ComponentRequired.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentRequired_Uid(), this.getString(), "uid", null, 0, 1, ComponentRequired.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentRequired_Dtstart(), this.getDateT(), null, "dtstart", null, 0, 1,
+				ComponentRequired.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentRequired_Dtstamp(), this.getDateT(), null, "dtstamp", null, 0, 1,
 				ComponentRequired.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1984,7 +1986,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dateTEClass, DateT.class, "DateT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDateT_Day(), this.getInteger(), "day", null, 1, 1, DateT.class, !IS_TRANSIENT, !IS_VOLATILE,
+		initEAttribute(getDateT_Day(), this.getInteger(), "day", null, 0, 1, DateT.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDateT_Day_name(), this.getString(), "day_name", null, 0, 1, DateT.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

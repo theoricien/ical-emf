@@ -1,0 +1,16 @@
+Enregistrer sous: "journalExemple"
+JournalC{
+	Date: Lundi 7 Mars 2021 a 12 heure 30 et 01s
+	Objet: "Devoir"
+	Organisateur: "Yasmine"
+	Commentaire{ "Xtext est Genial"}
+	Classe: CONFIDENTIAL
+	Status: "Status"
+	Contact{ "Maxime Jerome","Yasmine BenFredj"}
+	Invites{ "Maxime Jerome","Yasmine BenFredj"}
+	Identifiant: "id"
+	Last_mod: "le mois dernier"
+	Description:"un journal confidentiel"
+	URL: "https://github.com/theoricien"
+}
+

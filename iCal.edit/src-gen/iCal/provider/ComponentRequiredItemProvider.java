@@ -46,8 +46,8 @@ public class ComponentRequiredItemProvider extends ComponentItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDtstampPropertyDescriptor(object);
 			addUidPropertyDescriptor(object);
+			addDtstampPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,8 +64,7 @@ public class ComponentRequiredItemProvider extends ComponentItemProvider {
 						getResourceLocator(), getString("_UI_ComponentRequired_dtstamp_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_ComponentRequired_dtstamp_feature",
 								"_UI_ComponentRequired_type"),
-						ICalPackage.Literals.COMPONENT_REQUIRED__DTSTAMP, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						ICalPackage.Literals.COMPONENT_REQUIRED__DTSTAMP, true, false, false, null, null, null));
 	}
 
 	/**
@@ -132,7 +131,7 @@ public class ComponentRequiredItemProvider extends ComponentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentRequired) object).getDtstamp();
+		String label = ((ComponentRequired) object).getUid();
 		return label == null || label.length() == 0 ? getString("_UI_ComponentRequired_type")
 				: getString("_UI_ComponentRequired_type") + " " + label;
 	}
@@ -149,8 +148,8 @@ public class ComponentRequiredItemProvider extends ComponentItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentRequired.class)) {
-		case ICalPackage.COMPONENT_REQUIRED__DTSTAMP:
 		case ICalPackage.COMPONENT_REQUIRED__UID:
+		case ICalPackage.COMPONENT_REQUIRED__DTSTAMP:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case ICalPackage.COMPONENT_REQUIRED__DTSTART:

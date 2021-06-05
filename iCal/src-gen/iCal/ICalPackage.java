@@ -142,22 +142,13 @@ public interface ICalPackage extends EPackage {
 	int COMPONENT_REQUIRED = 8;
 
 	/**
-	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_REQUIRED__DTSTAMP = COMPONENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Uid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_REQUIRED__UID = COMPONENT_FEATURE_COUNT + 1;
+	int COMPONENT_REQUIRED__UID = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Dtstart</b></em>' containment reference.
@@ -166,7 +157,16 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_REQUIRED__DTSTART = COMPONENT_FEATURE_COUNT + 2;
+	int COMPONENT_REQUIRED__DTSTART = COMPONENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Dtstamp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_REQUIRED__DTSTAMP = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component Required</em>' class.
@@ -197,15 +197,6 @@ public interface ICalPackage extends EPackage {
 	int COMPONENT_ACTION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_ACTION__DTSTAMP = COMPONENT_REQUIRED__DTSTAMP;
-
-	/**
 	 * The feature id for the '<em><b>Uid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,6 +213,15 @@ public interface ICalPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_ACTION__DTSTART = COMPONENT_REQUIRED__DTSTART;
+
+	/**
+	 * The feature id for the '<em><b>Dtstamp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ACTION__DTSTAMP = COMPONENT_REQUIRED__DTSTAMP;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -459,15 +459,6 @@ public interface ICalPackage extends EPackage {
 	int EVENT_C = 2;
 
 	/**
-	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_C__DTSTAMP = COMPONENT_ACTION__DTSTAMP;
-
-	/**
 	 * The feature id for the '<em><b>Uid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -484,6 +475,15 @@ public interface ICalPackage extends EPackage {
 	 * @ordered
 	 */
 	int EVENT_C__DTSTART = COMPONENT_ACTION__DTSTART;
+
+	/**
+	 * The feature id for the '<em><b>Dtstamp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_C__DTSTAMP = COMPONENT_ACTION__DTSTAMP;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -775,15 +775,6 @@ public interface ICalPackage extends EPackage {
 	int TO_DO_C = 3;
 
 	/**
-	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TO_DO_C__DTSTAMP = COMPONENT_ACTION__DTSTAMP;
-
-	/**
 	 * The feature id for the '<em><b>Uid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -800,6 +791,15 @@ public interface ICalPackage extends EPackage {
 	 * @ordered
 	 */
 	int TO_DO_C__DTSTART = COMPONENT_ACTION__DTSTART;
+
+	/**
+	 * The feature id for the '<em><b>Dtstamp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TO_DO_C__DTSTAMP = COMPONENT_ACTION__DTSTAMP;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -1054,13 +1054,13 @@ public interface ICalPackage extends EPackage {
 	int TO_DO_C__ALARMC = COMPONENT_ACTION_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Dtend</b></em>' containment reference.
+	 * The feature id for the '<em><b>Due</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TO_DO_C__DTEND = COMPONENT_ACTION_FEATURE_COUNT + 5;
+	int TO_DO_C__DUE = COMPONENT_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>To Do C</em>' class.
@@ -1182,15 +1182,6 @@ public interface ICalPackage extends EPackage {
 	int JOURNAL_C = 6;
 
 	/**
-	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOURNAL_C__DTSTAMP = COMPONENT_ACTION__DTSTAMP;
-
-	/**
 	 * The feature id for the '<em><b>Uid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1207,6 +1198,15 @@ public interface ICalPackage extends EPackage {
 	 * @ordered
 	 */
 	int JOURNAL_C__DTSTART = COMPONENT_ACTION__DTSTART;
+
+	/**
+	 * The feature id for the '<em><b>Dtstamp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNAL_C__DTSTAMP = COMPONENT_ACTION__DTSTAMP;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -1444,15 +1444,6 @@ public interface ICalPackage extends EPackage {
 	int VACATION_C = 7;
 
 	/**
-	 * The feature id for the '<em><b>Dtstamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VACATION_C__DTSTAMP = COMPONENT_REQUIRED__DTSTAMP;
-
-	/**
 	 * The feature id for the '<em><b>Uid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1469,6 +1460,15 @@ public interface ICalPackage extends EPackage {
 	 * @ordered
 	 */
 	int VACATION_C__DTSTART = COMPONENT_REQUIRED__DTSTART;
+
+	/**
+	 * The feature id for the '<em><b>Dtstamp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VACATION_C__DTSTAMP = COMPONENT_REQUIRED__DTSTAMP;
 
 	/**
 	 * The feature id for the '<em><b>Organizer</b></em>' attribute.
@@ -1498,22 +1498,13 @@ public interface ICalPackage extends EPackage {
 	int VACATION_C__CONTACT = COMPONENT_REQUIRED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Dtend</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VACATION_C__DTEND = COMPONENT_REQUIRED_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Attendee</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__ATTENDEE = COMPONENT_REQUIRED_FEATURE_COUNT + 4;
+	int VACATION_C__ATTENDEE = COMPONENT_REQUIRED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute list.
@@ -1522,7 +1513,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__COMMENT = COMPONENT_REQUIRED_FEATURE_COUNT + 5;
+	int VACATION_C__COMMENT = COMPONENT_REQUIRED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Freebusy</b></em>' attribute list.
@@ -1531,7 +1522,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__FREEBUSY = COMPONENT_REQUIRED_FEATURE_COUNT + 6;
+	int VACATION_C__FREEBUSY = COMPONENT_REQUIRED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Rstatus</b></em>' attribute list.
@@ -1540,7 +1531,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__RSTATUS = COMPONENT_REQUIRED_FEATURE_COUNT + 7;
+	int VACATION_C__RSTATUS = COMPONENT_REQUIRED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Xprop</b></em>' attribute list.
@@ -1549,7 +1540,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__XPROP = COMPONENT_REQUIRED_FEATURE_COUNT + 8;
+	int VACATION_C__XPROP = COMPONENT_REQUIRED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Iana prop</b></em>' attribute list.
@@ -1558,7 +1549,16 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VACATION_C__IANA_PROP = COMPONENT_REQUIRED_FEATURE_COUNT + 9;
+	int VACATION_C__IANA_PROP = COMPONENT_REQUIRED_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Dtend</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VACATION_C__DTEND = COMPONENT_REQUIRED_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Vacation C</em>' class.
@@ -2525,15 +2525,15 @@ public interface ICalPackage extends EPackage {
 	EReference getToDoC_Alarmc();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link iCal.ToDoC#getDtend <em>Dtend</em>}'.
+	 * Returns the meta object for the containment reference '{@link iCal.ToDoC#getDue <em>Due</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Dtend</em>'.
-	 * @see iCal.ToDoC#getDtend()
+	 * @return the meta object for the containment reference '<em>Due</em>'.
+	 * @see iCal.ToDoC#getDue()
 	 * @see #getToDoC()
 	 * @generated
 	 */
-	EReference getToDoC_Dtend();
+	EReference getToDoC_Due();
 
 	/**
 	 * Returns the meta object for class '{@link iCal.Calendar <em>Calendar</em>}'.
@@ -2939,15 +2939,15 @@ public interface ICalPackage extends EPackage {
 	EAttribute getVacationC_Contact();
 
 	/**
-	 * Returns the meta object for the attribute '{@link iCal.VacationC#getDtend <em>Dtend</em>}'.
+	 * Returns the meta object for the containment reference '{@link iCal.VacationC#getDtend <em>Dtend</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Dtend</em>'.
+	 * @return the meta object for the containment reference '<em>Dtend</em>'.
 	 * @see iCal.VacationC#getDtend()
 	 * @see #getVacationC()
 	 * @generated
 	 */
-	EAttribute getVacationC_Dtend();
+	EReference getVacationC_Dtend();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link iCal.VacationC#getAttendee <em>Attendee</em>}'.
@@ -3026,15 +3026,15 @@ public interface ICalPackage extends EPackage {
 	EClass getComponentRequired();
 
 	/**
-	 * Returns the meta object for the attribute '{@link iCal.ComponentRequired#getDtstamp <em>Dtstamp</em>}'.
+	 * Returns the meta object for the containment reference '{@link iCal.ComponentRequired#getDtstamp <em>Dtstamp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Dtstamp</em>'.
+	 * @return the meta object for the containment reference '<em>Dtstamp</em>'.
 	 * @see iCal.ComponentRequired#getDtstamp()
 	 * @see #getComponentRequired()
 	 * @generated
 	 */
-	EAttribute getComponentRequired_Dtstamp();
+	EReference getComponentRequired_Dtstamp();
 
 	/**
 	 * Returns the meta object for the attribute '{@link iCal.ComponentRequired#getUid <em>Uid</em>}'.
@@ -3840,12 +3840,12 @@ public interface ICalPackage extends EPackage {
 		EReference TO_DO_C__ALARMC = eINSTANCE.getToDoC_Alarmc();
 
 		/**
-		 * The meta object literal for the '<em><b>Dtend</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Due</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TO_DO_C__DTEND = eINSTANCE.getToDoC_Dtend();
+		EReference TO_DO_C__DUE = eINSTANCE.getToDoC_Due();
 
 		/**
 		 * The meta object literal for the '{@link iCal.impl.CalendarImpl <em>Calendar</em>}' class.
@@ -4152,12 +4152,12 @@ public interface ICalPackage extends EPackage {
 		EAttribute VACATION_C__CONTACT = eINSTANCE.getVacationC_Contact();
 
 		/**
-		 * The meta object literal for the '<em><b>Dtend</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Dtend</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VACATION_C__DTEND = eINSTANCE.getVacationC_Dtend();
+		EReference VACATION_C__DTEND = eINSTANCE.getVacationC_Dtend();
 
 		/**
 		 * The meta object literal for the '<em><b>Attendee</b></em>' attribute list feature.
@@ -4218,12 +4218,12 @@ public interface ICalPackage extends EPackage {
 		EClass COMPONENT_REQUIRED = eINSTANCE.getComponentRequired();
 
 		/**
-		 * The meta object literal for the '<em><b>Dtstamp</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Dtstamp</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPONENT_REQUIRED__DTSTAMP = eINSTANCE.getComponentRequired_Dtstamp();
+		EReference COMPONENT_REQUIRED__DTSTAMP = eINSTANCE.getComponentRequired_Dtstamp();
 
 		/**
 		 * The meta object literal for the '<em><b>Uid</b></em>' attribute feature.

@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link iCal.ToDoC#getGeo <em>Geo</em>}</li>
  *   <li>{@link iCal.ToDoC#getLocation <em>Location</em>}</li>
  *   <li>{@link iCal.ToDoC#getAlarmc <em>Alarmc</em>}</li>
- *   <li>{@link iCal.ToDoC#getDtend <em>Dtend</em>}</li>
+ *   <li>{@link iCal.ToDoC#getDue <em>Due</em>}</li>
  * </ul>
  *
  * @see iCal.ICalPackage#getToDoC()
@@ -127,25 +127,25 @@ public interface ToDoC extends ComponentAction {
 	EList<AlarmC> getAlarmc();
 
 	/**
-	 * Returns the value of the '<em><b>Dtend</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Due</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dtend</em>' containment reference.
-	 * @see #setDtend(DateT)
-	 * @see iCal.ICalPackage#getToDoC_Dtend()
-	 * @model containment="true"
+	 * @return the value of the '<em>Due</em>' containment reference.
+	 * @see #setDue(DateT)
+	 * @see iCal.ICalPackage#getToDoC_Due()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	DateT getDtend();
+	DateT getDue();
 
 	/**
-	 * Sets the value of the '{@link iCal.ToDoC#getDtend <em>Dtend</em>}' containment reference.
+	 * Sets the value of the '{@link iCal.ToDoC#getDue <em>Due</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dtend</em>' containment reference.
-	 * @see #getDtend()
+	 * @param value the new value of the '<em>Due</em>' containment reference.
+	 * @see #getDue()
 	 * @generated
 	 */
-	void setDtend(DateT value);
+	void setDue(DateT value);
 
 } // ToDoC

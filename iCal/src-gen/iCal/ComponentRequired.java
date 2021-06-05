@@ -11,9 +11,9 @@ package iCal;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link iCal.ComponentRequired#getDtstamp <em>Dtstamp</em>}</li>
  *   <li>{@link iCal.ComponentRequired#getUid <em>Uid</em>}</li>
  *   <li>{@link iCal.ComponentRequired#getDtstart <em>Dtstart</em>}</li>
+ *   <li>{@link iCal.ComponentRequired#getDtstamp <em>Dtstamp</em>}</li>
  * </ul>
  *
  * @see iCal.ICalPackage#getComponentRequired()
@@ -22,26 +22,26 @@ package iCal;
  */
 public interface ComponentRequired extends Component {
 	/**
-	 * Returns the value of the '<em><b>Dtstamp</b></em>' attribute.
+	 * Returns the value of the '<em><b>Dtstamp</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dtstamp</em>' attribute.
-	 * @see #setDtstamp(String)
+	 * @return the value of the '<em>Dtstamp</em>' containment reference.
+	 * @see #setDtstamp(DateT)
 	 * @see iCal.ICalPackage#getComponentRequired_Dtstamp()
-	 * @model dataType="iCal.String"
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getDtstamp();
+	DateT getDtstamp();
 
 	/**
-	 * Sets the value of the '{@link iCal.ComponentRequired#getDtstamp <em>Dtstamp</em>}' attribute.
+	 * Sets the value of the '{@link iCal.ComponentRequired#getDtstamp <em>Dtstamp</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dtstamp</em>' attribute.
+	 * @param value the new value of the '<em>Dtstamp</em>' containment reference.
 	 * @see #getDtstamp()
 	 * @generated
 	 */
-	void setDtstamp(String value);
+	void setDtstamp(DateT value);
 
 	/**
 	 * Returns the value of the '<em><b>Uid</b></em>' attribute.

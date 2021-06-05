@@ -98,16 +98,12 @@ ruleiCalFormat returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='\r\n'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getICalFormatAccess().getCarriageReturnCrLineFeedLfKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getICalFormatAccess().getCalendarCalendarParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getICalFormatAccess().getCalendarCalendarParserRuleCall_2_0());
 				}
-				lv_calendar_3_0=ruleCalendar
+				lv_calendar_2_0=ruleCalendar
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getICalFormatRule());
@@ -115,7 +111,7 @@ ruleiCalFormat returns [EObject current=null]
 					set(
 						$current,
 						"calendar",
-						lv_calendar_3_0,
+						lv_calendar_2_0,
 						"xCalendar.MyDsl.Calendar");
 					afterParserOrEnumRuleCall();
 				}
@@ -277,55 +273,25 @@ ruleCalendar returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_1='\r\n'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getCalendarAccess().getCarriageReturnCrLineFeedLfKeyword_1_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCalendarAccess().getComponentComponentParserRuleCall_1_1_0());
+				{
+					newCompositeNode(grammarAccess.getCalendarAccess().getComponentComponentParserRuleCall_1_0());
+				}
+				lv_component_1_0=ruleComponent
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCalendarRule());
 					}
-					lv_component_2_0=ruleComponent
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCalendarRule());
-						}
-						add(
-							$current,
-							"component",
-							lv_component_2_0,
-							"xCalendar.MyDsl.Component");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					add(
+						$current,
+						"component",
+						lv_component_1_0,
+						"xCalendar.MyDsl.Component");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)*
 	)
-;
-
-// Entry rule entryRuleInteger
-entryRuleInteger returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getIntegerRule()); }
-	iv_ruleInteger=ruleInteger
-	{ $current=$iv_ruleInteger.current.getText(); }
-	EOF;
-
-// Rule Integer
-ruleInteger returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	this_INT_0=RULE_INT
-	{
-		$current.merge(this_INT_0);
-	}
-	{
-		newLeafNode(this_INT_0, grammarAccess.getIntegerAccess().getINTTerminalRuleCall());
-	}
 ;
 
 // Entry rule entryRuleMonth
@@ -513,138 +479,6 @@ ruleMonthNameT returns [EObject current=null]
 					}
 					setWithLastConsumed($current, "value", lv_value_0_12, null);
 				}
-				    |
-				lv_value_0_13='janvier'
-				{
-					newLeafNode(lv_value_0_13, grammarAccess.getMonthNameTAccess().getValueJanvierKeyword_0_12());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_13, null);
-				}
-				    |
-				lv_value_0_14='fevrier'
-				{
-					newLeafNode(lv_value_0_14, grammarAccess.getMonthNameTAccess().getValueFevrierKeyword_0_13());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_14, null);
-				}
-				    |
-				lv_value_0_15='mars'
-				{
-					newLeafNode(lv_value_0_15, grammarAccess.getMonthNameTAccess().getValueMarsKeyword_0_14());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_15, null);
-				}
-				    |
-				lv_value_0_16='avril'
-				{
-					newLeafNode(lv_value_0_16, grammarAccess.getMonthNameTAccess().getValueAvrilKeyword_0_15());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_16, null);
-				}
-				    |
-				lv_value_0_17='mai'
-				{
-					newLeafNode(lv_value_0_17, grammarAccess.getMonthNameTAccess().getValueMaiKeyword_0_16());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_17, null);
-				}
-				    |
-				lv_value_0_18='juin'
-				{
-					newLeafNode(lv_value_0_18, grammarAccess.getMonthNameTAccess().getValueJuinKeyword_0_17());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_18, null);
-				}
-				    |
-				lv_value_0_19='juillet'
-				{
-					newLeafNode(lv_value_0_19, grammarAccess.getMonthNameTAccess().getValueJuilletKeyword_0_18());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_19, null);
-				}
-				    |
-				lv_value_0_20='aout'
-				{
-					newLeafNode(lv_value_0_20, grammarAccess.getMonthNameTAccess().getValueAoutKeyword_0_19());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_20, null);
-				}
-				    |
-				lv_value_0_21='septembre'
-				{
-					newLeafNode(lv_value_0_21, grammarAccess.getMonthNameTAccess().getValueSeptembreKeyword_0_20());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_21, null);
-				}
-				    |
-				lv_value_0_22='octobre'
-				{
-					newLeafNode(lv_value_0_22, grammarAccess.getMonthNameTAccess().getValueOctobreKeyword_0_21());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_22, null);
-				}
-				    |
-				lv_value_0_23='novembre'
-				{
-					newLeafNode(lv_value_0_23, grammarAccess.getMonthNameTAccess().getValueNovembreKeyword_0_22());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_23, null);
-				}
-				    |
-				lv_value_0_24='decembre'
-				{
-					newLeafNode(lv_value_0_24, grammarAccess.getMonthNameTAccess().getValueDecembreKeyword_0_23());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_24, null);
-				}
 			)
 		)
 	)
@@ -667,9 +501,9 @@ ruleMonthT returns [EObject current=null]
 }:
 	(
 		(
-			lv_value_0_0=RULE_TWO_DIGIT
+			lv_value_0_0=RULE_INT
 			{
-				newLeafNode(lv_value_0_0, grammarAccess.getMonthTAccess().getValueTWO_DIGITTerminalRuleCall_0());
+				newLeafNode(lv_value_0_0, grammarAccess.getMonthTAccess().getValueINTTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -679,7 +513,7 @@ ruleMonthT returns [EObject current=null]
 					$current,
 					"value",
 					lv_value_0_0,
-					"xCalendar.MyDsl.TWO_DIGIT");
+					"xCalendar.MyDsl.INT");
 			}
 		)
 	)
@@ -703,9 +537,28 @@ ruleDateT returns [EObject current=null]
 	(
 		(
 			(
-				lv_day_name_0_0=RULE_STR
 				{
-					newLeafNode(lv_day_name_0_0, grammarAccess.getDateTAccess().getDay_nameSTRTerminalRuleCall_0_0());
+					newCompositeNode(grammarAccess.getDateTAccess().getDay_nameDayNameParserRuleCall_0_0());
+				}
+				lv_day_name_0_0=ruleDayName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDateTRule());
+					}
+					set(
+						$current,
+						"day_name",
+						lv_day_name_0_0,
+						"xCalendar.MyDsl.DayName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				lv_day_1_0=RULE_INT
+				{
+					newLeafNode(lv_day_1_0, grammarAccess.getDateTAccess().getDayINTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -713,28 +566,9 @@ ruleDateT returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"day_name",
-						lv_day_name_0_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getDateTAccess().getDayIntegerParserRuleCall_1_0());
-				}
-				lv_day_1_0=ruleInteger
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDateTRule());
-					}
-					set(
-						$current,
 						"day",
 						lv_day_1_0,
-						"xCalendar.MyDsl.Integer");
-					afterParserOrEnumRuleCall();
+						"xCalendar.MyDsl.INT");
 				}
 			)
 		)
@@ -759,161 +593,188 @@ ruleDateT returns [EObject current=null]
 		)
 		(
 			(
+				lv_year_3_0=RULE_INT
 				{
-					newCompositeNode(grammarAccess.getDateTAccess().getYearIntegerParserRuleCall_3_0());
+					newLeafNode(lv_year_3_0, grammarAccess.getDateTAccess().getYearINTTerminalRuleCall_3_0());
 				}
-				lv_year_3_0=ruleInteger
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDateTRule());
+						$current = createModelElement(grammarAccess.getDateTRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"year",
 						lv_year_3_0,
-						"xCalendar.MyDsl.Integer");
-					afterParserOrEnumRuleCall();
+						"xCalendar.MyDsl.INT");
 				}
 			)
 		)?
 		(
 			(
-				otherlv_4='\u00E0 '
+				otherlv_4=' a '
 				{
-					newLeafNode(otherlv_4, grammarAccess.getDateTAccess().getLatinSmallLetterAWithGraveSpaceKeyword_4_0_0());
-				}
-				    |
-				otherlv_5='a '
-				{
-					newLeafNode(otherlv_5, grammarAccess.getDateTAccess().getAKeyword_4_0_1());
+					newLeafNode(otherlv_4, grammarAccess.getDateTAccess().getAKeyword_4_0());
 				}
 			)?
 			(
 				(
+					lv_hours_5_0=RULE_INT
 					{
-						newCompositeNode(grammarAccess.getDateTAccess().getHoursIntegerParserRuleCall_4_1_0());
+						newLeafNode(lv_hours_5_0, grammarAccess.getDateTAccess().getHoursINTTerminalRuleCall_4_1_0());
 					}
-					lv_hours_6_0=ruleInteger
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getDateTRule());
+							$current = createModelElement(grammarAccess.getDateTRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"hours",
-							lv_hours_6_0,
-							"xCalendar.MyDsl.Integer");
-						afterParserOrEnumRuleCall();
+							lv_hours_5_0,
+							"xCalendar.MyDsl.INT");
 					}
 				)
 			)
 			(
-				otherlv_7='h'
+				otherlv_6='h'
 				{
-					newLeafNode(otherlv_7, grammarAccess.getDateTAccess().getHKeyword_4_2_0());
+					newLeafNode(otherlv_6, grammarAccess.getDateTAccess().getHKeyword_4_2_0());
 				}
 				    |
-				otherlv_8=':'
+				otherlv_7=':'
 				{
-					newLeafNode(otherlv_8, grammarAccess.getDateTAccess().getColonKeyword_4_2_1());
+					newLeafNode(otherlv_7, grammarAccess.getDateTAccess().getColonKeyword_4_2_1());
 				}
 				    |
-				otherlv_9='heure '
+				otherlv_8=' heure '
 				{
-					newLeafNode(otherlv_9, grammarAccess.getDateTAccess().getHeureKeyword_4_2_2());
+					newLeafNode(otherlv_8, grammarAccess.getDateTAccess().getHeureKeyword_4_2_2());
 				}
 			)
 			(
 				(
 					(
+						lv_minutes_9_0=RULE_INT
 						{
-							newCompositeNode(grammarAccess.getDateTAccess().getMinutesIntegerParserRuleCall_4_3_0_0());
+							newLeafNode(lv_minutes_9_0, grammarAccess.getDateTAccess().getMinutesINTTerminalRuleCall_4_3_0_0());
 						}
-						lv_minutes_10_0=ruleInteger
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getDateTRule());
+								$current = createModelElement(grammarAccess.getDateTRule());
 							}
-							set(
+							setWithLastConsumed(
 								$current,
 								"minutes",
-								lv_minutes_10_0,
-								"xCalendar.MyDsl.Integer");
-							afterParserOrEnumRuleCall();
+								lv_minutes_9_0,
+								"xCalendar.MyDsl.INT");
 						}
 					)
 				)
 				(
-					otherlv_11='m'
+					otherlv_10='m'
 					{
-						newLeafNode(otherlv_11, grammarAccess.getDateTAccess().getMKeyword_4_3_1_0());
+						newLeafNode(otherlv_10, grammarAccess.getDateTAccess().getMKeyword_4_3_1_0());
 					}
 					    |
-					otherlv_12='mn'
+					otherlv_11='mn'
 					{
-						newLeafNode(otherlv_12, grammarAccess.getDateTAccess().getMnKeyword_4_3_1_1());
+						newLeafNode(otherlv_11, grammarAccess.getDateTAccess().getMnKeyword_4_3_1_1());
 					}
 					    |
-					otherlv_13='min'
+					otherlv_12='min'
 					{
-						newLeafNode(otherlv_13, grammarAccess.getDateTAccess().getMinKeyword_4_3_1_2());
+						newLeafNode(otherlv_12, grammarAccess.getDateTAccess().getMinKeyword_4_3_1_2());
 					}
 					    |
-					otherlv_14='minutes'
+					otherlv_13=' minutes'
 					{
-						newLeafNode(otherlv_14, grammarAccess.getDateTAccess().getMinutesKeyword_4_3_1_3());
+						newLeafNode(otherlv_13, grammarAccess.getDateTAccess().getMinutesKeyword_4_3_1_3());
 					}
 					    |
-					otherlv_15=':'
+					otherlv_14=':'
 					{
-						newLeafNode(otherlv_15, grammarAccess.getDateTAccess().getColonKeyword_4_3_1_4());
+						newLeafNode(otherlv_14, grammarAccess.getDateTAccess().getColonKeyword_4_3_1_4());
 					}
 				)?
 			)?
 			(
 				(
-					otherlv_16=' et '
+					otherlv_15=' et '
 					{
-						newLeafNode(otherlv_16, grammarAccess.getDateTAccess().getEtKeyword_4_4_0());
+						newLeafNode(otherlv_15, grammarAccess.getDateTAccess().getEtKeyword_4_4_0());
 					}
 				)?
 				(
 					(
+						lv_seconds_16_0=RULE_INT
 						{
-							newCompositeNode(grammarAccess.getDateTAccess().getSecondsIntegerParserRuleCall_4_4_1_0());
+							newLeafNode(lv_seconds_16_0, grammarAccess.getDateTAccess().getSecondsINTTerminalRuleCall_4_4_1_0());
 						}
-						lv_seconds_17_0=ruleInteger
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getDateTRule());
+								$current = createModelElement(grammarAccess.getDateTRule());
 							}
-							set(
+							setWithLastConsumed(
 								$current,
 								"seconds",
-								lv_seconds_17_0,
-								"xCalendar.MyDsl.Integer");
-							afterParserOrEnumRuleCall();
+								lv_seconds_16_0,
+								"xCalendar.MyDsl.INT");
 						}
 					)
 				)
 				(
-					otherlv_18='s'
+					otherlv_17='s'
 					{
-						newLeafNode(otherlv_18, grammarAccess.getDateTAccess().getSKeyword_4_4_2_0());
+						newLeafNode(otherlv_17, grammarAccess.getDateTAccess().getSKeyword_4_4_2_0());
 					}
 					    |
-					otherlv_19='sec'
+					otherlv_18='sec'
 					{
-						newLeafNode(otherlv_19, grammarAccess.getDateTAccess().getSecKeyword_4_4_2_1());
+						newLeafNode(otherlv_18, grammarAccess.getDateTAccess().getSecKeyword_4_4_2_1());
 					}
 					    |
-					otherlv_20='secondes'
+					otherlv_19=' secondes '
 					{
-						newLeafNode(otherlv_20, grammarAccess.getDateTAccess().getSecondesKeyword_4_4_2_2());
+						newLeafNode(otherlv_19, grammarAccess.getDateTAccess().getSecondesKeyword_4_4_2_2());
 					}
 				)?
 			)?
 		)?
+	)
+;
+
+// Entry rule entryRuleClassification
+entryRuleClassification returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getClassificationRule()); }
+	iv_ruleClassification=ruleClassification
+	{ $current=$iv_ruleClassification.current.getText(); }
+	EOF;
+
+// Rule Classification
+ruleClassification returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='PUBLIC'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getClassificationAccess().getPUBLICKeyword_0());
+		}
+		    |
+		kw='PRIVATE'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getClassificationAccess().getPRIVATEKeyword_1());
+		}
+		    |
+		kw='CONFIDENTIAL'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getClassificationAccess().getCONFIDENTIALKeyword_2());
+		}
 	)
 ;
 
@@ -939,13 +800,13 @@ ruleStatus returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 			newLeafNode(kw, grammarAccess.getStatusAccess().getTentativeKeyword_0());
 		}
 		    |
-		kw='Confirm\u00E9'
+		kw='Confirm\uFFFD'
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getStatusAccess().getConfirmKeyword_1());
 		}
 		    |
-		kw='Annul\u00E9'
+		kw='Annul\uFFFD'
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getStatusAccess().getAnnulKeyword_2());
@@ -980,7 +841,7 @@ ruleEventStatus returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTok
 			afterParserOrEnumRuleCall();
 		}
 		    |
-		kw='Compl\u00E9t\u00E9'
+		kw='Compl\uFFFDt\uFFFD'
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getEventStatusAccess().getComplTKeyword_1());
@@ -990,6 +851,66 @@ ruleEventStatus returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTok
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getEventStatusAccess().getEnCoursKeyword_2());
+		}
+	)
+;
+
+// Entry rule entryRuleDayName
+entryRuleDayName returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDayNameRule()); }
+	iv_ruleDayName=ruleDayName
+	{ $current=$iv_ruleDayName.current.getText(); }
+	EOF;
+
+// Rule DayName
+ruleDayName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='Lundi'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDayNameAccess().getLundiKeyword_0());
+		}
+		    |
+		kw='Mardi'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDayNameAccess().getMardiKeyword_1());
+		}
+		    |
+		kw='Mercredi'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDayNameAccess().getMercrediKeyword_2());
+		}
+		    |
+		kw='Jeudi'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDayNameAccess().getJeudiKeyword_3());
+		}
+		    |
+		kw='Vendredi'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDayNameAccess().getVendrediKeyword_4());
+		}
+		    |
+		kw='Samedi'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDayNameAccess().getSamediKeyword_5());
+		}
+		    |
+		kw='Dimanche'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDayNameAccess().getDimancheKeyword_6());
 		}
 	)
 ;
@@ -1010,669 +931,882 @@ ruleEventC returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='RDV {'
+		otherlv_0='EventC'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getEventCAccess().getRDVKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getEventCAccess().getEventCKeyword_0());
 		}
-		otherlv_1='Date: '
+		otherlv_1='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getEventCAccess().getDateKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getEventCAccess().getLeftCurlyBracketKeyword_1());
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getEventCAccess().getDtstartDateTParserRuleCall_2_0());
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getEventCAccess().getUnorderedGroup_2());
 				}
-				lv_dtstart_2_0=ruleDateT
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEventCRule());
+				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 0);
 					}
-					set(
-						$current,
-						"dtstart",
-						lv_dtstart_2_0,
-						"xCalendar.MyDsl.DateT");
-					afterParserOrEnumRuleCall();
-				}
+								({true}?=>(otherlv_3='Date:'
+								{
+									newLeafNode(otherlv_3, grammarAccess.getEventCAccess().getDateKeyword_2_0_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getEventCAccess().getDtstartDateTParserRuleCall_2_0_1_0());
+										}
+										lv_dtstart_4_0=ruleDateT
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getEventCRule());
+											}
+											set(
+												$current,
+												"dtstart",
+												lv_dtstart_4_0,
+												"xCalendar.MyDsl.DateT");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 1);
+					}
+								({true}?=>(otherlv_5='Identifiant:'
+								{
+									newLeafNode(otherlv_5, grammarAccess.getEventCAccess().getIdentifiantKeyword_2_1_0());
+								}
+								(
+									(
+										lv_uid_6_0=RULE_STR
+										{
+											newLeafNode(lv_uid_6_0, grammarAccess.getEventCAccess().getUidSTRTerminalRuleCall_2_1_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"uid",
+												lv_uid_6_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 2);
+					}
+								({true}?=>(otherlv_7='Organisateur:'
+								{
+									newLeafNode(otherlv_7, grammarAccess.getEventCAccess().getOrganisateurKeyword_2_2_0());
+								}
+								(
+									(
+										lv_organizer_8_0=RULE_STR
+										{
+											newLeafNode(lv_organizer_8_0, grammarAccess.getEventCAccess().getOrganizerSTRTerminalRuleCall_2_2_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"organizer",
+												lv_organizer_8_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 3);
+					}
+								({true}?=>(otherlv_9='Objet:'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getEventCAccess().getObjetKeyword_2_3_0());
+								}
+								(
+									(
+										lv_summary_10_0=RULE_STR
+										{
+											newLeafNode(lv_summary_10_0, grammarAccess.getEventCAccess().getSummarySTRTerminalRuleCall_2_3_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"summary",
+												lv_summary_10_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 4);
+					}
+								({true}?=>(otherlv_11='URL:'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getEventCAccess().getURLKeyword_2_4_0());
+								}
+								(
+									(
+										lv_url_12_0=RULE_STR
+										{
+											newLeafNode(lv_url_12_0, grammarAccess.getEventCAccess().getUrlSTRTerminalRuleCall_2_4_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"url",
+												lv_url_12_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 5)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 5);
+					}
+								({true}?=>(otherlv_13='Attachements:'
+								{
+									newLeafNode(otherlv_13, grammarAccess.getEventCAccess().getAttachementsKeyword_2_5_0());
+								}
+								(
+									(
+										lv_attach_14_0=RULE_STR
+										{
+											newLeafNode(lv_attach_14_0, grammarAccess.getEventCAccess().getAttachSTRTerminalRuleCall_2_5_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"attach",
+												lv_attach_14_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_15=','
+									{
+										newLeafNode(otherlv_15, grammarAccess.getEventCAccess().getCommaKeyword_2_5_2_0());
+									}
+									(
+										(
+											lv_attach_16_0=RULE_STR
+											{
+												newLeafNode(lv_attach_16_0, grammarAccess.getEventCAccess().getAttachSTRTerminalRuleCall_2_5_2_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getEventCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"attach",
+													lv_attach_16_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 6)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 6);
+					}
+								({true}?=>(otherlv_17='Invites:'
+								{
+									newLeafNode(otherlv_17, grammarAccess.getEventCAccess().getInvitesKeyword_2_6_0());
+								}
+								(
+									(
+										lv_attendee_18_0=RULE_STR
+										{
+											newLeafNode(lv_attendee_18_0, grammarAccess.getEventCAccess().getAttendeeSTRTerminalRuleCall_2_6_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"attendee",
+												lv_attendee_18_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_19=','
+									{
+										newLeafNode(otherlv_19, grammarAccess.getEventCAccess().getCommaKeyword_2_6_2_0());
+									}
+									(
+										(
+											lv_attendee_20_0=RULE_STR
+											{
+												newLeafNode(lv_attendee_20_0, grammarAccess.getEventCAccess().getAttendeeSTRTerminalRuleCall_2_6_2_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getEventCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"attendee",
+													lv_attendee_20_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 7)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 7);
+					}
+								({true}?=>(otherlv_21='Categories:'
+								{
+									newLeafNode(otherlv_21, grammarAccess.getEventCAccess().getCategoriesKeyword_2_7_0());
+								}
+								(
+									(
+										lv_categories_22_0=RULE_STR
+										{
+											newLeafNode(lv_categories_22_0, grammarAccess.getEventCAccess().getCategoriesSTRTerminalRuleCall_2_7_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"categories",
+												lv_categories_22_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_23=','
+									{
+										newLeafNode(otherlv_23, grammarAccess.getEventCAccess().getCommaKeyword_2_7_2_0());
+									}
+									(
+										(
+											lv_categories_24_0=RULE_STR
+											{
+												newLeafNode(lv_categories_24_0, grammarAccess.getEventCAccess().getCategoriesSTRTerminalRuleCall_2_7_2_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getEventCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"categories",
+													lv_categories_24_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 8)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 8);
+					}
+								({true}?=>(otherlv_25='Commentaire:'
+								{
+									newLeafNode(otherlv_25, grammarAccess.getEventCAccess().getCommentaireKeyword_2_8_0());
+								}
+								(
+									(
+										lv_comment_26_0=RULE_STR
+										{
+											newLeafNode(lv_comment_26_0, grammarAccess.getEventCAccess().getCommentSTRTerminalRuleCall_2_8_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"comment",
+												lv_comment_26_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_27=','
+									{
+										newLeafNode(otherlv_27, grammarAccess.getEventCAccess().getCommaKeyword_2_8_2_0());
+									}
+									(
+										(
+											lv_comment_28_0=RULE_STR
+											{
+												newLeafNode(lv_comment_28_0, grammarAccess.getEventCAccess().getCommentSTRTerminalRuleCall_2_8_2_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getEventCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"comment",
+													lv_comment_28_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 9)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 9);
+					}
+								({true}?=>(otherlv_29='Contact:'
+								{
+									newLeafNode(otherlv_29, grammarAccess.getEventCAccess().getContactKeyword_2_9_0());
+								}
+								(
+									(
+										lv_contact_30_0=RULE_STR
+										{
+											newLeafNode(lv_contact_30_0, grammarAccess.getEventCAccess().getContactSTRTerminalRuleCall_2_9_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"contact",
+												lv_contact_30_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_31=','
+									{
+										newLeafNode(otherlv_31, grammarAccess.getEventCAccess().getCommaKeyword_2_9_2_0());
+									}
+									(
+										(
+											lv_contact_32_0=RULE_STR
+											{
+												newLeafNode(lv_contact_32_0, grammarAccess.getEventCAccess().getContactSTRTerminalRuleCall_2_9_2_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getEventCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"contact",
+													lv_contact_32_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 10)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 10);
+					}
+								({true}?=>(otherlv_33='Status:'
+								{
+									newLeafNode(otherlv_33, grammarAccess.getEventCAccess().getStatusKeyword_2_10_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getEventCAccess().getRstatusEventStatusParserRuleCall_2_10_1_0());
+										}
+										lv_rstatus_34_0=ruleEventStatus
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getEventCRule());
+											}
+											add(
+												$current,
+												"rstatus",
+												lv_rstatus_34_0,
+												"xCalendar.MyDsl.EventStatus");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_35=','
+									{
+										newLeafNode(otherlv_35, grammarAccess.getEventCAccess().getCommaKeyword_2_10_2_0());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getEventCAccess().getRstatusEventStatusParserRuleCall_2_10_2_1_0());
+											}
+											lv_rstatus_36_0=ruleEventStatus
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getEventCRule());
+												}
+												add(
+													$current,
+													"rstatus",
+													lv_rstatus_36_0,
+													"xCalendar.MyDsl.EventStatus");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+								)*
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 11)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 11);
+					}
+								({true}?=>(otherlv_37='Relier a:'
+								{
+									newLeafNode(otherlv_37, grammarAccess.getEventCAccess().getRelierAKeyword_2_11_0());
+								}
+								(
+									(
+										lv_related_38_0=RULE_STR
+										{
+											newLeafNode(lv_related_38_0, grammarAccess.getEventCAccess().getRelatedSTRTerminalRuleCall_2_11_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"related",
+												lv_related_38_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_39=','
+									{
+										newLeafNode(otherlv_39, grammarAccess.getEventCAccess().getCommaKeyword_2_11_2_0());
+									}
+									(
+										(
+											lv_related_40_0=RULE_STR
+											{
+												newLeafNode(lv_related_40_0, grammarAccess.getEventCAccess().getRelatedSTRTerminalRuleCall_2_11_2_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getEventCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"related",
+													lv_related_40_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 12)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 12);
+					}
+								({true}?=>(otherlv_41='Resources:'
+								{
+									newLeafNode(otherlv_41, grammarAccess.getEventCAccess().getResourcesKeyword_2_12_0());
+								}
+								(
+									(
+										lv_resources_42_0=RULE_STR
+										{
+											newLeafNode(lv_resources_42_0, grammarAccess.getEventCAccess().getResourcesSTRTerminalRuleCall_2_12_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"resources",
+												lv_resources_42_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_43=','
+									{
+										newLeafNode(otherlv_43, grammarAccess.getEventCAccess().getCommaKeyword_2_12_2_0());
+									}
+									(
+										(
+											lv_resources_44_0=RULE_STR
+											{
+												newLeafNode(lv_resources_44_0, grammarAccess.getEventCAccess().getResourcesSTRTerminalRuleCall_2_12_2_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getEventCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"resources",
+													lv_resources_44_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 13)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 13);
+					}
+								({true}?=>(otherlv_45='Description:'
+								{
+									newLeafNode(otherlv_45, grammarAccess.getEventCAccess().getDescriptionKeyword_2_13_0());
+								}
+								(
+									(
+										lv_description_46_0=RULE_STR
+										{
+											newLeafNode(lv_description_46_0, grammarAccess.getEventCAccess().getDescriptionSTRTerminalRuleCall_2_13_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"description",
+												lv_description_46_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 14)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 14);
+					}
+								({true}?=>(otherlv_47='Priorite:'
+								{
+									newLeafNode(otherlv_47, grammarAccess.getEventCAccess().getPrioriteKeyword_2_14_0());
+								}
+								(
+									(
+										lv_priority_48_0=RULE_STR
+										{
+											newLeafNode(lv_priority_48_0, grammarAccess.getEventCAccess().getPrioritySTRTerminalRuleCall_2_14_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"priority",
+												lv_priority_48_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 15)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 15);
+					}
+								({true}?=>(otherlv_49='Lieu:'
+								{
+									newLeafNode(otherlv_49, grammarAccess.getEventCAccess().getLieuKeyword_2_15_0());
+								}
+								(
+									(
+										lv_location_50_0=RULE_STR
+										{
+											newLeafNode(lv_location_50_0, grammarAccess.getEventCAccess().getLocationSTRTerminalRuleCall_2_15_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getEventCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"location",
+												lv_location_50_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 16)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 16);
+					}
+								({true}?=>(otherlv_51='Fin:'
+								{
+									newLeafNode(otherlv_51, grammarAccess.getEventCAccess().getFinKeyword_2_16_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getEventCAccess().getDtendDateTParserRuleCall_2_16_1_0());
+										}
+										lv_dtend_52_0=ruleDateT
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getEventCRule());
+											}
+											set(
+												$current,
+												"dtend",
+												lv_dtend_52_0,
+												"xCalendar.MyDsl.DateT");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 17)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 17);
+					}
+								({true}?=>(otherlv_53='Classe:'
+								{
+									newLeafNode(otherlv_53, grammarAccess.getEventCAccess().getClasseKeyword_2_17_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getEventCAccess().getClassClassificationParserRuleCall_2_17_1_0());
+										}
+										lv_class_54_0=ruleClassification
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getEventCRule());
+											}
+											set(
+												$current,
+												"class",
+												lv_class_54_0,
+												"xCalendar.MyDsl.Classification");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 18)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEventCAccess().getUnorderedGroup_2(), 18);
+					}
+								({true}?=>(otherlv_55='Alarmes:'
+								{
+									newLeafNode(otherlv_55, grammarAccess.getEventCAccess().getAlarmesKeyword_2_18_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getEventCAccess().getAlarmcAlarmCParserRuleCall_2_18_1_0());
+										}
+										lv_alarmc_56_0=ruleAlarmC
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getEventCRule());
+											}
+											add(
+												$current,
+												"alarmc",
+												lv_alarmc_56_0,
+												"xCalendar.MyDsl.AlarmC");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_57=','
+									{
+										newLeafNode(otherlv_57, grammarAccess.getEventCAccess().getCommaKeyword_2_18_2_0());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getEventCAccess().getAlarmcAlarmCParserRuleCall_2_18_2_1_0());
+											}
+											lv_alarmc_58_0=ruleAlarmC
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getEventCRule());
+												}
+												add(
+													$current,
+													"alarmc",
+													lv_alarmc_58_0,
+													"xCalendar.MyDsl.AlarmC");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+								)*
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+					}
+				)
 			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getEventCAccess().getUnorderedGroup_2())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getEventCAccess().getUnorderedGroup_2());
+				}
 		)
-		(
-			otherlv_3='Identifiant: '
-			{
-				newLeafNode(otherlv_3, grammarAccess.getEventCAccess().getIdentifiantKeyword_3_0());
-			}
-			(
-				(
-					lv_uid_4_0=RULE_STR
-					{
-						newLeafNode(lv_uid_4_0, grammarAccess.getEventCAccess().getUidSTRTerminalRuleCall_3_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"uid",
-							lv_uid_4_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_5='Organisateur: '
-			{
-				newLeafNode(otherlv_5, grammarAccess.getEventCAccess().getOrganisateurKeyword_4_0());
-			}
-			(
-				(
-					lv_organizer_6_0=RULE_STR
-					{
-						newLeafNode(lv_organizer_6_0, grammarAccess.getEventCAccess().getOrganizerSTRTerminalRuleCall_4_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"organizer",
-							lv_organizer_6_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_7='Objet: '
-			{
-				newLeafNode(otherlv_7, grammarAccess.getEventCAccess().getObjetKeyword_5_0());
-			}
-			(
-				(
-					lv_summary_8_0=RULE_STR
-					{
-						newLeafNode(lv_summary_8_0, grammarAccess.getEventCAccess().getSummarySTRTerminalRuleCall_5_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"summary",
-							lv_summary_8_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_9='URL: '
-			{
-				newLeafNode(otherlv_9, grammarAccess.getEventCAccess().getURLKeyword_6_0());
-			}
-			(
-				(
-					lv_url_10_0=RULE_STR
-					{
-						newLeafNode(lv_url_10_0, grammarAccess.getEventCAccess().getUrlSTRTerminalRuleCall_6_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"url",
-							lv_url_10_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_11='Attachements: '
-			{
-				newLeafNode(otherlv_11, grammarAccess.getEventCAccess().getAttachementsKeyword_7_0());
-			}
-			(
-				(
-					lv_attach_12_0=RULE_STR
-					{
-						newLeafNode(lv_attach_12_0, grammarAccess.getEventCAccess().getAttachSTRTerminalRuleCall_7_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"attach",
-							lv_attach_12_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_13=','
-				{
-					newLeafNode(otherlv_13, grammarAccess.getEventCAccess().getCommaKeyword_7_2_0());
-				}
-				(
-					(
-						lv_attach_14_0=RULE_STR
-						{
-							newLeafNode(lv_attach_14_0, grammarAccess.getEventCAccess().getAttachSTRTerminalRuleCall_7_2_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getEventCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"attach",
-								lv_attach_14_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_15='Invit\u00E9s: '
-			{
-				newLeafNode(otherlv_15, grammarAccess.getEventCAccess().getInvitSKeyword_8_0());
-			}
-			(
-				(
-					lv_attendee_16_0=RULE_STR
-					{
-						newLeafNode(lv_attendee_16_0, grammarAccess.getEventCAccess().getAttendeeSTRTerminalRuleCall_8_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"attendee",
-							lv_attendee_16_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_17=','
-				{
-					newLeafNode(otherlv_17, grammarAccess.getEventCAccess().getCommaKeyword_8_2_0());
-				}
-				(
-					(
-						lv_attendee_18_0=RULE_STR
-						{
-							newLeafNode(lv_attendee_18_0, grammarAccess.getEventCAccess().getAttendeeSTRTerminalRuleCall_8_2_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getEventCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"attendee",
-								lv_attendee_18_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_19='Cat\u00E9gories: '
-			{
-				newLeafNode(otherlv_19, grammarAccess.getEventCAccess().getCatGoriesKeyword_9_0());
-			}
-			(
-				(
-					lv_categories_20_0=RULE_STR
-					{
-						newLeafNode(lv_categories_20_0, grammarAccess.getEventCAccess().getCategoriesSTRTerminalRuleCall_9_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"categories",
-							lv_categories_20_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_21=','
-				{
-					newLeafNode(otherlv_21, grammarAccess.getEventCAccess().getCommaKeyword_9_2_0());
-				}
-				(
-					(
-						lv_categories_22_0=RULE_STR
-						{
-							newLeafNode(lv_categories_22_0, grammarAccess.getEventCAccess().getCategoriesSTRTerminalRuleCall_9_2_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getEventCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"categories",
-								lv_categories_22_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_23='Commentaire: '
-			{
-				newLeafNode(otherlv_23, grammarAccess.getEventCAccess().getCommentaireKeyword_10_0());
-			}
-			(
-				(
-					lv_comment_24_0=RULE_STR
-					{
-						newLeafNode(lv_comment_24_0, grammarAccess.getEventCAccess().getCommentSTRTerminalRuleCall_10_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"comment",
-							lv_comment_24_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_25=','
-				{
-					newLeafNode(otherlv_25, grammarAccess.getEventCAccess().getCommaKeyword_10_2_0());
-				}
-				(
-					(
-						lv_comment_26_0=RULE_STR
-						{
-							newLeafNode(lv_comment_26_0, grammarAccess.getEventCAccess().getCommentSTRTerminalRuleCall_10_2_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getEventCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"comment",
-								lv_comment_26_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_27='Contact: '
-			{
-				newLeafNode(otherlv_27, grammarAccess.getEventCAccess().getContactKeyword_11_0());
-			}
-			(
-				(
-					lv_contact_28_0=RULE_STR
-					{
-						newLeafNode(lv_contact_28_0, grammarAccess.getEventCAccess().getContactSTRTerminalRuleCall_11_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"contact",
-							lv_contact_28_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_29=','
-				{
-					newLeafNode(otherlv_29, grammarAccess.getEventCAccess().getCommaKeyword_11_2_0());
-				}
-				(
-					(
-						lv_contact_30_0=RULE_STR
-						{
-							newLeafNode(lv_contact_30_0, grammarAccess.getEventCAccess().getContactSTRTerminalRuleCall_11_2_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getEventCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"contact",
-								lv_contact_30_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_31='Status: '
-			{
-				newLeafNode(otherlv_31, grammarAccess.getEventCAccess().getStatusKeyword_12_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getEventCAccess().getRstatusEventStatusParserRuleCall_12_1_0());
-					}
-					lv_rstatus_32_0=ruleEventStatus
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getEventCRule());
-						}
-						add(
-							$current,
-							"rstatus",
-							lv_rstatus_32_0,
-							"xCalendar.MyDsl.EventStatus");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_33=','
-				{
-					newLeafNode(otherlv_33, grammarAccess.getEventCAccess().getCommaKeyword_12_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getEventCAccess().getRstatusEventStatusParserRuleCall_12_2_1_0());
-						}
-						lv_rstatus_34_0=ruleEventStatus
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getEventCRule());
-							}
-							add(
-								$current,
-								"rstatus",
-								lv_rstatus_34_0,
-								"xCalendar.MyDsl.EventStatus");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_35='Reli\u00E9 \u00E0: '
-			{
-				newLeafNode(otherlv_35, grammarAccess.getEventCAccess().getReliKeyword_13_0());
-			}
-			(
-				(
-					lv_related_36_0=RULE_STR
-					{
-						newLeafNode(lv_related_36_0, grammarAccess.getEventCAccess().getRelatedSTRTerminalRuleCall_13_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"related",
-							lv_related_36_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_37=','
-				{
-					newLeafNode(otherlv_37, grammarAccess.getEventCAccess().getCommaKeyword_13_2_0());
-				}
-				(
-					(
-						lv_related_38_0=RULE_STR
-						{
-							newLeafNode(lv_related_38_0, grammarAccess.getEventCAccess().getRelatedSTRTerminalRuleCall_13_2_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getEventCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"related",
-								lv_related_38_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_39='resources: '
-			{
-				newLeafNode(otherlv_39, grammarAccess.getEventCAccess().getResourcesKeyword_14_0());
-			}
-			(
-				(
-					lv_resources_40_0=RULE_STR
-					{
-						newLeafNode(lv_resources_40_0, grammarAccess.getEventCAccess().getResourcesSTRTerminalRuleCall_14_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"resources",
-							lv_resources_40_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_41=','
-				{
-					newLeafNode(otherlv_41, grammarAccess.getEventCAccess().getCommaKeyword_14_2_0());
-				}
-				(
-					(
-						lv_resources_42_0=RULE_STR
-						{
-							newLeafNode(lv_resources_42_0, grammarAccess.getEventCAccess().getResourcesSTRTerminalRuleCall_14_2_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getEventCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"resources",
-								lv_resources_42_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_43='Description: '
-			{
-				newLeafNode(otherlv_43, grammarAccess.getEventCAccess().getDescriptionKeyword_15_0());
-			}
-			(
-				(
-					lv_description_44_0=RULE_STR
-					{
-						newLeafNode(lv_description_44_0, grammarAccess.getEventCAccess().getDescriptionSTRTerminalRuleCall_15_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"description",
-							lv_description_44_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_45='Priorit\u00E9: '
-			{
-				newLeafNode(otherlv_45, grammarAccess.getEventCAccess().getPrioritKeyword_16_0());
-			}
-			(
-				(
-					lv_priority_46_0=RULE_STR
-					{
-						newLeafNode(lv_priority_46_0, grammarAccess.getEventCAccess().getPrioritySTRTerminalRuleCall_16_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"priority",
-							lv_priority_46_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_47='Lieu: '
-			{
-				newLeafNode(otherlv_47, grammarAccess.getEventCAccess().getLieuKeyword_17_0());
-			}
-			(
-				(
-					lv_location_48_0=RULE_STR
-					{
-						newLeafNode(lv_location_48_0, grammarAccess.getEventCAccess().getLocationSTRTerminalRuleCall_17_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEventCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"location",
-							lv_location_48_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_49='Fin: '
-			{
-				newLeafNode(otherlv_49, grammarAccess.getEventCAccess().getFinKeyword_18_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getEventCAccess().getDtendDateTParserRuleCall_18_1_0());
-					}
-					lv_dtend_50_0=ruleDateT
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getEventCRule());
-						}
-						set(
-							$current,
-							"dtend",
-							lv_dtend_50_0,
-							"xCalendar.MyDsl.DateT");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_51='Rappel: '
-			{
-				newLeafNode(otherlv_51, grammarAccess.getEventCAccess().getRappelKeyword_19_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getEventCAccess().getAlarmcAlarmCParserRuleCall_19_1_0());
-					}
-					lv_alarmc_52_0=ruleAlarmC
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getEventCRule());
-						}
-						add(
-							$current,
-							"alarmc",
-							lv_alarmc_52_0,
-							"xCalendar.MyDsl.AlarmC");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_53=','
-				{
-					newLeafNode(otherlv_53, grammarAccess.getEventCAccess().getCommaKeyword_19_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getEventCAccess().getAlarmcAlarmCParserRuleCall_19_2_1_0());
-						}
-						lv_alarmc_54_0=ruleAlarmC
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getEventCRule());
-							}
-							add(
-								$current,
-								"alarmc",
-								lv_alarmc_54_0,
-								"xCalendar.MyDsl.AlarmC");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		otherlv_55='\r\n'
+		otherlv_59='}'
 		{
-			newLeafNode(otherlv_55, grammarAccess.getEventCAccess().getCarriageReturnCrLineFeedLfKeyword_20());
-		}
-		otherlv_56='}'
-		{
-			newLeafNode(otherlv_56, grammarAccess.getEventCAccess().getRightCurlyBracketKeyword_21());
+			newLeafNode(otherlv_59, grammarAccess.getEventCAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -1701,149 +1835,224 @@ ruleAlarmC returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getAlarmCAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='action'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getAlarmCAccess().getActionKeyword_2());
-		}
 		(
 			(
-				lv_action_3_0=RULE_STR
-				{
-					newLeafNode(lv_action_3_0, grammarAccess.getAlarmCAccess().getActionSTRTerminalRuleCall_3_0());
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getAlarmCAccess().getUnorderedGroup_2());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAlarmCRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"action",
-						lv_action_3_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)
-		otherlv_4='trigger'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getAlarmCAccess().getTriggerKeyword_4());
-		}
-		(
-			(
-				lv_trigger_5_0=RULE_STR
-				{
-					newLeafNode(lv_trigger_5_0, grammarAccess.getAlarmCAccess().getTriggerSTRTerminalRuleCall_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAlarmCRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"trigger",
-						lv_trigger_5_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)
-		(
-			otherlv_6='attach'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getAlarmCAccess().getAttachKeyword_6_0());
-			}
-			(
 				(
-					lv_attach_7_0=RULE_STR
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 0)}?=>(
 					{
-						newLeafNode(lv_attach_7_0, grammarAccess.getAlarmCAccess().getAttachSTRTerminalRuleCall_6_1_0());
+						getUnorderedGroupHelper().select(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 0);
 					}
+								({true}?=>(otherlv_3='Action:'
+								{
+									newLeafNode(otherlv_3, grammarAccess.getAlarmCAccess().getActionKeyword_2_0_0());
+								}
+								(
+									(
+										lv_action_4_0=RULE_STR
+										{
+											newLeafNode(lv_action_4_0, grammarAccess.getAlarmCAccess().getActionSTRTerminalRuleCall_2_0_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getAlarmCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"action",
+												lv_action_4_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getAlarmCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 1)}?=>(
 					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAlarmCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"attach",
-							lv_attach_7_0,
-							"xCalendar.MyDsl.STR");
+						getUnorderedGroupHelper().select(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 1);
+					}
+								({true}?=>(otherlv_5='Trigger:'
+								{
+									newLeafNode(otherlv_5, grammarAccess.getAlarmCAccess().getTriggerKeyword_2_1_0());
+								}
+								(
+									(
+										lv_trigger_6_0=RULE_STR
+										{
+											newLeafNode(lv_trigger_6_0, grammarAccess.getAlarmCAccess().getTriggerSTRTerminalRuleCall_2_1_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getAlarmCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"trigger",
+												lv_trigger_6_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getAlarmCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 2);
+					}
+								({true}?=>(otherlv_7='Attachements:'
+								{
+									newLeafNode(otherlv_7, grammarAccess.getAlarmCAccess().getAttachementsKeyword_2_2_0());
+								}
+								(
+									(
+										lv_attach_8_0=RULE_STR
+										{
+											newLeafNode(lv_attach_8_0, grammarAccess.getAlarmCAccess().getAttachSTRTerminalRuleCall_2_2_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getAlarmCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"attach",
+												lv_attach_8_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getAlarmCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 3);
+					}
+								({true}?=>(otherlv_9='Description:'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getAlarmCAccess().getDescriptionKeyword_2_3_0());
+								}
+								(
+									(
+										lv_description_10_0=RULE_STR
+										{
+											newLeafNode(lv_description_10_0, grammarAccess.getAlarmCAccess().getDescriptionSTRTerminalRuleCall_2_3_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getAlarmCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"description",
+												lv_description_10_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getAlarmCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 4);
+					}
+								({true}?=>(otherlv_11='Type:'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getAlarmCAccess().getTypeKeyword_2_4_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getAlarmCAccess().getTypeAlarmTypeParserRuleCall_2_4_1_0());
+										}
+										lv_type_12_0=ruleAlarmType
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getAlarmCRule());
+											}
+											set(
+												$current,
+												"type",
+												lv_type_12_0,
+												"xCalendar.MyDsl.AlarmType");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getAlarmCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 5)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getAlarmCAccess().getUnorderedGroup_2(), 5);
+					}
+								({true}?=>(otherlv_13='Temps:'
+								{
+									newLeafNode(otherlv_13, grammarAccess.getAlarmCAccess().getTempsKeyword_2_5_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getAlarmCAccess().getTimeComponentAlarmTimeParserRuleCall_2_5_1_0());
+										}
+										lv_time_14_0=ruleComponentAlarmTime
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getAlarmCRule());
+											}
+											set(
+												$current,
+												"time",
+												lv_time_14_0,
+												"xCalendar.MyDsl.ComponentAlarmTime");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getAlarmCAccess().getUnorderedGroup_2());
 					}
 				)
 			)
-		)?
-		(
-			otherlv_8='description'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getAlarmCAccess().getDescriptionKeyword_7_0());
-			}
-			(
-				(
-					lv_description_9_0=RULE_STR
-					{
-						newLeafNode(lv_description_9_0, grammarAccess.getAlarmCAccess().getDescriptionSTRTerminalRuleCall_7_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAlarmCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"description",
-							lv_description_9_0,
-							"xCalendar.MyDsl.STR");
-					}
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getAlarmCAccess().getUnorderedGroup_2())}?
 				)
 			)
-		)?
-		otherlv_10='type'
-		{
-			newLeafNode(otherlv_10, grammarAccess.getAlarmCAccess().getTypeKeyword_8());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAlarmCAccess().getTypeAlarmTypeParserRuleCall_9_0());
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getAlarmCAccess().getUnorderedGroup_2());
 				}
-				lv_type_11_0=ruleAlarmType
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAlarmCRule());
-					}
-					set(
-						$current,
-						"type",
-						lv_type_11_0,
-						"xCalendar.MyDsl.AlarmType");
-					afterParserOrEnumRuleCall();
-				}
-			)
 		)
-		(
-			otherlv_12='time'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getAlarmCAccess().getTimeKeyword_10_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAlarmCAccess().getTimeComponentAlarmTimeParserRuleCall_10_1_0());
-					}
-					lv_time_13_0=ruleComponentAlarmTime
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAlarmCRule());
-						}
-						set(
-							$current,
-							"time",
-							lv_time_13_0,
-							"xCalendar.MyDsl.ComponentAlarmTime");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_14='}'
+		otherlv_15='}'
 		{
-			newLeafNode(otherlv_14, grammarAccess.getAlarmCAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_15, grammarAccess.getAlarmCAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -1872,157 +2081,223 @@ ruletzprop returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getTzpropAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='dtstart'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getTzpropAccess().getDtstartKeyword_2());
-		}
 		(
 			(
-				lv_dtstart_3_0=RULE_STR
-				{
-					newLeafNode(lv_dtstart_3_0, grammarAccess.getTzpropAccess().getDtstartSTRTerminalRuleCall_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTzpropRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"dtstart",
-						lv_dtstart_3_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)
-		otherlv_4='tzoffseto'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getTzpropAccess().getTzoffsetoKeyword_4());
-		}
-		(
-			(
-				lv_tzoffseto_5_0=RULE_STR
-				{
-					newLeafNode(lv_tzoffseto_5_0, grammarAccess.getTzpropAccess().getTzoffsetoSTRTerminalRuleCall_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTzpropRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"tzoffseto",
-						lv_tzoffseto_5_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)
-		otherlv_6='tzoffsetfrom'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getTzpropAccess().getTzoffsetfromKeyword_6());
-		}
-		(
-			(
-				lv_tzoffsetfrom_7_0=RULE_STR
-				{
-					newLeafNode(lv_tzoffsetfrom_7_0, grammarAccess.getTzpropAccess().getTzoffsetfromSTRTerminalRuleCall_7_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTzpropRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"tzoffsetfrom",
-						lv_tzoffsetfrom_7_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)
-		(
-			otherlv_8='rrule'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getTzpropAccess().getRruleKeyword_8_0());
-			}
-			(
-				(
-					lv_rrule_9_0=RULE_STR
-					{
-						newLeafNode(lv_rrule_9_0, grammarAccess.getTzpropAccess().getRruleSTRTerminalRuleCall_8_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTzpropRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"rrule",
-							lv_rrule_9_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_10='opt'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getTzpropAccess().getOptKeyword_9_0());
-			}
-			otherlv_11='{'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getTzpropAccess().getLeftCurlyBracketKeyword_9_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getTzpropAccess().getOptTzpropOptionalParserRuleCall_9_2_0());
-					}
-					lv_opt_12_0=ruletzpropOptional
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTzpropRule());
-						}
-						add(
-							$current,
-							"opt",
-							lv_opt_12_0,
-							"xCalendar.MyDsl.tzpropOptional");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_13=','
-				{
-					newLeafNode(otherlv_13, grammarAccess.getTzpropAccess().getCommaKeyword_9_3_0());
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getTzpropAccess().getUnorderedGroup_2());
 				}
 				(
 					(
-						{
-							newCompositeNode(grammarAccess.getTzpropAccess().getOptTzpropOptionalParserRuleCall_9_3_1_0());
-						}
-						lv_opt_14_0=ruletzpropOptional
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getTzpropRule());
-							}
-							add(
-								$current,
-								"opt",
-								lv_opt_14_0,
-								"xCalendar.MyDsl.tzpropOptional");
-							afterParserOrEnumRuleCall();
-						}
-					)
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTzpropAccess().getUnorderedGroup_2(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTzpropAccess().getUnorderedGroup_2(), 0);
+					}
+								({true}?=>(otherlv_3='Date:'
+								{
+									newLeafNode(otherlv_3, grammarAccess.getTzpropAccess().getDateKeyword_2_0_0());
+								}
+								(
+									(
+										lv_dtstart_4_0=RULE_STR
+										{
+											newLeafNode(lv_dtstart_4_0, grammarAccess.getTzpropAccess().getDtstartSTRTerminalRuleCall_2_0_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTzpropRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"dtstart",
+												lv_dtstart_4_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTzpropAccess().getUnorderedGroup_2());
+					}
 				)
-			)*
-			otherlv_15='}'
-			{
-				newLeafNode(otherlv_15, grammarAccess.getTzpropAccess().getRightCurlyBracketKeyword_9_4());
-			}
-		)?
-		otherlv_16='}'
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTzpropAccess().getUnorderedGroup_2(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTzpropAccess().getUnorderedGroup_2(), 1);
+					}
+								({true}?=>(otherlv_5='Tzoffseto:'
+								{
+									newLeafNode(otherlv_5, grammarAccess.getTzpropAccess().getTzoffsetoKeyword_2_1_0());
+								}
+								(
+									(
+										lv_tzoffseto_6_0=RULE_STR
+										{
+											newLeafNode(lv_tzoffseto_6_0, grammarAccess.getTzpropAccess().getTzoffsetoSTRTerminalRuleCall_2_1_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTzpropRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"tzoffseto",
+												lv_tzoffseto_6_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTzpropAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTzpropAccess().getUnorderedGroup_2(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTzpropAccess().getUnorderedGroup_2(), 2);
+					}
+								({true}?=>(otherlv_7='Tzoffsetfrom:'
+								{
+									newLeafNode(otherlv_7, grammarAccess.getTzpropAccess().getTzoffsetfromKeyword_2_2_0());
+								}
+								(
+									(
+										lv_tzoffsetfrom_8_0=RULE_STR
+										{
+											newLeafNode(lv_tzoffsetfrom_8_0, grammarAccess.getTzpropAccess().getTzoffsetfromSTRTerminalRuleCall_2_2_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTzpropRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"tzoffsetfrom",
+												lv_tzoffsetfrom_8_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTzpropAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTzpropAccess().getUnorderedGroup_2(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTzpropAccess().getUnorderedGroup_2(), 3);
+					}
+								({true}?=>(otherlv_9='Rrule:'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getTzpropAccess().getRruleKeyword_2_3_0());
+								}
+								(
+									(
+										lv_rrule_10_0=RULE_STR
+										{
+											newLeafNode(lv_rrule_10_0, grammarAccess.getTzpropAccess().getRruleSTRTerminalRuleCall_2_3_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTzpropRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"rrule",
+												lv_rrule_10_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTzpropAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTzpropAccess().getUnorderedGroup_2(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTzpropAccess().getUnorderedGroup_2(), 4);
+					}
+								({true}?=>(otherlv_11='Opt'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getTzpropAccess().getOptKeyword_2_4_0());
+								}
+								otherlv_12='{'
+								{
+									newLeafNode(otherlv_12, grammarAccess.getTzpropAccess().getLeftCurlyBracketKeyword_2_4_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getTzpropAccess().getOptTzpropOptionalParserRuleCall_2_4_2_0());
+										}
+										lv_opt_13_0=ruletzpropOptional
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getTzpropRule());
+											}
+											add(
+												$current,
+												"opt",
+												lv_opt_13_0,
+												"xCalendar.MyDsl.tzpropOptional");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_14=','
+									{
+										newLeafNode(otherlv_14, grammarAccess.getTzpropAccess().getCommaKeyword_2_4_3_0());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getTzpropAccess().getOptTzpropOptionalParserRuleCall_2_4_3_1_0());
+											}
+											lv_opt_15_0=ruletzpropOptional
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getTzpropRule());
+												}
+												add(
+													$current,
+													"opt",
+													lv_opt_15_0,
+													"xCalendar.MyDsl.tzpropOptional");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+								)*
+								otherlv_16='}'
+								{
+									newLeafNode(otherlv_16, grammarAccess.getTzpropAccess().getRightCurlyBracketKeyword_2_4_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTzpropAccess().getUnorderedGroup_2());
+					}
+				)
+			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getTzpropAccess().getUnorderedGroup_2())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getTzpropAccess().getUnorderedGroup_2());
+				}
+		)
+		otherlv_17='}'
 		{
-			newLeafNode(otherlv_16, grammarAccess.getTzpropAccess().getRightCurlyBracketKeyword_10());
+			newLeafNode(otherlv_17, grammarAccess.getTzpropAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -2059,128 +2334,187 @@ ruletzpropOptional returns [EObject current=null]
 			newLeafNode(otherlv_2, grammarAccess.getTzpropOptionalAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
-			otherlv_3='comment'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getTzpropOptionalAccess().getCommentKeyword_3_0());
-			}
 			(
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3());
+				}
 				(
-					lv_comment_4_0=RULE_STR
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3(), 0)}?=>(
 					{
-						newLeafNode(lv_comment_4_0, grammarAccess.getTzpropOptionalAccess().getCommentSTRTerminalRuleCall_3_1_0());
+						getUnorderedGroupHelper().select(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3(), 0);
 					}
+								({true}?=>(otherlv_4='Commentaire:'
+								{
+									newLeafNode(otherlv_4, grammarAccess.getTzpropOptionalAccess().getCommentaireKeyword_3_0_0());
+								}
+								(
+									(
+										lv_comment_5_0=RULE_STR
+										{
+											newLeafNode(lv_comment_5_0, grammarAccess.getTzpropOptionalAccess().getCommentSTRTerminalRuleCall_3_0_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTzpropOptionalRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"comment",
+												lv_comment_5_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3(), 1)}?=>(
 					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTzpropOptionalRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"comment",
-							lv_comment_4_0,
-							"xCalendar.MyDsl.STR");
+						getUnorderedGroupHelper().select(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3(), 1);
+					}
+								({true}?=>(otherlv_6='Rdate:'
+								{
+									newLeafNode(otherlv_6, grammarAccess.getTzpropOptionalAccess().getRdateKeyword_3_1_0());
+								}
+								(
+									(
+										lv_rdate_7_0=RULE_STR
+										{
+											newLeafNode(lv_rdate_7_0, grammarAccess.getTzpropOptionalAccess().getRdateSTRTerminalRuleCall_3_1_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTzpropOptionalRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"rdate",
+												lv_rdate_7_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3(), 2);
+					}
+								({true}?=>(otherlv_8='Tzname:'
+								{
+									newLeafNode(otherlv_8, grammarAccess.getTzpropOptionalAccess().getTznameKeyword_3_2_0());
+								}
+								(
+									(
+										lv_tzname_9_0=RULE_STR
+										{
+											newLeafNode(lv_tzname_9_0, grammarAccess.getTzpropOptionalAccess().getTznameSTRTerminalRuleCall_3_2_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTzpropOptionalRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"tzname",
+												lv_tzname_9_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3(), 3);
+					}
+								({true}?=>(otherlv_10='X_prop:'
+								{
+									newLeafNode(otherlv_10, grammarAccess.getTzpropOptionalAccess().getX_propKeyword_3_3_0());
+								}
+								(
+									(
+										lv_x_prop_11_0=RULE_STR
+										{
+											newLeafNode(lv_x_prop_11_0, grammarAccess.getTzpropOptionalAccess().getX_propSTRTerminalRuleCall_3_3_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTzpropOptionalRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"x_prop",
+												lv_x_prop_11_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3(), 4);
+					}
+								({true}?=>(otherlv_12='Iana_prop:'
+								{
+									newLeafNode(otherlv_12, grammarAccess.getTzpropOptionalAccess().getIana_propKeyword_3_4_0());
+								}
+								(
+									(
+										lv_iana_prop_13_0=RULE_STR
+										{
+											newLeafNode(lv_iana_prop_13_0, grammarAccess.getTzpropOptionalAccess().getIana_propSTRTerminalRuleCall_3_4_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTzpropOptionalRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"iana_prop",
+												lv_iana_prop_13_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3());
 					}
 				)
 			)
-		)?
-		(
-			otherlv_5='rdate'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getTzpropOptionalAccess().getRdateKeyword_4_0());
-			}
-			(
-				(
-					lv_rdate_6_0=RULE_STR
-					{
-						newLeafNode(lv_rdate_6_0, grammarAccess.getTzpropOptionalAccess().getRdateSTRTerminalRuleCall_4_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTzpropOptionalRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"rdate",
-							lv_rdate_6_0,
-							"xCalendar.MyDsl.STR");
-					}
+					)*
 				)
 			)
-		)?
-		(
-			otherlv_7='tzname'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getTzpropOptionalAccess().getTznameKeyword_5_0());
-			}
-			(
-				(
-					lv_tzname_8_0=RULE_STR
-					{
-						newLeafNode(lv_tzname_8_0, grammarAccess.getTzpropOptionalAccess().getTznameSTRTerminalRuleCall_5_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTzpropOptionalRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"tzname",
-							lv_tzname_8_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_9='x_prop'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getTzpropOptionalAccess().getX_propKeyword_6_0());
-			}
-			(
-				(
-					lv_x_prop_10_0=RULE_STR
-					{
-						newLeafNode(lv_x_prop_10_0, grammarAccess.getTzpropOptionalAccess().getX_propSTRTerminalRuleCall_6_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTzpropOptionalRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"x_prop",
-							lv_x_prop_10_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_11='iana_prop'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getTzpropOptionalAccess().getIana_propKeyword_7_0());
-			}
-			(
-				(
-					lv_iana_prop_12_0=RULE_STR
-					{
-						newLeafNode(lv_iana_prop_12_0, grammarAccess.getTzpropOptionalAccess().getIana_propSTRTerminalRuleCall_7_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTzpropOptionalRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"iana_prop",
-							lv_iana_prop_12_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		otherlv_13='}'
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getTzpropOptionalAccess().getUnorderedGroup_3());
+				}
+		)
+		otherlv_14='}'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getTzpropOptionalAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_14, grammarAccess.getTzpropOptionalAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -2217,56 +2551,88 @@ ruleComponentAlarmTime returns [EObject current=null]
 			newLeafNode(otherlv_2, grammarAccess.getComponentAlarmTimeAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
-			otherlv_3='duration'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getComponentAlarmTimeAccess().getDurationKeyword_3_0());
-			}
 			(
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getComponentAlarmTimeAccess().getUnorderedGroup_3());
+				}
 				(
-					lv_duration_4_0=RULE_STR
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentAlarmTimeAccess().getUnorderedGroup_3(), 0)}?=>(
 					{
-						newLeafNode(lv_duration_4_0, grammarAccess.getComponentAlarmTimeAccess().getDurationSTRTerminalRuleCall_3_1_0());
+						getUnorderedGroupHelper().select(grammarAccess.getComponentAlarmTimeAccess().getUnorderedGroup_3(), 0);
 					}
+								({true}?=>(otherlv_4='Duree:'
+								{
+									newLeafNode(otherlv_4, grammarAccess.getComponentAlarmTimeAccess().getDureeKeyword_3_0_0());
+								}
+								(
+									(
+										lv_duration_5_0=RULE_STR
+										{
+											newLeafNode(lv_duration_5_0, grammarAccess.getComponentAlarmTimeAccess().getDurationSTRTerminalRuleCall_3_0_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getComponentAlarmTimeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"duration",
+												lv_duration_5_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentAlarmTimeAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentAlarmTimeAccess().getUnorderedGroup_3(), 1)}?=>(
 					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getComponentAlarmTimeRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"duration",
-							lv_duration_4_0,
-							"xCalendar.MyDsl.STR");
+						getUnorderedGroupHelper().select(grammarAccess.getComponentAlarmTimeAccess().getUnorderedGroup_3(), 1);
+					}
+								({true}?=>(otherlv_6='Repeter:'
+								{
+									newLeafNode(otherlv_6, grammarAccess.getComponentAlarmTimeAccess().getRepeterKeyword_3_1_0());
+								}
+								(
+									(
+										lv_repeat_7_0=RULE_STR
+										{
+											newLeafNode(lv_repeat_7_0, grammarAccess.getComponentAlarmTimeAccess().getRepeatSTRTerminalRuleCall_3_1_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getComponentAlarmTimeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"repeat",
+												lv_repeat_7_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentAlarmTimeAccess().getUnorderedGroup_3());
 					}
 				)
 			)
-		)?
-		(
-			otherlv_5='repeat'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getComponentAlarmTimeAccess().getRepeatKeyword_4_0());
-			}
-			(
-				(
-					lv_repeat_6_0=RULE_STR
-					{
-						newLeafNode(lv_repeat_6_0, grammarAccess.getComponentAlarmTimeAccess().getRepeatSTRTerminalRuleCall_4_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getComponentAlarmTimeRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"repeat",
-							lv_repeat_6_0,
-							"xCalendar.MyDsl.STR");
-					}
+					)*
 				)
 			)
-		)?
-		otherlv_7='}'
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getComponentAlarmTimeAccess().getUnorderedGroup_3());
+				}
+		)
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getComponentAlarmTimeAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getComponentAlarmTimeAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -2303,9 +2669,9 @@ ruleComponentAlarmAudioProperty returns [EObject current=null]
 			newLeafNode(otherlv_2, grammarAccess.getComponentAlarmAudioPropertyAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
-			otherlv_3='attach'
+			otherlv_3='Attachements:'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getComponentAlarmAudioPropertyAccess().getAttachKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getComponentAlarmAudioPropertyAccess().getAttachementsKeyword_3_0());
 			}
 			(
 				(
@@ -2357,7 +2723,7 @@ ruleComponentAlarmDispProperty returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getComponentAlarmDispPropertyAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='description'
+		otherlv_2='Description:'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getComponentAlarmDispPropertyAccess().getDescriptionKeyword_2());
 		}
@@ -2410,141 +2776,187 @@ ruleComponentAlarmEmailProperty returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getComponentAlarmEmailPropertyAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='attendee'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttendeeKeyword_2());
-		}
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getComponentAlarmEmailPropertyAccess().getLeftCurlyBracketKeyword_3());
-		}
 		(
 			(
-				lv_attendee_4_0=RULE_STR
-				{
-					newLeafNode(lv_attendee_4_0, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttendeeSTRTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getComponentAlarmEmailPropertyRule());
-					}
-					addWithLastConsumed(
-						$current,
-						"attendee",
-						lv_attendee_4_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)
-		(
-			otherlv_5=','
-			{
-				newLeafNode(otherlv_5, grammarAccess.getComponentAlarmEmailPropertyAccess().getCommaKeyword_5_0());
-			}
-			(
-				(
-					lv_attendee_6_0=RULE_STR
-					{
-						newLeafNode(lv_attendee_6_0, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttendeeSTRTerminalRuleCall_5_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getComponentAlarmEmailPropertyRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"attendee",
-							lv_attendee_6_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)*
-		otherlv_7='}'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getComponentAlarmEmailPropertyAccess().getRightCurlyBracketKeyword_6());
-		}
-		otherlv_8='description'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getComponentAlarmEmailPropertyAccess().getDescriptionKeyword_7());
-		}
-		(
-			(
-				lv_description_9_0=RULE_STR
-				{
-					newLeafNode(lv_description_9_0, grammarAccess.getComponentAlarmEmailPropertyAccess().getDescriptionSTRTerminalRuleCall_8_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getComponentAlarmEmailPropertyRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"description",
-						lv_description_9_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)
-		(
-			otherlv_10='attach'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttachKeyword_9_0());
-			}
-			otherlv_11='{'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getComponentAlarmEmailPropertyAccess().getLeftCurlyBracketKeyword_9_1());
-			}
-			(
-				(
-					lv_attach_12_0=RULE_STR
-					{
-						newLeafNode(lv_attach_12_0, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttachSTRTerminalRuleCall_9_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getComponentAlarmEmailPropertyRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"attach",
-							lv_attach_12_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_13=','
-				{
-					newLeafNode(otherlv_13, grammarAccess.getComponentAlarmEmailPropertyAccess().getCommaKeyword_9_3_0());
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2());
 				}
 				(
 					(
-						lv_attach_14_0=RULE_STR
-						{
-							newLeafNode(lv_attach_14_0, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttachSTRTerminalRuleCall_9_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getComponentAlarmEmailPropertyRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"attach",
-								lv_attach_14_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2(), 0);
+					}
+								({true}?=>(otherlv_3='Invites'
+								{
+									newLeafNode(otherlv_3, grammarAccess.getComponentAlarmEmailPropertyAccess().getInvitesKeyword_2_0_0());
+								}
+								otherlv_4='{'
+								{
+									newLeafNode(otherlv_4, grammarAccess.getComponentAlarmEmailPropertyAccess().getLeftCurlyBracketKeyword_2_0_1());
+								}
+								(
+									(
+										lv_attendee_5_0=RULE_STR
+										{
+											newLeafNode(lv_attendee_5_0, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttendeeSTRTerminalRuleCall_2_0_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getComponentAlarmEmailPropertyRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"attendee",
+												lv_attendee_5_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_6=','
+									{
+										newLeafNode(otherlv_6, grammarAccess.getComponentAlarmEmailPropertyAccess().getCommaKeyword_2_0_3_0());
+									}
+									(
+										(
+											lv_attendee_7_0=RULE_STR
+											{
+												newLeafNode(lv_attendee_7_0, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttendeeSTRTerminalRuleCall_2_0_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getComponentAlarmEmailPropertyRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"attendee",
+													lv_attendee_7_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_8='}'
+								{
+									newLeafNode(otherlv_8, grammarAccess.getComponentAlarmEmailPropertyAccess().getRightCurlyBracketKeyword_2_0_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2());
+					}
 				)
-			)*
-			otherlv_15='}'
-			{
-				newLeafNode(otherlv_15, grammarAccess.getComponentAlarmEmailPropertyAccess().getRightCurlyBracketKeyword_9_4());
-			}
-		)?
-		otherlv_16='}'
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2(), 1);
+					}
+								({true}?=>(otherlv_9='Description:'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getComponentAlarmEmailPropertyAccess().getDescriptionKeyword_2_1_0());
+								}
+								(
+									(
+										lv_description_10_0=RULE_STR
+										{
+											newLeafNode(lv_description_10_0, grammarAccess.getComponentAlarmEmailPropertyAccess().getDescriptionSTRTerminalRuleCall_2_1_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getComponentAlarmEmailPropertyRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"description",
+												lv_description_10_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2(), 2);
+					}
+								({true}?=>(otherlv_11='Attachements'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttachementsKeyword_2_2_0());
+								}
+								otherlv_12='{'
+								{
+									newLeafNode(otherlv_12, grammarAccess.getComponentAlarmEmailPropertyAccess().getLeftCurlyBracketKeyword_2_2_1());
+								}
+								(
+									(
+										lv_attach_13_0=RULE_STR
+										{
+											newLeafNode(lv_attach_13_0, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttachSTRTerminalRuleCall_2_2_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getComponentAlarmEmailPropertyRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"attach",
+												lv_attach_13_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_14=','
+									{
+										newLeafNode(otherlv_14, grammarAccess.getComponentAlarmEmailPropertyAccess().getCommaKeyword_2_2_3_0());
+									}
+									(
+										(
+											lv_attach_15_0=RULE_STR
+											{
+												newLeafNode(lv_attach_15_0, grammarAccess.getComponentAlarmEmailPropertyAccess().getAttachSTRTerminalRuleCall_2_2_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getComponentAlarmEmailPropertyRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"attach",
+													lv_attach_15_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_16='}'
+								{
+									newLeafNode(otherlv_16, grammarAccess.getComponentAlarmEmailPropertyAccess().getRightCurlyBracketKeyword_2_2_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2());
+					}
+				)
+			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getComponentAlarmEmailPropertyAccess().getUnorderedGroup_2());
+				}
+		)
+		otherlv_17='}'
 		{
-			newLeafNode(otherlv_16, grammarAccess.getComponentAlarmEmailPropertyAccess().getRightCurlyBracketKeyword_10());
+			newLeafNode(otherlv_17, grammarAccess.getComponentAlarmEmailPropertyAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -2573,1225 +2985,1526 @@ ruleToDoC returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='dtstamp'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getToDoCAccess().getDtstampKeyword_2());
-		}
 		(
 			(
-				lv_dtstamp_3_0=RULE_STR
-				{
-					newLeafNode(lv_dtstamp_3_0, grammarAccess.getToDoCAccess().getDtstampSTRTerminalRuleCall_3_0());
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getToDoCRule());
+				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 0);
 					}
-					setWithLastConsumed(
-						$current,
-						"dtstamp",
-						lv_dtstamp_3_0,
-						"xCalendar.MyDsl.STR");
-				}
+								({true}?=>(otherlv_3='Dtstamp:'
+								{
+									newLeafNode(otherlv_3, grammarAccess.getToDoCAccess().getDtstampKeyword_2_0_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getToDoCAccess().getDtstampDateTParserRuleCall_2_0_1_0());
+										}
+										lv_dtstamp_4_0=ruleDateT
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getToDoCRule());
+											}
+											set(
+												$current,
+												"dtstamp",
+												lv_dtstamp_4_0,
+												"xCalendar.MyDsl.DateT");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 1);
+					}
+								({true}?=>(otherlv_5='Identifiant:'
+								{
+									newLeafNode(otherlv_5, grammarAccess.getToDoCAccess().getIdentifiantKeyword_2_1_0());
+								}
+								(
+									(
+										lv_uid_6_0=RULE_STR
+										{
+											newLeafNode(lv_uid_6_0, grammarAccess.getToDoCAccess().getUidSTRTerminalRuleCall_2_1_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"uid",
+												lv_uid_6_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 2);
+					}
+								({true}?=>(otherlv_7='Due:'
+								{
+									newLeafNode(otherlv_7, grammarAccess.getToDoCAccess().getDueKeyword_2_2_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getToDoCAccess().getDueDateTParserRuleCall_2_2_1_0());
+										}
+										lv_due_8_0=ruleDateT
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getToDoCRule());
+											}
+											set(
+												$current,
+												"due",
+												lv_due_8_0,
+												"xCalendar.MyDsl.DateT");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 3);
+					}
+								({true}?=>(otherlv_9='Date:'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getToDoCAccess().getDateKeyword_2_3_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getToDoCAccess().getDtstartDateTParserRuleCall_2_3_1_0());
+										}
+										lv_dtstart_10_0=ruleDateT
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getToDoCRule());
+											}
+											set(
+												$current,
+												"dtstart",
+												lv_dtstart_10_0,
+												"xCalendar.MyDsl.DateT");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 4);
+					}
+								({true}?=>(otherlv_11='Classe:'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getToDoCAccess().getClasseKeyword_2_4_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getToDoCAccess().getClassClassificationParserRuleCall_2_4_1_0());
+										}
+										lv_class_12_0=ruleClassification
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getToDoCRule());
+											}
+											set(
+												$current,
+												"class",
+												lv_class_12_0,
+												"xCalendar.MyDsl.Classification");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 5)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 5);
+					}
+								({true}?=>(otherlv_13='Cree le:'
+								{
+									newLeafNode(otherlv_13, grammarAccess.getToDoCAccess().getCreeLeKeyword_2_5_0());
+								}
+								(
+									(
+										lv_created_14_0=RULE_STR
+										{
+											newLeafNode(lv_created_14_0, grammarAccess.getToDoCAccess().getCreatedSTRTerminalRuleCall_2_5_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"created",
+												lv_created_14_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 6)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 6);
+					}
+								({true}?=>(otherlv_15='Last_mod:'
+								{
+									newLeafNode(otherlv_15, grammarAccess.getToDoCAccess().getLast_modKeyword_2_6_0());
+								}
+								(
+									(
+										lv_last_mod_16_0=RULE_STR
+										{
+											newLeafNode(lv_last_mod_16_0, grammarAccess.getToDoCAccess().getLast_modSTRTerminalRuleCall_2_6_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"last_mod",
+												lv_last_mod_16_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 7)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 7);
+					}
+								({true}?=>(otherlv_17='Organisateur:'
+								{
+									newLeafNode(otherlv_17, grammarAccess.getToDoCAccess().getOrganisateurKeyword_2_7_0());
+								}
+								(
+									(
+										lv_organizer_18_0=RULE_STR
+										{
+											newLeafNode(lv_organizer_18_0, grammarAccess.getToDoCAccess().getOrganizerSTRTerminalRuleCall_2_7_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"organizer",
+												lv_organizer_18_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 8)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 8);
+					}
+								({true}?=>(otherlv_19='Seq:'
+								{
+									newLeafNode(otherlv_19, grammarAccess.getToDoCAccess().getSeqKeyword_2_8_0());
+								}
+								(
+									(
+										lv_seq_20_0=RULE_STR
+										{
+											newLeafNode(lv_seq_20_0, grammarAccess.getToDoCAccess().getSeqSTRTerminalRuleCall_2_8_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"seq",
+												lv_seq_20_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 9)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 9);
+					}
+								({true}?=>(otherlv_21='Status:'
+								{
+									newLeafNode(otherlv_21, grammarAccess.getToDoCAccess().getStatusKeyword_2_9_0());
+								}
+								(
+									(
+										lv_status_22_0=RULE_STR
+										{
+											newLeafNode(lv_status_22_0, grammarAccess.getToDoCAccess().getStatusSTRTerminalRuleCall_2_9_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"status",
+												lv_status_22_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 10)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 10);
+					}
+								({true}?=>(otherlv_23='Objet:'
+								{
+									newLeafNode(otherlv_23, grammarAccess.getToDoCAccess().getObjetKeyword_2_10_0());
+								}
+								(
+									(
+										lv_summary_24_0=RULE_STR
+										{
+											newLeafNode(lv_summary_24_0, grammarAccess.getToDoCAccess().getSummarySTRTerminalRuleCall_2_10_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"summary",
+												lv_summary_24_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 11)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 11);
+					}
+								({true}?=>(otherlv_25='URL:'
+								{
+									newLeafNode(otherlv_25, grammarAccess.getToDoCAccess().getURLKeyword_2_11_0());
+								}
+								(
+									(
+										lv_url_26_0=RULE_STR
+										{
+											newLeafNode(lv_url_26_0, grammarAccess.getToDoCAccess().getUrlSTRTerminalRuleCall_2_11_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"url",
+												lv_url_26_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 12)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 12);
+					}
+								({true}?=>(otherlv_27='Recurid:'
+								{
+									newLeafNode(otherlv_27, grammarAccess.getToDoCAccess().getRecuridKeyword_2_12_0());
+								}
+								(
+									(
+										lv_recurid_28_0=RULE_STR
+										{
+											newLeafNode(lv_recurid_28_0, grammarAccess.getToDoCAccess().getRecuridSTRTerminalRuleCall_2_12_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"recurid",
+												lv_recurid_28_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 13)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 13);
+					}
+								({true}?=>(otherlv_29='Rrule'
+								{
+									newLeafNode(otherlv_29, grammarAccess.getToDoCAccess().getRruleKeyword_2_13_0());
+								}
+								otherlv_30='{'
+								{
+									newLeafNode(otherlv_30, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_13_1());
+								}
+								(
+									(
+										lv_rrule_31_0=RULE_STR
+										{
+											newLeafNode(lv_rrule_31_0, grammarAccess.getToDoCAccess().getRruleSTRTerminalRuleCall_2_13_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"rrule",
+												lv_rrule_31_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_32=','
+									{
+										newLeafNode(otherlv_32, grammarAccess.getToDoCAccess().getCommaKeyword_2_13_3_0());
+									}
+									(
+										(
+											lv_rrule_33_0=RULE_STR
+											{
+												newLeafNode(lv_rrule_33_0, grammarAccess.getToDoCAccess().getRruleSTRTerminalRuleCall_2_13_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"rrule",
+													lv_rrule_33_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_34='}'
+								{
+									newLeafNode(otherlv_34, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_13_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 14)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 14);
+					}
+								({true}?=>(otherlv_35='Attachements'
+								{
+									newLeafNode(otherlv_35, grammarAccess.getToDoCAccess().getAttachementsKeyword_2_14_0());
+								}
+								otherlv_36='{'
+								{
+									newLeafNode(otherlv_36, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_14_1());
+								}
+								(
+									(
+										lv_attach_37_0=RULE_STR
+										{
+											newLeafNode(lv_attach_37_0, grammarAccess.getToDoCAccess().getAttachSTRTerminalRuleCall_2_14_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"attach",
+												lv_attach_37_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_38=','
+									{
+										newLeafNode(otherlv_38, grammarAccess.getToDoCAccess().getCommaKeyword_2_14_3_0());
+									}
+									(
+										(
+											lv_attach_39_0=RULE_STR
+											{
+												newLeafNode(lv_attach_39_0, grammarAccess.getToDoCAccess().getAttachSTRTerminalRuleCall_2_14_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"attach",
+													lv_attach_39_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_40='}'
+								{
+									newLeafNode(otherlv_40, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_14_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 15)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 15);
+					}
+								({true}?=>(otherlv_41='Invites'
+								{
+									newLeafNode(otherlv_41, grammarAccess.getToDoCAccess().getInvitesKeyword_2_15_0());
+								}
+								otherlv_42='{'
+								{
+									newLeafNode(otherlv_42, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_15_1());
+								}
+								(
+									(
+										lv_attendee_43_0=RULE_STR
+										{
+											newLeafNode(lv_attendee_43_0, grammarAccess.getToDoCAccess().getAttendeeSTRTerminalRuleCall_2_15_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"attendee",
+												lv_attendee_43_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_44=','
+									{
+										newLeafNode(otherlv_44, grammarAccess.getToDoCAccess().getCommaKeyword_2_15_3_0());
+									}
+									(
+										(
+											lv_attendee_45_0=RULE_STR
+											{
+												newLeafNode(lv_attendee_45_0, grammarAccess.getToDoCAccess().getAttendeeSTRTerminalRuleCall_2_15_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"attendee",
+													lv_attendee_45_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_46='}'
+								{
+									newLeafNode(otherlv_46, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_15_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 16)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 16);
+					}
+								({true}?=>(otherlv_47='Categories'
+								{
+									newLeafNode(otherlv_47, grammarAccess.getToDoCAccess().getCategoriesKeyword_2_16_0());
+								}
+								otherlv_48='{'
+								{
+									newLeafNode(otherlv_48, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_16_1());
+								}
+								(
+									(
+										lv_categories_49_0=RULE_STR
+										{
+											newLeafNode(lv_categories_49_0, grammarAccess.getToDoCAccess().getCategoriesSTRTerminalRuleCall_2_16_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"categories",
+												lv_categories_49_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_50=','
+									{
+										newLeafNode(otherlv_50, grammarAccess.getToDoCAccess().getCommaKeyword_2_16_3_0());
+									}
+									(
+										(
+											lv_categories_51_0=RULE_STR
+											{
+												newLeafNode(lv_categories_51_0, grammarAccess.getToDoCAccess().getCategoriesSTRTerminalRuleCall_2_16_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"categories",
+													lv_categories_51_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_52='}'
+								{
+									newLeafNode(otherlv_52, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_16_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 17)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 17);
+					}
+								({true}?=>(otherlv_53='Commentaire'
+								{
+									newLeafNode(otherlv_53, grammarAccess.getToDoCAccess().getCommentaireKeyword_2_17_0());
+								}
+								otherlv_54='{'
+								{
+									newLeafNode(otherlv_54, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_17_1());
+								}
+								(
+									(
+										lv_comment_55_0=RULE_STR
+										{
+											newLeafNode(lv_comment_55_0, grammarAccess.getToDoCAccess().getCommentSTRTerminalRuleCall_2_17_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"comment",
+												lv_comment_55_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_56=','
+									{
+										newLeafNode(otherlv_56, grammarAccess.getToDoCAccess().getCommaKeyword_2_17_3_0());
+									}
+									(
+										(
+											lv_comment_57_0=RULE_STR
+											{
+												newLeafNode(lv_comment_57_0, grammarAccess.getToDoCAccess().getCommentSTRTerminalRuleCall_2_17_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"comment",
+													lv_comment_57_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_58='}'
+								{
+									newLeafNode(otherlv_58, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_17_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 18)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 18);
+					}
+								({true}?=>(otherlv_59='Contact'
+								{
+									newLeafNode(otherlv_59, grammarAccess.getToDoCAccess().getContactKeyword_2_18_0());
+								}
+								otherlv_60='{'
+								{
+									newLeafNode(otherlv_60, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_18_1());
+								}
+								(
+									(
+										lv_contact_61_0=RULE_STR
+										{
+											newLeafNode(lv_contact_61_0, grammarAccess.getToDoCAccess().getContactSTRTerminalRuleCall_2_18_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"contact",
+												lv_contact_61_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_62=','
+									{
+										newLeafNode(otherlv_62, grammarAccess.getToDoCAccess().getCommaKeyword_2_18_3_0());
+									}
+									(
+										(
+											lv_contact_63_0=RULE_STR
+											{
+												newLeafNode(lv_contact_63_0, grammarAccess.getToDoCAccess().getContactSTRTerminalRuleCall_2_18_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"contact",
+													lv_contact_63_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_64='}'
+								{
+									newLeafNode(otherlv_64, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_18_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 19)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 19);
+					}
+								({true}?=>(otherlv_65='Exdate'
+								{
+									newLeafNode(otherlv_65, grammarAccess.getToDoCAccess().getExdateKeyword_2_19_0());
+								}
+								otherlv_66='{'
+								{
+									newLeafNode(otherlv_66, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_19_1());
+								}
+								(
+									(
+										lv_exdate_67_0=RULE_STR
+										{
+											newLeafNode(lv_exdate_67_0, grammarAccess.getToDoCAccess().getExdateSTRTerminalRuleCall_2_19_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"exdate",
+												lv_exdate_67_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_68=','
+									{
+										newLeafNode(otherlv_68, grammarAccess.getToDoCAccess().getCommaKeyword_2_19_3_0());
+									}
+									(
+										(
+											lv_exdate_69_0=RULE_STR
+											{
+												newLeafNode(lv_exdate_69_0, grammarAccess.getToDoCAccess().getExdateSTRTerminalRuleCall_2_19_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"exdate",
+													lv_exdate_69_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_70='}'
+								{
+									newLeafNode(otherlv_70, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_19_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 20)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 20);
+					}
+								({true}?=>(otherlv_71='Rstatus'
+								{
+									newLeafNode(otherlv_71, grammarAccess.getToDoCAccess().getRstatusKeyword_2_20_0());
+								}
+								otherlv_72='{'
+								{
+									newLeafNode(otherlv_72, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_20_1());
+								}
+								(
+									(
+										lv_rstatus_73_0=RULE_STR
+										{
+											newLeafNode(lv_rstatus_73_0, grammarAccess.getToDoCAccess().getRstatusSTRTerminalRuleCall_2_20_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"rstatus",
+												lv_rstatus_73_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_74=','
+									{
+										newLeafNode(otherlv_74, grammarAccess.getToDoCAccess().getCommaKeyword_2_20_3_0());
+									}
+									(
+										(
+											lv_rstatus_75_0=RULE_STR
+											{
+												newLeafNode(lv_rstatus_75_0, grammarAccess.getToDoCAccess().getRstatusSTRTerminalRuleCall_2_20_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"rstatus",
+													lv_rstatus_75_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_76='}'
+								{
+									newLeafNode(otherlv_76, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_20_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 21)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 21);
+					}
+								({true}?=>(otherlv_77='Relier a'
+								{
+									newLeafNode(otherlv_77, grammarAccess.getToDoCAccess().getRelierAKeyword_2_21_0());
+								}
+								otherlv_78='{'
+								{
+									newLeafNode(otherlv_78, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_21_1());
+								}
+								(
+									(
+										lv_related_79_0=RULE_STR
+										{
+											newLeafNode(lv_related_79_0, grammarAccess.getToDoCAccess().getRelatedSTRTerminalRuleCall_2_21_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"related",
+												lv_related_79_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_80=','
+									{
+										newLeafNode(otherlv_80, grammarAccess.getToDoCAccess().getCommaKeyword_2_21_3_0());
+									}
+									(
+										(
+											lv_related_81_0=RULE_STR
+											{
+												newLeafNode(lv_related_81_0, grammarAccess.getToDoCAccess().getRelatedSTRTerminalRuleCall_2_21_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"related",
+													lv_related_81_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_82='}'
+								{
+									newLeafNode(otherlv_82, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_21_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 22)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 22);
+					}
+								({true}?=>(otherlv_83='Resources'
+								{
+									newLeafNode(otherlv_83, grammarAccess.getToDoCAccess().getResourcesKeyword_2_22_0());
+								}
+								otherlv_84='{'
+								{
+									newLeafNode(otherlv_84, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_22_1());
+								}
+								(
+									(
+										lv_resources_85_0=RULE_STR
+										{
+											newLeafNode(lv_resources_85_0, grammarAccess.getToDoCAccess().getResourcesSTRTerminalRuleCall_2_22_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"resources",
+												lv_resources_85_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_86=','
+									{
+										newLeafNode(otherlv_86, grammarAccess.getToDoCAccess().getCommaKeyword_2_22_3_0());
+									}
+									(
+										(
+											lv_resources_87_0=RULE_STR
+											{
+												newLeafNode(lv_resources_87_0, grammarAccess.getToDoCAccess().getResourcesSTRTerminalRuleCall_2_22_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"resources",
+													lv_resources_87_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_88='}'
+								{
+									newLeafNode(otherlv_88, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_22_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 23)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 23);
+					}
+								({true}?=>(otherlv_89='Rdate'
+								{
+									newLeafNode(otherlv_89, grammarAccess.getToDoCAccess().getRdateKeyword_2_23_0());
+								}
+								otherlv_90='{'
+								{
+									newLeafNode(otherlv_90, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_23_1());
+								}
+								(
+									(
+										lv_rdate_91_0=RULE_STR
+										{
+											newLeafNode(lv_rdate_91_0, grammarAccess.getToDoCAccess().getRdateSTRTerminalRuleCall_2_23_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"rdate",
+												lv_rdate_91_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_92=','
+									{
+										newLeafNode(otherlv_92, grammarAccess.getToDoCAccess().getCommaKeyword_2_23_3_0());
+									}
+									(
+										(
+											lv_rdate_93_0=RULE_STR
+											{
+												newLeafNode(lv_rdate_93_0, grammarAccess.getToDoCAccess().getRdateSTRTerminalRuleCall_2_23_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"rdate",
+													lv_rdate_93_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_94='}'
+								{
+									newLeafNode(otherlv_94, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_23_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 24)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 24);
+					}
+								({true}?=>(otherlv_95='X_prop'
+								{
+									newLeafNode(otherlv_95, grammarAccess.getToDoCAccess().getX_propKeyword_2_24_0());
+								}
+								otherlv_96='{'
+								{
+									newLeafNode(otherlv_96, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_24_1());
+								}
+								(
+									(
+										lv_x_prop_97_0=RULE_STR
+										{
+											newLeafNode(lv_x_prop_97_0, grammarAccess.getToDoCAccess().getX_propSTRTerminalRuleCall_2_24_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"x_prop",
+												lv_x_prop_97_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_98=','
+									{
+										newLeafNode(otherlv_98, grammarAccess.getToDoCAccess().getCommaKeyword_2_24_3_0());
+									}
+									(
+										(
+											lv_x_prop_99_0=RULE_STR
+											{
+												newLeafNode(lv_x_prop_99_0, grammarAccess.getToDoCAccess().getX_propSTRTerminalRuleCall_2_24_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"x_prop",
+													lv_x_prop_99_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_100='}'
+								{
+									newLeafNode(otherlv_100, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_24_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 25)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 25);
+					}
+								({true}?=>(otherlv_101='Iana_prop'
+								{
+									newLeafNode(otherlv_101, grammarAccess.getToDoCAccess().getIana_propKeyword_2_25_0());
+								}
+								otherlv_102='{'
+								{
+									newLeafNode(otherlv_102, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_2_25_1());
+								}
+								(
+									(
+										lv_iana_prop_103_0=RULE_STR
+										{
+											newLeafNode(lv_iana_prop_103_0, grammarAccess.getToDoCAccess().getIana_propSTRTerminalRuleCall_2_25_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"iana_prop",
+												lv_iana_prop_103_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_104=','
+									{
+										newLeafNode(otherlv_104, grammarAccess.getToDoCAccess().getCommaKeyword_2_25_3_0());
+									}
+									(
+										(
+											lv_iana_prop_105_0=RULE_STR
+											{
+												newLeafNode(lv_iana_prop_105_0, grammarAccess.getToDoCAccess().getIana_propSTRTerminalRuleCall_2_25_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getToDoCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"iana_prop",
+													lv_iana_prop_105_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_106='}'
+								{
+									newLeafNode(otherlv_106, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_2_25_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 26)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 26);
+					}
+								({true}?=>(otherlv_107='Description:'
+								{
+									newLeafNode(otherlv_107, grammarAccess.getToDoCAccess().getDescriptionKeyword_2_26_0());
+								}
+								(
+									(
+										lv_description_108_0=RULE_STR
+										{
+											newLeafNode(lv_description_108_0, grammarAccess.getToDoCAccess().getDescriptionSTRTerminalRuleCall_2_26_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"description",
+												lv_description_108_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 27)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 27);
+					}
+								({true}?=>(otherlv_109='Completee:'
+								{
+									newLeafNode(otherlv_109, grammarAccess.getToDoCAccess().getCompleteeKeyword_2_27_0());
+								}
+								(
+									(
+										lv_completed_110_0=RULE_STR
+										{
+											newLeafNode(lv_completed_110_0, grammarAccess.getToDoCAccess().getCompletedSTRTerminalRuleCall_2_27_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"completed",
+												lv_completed_110_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 28)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 28);
+					}
+								({true}?=>(otherlv_111='Priorite:'
+								{
+									newLeafNode(otherlv_111, grammarAccess.getToDoCAccess().getPrioriteKeyword_2_28_0());
+								}
+								(
+									(
+										lv_priority_112_0=RULE_STR
+										{
+											newLeafNode(lv_priority_112_0, grammarAccess.getToDoCAccess().getPrioritySTRTerminalRuleCall_2_28_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"priority",
+												lv_priority_112_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 29)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 29);
+					}
+								({true}?=>(otherlv_113='Geo:'
+								{
+									newLeafNode(otherlv_113, grammarAccess.getToDoCAccess().getGeoKeyword_2_29_0());
+								}
+								(
+									(
+										lv_geo_114_0=RULE_STR
+										{
+											newLeafNode(lv_geo_114_0, grammarAccess.getToDoCAccess().getGeoSTRTerminalRuleCall_2_29_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"geo",
+												lv_geo_114_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 30)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 30);
+					}
+								({true}?=>(otherlv_115='Lieu:'
+								{
+									newLeafNode(otherlv_115, grammarAccess.getToDoCAccess().getLieuKeyword_2_30_0());
+								}
+								(
+									(
+										lv_location_116_0=RULE_STR
+										{
+											newLeafNode(lv_location_116_0, grammarAccess.getToDoCAccess().getLocationSTRTerminalRuleCall_2_30_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getToDoCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"location",
+												lv_location_116_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 31)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getToDoCAccess().getUnorderedGroup_2(), 31);
+					}
+								({true}?=>(otherlv_117='Alarmes:'
+								{
+									newLeafNode(otherlv_117, grammarAccess.getToDoCAccess().getAlarmesKeyword_2_31_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getToDoCAccess().getAlarmcAlarmCParserRuleCall_2_31_1_0());
+										}
+										lv_alarmc_118_0=ruleAlarmC
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getToDoCRule());
+											}
+											add(
+												$current,
+												"alarmc",
+												lv_alarmc_118_0,
+												"xCalendar.MyDsl.AlarmC");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_119=','
+									{
+										newLeafNode(otherlv_119, grammarAccess.getToDoCAccess().getCommaKeyword_2_31_2_0());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getToDoCAccess().getAlarmcAlarmCParserRuleCall_2_31_2_1_0());
+											}
+											lv_alarmc_120_0=ruleAlarmC
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getToDoCRule());
+												}
+												add(
+													$current,
+													"alarmc",
+													lv_alarmc_120_0,
+													"xCalendar.MyDsl.AlarmC");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+								)*
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+					}
+				)
 			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getToDoCAccess().getUnorderedGroup_2())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getToDoCAccess().getUnorderedGroup_2());
+				}
 		)
-		otherlv_4='uid'
+		otherlv_121='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getToDoCAccess().getUidKeyword_4());
-		}
-		(
-			(
-				lv_uid_5_0=RULE_STR
-				{
-					newLeafNode(lv_uid_5_0, grammarAccess.getToDoCAccess().getUidSTRTerminalRuleCall_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getToDoCRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"uid",
-						lv_uid_5_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)
-		(
-			otherlv_6='dtstart'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getToDoCAccess().getDtstartKeyword_6_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getToDoCAccess().getDtstartDateTParserRuleCall_6_1_0());
-					}
-					lv_dtstart_7_0=ruleDateT
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getToDoCRule());
-						}
-						set(
-							$current,
-							"dtstart",
-							lv_dtstart_7_0,
-							"xCalendar.MyDsl.DateT");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_8='class'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getToDoCAccess().getClassKeyword_7_0());
-			}
-			(
-				(
-					lv_class_9_0=RULE_STR
-					{
-						newLeafNode(lv_class_9_0, grammarAccess.getToDoCAccess().getClassSTRTerminalRuleCall_7_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"class",
-							lv_class_9_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_10='created'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getToDoCAccess().getCreatedKeyword_8_0());
-			}
-			(
-				(
-					lv_created_11_0=RULE_STR
-					{
-						newLeafNode(lv_created_11_0, grammarAccess.getToDoCAccess().getCreatedSTRTerminalRuleCall_8_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"created",
-							lv_created_11_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_12='last_mod'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getToDoCAccess().getLast_modKeyword_9_0());
-			}
-			(
-				(
-					lv_last_mod_13_0=RULE_STR
-					{
-						newLeafNode(lv_last_mod_13_0, grammarAccess.getToDoCAccess().getLast_modSTRTerminalRuleCall_9_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"last_mod",
-							lv_last_mod_13_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_14='organizer'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getToDoCAccess().getOrganizerKeyword_10_0());
-			}
-			(
-				(
-					lv_organizer_15_0=RULE_STR
-					{
-						newLeafNode(lv_organizer_15_0, grammarAccess.getToDoCAccess().getOrganizerSTRTerminalRuleCall_10_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"organizer",
-							lv_organizer_15_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_16='seq'
-			{
-				newLeafNode(otherlv_16, grammarAccess.getToDoCAccess().getSeqKeyword_11_0());
-			}
-			(
-				(
-					lv_seq_17_0=RULE_STR
-					{
-						newLeafNode(lv_seq_17_0, grammarAccess.getToDoCAccess().getSeqSTRTerminalRuleCall_11_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"seq",
-							lv_seq_17_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_18='status'
-			{
-				newLeafNode(otherlv_18, grammarAccess.getToDoCAccess().getStatusKeyword_12_0());
-			}
-			(
-				(
-					lv_status_19_0=RULE_STR
-					{
-						newLeafNode(lv_status_19_0, grammarAccess.getToDoCAccess().getStatusSTRTerminalRuleCall_12_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"status",
-							lv_status_19_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_20='summary'
-			{
-				newLeafNode(otherlv_20, grammarAccess.getToDoCAccess().getSummaryKeyword_13_0());
-			}
-			(
-				(
-					lv_summary_21_0=RULE_STR
-					{
-						newLeafNode(lv_summary_21_0, grammarAccess.getToDoCAccess().getSummarySTRTerminalRuleCall_13_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"summary",
-							lv_summary_21_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_22='url'
-			{
-				newLeafNode(otherlv_22, grammarAccess.getToDoCAccess().getUrlKeyword_14_0());
-			}
-			(
-				(
-					lv_url_23_0=RULE_STR
-					{
-						newLeafNode(lv_url_23_0, grammarAccess.getToDoCAccess().getUrlSTRTerminalRuleCall_14_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"url",
-							lv_url_23_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_24='recurid'
-			{
-				newLeafNode(otherlv_24, grammarAccess.getToDoCAccess().getRecuridKeyword_15_0());
-			}
-			(
-				(
-					lv_recurid_25_0=RULE_STR
-					{
-						newLeafNode(lv_recurid_25_0, grammarAccess.getToDoCAccess().getRecuridSTRTerminalRuleCall_15_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"recurid",
-							lv_recurid_25_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_26='rrule'
-			{
-				newLeafNode(otherlv_26, grammarAccess.getToDoCAccess().getRruleKeyword_16_0());
-			}
-			otherlv_27='{'
-			{
-				newLeafNode(otherlv_27, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_16_1());
-			}
-			(
-				(
-					lv_rrule_28_0=RULE_STR
-					{
-						newLeafNode(lv_rrule_28_0, grammarAccess.getToDoCAccess().getRruleSTRTerminalRuleCall_16_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"rrule",
-							lv_rrule_28_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_29=','
-				{
-					newLeafNode(otherlv_29, grammarAccess.getToDoCAccess().getCommaKeyword_16_3_0());
-				}
-				(
-					(
-						lv_rrule_30_0=RULE_STR
-						{
-							newLeafNode(lv_rrule_30_0, grammarAccess.getToDoCAccess().getRruleSTRTerminalRuleCall_16_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"rrule",
-								lv_rrule_30_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_31='}'
-			{
-				newLeafNode(otherlv_31, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_16_4());
-			}
-		)?
-		(
-			otherlv_32='attach'
-			{
-				newLeafNode(otherlv_32, grammarAccess.getToDoCAccess().getAttachKeyword_17_0());
-			}
-			otherlv_33='{'
-			{
-				newLeafNode(otherlv_33, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_17_1());
-			}
-			(
-				(
-					lv_attach_34_0=RULE_STR
-					{
-						newLeafNode(lv_attach_34_0, grammarAccess.getToDoCAccess().getAttachSTRTerminalRuleCall_17_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"attach",
-							lv_attach_34_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_35=','
-				{
-					newLeafNode(otherlv_35, grammarAccess.getToDoCAccess().getCommaKeyword_17_3_0());
-				}
-				(
-					(
-						lv_attach_36_0=RULE_STR
-						{
-							newLeafNode(lv_attach_36_0, grammarAccess.getToDoCAccess().getAttachSTRTerminalRuleCall_17_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"attach",
-								lv_attach_36_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_37='}'
-			{
-				newLeafNode(otherlv_37, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_17_4());
-			}
-		)?
-		(
-			otherlv_38='attendee'
-			{
-				newLeafNode(otherlv_38, grammarAccess.getToDoCAccess().getAttendeeKeyword_18_0());
-			}
-			otherlv_39='{'
-			{
-				newLeafNode(otherlv_39, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_18_1());
-			}
-			(
-				(
-					lv_attendee_40_0=RULE_STR
-					{
-						newLeafNode(lv_attendee_40_0, grammarAccess.getToDoCAccess().getAttendeeSTRTerminalRuleCall_18_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"attendee",
-							lv_attendee_40_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_41=','
-				{
-					newLeafNode(otherlv_41, grammarAccess.getToDoCAccess().getCommaKeyword_18_3_0());
-				}
-				(
-					(
-						lv_attendee_42_0=RULE_STR
-						{
-							newLeafNode(lv_attendee_42_0, grammarAccess.getToDoCAccess().getAttendeeSTRTerminalRuleCall_18_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"attendee",
-								lv_attendee_42_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_43='}'
-			{
-				newLeafNode(otherlv_43, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_18_4());
-			}
-		)?
-		(
-			otherlv_44='categories'
-			{
-				newLeafNode(otherlv_44, grammarAccess.getToDoCAccess().getCategoriesKeyword_19_0());
-			}
-			otherlv_45='{'
-			{
-				newLeafNode(otherlv_45, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_19_1());
-			}
-			(
-				(
-					lv_categories_46_0=RULE_STR
-					{
-						newLeafNode(lv_categories_46_0, grammarAccess.getToDoCAccess().getCategoriesSTRTerminalRuleCall_19_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"categories",
-							lv_categories_46_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_47=','
-				{
-					newLeafNode(otherlv_47, grammarAccess.getToDoCAccess().getCommaKeyword_19_3_0());
-				}
-				(
-					(
-						lv_categories_48_0=RULE_STR
-						{
-							newLeafNode(lv_categories_48_0, grammarAccess.getToDoCAccess().getCategoriesSTRTerminalRuleCall_19_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"categories",
-								lv_categories_48_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_49='}'
-			{
-				newLeafNode(otherlv_49, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_19_4());
-			}
-		)?
-		(
-			otherlv_50='comment'
-			{
-				newLeafNode(otherlv_50, grammarAccess.getToDoCAccess().getCommentKeyword_20_0());
-			}
-			otherlv_51='{'
-			{
-				newLeafNode(otherlv_51, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_20_1());
-			}
-			(
-				(
-					lv_comment_52_0=RULE_STR
-					{
-						newLeafNode(lv_comment_52_0, grammarAccess.getToDoCAccess().getCommentSTRTerminalRuleCall_20_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"comment",
-							lv_comment_52_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_53=','
-				{
-					newLeafNode(otherlv_53, grammarAccess.getToDoCAccess().getCommaKeyword_20_3_0());
-				}
-				(
-					(
-						lv_comment_54_0=RULE_STR
-						{
-							newLeafNode(lv_comment_54_0, grammarAccess.getToDoCAccess().getCommentSTRTerminalRuleCall_20_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"comment",
-								lv_comment_54_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_55='}'
-			{
-				newLeafNode(otherlv_55, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_20_4());
-			}
-		)?
-		(
-			otherlv_56='contact'
-			{
-				newLeafNode(otherlv_56, grammarAccess.getToDoCAccess().getContactKeyword_21_0());
-			}
-			otherlv_57='{'
-			{
-				newLeafNode(otherlv_57, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_21_1());
-			}
-			(
-				(
-					lv_contact_58_0=RULE_STR
-					{
-						newLeafNode(lv_contact_58_0, grammarAccess.getToDoCAccess().getContactSTRTerminalRuleCall_21_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"contact",
-							lv_contact_58_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_59=','
-				{
-					newLeafNode(otherlv_59, grammarAccess.getToDoCAccess().getCommaKeyword_21_3_0());
-				}
-				(
-					(
-						lv_contact_60_0=RULE_STR
-						{
-							newLeafNode(lv_contact_60_0, grammarAccess.getToDoCAccess().getContactSTRTerminalRuleCall_21_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"contact",
-								lv_contact_60_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_61='}'
-			{
-				newLeafNode(otherlv_61, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_21_4());
-			}
-		)?
-		(
-			otherlv_62='exdate'
-			{
-				newLeafNode(otherlv_62, grammarAccess.getToDoCAccess().getExdateKeyword_22_0());
-			}
-			otherlv_63='{'
-			{
-				newLeafNode(otherlv_63, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_22_1());
-			}
-			(
-				(
-					lv_exdate_64_0=RULE_STR
-					{
-						newLeafNode(lv_exdate_64_0, grammarAccess.getToDoCAccess().getExdateSTRTerminalRuleCall_22_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"exdate",
-							lv_exdate_64_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_65=','
-				{
-					newLeafNode(otherlv_65, grammarAccess.getToDoCAccess().getCommaKeyword_22_3_0());
-				}
-				(
-					(
-						lv_exdate_66_0=RULE_STR
-						{
-							newLeafNode(lv_exdate_66_0, grammarAccess.getToDoCAccess().getExdateSTRTerminalRuleCall_22_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"exdate",
-								lv_exdate_66_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_67='}'
-			{
-				newLeafNode(otherlv_67, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_22_4());
-			}
-		)?
-		(
-			otherlv_68='rstatus'
-			{
-				newLeafNode(otherlv_68, grammarAccess.getToDoCAccess().getRstatusKeyword_23_0());
-			}
-			otherlv_69='{'
-			{
-				newLeafNode(otherlv_69, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_23_1());
-			}
-			(
-				(
-					lv_rstatus_70_0=RULE_STR
-					{
-						newLeafNode(lv_rstatus_70_0, grammarAccess.getToDoCAccess().getRstatusSTRTerminalRuleCall_23_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"rstatus",
-							lv_rstatus_70_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_71=','
-				{
-					newLeafNode(otherlv_71, grammarAccess.getToDoCAccess().getCommaKeyword_23_3_0());
-				}
-				(
-					(
-						lv_rstatus_72_0=RULE_STR
-						{
-							newLeafNode(lv_rstatus_72_0, grammarAccess.getToDoCAccess().getRstatusSTRTerminalRuleCall_23_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"rstatus",
-								lv_rstatus_72_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_73='}'
-			{
-				newLeafNode(otherlv_73, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_23_4());
-			}
-		)?
-		(
-			otherlv_74='related'
-			{
-				newLeafNode(otherlv_74, grammarAccess.getToDoCAccess().getRelatedKeyword_24_0());
-			}
-			otherlv_75='{'
-			{
-				newLeafNode(otherlv_75, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_24_1());
-			}
-			(
-				(
-					lv_related_76_0=RULE_STR
-					{
-						newLeafNode(lv_related_76_0, grammarAccess.getToDoCAccess().getRelatedSTRTerminalRuleCall_24_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"related",
-							lv_related_76_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_77=','
-				{
-					newLeafNode(otherlv_77, grammarAccess.getToDoCAccess().getCommaKeyword_24_3_0());
-				}
-				(
-					(
-						lv_related_78_0=RULE_STR
-						{
-							newLeafNode(lv_related_78_0, grammarAccess.getToDoCAccess().getRelatedSTRTerminalRuleCall_24_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"related",
-								lv_related_78_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_79='}'
-			{
-				newLeafNode(otherlv_79, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_24_4());
-			}
-		)?
-		(
-			otherlv_80='resources'
-			{
-				newLeafNode(otherlv_80, grammarAccess.getToDoCAccess().getResourcesKeyword_25_0());
-			}
-			otherlv_81='{'
-			{
-				newLeafNode(otherlv_81, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_25_1());
-			}
-			(
-				(
-					lv_resources_82_0=RULE_STR
-					{
-						newLeafNode(lv_resources_82_0, grammarAccess.getToDoCAccess().getResourcesSTRTerminalRuleCall_25_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"resources",
-							lv_resources_82_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_83=','
-				{
-					newLeafNode(otherlv_83, grammarAccess.getToDoCAccess().getCommaKeyword_25_3_0());
-				}
-				(
-					(
-						lv_resources_84_0=RULE_STR
-						{
-							newLeafNode(lv_resources_84_0, grammarAccess.getToDoCAccess().getResourcesSTRTerminalRuleCall_25_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"resources",
-								lv_resources_84_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_85='}'
-			{
-				newLeafNode(otherlv_85, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_25_4());
-			}
-		)?
-		(
-			otherlv_86='rdate'
-			{
-				newLeafNode(otherlv_86, grammarAccess.getToDoCAccess().getRdateKeyword_26_0());
-			}
-			otherlv_87='{'
-			{
-				newLeafNode(otherlv_87, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_26_1());
-			}
-			(
-				(
-					lv_rdate_88_0=RULE_STR
-					{
-						newLeafNode(lv_rdate_88_0, grammarAccess.getToDoCAccess().getRdateSTRTerminalRuleCall_26_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"rdate",
-							lv_rdate_88_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_89=','
-				{
-					newLeafNode(otherlv_89, grammarAccess.getToDoCAccess().getCommaKeyword_26_3_0());
-				}
-				(
-					(
-						lv_rdate_90_0=RULE_STR
-						{
-							newLeafNode(lv_rdate_90_0, grammarAccess.getToDoCAccess().getRdateSTRTerminalRuleCall_26_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"rdate",
-								lv_rdate_90_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_91='}'
-			{
-				newLeafNode(otherlv_91, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_26_4());
-			}
-		)?
-		(
-			otherlv_92='x_prop'
-			{
-				newLeafNode(otherlv_92, grammarAccess.getToDoCAccess().getX_propKeyword_27_0());
-			}
-			otherlv_93='{'
-			{
-				newLeafNode(otherlv_93, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_27_1());
-			}
-			(
-				(
-					lv_x_prop_94_0=RULE_STR
-					{
-						newLeafNode(lv_x_prop_94_0, grammarAccess.getToDoCAccess().getX_propSTRTerminalRuleCall_27_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"x_prop",
-							lv_x_prop_94_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_95=','
-				{
-					newLeafNode(otherlv_95, grammarAccess.getToDoCAccess().getCommaKeyword_27_3_0());
-				}
-				(
-					(
-						lv_x_prop_96_0=RULE_STR
-						{
-							newLeafNode(lv_x_prop_96_0, grammarAccess.getToDoCAccess().getX_propSTRTerminalRuleCall_27_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"x_prop",
-								lv_x_prop_96_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_97='}'
-			{
-				newLeafNode(otherlv_97, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_27_4());
-			}
-		)?
-		(
-			otherlv_98='iana_prop'
-			{
-				newLeafNode(otherlv_98, grammarAccess.getToDoCAccess().getIana_propKeyword_28_0());
-			}
-			otherlv_99='{'
-			{
-				newLeafNode(otherlv_99, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_28_1());
-			}
-			(
-				(
-					lv_iana_prop_100_0=RULE_STR
-					{
-						newLeafNode(lv_iana_prop_100_0, grammarAccess.getToDoCAccess().getIana_propSTRTerminalRuleCall_28_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"iana_prop",
-							lv_iana_prop_100_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_101=','
-				{
-					newLeafNode(otherlv_101, grammarAccess.getToDoCAccess().getCommaKeyword_28_3_0());
-				}
-				(
-					(
-						lv_iana_prop_102_0=RULE_STR
-						{
-							newLeafNode(lv_iana_prop_102_0, grammarAccess.getToDoCAccess().getIana_propSTRTerminalRuleCall_28_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getToDoCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"iana_prop",
-								lv_iana_prop_102_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_103='}'
-			{
-				newLeafNode(otherlv_103, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_28_4());
-			}
-		)?
-		(
-			otherlv_104='description'
-			{
-				newLeafNode(otherlv_104, grammarAccess.getToDoCAccess().getDescriptionKeyword_29_0());
-			}
-			(
-				(
-					lv_description_105_0=RULE_STR
-					{
-						newLeafNode(lv_description_105_0, grammarAccess.getToDoCAccess().getDescriptionSTRTerminalRuleCall_29_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"description",
-							lv_description_105_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_106='completed'
-			{
-				newLeafNode(otherlv_106, grammarAccess.getToDoCAccess().getCompletedKeyword_30_0());
-			}
-			(
-				(
-					lv_completed_107_0=RULE_STR
-					{
-						newLeafNode(lv_completed_107_0, grammarAccess.getToDoCAccess().getCompletedSTRTerminalRuleCall_30_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"completed",
-							lv_completed_107_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_108='priority'
-			{
-				newLeafNode(otherlv_108, grammarAccess.getToDoCAccess().getPriorityKeyword_31_0());
-			}
-			(
-				(
-					lv_priority_109_0=RULE_STR
-					{
-						newLeafNode(lv_priority_109_0, grammarAccess.getToDoCAccess().getPrioritySTRTerminalRuleCall_31_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"priority",
-							lv_priority_109_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_110='geo'
-			{
-				newLeafNode(otherlv_110, grammarAccess.getToDoCAccess().getGeoKeyword_32_0());
-			}
-			(
-				(
-					lv_geo_111_0=RULE_STR
-					{
-						newLeafNode(lv_geo_111_0, grammarAccess.getToDoCAccess().getGeoSTRTerminalRuleCall_32_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"geo",
-							lv_geo_111_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_112='location'
-			{
-				newLeafNode(otherlv_112, grammarAccess.getToDoCAccess().getLocationKeyword_33_0());
-			}
-			(
-				(
-					lv_location_113_0=RULE_STR
-					{
-						newLeafNode(lv_location_113_0, grammarAccess.getToDoCAccess().getLocationSTRTerminalRuleCall_33_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToDoCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"location",
-							lv_location_113_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_114='dtend'
-			{
-				newLeafNode(otherlv_114, grammarAccess.getToDoCAccess().getDtendKeyword_34_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getToDoCAccess().getDtendDateTParserRuleCall_34_1_0());
-					}
-					lv_dtend_115_0=ruleDateT
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getToDoCRule());
-						}
-						set(
-							$current,
-							"dtend",
-							lv_dtend_115_0,
-							"xCalendar.MyDsl.DateT");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_116='alarmc'
-			{
-				newLeafNode(otherlv_116, grammarAccess.getToDoCAccess().getAlarmcKeyword_35_0());
-			}
-			otherlv_117='{'
-			{
-				newLeafNode(otherlv_117, grammarAccess.getToDoCAccess().getLeftCurlyBracketKeyword_35_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getToDoCAccess().getAlarmcAlarmCParserRuleCall_35_2_0());
-					}
-					lv_alarmc_118_0=ruleAlarmC
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getToDoCRule());
-						}
-						add(
-							$current,
-							"alarmc",
-							lv_alarmc_118_0,
-							"xCalendar.MyDsl.AlarmC");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_119=','
-				{
-					newLeafNode(otherlv_119, grammarAccess.getToDoCAccess().getCommaKeyword_35_3_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getToDoCAccess().getAlarmcAlarmCParserRuleCall_35_3_1_0());
-						}
-						lv_alarmc_120_0=ruleAlarmC
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getToDoCRule());
-							}
-							add(
-								$current,
-								"alarmc",
-								lv_alarmc_120_0,
-								"xCalendar.MyDsl.AlarmC");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_121='}'
-			{
-				newLeafNode(otherlv_121, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_35_4());
-			}
-		)?
-		otherlv_122='}'
-		{
-			newLeafNode(otherlv_122, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_36());
+			newLeafNode(otherlv_121, grammarAccess.getToDoCAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -3820,1046 +4533,1267 @@ ruleJournalC returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='dtstamp'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getJournalCAccess().getDtstampKeyword_2());
-		}
 		(
 			(
-				lv_dtstamp_3_0=RULE_STR
-				{
-					newLeafNode(lv_dtstamp_3_0, grammarAccess.getJournalCAccess().getDtstampSTRTerminalRuleCall_3_0());
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getJournalCRule());
+				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 0);
 					}
-					setWithLastConsumed(
-						$current,
-						"dtstamp",
-						lv_dtstamp_3_0,
-						"xCalendar.MyDsl.STR");
-				}
+								({true}?=>(otherlv_3='Identifiant:'
+								{
+									newLeafNode(otherlv_3, grammarAccess.getJournalCAccess().getIdentifiantKeyword_2_0_0());
+								}
+								(
+									(
+										lv_uid_4_0=RULE_STR
+										{
+											newLeafNode(lv_uid_4_0, grammarAccess.getJournalCAccess().getUidSTRTerminalRuleCall_2_0_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"uid",
+												lv_uid_4_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 1);
+					}
+								({true}?=>(otherlv_5='Date:'
+								{
+									newLeafNode(otherlv_5, grammarAccess.getJournalCAccess().getDateKeyword_2_1_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getJournalCAccess().getDtstartDateTParserRuleCall_2_1_1_0());
+										}
+										lv_dtstart_6_0=ruleDateT
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getJournalCRule());
+											}
+											set(
+												$current,
+												"dtstart",
+												lv_dtstart_6_0,
+												"xCalendar.MyDsl.DateT");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 2);
+					}
+								({true}?=>(otherlv_7='Classe:'
+								{
+									newLeafNode(otherlv_7, grammarAccess.getJournalCAccess().getClasseKeyword_2_2_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getJournalCAccess().getClassClassificationParserRuleCall_2_2_1_0());
+										}
+										lv_class_8_0=ruleClassification
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getJournalCRule());
+											}
+											set(
+												$current,
+												"class",
+												lv_class_8_0,
+												"xCalendar.MyDsl.Classification");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 3);
+					}
+								({true}?=>(otherlv_9='Cree le:'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getJournalCAccess().getCreeLeKeyword_2_3_0());
+								}
+								(
+									(
+										lv_created_10_0=RULE_STR
+										{
+											newLeafNode(lv_created_10_0, grammarAccess.getJournalCAccess().getCreatedSTRTerminalRuleCall_2_3_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"created",
+												lv_created_10_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 4);
+					}
+								({true}?=>(otherlv_11='Last_mod:'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getJournalCAccess().getLast_modKeyword_2_4_0());
+								}
+								(
+									(
+										lv_last_mod_12_0=RULE_STR
+										{
+											newLeafNode(lv_last_mod_12_0, grammarAccess.getJournalCAccess().getLast_modSTRTerminalRuleCall_2_4_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"last_mod",
+												lv_last_mod_12_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 5)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 5);
+					}
+								({true}?=>(otherlv_13='Organisateur:'
+								{
+									newLeafNode(otherlv_13, grammarAccess.getJournalCAccess().getOrganisateurKeyword_2_5_0());
+								}
+								(
+									(
+										lv_organizer_14_0=RULE_STR
+										{
+											newLeafNode(lv_organizer_14_0, grammarAccess.getJournalCAccess().getOrganizerSTRTerminalRuleCall_2_5_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"organizer",
+												lv_organizer_14_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 6)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 6);
+					}
+								({true}?=>(otherlv_15='Seq:'
+								{
+									newLeafNode(otherlv_15, grammarAccess.getJournalCAccess().getSeqKeyword_2_6_0());
+								}
+								(
+									(
+										lv_seq_16_0=RULE_STR
+										{
+											newLeafNode(lv_seq_16_0, grammarAccess.getJournalCAccess().getSeqSTRTerminalRuleCall_2_6_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"seq",
+												lv_seq_16_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 7)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 7);
+					}
+								({true}?=>(otherlv_17='Status:'
+								{
+									newLeafNode(otherlv_17, grammarAccess.getJournalCAccess().getStatusKeyword_2_7_0());
+								}
+								(
+									(
+										lv_status_18_0=RULE_STR
+										{
+											newLeafNode(lv_status_18_0, grammarAccess.getJournalCAccess().getStatusSTRTerminalRuleCall_2_7_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"status",
+												lv_status_18_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 8)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 8);
+					}
+								({true}?=>(otherlv_19='Objet:'
+								{
+									newLeafNode(otherlv_19, grammarAccess.getJournalCAccess().getObjetKeyword_2_8_0());
+								}
+								(
+									(
+										lv_summary_20_0=RULE_STR
+										{
+											newLeafNode(lv_summary_20_0, grammarAccess.getJournalCAccess().getSummarySTRTerminalRuleCall_2_8_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"summary",
+												lv_summary_20_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 9)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 9);
+					}
+								({true}?=>(otherlv_21='URL:'
+								{
+									newLeafNode(otherlv_21, grammarAccess.getJournalCAccess().getURLKeyword_2_9_0());
+								}
+								(
+									(
+										lv_url_22_0=RULE_STR
+										{
+											newLeafNode(lv_url_22_0, grammarAccess.getJournalCAccess().getUrlSTRTerminalRuleCall_2_9_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"url",
+												lv_url_22_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 10)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 10);
+					}
+								({true}?=>(otherlv_23='Recurid:'
+								{
+									newLeafNode(otherlv_23, grammarAccess.getJournalCAccess().getRecuridKeyword_2_10_0());
+								}
+								(
+									(
+										lv_recurid_24_0=RULE_STR
+										{
+											newLeafNode(lv_recurid_24_0, grammarAccess.getJournalCAccess().getRecuridSTRTerminalRuleCall_2_10_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"recurid",
+												lv_recurid_24_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 11)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 11);
+					}
+								({true}?=>(otherlv_25='Rrule'
+								{
+									newLeafNode(otherlv_25, grammarAccess.getJournalCAccess().getRruleKeyword_2_11_0());
+								}
+								otherlv_26='{'
+								{
+									newLeafNode(otherlv_26, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_11_1());
+								}
+								(
+									(
+										lv_rrule_27_0=RULE_STR
+										{
+											newLeafNode(lv_rrule_27_0, grammarAccess.getJournalCAccess().getRruleSTRTerminalRuleCall_2_11_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"rrule",
+												lv_rrule_27_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_28=','
+									{
+										newLeafNode(otherlv_28, grammarAccess.getJournalCAccess().getCommaKeyword_2_11_3_0());
+									}
+									(
+										(
+											lv_rrule_29_0=RULE_STR
+											{
+												newLeafNode(lv_rrule_29_0, grammarAccess.getJournalCAccess().getRruleSTRTerminalRuleCall_2_11_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"rrule",
+													lv_rrule_29_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_30='}'
+								{
+									newLeafNode(otherlv_30, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_11_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 12)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 12);
+					}
+								({true}?=>(otherlv_31='Attachements'
+								{
+									newLeafNode(otherlv_31, grammarAccess.getJournalCAccess().getAttachementsKeyword_2_12_0());
+								}
+								otherlv_32='{'
+								{
+									newLeafNode(otherlv_32, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_12_1());
+								}
+								(
+									(
+										lv_attach_33_0=RULE_STR
+										{
+											newLeafNode(lv_attach_33_0, grammarAccess.getJournalCAccess().getAttachSTRTerminalRuleCall_2_12_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"attach",
+												lv_attach_33_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_34=','
+									{
+										newLeafNode(otherlv_34, grammarAccess.getJournalCAccess().getCommaKeyword_2_12_3_0());
+									}
+									(
+										(
+											lv_attach_35_0=RULE_STR
+											{
+												newLeafNode(lv_attach_35_0, grammarAccess.getJournalCAccess().getAttachSTRTerminalRuleCall_2_12_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"attach",
+													lv_attach_35_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_36='}'
+								{
+									newLeafNode(otherlv_36, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_12_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 13)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 13);
+					}
+								({true}?=>(otherlv_37='Invites'
+								{
+									newLeafNode(otherlv_37, grammarAccess.getJournalCAccess().getInvitesKeyword_2_13_0());
+								}
+								otherlv_38='{'
+								{
+									newLeafNode(otherlv_38, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_13_1());
+								}
+								(
+									(
+										lv_attendee_39_0=RULE_STR
+										{
+											newLeafNode(lv_attendee_39_0, grammarAccess.getJournalCAccess().getAttendeeSTRTerminalRuleCall_2_13_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"attendee",
+												lv_attendee_39_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_40=','
+									{
+										newLeafNode(otherlv_40, grammarAccess.getJournalCAccess().getCommaKeyword_2_13_3_0());
+									}
+									(
+										(
+											lv_attendee_41_0=RULE_STR
+											{
+												newLeafNode(lv_attendee_41_0, grammarAccess.getJournalCAccess().getAttendeeSTRTerminalRuleCall_2_13_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"attendee",
+													lv_attendee_41_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_42='}'
+								{
+									newLeafNode(otherlv_42, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_13_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 14)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 14);
+					}
+								({true}?=>(otherlv_43='Categories'
+								{
+									newLeafNode(otherlv_43, grammarAccess.getJournalCAccess().getCategoriesKeyword_2_14_0());
+								}
+								otherlv_44='{'
+								{
+									newLeafNode(otherlv_44, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_14_1());
+								}
+								(
+									(
+										lv_categories_45_0=RULE_STR
+										{
+											newLeafNode(lv_categories_45_0, grammarAccess.getJournalCAccess().getCategoriesSTRTerminalRuleCall_2_14_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"categories",
+												lv_categories_45_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_46=','
+									{
+										newLeafNode(otherlv_46, grammarAccess.getJournalCAccess().getCommaKeyword_2_14_3_0());
+									}
+									(
+										(
+											lv_categories_47_0=RULE_STR
+											{
+												newLeafNode(lv_categories_47_0, grammarAccess.getJournalCAccess().getCategoriesSTRTerminalRuleCall_2_14_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"categories",
+													lv_categories_47_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_48='}'
+								{
+									newLeafNode(otherlv_48, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_14_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 15)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 15);
+					}
+								({true}?=>(otherlv_49='Commentaire'
+								{
+									newLeafNode(otherlv_49, grammarAccess.getJournalCAccess().getCommentaireKeyword_2_15_0());
+								}
+								otherlv_50='{'
+								{
+									newLeafNode(otherlv_50, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_15_1());
+								}
+								(
+									(
+										lv_comment_51_0=RULE_STR
+										{
+											newLeafNode(lv_comment_51_0, grammarAccess.getJournalCAccess().getCommentSTRTerminalRuleCall_2_15_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"comment",
+												lv_comment_51_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_52=','
+									{
+										newLeafNode(otherlv_52, grammarAccess.getJournalCAccess().getCommaKeyword_2_15_3_0());
+									}
+									(
+										(
+											lv_comment_53_0=RULE_STR
+											{
+												newLeafNode(lv_comment_53_0, grammarAccess.getJournalCAccess().getCommentSTRTerminalRuleCall_2_15_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"comment",
+													lv_comment_53_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_54='}'
+								{
+									newLeafNode(otherlv_54, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_15_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 16)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 16);
+					}
+								({true}?=>(otherlv_55='Contact'
+								{
+									newLeafNode(otherlv_55, grammarAccess.getJournalCAccess().getContactKeyword_2_16_0());
+								}
+								otherlv_56='{'
+								{
+									newLeafNode(otherlv_56, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_16_1());
+								}
+								(
+									(
+										lv_contact_57_0=RULE_STR
+										{
+											newLeafNode(lv_contact_57_0, grammarAccess.getJournalCAccess().getContactSTRTerminalRuleCall_2_16_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"contact",
+												lv_contact_57_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_58=','
+									{
+										newLeafNode(otherlv_58, grammarAccess.getJournalCAccess().getCommaKeyword_2_16_3_0());
+									}
+									(
+										(
+											lv_contact_59_0=RULE_STR
+											{
+												newLeafNode(lv_contact_59_0, grammarAccess.getJournalCAccess().getContactSTRTerminalRuleCall_2_16_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"contact",
+													lv_contact_59_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_60='}'
+								{
+									newLeafNode(otherlv_60, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_16_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 17)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 17);
+					}
+								({true}?=>(otherlv_61='Exdate'
+								{
+									newLeafNode(otherlv_61, grammarAccess.getJournalCAccess().getExdateKeyword_2_17_0());
+								}
+								otherlv_62='{'
+								{
+									newLeafNode(otherlv_62, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_17_1());
+								}
+								(
+									(
+										lv_exdate_63_0=RULE_STR
+										{
+											newLeafNode(lv_exdate_63_0, grammarAccess.getJournalCAccess().getExdateSTRTerminalRuleCall_2_17_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"exdate",
+												lv_exdate_63_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_64=','
+									{
+										newLeafNode(otherlv_64, grammarAccess.getJournalCAccess().getCommaKeyword_2_17_3_0());
+									}
+									(
+										(
+											lv_exdate_65_0=RULE_STR
+											{
+												newLeafNode(lv_exdate_65_0, grammarAccess.getJournalCAccess().getExdateSTRTerminalRuleCall_2_17_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"exdate",
+													lv_exdate_65_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_66='}'
+								{
+									newLeafNode(otherlv_66, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_17_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 18)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 18);
+					}
+								({true}?=>(otherlv_67='Rstatus'
+								{
+									newLeafNode(otherlv_67, grammarAccess.getJournalCAccess().getRstatusKeyword_2_18_0());
+								}
+								otherlv_68='{'
+								{
+									newLeafNode(otherlv_68, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_18_1());
+								}
+								(
+									(
+										lv_rstatus_69_0=RULE_STR
+										{
+											newLeafNode(lv_rstatus_69_0, grammarAccess.getJournalCAccess().getRstatusSTRTerminalRuleCall_2_18_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"rstatus",
+												lv_rstatus_69_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_70=','
+									{
+										newLeafNode(otherlv_70, grammarAccess.getJournalCAccess().getCommaKeyword_2_18_3_0());
+									}
+									(
+										(
+											lv_rstatus_71_0=RULE_STR
+											{
+												newLeafNode(lv_rstatus_71_0, grammarAccess.getJournalCAccess().getRstatusSTRTerminalRuleCall_2_18_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"rstatus",
+													lv_rstatus_71_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_72='}'
+								{
+									newLeafNode(otherlv_72, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_18_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 19)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 19);
+					}
+								({true}?=>(otherlv_73='Relier a'
+								{
+									newLeafNode(otherlv_73, grammarAccess.getJournalCAccess().getRelierAKeyword_2_19_0());
+								}
+								otherlv_74='{'
+								{
+									newLeafNode(otherlv_74, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_19_1());
+								}
+								(
+									(
+										lv_related_75_0=RULE_STR
+										{
+											newLeafNode(lv_related_75_0, grammarAccess.getJournalCAccess().getRelatedSTRTerminalRuleCall_2_19_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"related",
+												lv_related_75_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_76=','
+									{
+										newLeafNode(otherlv_76, grammarAccess.getJournalCAccess().getCommaKeyword_2_19_3_0());
+									}
+									(
+										(
+											lv_related_77_0=RULE_STR
+											{
+												newLeafNode(lv_related_77_0, grammarAccess.getJournalCAccess().getRelatedSTRTerminalRuleCall_2_19_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"related",
+													lv_related_77_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_78='}'
+								{
+									newLeafNode(otherlv_78, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_19_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 20)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 20);
+					}
+								({true}?=>(otherlv_79='Resources'
+								{
+									newLeafNode(otherlv_79, grammarAccess.getJournalCAccess().getResourcesKeyword_2_20_0());
+								}
+								otherlv_80='{'
+								{
+									newLeafNode(otherlv_80, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_20_1());
+								}
+								(
+									(
+										lv_resources_81_0=RULE_STR
+										{
+											newLeafNode(lv_resources_81_0, grammarAccess.getJournalCAccess().getResourcesSTRTerminalRuleCall_2_20_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"resources",
+												lv_resources_81_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_82=','
+									{
+										newLeafNode(otherlv_82, grammarAccess.getJournalCAccess().getCommaKeyword_2_20_3_0());
+									}
+									(
+										(
+											lv_resources_83_0=RULE_STR
+											{
+												newLeafNode(lv_resources_83_0, grammarAccess.getJournalCAccess().getResourcesSTRTerminalRuleCall_2_20_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"resources",
+													lv_resources_83_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_84='}'
+								{
+									newLeafNode(otherlv_84, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_20_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 21)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 21);
+					}
+								({true}?=>(otherlv_85='Rdate'
+								{
+									newLeafNode(otherlv_85, grammarAccess.getJournalCAccess().getRdateKeyword_2_21_0());
+								}
+								otherlv_86='{'
+								{
+									newLeafNode(otherlv_86, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_21_1());
+								}
+								(
+									(
+										lv_rdate_87_0=RULE_STR
+										{
+											newLeafNode(lv_rdate_87_0, grammarAccess.getJournalCAccess().getRdateSTRTerminalRuleCall_2_21_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"rdate",
+												lv_rdate_87_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_88=','
+									{
+										newLeafNode(otherlv_88, grammarAccess.getJournalCAccess().getCommaKeyword_2_21_3_0());
+									}
+									(
+										(
+											lv_rdate_89_0=RULE_STR
+											{
+												newLeafNode(lv_rdate_89_0, grammarAccess.getJournalCAccess().getRdateSTRTerminalRuleCall_2_21_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"rdate",
+													lv_rdate_89_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_90='}'
+								{
+									newLeafNode(otherlv_90, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_21_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 22)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 22);
+					}
+								({true}?=>(otherlv_91='X_prop'
+								{
+									newLeafNode(otherlv_91, grammarAccess.getJournalCAccess().getX_propKeyword_2_22_0());
+								}
+								otherlv_92='{'
+								{
+									newLeafNode(otherlv_92, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_22_1());
+								}
+								(
+									(
+										lv_x_prop_93_0=RULE_STR
+										{
+											newLeafNode(lv_x_prop_93_0, grammarAccess.getJournalCAccess().getX_propSTRTerminalRuleCall_2_22_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"x_prop",
+												lv_x_prop_93_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_94=','
+									{
+										newLeafNode(otherlv_94, grammarAccess.getJournalCAccess().getCommaKeyword_2_22_3_0());
+									}
+									(
+										(
+											lv_x_prop_95_0=RULE_STR
+											{
+												newLeafNode(lv_x_prop_95_0, grammarAccess.getJournalCAccess().getX_propSTRTerminalRuleCall_2_22_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"x_prop",
+													lv_x_prop_95_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_96='}'
+								{
+									newLeafNode(otherlv_96, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_22_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 23)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 23);
+					}
+								({true}?=>(otherlv_97='Iana_prop'
+								{
+									newLeafNode(otherlv_97, grammarAccess.getJournalCAccess().getIana_propKeyword_2_23_0());
+								}
+								otherlv_98='{'
+								{
+									newLeafNode(otherlv_98, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_2_23_1());
+								}
+								(
+									(
+										lv_iana_prop_99_0=RULE_STR
+										{
+											newLeafNode(lv_iana_prop_99_0, grammarAccess.getJournalCAccess().getIana_propSTRTerminalRuleCall_2_23_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"iana_prop",
+												lv_iana_prop_99_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_100=','
+									{
+										newLeafNode(otherlv_100, grammarAccess.getJournalCAccess().getCommaKeyword_2_23_3_0());
+									}
+									(
+										(
+											lv_iana_prop_101_0=RULE_STR
+											{
+												newLeafNode(lv_iana_prop_101_0, grammarAccess.getJournalCAccess().getIana_propSTRTerminalRuleCall_2_23_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getJournalCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"iana_prop",
+													lv_iana_prop_101_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_102='}'
+								{
+									newLeafNode(otherlv_102, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_2_23_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 24)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getJournalCAccess().getUnorderedGroup_2(), 24);
+					}
+								({true}?=>(otherlv_103='Description:'
+								{
+									newLeafNode(otherlv_103, grammarAccess.getJournalCAccess().getDescriptionKeyword_2_24_0());
+								}
+								(
+									(
+										lv_description_104_0=RULE_STR
+										{
+											newLeafNode(lv_description_104_0, grammarAccess.getJournalCAccess().getDescriptionSTRTerminalRuleCall_2_24_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getJournalCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"description",
+												lv_description_104_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+					}
+				)
 			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getJournalCAccess().getUnorderedGroup_2())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getJournalCAccess().getUnorderedGroup_2());
+				}
 		)
-		otherlv_4='uid'
+		otherlv_105='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getJournalCAccess().getUidKeyword_4());
-		}
-		(
-			(
-				lv_uid_5_0=RULE_STR
-				{
-					newLeafNode(lv_uid_5_0, grammarAccess.getJournalCAccess().getUidSTRTerminalRuleCall_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getJournalCRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"uid",
-						lv_uid_5_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)
-		(
-			otherlv_6='dtstart'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getJournalCAccess().getDtstartKeyword_6_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getJournalCAccess().getDtstartDateTParserRuleCall_6_1_0());
-					}
-					lv_dtstart_7_0=ruleDateT
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getJournalCRule());
-						}
-						set(
-							$current,
-							"dtstart",
-							lv_dtstart_7_0,
-							"xCalendar.MyDsl.DateT");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_8='class'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getJournalCAccess().getClassKeyword_7_0());
-			}
-			(
-				(
-					lv_class_9_0=RULE_STR
-					{
-						newLeafNode(lv_class_9_0, grammarAccess.getJournalCAccess().getClassSTRTerminalRuleCall_7_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"class",
-							lv_class_9_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_10='created'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getJournalCAccess().getCreatedKeyword_8_0());
-			}
-			(
-				(
-					lv_created_11_0=RULE_STR
-					{
-						newLeafNode(lv_created_11_0, grammarAccess.getJournalCAccess().getCreatedSTRTerminalRuleCall_8_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"created",
-							lv_created_11_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_12='last_mod'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getJournalCAccess().getLast_modKeyword_9_0());
-			}
-			(
-				(
-					lv_last_mod_13_0=RULE_STR
-					{
-						newLeafNode(lv_last_mod_13_0, grammarAccess.getJournalCAccess().getLast_modSTRTerminalRuleCall_9_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"last_mod",
-							lv_last_mod_13_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_14='organizer'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getJournalCAccess().getOrganizerKeyword_10_0());
-			}
-			(
-				(
-					lv_organizer_15_0=RULE_STR
-					{
-						newLeafNode(lv_organizer_15_0, grammarAccess.getJournalCAccess().getOrganizerSTRTerminalRuleCall_10_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"organizer",
-							lv_organizer_15_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_16='seq'
-			{
-				newLeafNode(otherlv_16, grammarAccess.getJournalCAccess().getSeqKeyword_11_0());
-			}
-			(
-				(
-					lv_seq_17_0=RULE_STR
-					{
-						newLeafNode(lv_seq_17_0, grammarAccess.getJournalCAccess().getSeqSTRTerminalRuleCall_11_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"seq",
-							lv_seq_17_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_18='status'
-			{
-				newLeafNode(otherlv_18, grammarAccess.getJournalCAccess().getStatusKeyword_12_0());
-			}
-			(
-				(
-					lv_status_19_0=RULE_STR
-					{
-						newLeafNode(lv_status_19_0, grammarAccess.getJournalCAccess().getStatusSTRTerminalRuleCall_12_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"status",
-							lv_status_19_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_20='summary'
-			{
-				newLeafNode(otherlv_20, grammarAccess.getJournalCAccess().getSummaryKeyword_13_0());
-			}
-			(
-				(
-					lv_summary_21_0=RULE_STR
-					{
-						newLeafNode(lv_summary_21_0, grammarAccess.getJournalCAccess().getSummarySTRTerminalRuleCall_13_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"summary",
-							lv_summary_21_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_22='url'
-			{
-				newLeafNode(otherlv_22, grammarAccess.getJournalCAccess().getUrlKeyword_14_0());
-			}
-			(
-				(
-					lv_url_23_0=RULE_STR
-					{
-						newLeafNode(lv_url_23_0, grammarAccess.getJournalCAccess().getUrlSTRTerminalRuleCall_14_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"url",
-							lv_url_23_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_24='recurid'
-			{
-				newLeafNode(otherlv_24, grammarAccess.getJournalCAccess().getRecuridKeyword_15_0());
-			}
-			(
-				(
-					lv_recurid_25_0=RULE_STR
-					{
-						newLeafNode(lv_recurid_25_0, grammarAccess.getJournalCAccess().getRecuridSTRTerminalRuleCall_15_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"recurid",
-							lv_recurid_25_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_26='rrule'
-			{
-				newLeafNode(otherlv_26, grammarAccess.getJournalCAccess().getRruleKeyword_16_0());
-			}
-			otherlv_27='{'
-			{
-				newLeafNode(otherlv_27, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_16_1());
-			}
-			(
-				(
-					lv_rrule_28_0=RULE_STR
-					{
-						newLeafNode(lv_rrule_28_0, grammarAccess.getJournalCAccess().getRruleSTRTerminalRuleCall_16_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"rrule",
-							lv_rrule_28_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_29=','
-				{
-					newLeafNode(otherlv_29, grammarAccess.getJournalCAccess().getCommaKeyword_16_3_0());
-				}
-				(
-					(
-						lv_rrule_30_0=RULE_STR
-						{
-							newLeafNode(lv_rrule_30_0, grammarAccess.getJournalCAccess().getRruleSTRTerminalRuleCall_16_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"rrule",
-								lv_rrule_30_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_31='}'
-			{
-				newLeafNode(otherlv_31, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_16_4());
-			}
-		)?
-		(
-			otherlv_32='attach'
-			{
-				newLeafNode(otherlv_32, grammarAccess.getJournalCAccess().getAttachKeyword_17_0());
-			}
-			otherlv_33='{'
-			{
-				newLeafNode(otherlv_33, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_17_1());
-			}
-			(
-				(
-					lv_attach_34_0=RULE_STR
-					{
-						newLeafNode(lv_attach_34_0, grammarAccess.getJournalCAccess().getAttachSTRTerminalRuleCall_17_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"attach",
-							lv_attach_34_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_35=','
-				{
-					newLeafNode(otherlv_35, grammarAccess.getJournalCAccess().getCommaKeyword_17_3_0());
-				}
-				(
-					(
-						lv_attach_36_0=RULE_STR
-						{
-							newLeafNode(lv_attach_36_0, grammarAccess.getJournalCAccess().getAttachSTRTerminalRuleCall_17_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"attach",
-								lv_attach_36_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_37='}'
-			{
-				newLeafNode(otherlv_37, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_17_4());
-			}
-		)?
-		(
-			otherlv_38='attendee'
-			{
-				newLeafNode(otherlv_38, grammarAccess.getJournalCAccess().getAttendeeKeyword_18_0());
-			}
-			otherlv_39='{'
-			{
-				newLeafNode(otherlv_39, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_18_1());
-			}
-			(
-				(
-					lv_attendee_40_0=RULE_STR
-					{
-						newLeafNode(lv_attendee_40_0, grammarAccess.getJournalCAccess().getAttendeeSTRTerminalRuleCall_18_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"attendee",
-							lv_attendee_40_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_41=','
-				{
-					newLeafNode(otherlv_41, grammarAccess.getJournalCAccess().getCommaKeyword_18_3_0());
-				}
-				(
-					(
-						lv_attendee_42_0=RULE_STR
-						{
-							newLeafNode(lv_attendee_42_0, grammarAccess.getJournalCAccess().getAttendeeSTRTerminalRuleCall_18_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"attendee",
-								lv_attendee_42_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_43='}'
-			{
-				newLeafNode(otherlv_43, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_18_4());
-			}
-		)?
-		(
-			otherlv_44='categories'
-			{
-				newLeafNode(otherlv_44, grammarAccess.getJournalCAccess().getCategoriesKeyword_19_0());
-			}
-			otherlv_45='{'
-			{
-				newLeafNode(otherlv_45, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_19_1());
-			}
-			(
-				(
-					lv_categories_46_0=RULE_STR
-					{
-						newLeafNode(lv_categories_46_0, grammarAccess.getJournalCAccess().getCategoriesSTRTerminalRuleCall_19_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"categories",
-							lv_categories_46_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_47=','
-				{
-					newLeafNode(otherlv_47, grammarAccess.getJournalCAccess().getCommaKeyword_19_3_0());
-				}
-				(
-					(
-						lv_categories_48_0=RULE_STR
-						{
-							newLeafNode(lv_categories_48_0, grammarAccess.getJournalCAccess().getCategoriesSTRTerminalRuleCall_19_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"categories",
-								lv_categories_48_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_49='}'
-			{
-				newLeafNode(otherlv_49, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_19_4());
-			}
-		)?
-		(
-			otherlv_50='comment'
-			{
-				newLeafNode(otherlv_50, grammarAccess.getJournalCAccess().getCommentKeyword_20_0());
-			}
-			otherlv_51='{'
-			{
-				newLeafNode(otherlv_51, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_20_1());
-			}
-			(
-				(
-					lv_comment_52_0=RULE_STR
-					{
-						newLeafNode(lv_comment_52_0, grammarAccess.getJournalCAccess().getCommentSTRTerminalRuleCall_20_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"comment",
-							lv_comment_52_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_53=','
-				{
-					newLeafNode(otherlv_53, grammarAccess.getJournalCAccess().getCommaKeyword_20_3_0());
-				}
-				(
-					(
-						lv_comment_54_0=RULE_STR
-						{
-							newLeafNode(lv_comment_54_0, grammarAccess.getJournalCAccess().getCommentSTRTerminalRuleCall_20_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"comment",
-								lv_comment_54_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_55='}'
-			{
-				newLeafNode(otherlv_55, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_20_4());
-			}
-		)?
-		(
-			otherlv_56='contact'
-			{
-				newLeafNode(otherlv_56, grammarAccess.getJournalCAccess().getContactKeyword_21_0());
-			}
-			otherlv_57='{'
-			{
-				newLeafNode(otherlv_57, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_21_1());
-			}
-			(
-				(
-					lv_contact_58_0=RULE_STR
-					{
-						newLeafNode(lv_contact_58_0, grammarAccess.getJournalCAccess().getContactSTRTerminalRuleCall_21_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"contact",
-							lv_contact_58_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_59=','
-				{
-					newLeafNode(otherlv_59, grammarAccess.getJournalCAccess().getCommaKeyword_21_3_0());
-				}
-				(
-					(
-						lv_contact_60_0=RULE_STR
-						{
-							newLeafNode(lv_contact_60_0, grammarAccess.getJournalCAccess().getContactSTRTerminalRuleCall_21_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"contact",
-								lv_contact_60_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_61='}'
-			{
-				newLeafNode(otherlv_61, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_21_4());
-			}
-		)?
-		(
-			otherlv_62='exdate'
-			{
-				newLeafNode(otherlv_62, grammarAccess.getJournalCAccess().getExdateKeyword_22_0());
-			}
-			otherlv_63='{'
-			{
-				newLeafNode(otherlv_63, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_22_1());
-			}
-			(
-				(
-					lv_exdate_64_0=RULE_STR
-					{
-						newLeafNode(lv_exdate_64_0, grammarAccess.getJournalCAccess().getExdateSTRTerminalRuleCall_22_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"exdate",
-							lv_exdate_64_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_65=','
-				{
-					newLeafNode(otherlv_65, grammarAccess.getJournalCAccess().getCommaKeyword_22_3_0());
-				}
-				(
-					(
-						lv_exdate_66_0=RULE_STR
-						{
-							newLeafNode(lv_exdate_66_0, grammarAccess.getJournalCAccess().getExdateSTRTerminalRuleCall_22_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"exdate",
-								lv_exdate_66_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_67='}'
-			{
-				newLeafNode(otherlv_67, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_22_4());
-			}
-		)?
-		(
-			otherlv_68='rstatus'
-			{
-				newLeafNode(otherlv_68, grammarAccess.getJournalCAccess().getRstatusKeyword_23_0());
-			}
-			otherlv_69='{'
-			{
-				newLeafNode(otherlv_69, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_23_1());
-			}
-			(
-				(
-					lv_rstatus_70_0=RULE_STR
-					{
-						newLeafNode(lv_rstatus_70_0, grammarAccess.getJournalCAccess().getRstatusSTRTerminalRuleCall_23_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"rstatus",
-							lv_rstatus_70_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_71=','
-				{
-					newLeafNode(otherlv_71, grammarAccess.getJournalCAccess().getCommaKeyword_23_3_0());
-				}
-				(
-					(
-						lv_rstatus_72_0=RULE_STR
-						{
-							newLeafNode(lv_rstatus_72_0, grammarAccess.getJournalCAccess().getRstatusSTRTerminalRuleCall_23_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"rstatus",
-								lv_rstatus_72_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_73='}'
-			{
-				newLeafNode(otherlv_73, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_23_4());
-			}
-		)?
-		(
-			otherlv_74='related'
-			{
-				newLeafNode(otherlv_74, grammarAccess.getJournalCAccess().getRelatedKeyword_24_0());
-			}
-			otherlv_75='{'
-			{
-				newLeafNode(otherlv_75, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_24_1());
-			}
-			(
-				(
-					lv_related_76_0=RULE_STR
-					{
-						newLeafNode(lv_related_76_0, grammarAccess.getJournalCAccess().getRelatedSTRTerminalRuleCall_24_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"related",
-							lv_related_76_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_77=','
-				{
-					newLeafNode(otherlv_77, grammarAccess.getJournalCAccess().getCommaKeyword_24_3_0());
-				}
-				(
-					(
-						lv_related_78_0=RULE_STR
-						{
-							newLeafNode(lv_related_78_0, grammarAccess.getJournalCAccess().getRelatedSTRTerminalRuleCall_24_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"related",
-								lv_related_78_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_79='}'
-			{
-				newLeafNode(otherlv_79, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_24_4());
-			}
-		)?
-		(
-			otherlv_80='resources'
-			{
-				newLeafNode(otherlv_80, grammarAccess.getJournalCAccess().getResourcesKeyword_25_0());
-			}
-			otherlv_81='{'
-			{
-				newLeafNode(otherlv_81, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_25_1());
-			}
-			(
-				(
-					lv_resources_82_0=RULE_STR
-					{
-						newLeafNode(lv_resources_82_0, grammarAccess.getJournalCAccess().getResourcesSTRTerminalRuleCall_25_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"resources",
-							lv_resources_82_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_83=','
-				{
-					newLeafNode(otherlv_83, grammarAccess.getJournalCAccess().getCommaKeyword_25_3_0());
-				}
-				(
-					(
-						lv_resources_84_0=RULE_STR
-						{
-							newLeafNode(lv_resources_84_0, grammarAccess.getJournalCAccess().getResourcesSTRTerminalRuleCall_25_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"resources",
-								lv_resources_84_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_85='}'
-			{
-				newLeafNode(otherlv_85, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_25_4());
-			}
-		)?
-		(
-			otherlv_86='rdate'
-			{
-				newLeafNode(otherlv_86, grammarAccess.getJournalCAccess().getRdateKeyword_26_0());
-			}
-			otherlv_87='{'
-			{
-				newLeafNode(otherlv_87, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_26_1());
-			}
-			(
-				(
-					lv_rdate_88_0=RULE_STR
-					{
-						newLeafNode(lv_rdate_88_0, grammarAccess.getJournalCAccess().getRdateSTRTerminalRuleCall_26_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"rdate",
-							lv_rdate_88_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_89=','
-				{
-					newLeafNode(otherlv_89, grammarAccess.getJournalCAccess().getCommaKeyword_26_3_0());
-				}
-				(
-					(
-						lv_rdate_90_0=RULE_STR
-						{
-							newLeafNode(lv_rdate_90_0, grammarAccess.getJournalCAccess().getRdateSTRTerminalRuleCall_26_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"rdate",
-								lv_rdate_90_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_91='}'
-			{
-				newLeafNode(otherlv_91, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_26_4());
-			}
-		)?
-		(
-			otherlv_92='x_prop'
-			{
-				newLeafNode(otherlv_92, grammarAccess.getJournalCAccess().getX_propKeyword_27_0());
-			}
-			otherlv_93='{'
-			{
-				newLeafNode(otherlv_93, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_27_1());
-			}
-			(
-				(
-					lv_x_prop_94_0=RULE_STR
-					{
-						newLeafNode(lv_x_prop_94_0, grammarAccess.getJournalCAccess().getX_propSTRTerminalRuleCall_27_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"x_prop",
-							lv_x_prop_94_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_95=','
-				{
-					newLeafNode(otherlv_95, grammarAccess.getJournalCAccess().getCommaKeyword_27_3_0());
-				}
-				(
-					(
-						lv_x_prop_96_0=RULE_STR
-						{
-							newLeafNode(lv_x_prop_96_0, grammarAccess.getJournalCAccess().getX_propSTRTerminalRuleCall_27_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"x_prop",
-								lv_x_prop_96_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_97='}'
-			{
-				newLeafNode(otherlv_97, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_27_4());
-			}
-		)?
-		(
-			otherlv_98='iana_prop'
-			{
-				newLeafNode(otherlv_98, grammarAccess.getJournalCAccess().getIana_propKeyword_28_0());
-			}
-			otherlv_99='{'
-			{
-				newLeafNode(otherlv_99, grammarAccess.getJournalCAccess().getLeftCurlyBracketKeyword_28_1());
-			}
-			(
-				(
-					lv_iana_prop_100_0=RULE_STR
-					{
-						newLeafNode(lv_iana_prop_100_0, grammarAccess.getJournalCAccess().getIana_propSTRTerminalRuleCall_28_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"iana_prop",
-							lv_iana_prop_100_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_101=','
-				{
-					newLeafNode(otherlv_101, grammarAccess.getJournalCAccess().getCommaKeyword_28_3_0());
-				}
-				(
-					(
-						lv_iana_prop_102_0=RULE_STR
-						{
-							newLeafNode(lv_iana_prop_102_0, grammarAccess.getJournalCAccess().getIana_propSTRTerminalRuleCall_28_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getJournalCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"iana_prop",
-								lv_iana_prop_102_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_103='}'
-			{
-				newLeafNode(otherlv_103, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_28_4());
-			}
-		)?
-		(
-			otherlv_104='description'
-			{
-				newLeafNode(otherlv_104, grammarAccess.getJournalCAccess().getDescriptionKeyword_29_0());
-			}
-			(
-				(
-					lv_description_105_0=RULE_STR
-					{
-						newLeafNode(lv_description_105_0, grammarAccess.getJournalCAccess().getDescriptionSTRTerminalRuleCall_29_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getJournalCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"description",
-							lv_description_105_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		otherlv_106='}'
-		{
-			newLeafNode(otherlv_106, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_30());
+			newLeafNode(otherlv_105, grammarAccess.getJournalCAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -4888,510 +5822,614 @@ ruleVacationC returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='dtstamp'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getVacationCAccess().getDtstampKeyword_2());
-		}
 		(
 			(
-				lv_dtstamp_3_0=RULE_STR
-				{
-					newLeafNode(lv_dtstamp_3_0, grammarAccess.getVacationCAccess().getDtstampSTRTerminalRuleCall_3_0());
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVacationCRule());
+				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 0);
 					}
-					setWithLastConsumed(
-						$current,
-						"dtstamp",
-						lv_dtstamp_3_0,
-						"xCalendar.MyDsl.STR");
-				}
+								({true}?=>(otherlv_3='Identifiant:'
+								{
+									newLeafNode(otherlv_3, grammarAccess.getVacationCAccess().getIdentifiantKeyword_2_0_0());
+								}
+								(
+									(
+										lv_uid_4_0=RULE_STR
+										{
+											newLeafNode(lv_uid_4_0, grammarAccess.getVacationCAccess().getUidSTRTerminalRuleCall_2_0_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVacationCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"uid",
+												lv_uid_4_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 1);
+					}
+								({true}?=>(otherlv_5='Date:'
+								{
+									newLeafNode(otherlv_5, grammarAccess.getVacationCAccess().getDateKeyword_2_1_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getVacationCAccess().getDtstartDateTParserRuleCall_2_1_1_0());
+										}
+										lv_dtstart_6_0=ruleDateT
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getVacationCRule());
+											}
+											set(
+												$current,
+												"dtstart",
+												lv_dtstart_6_0,
+												"xCalendar.MyDsl.DateT");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 2);
+					}
+								({true}?=>(otherlv_7='Organisateur:'
+								{
+									newLeafNode(otherlv_7, grammarAccess.getVacationCAccess().getOrganisateurKeyword_2_2_0());
+								}
+								(
+									(
+										lv_organizer_8_0=RULE_STR
+										{
+											newLeafNode(lv_organizer_8_0, grammarAccess.getVacationCAccess().getOrganizerSTRTerminalRuleCall_2_2_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVacationCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"organizer",
+												lv_organizer_8_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 3);
+					}
+								({true}?=>(otherlv_9='URL:'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getVacationCAccess().getURLKeyword_2_3_0());
+								}
+								(
+									(
+										lv_url_10_0=RULE_STR
+										{
+											newLeafNode(lv_url_10_0, grammarAccess.getVacationCAccess().getUrlSTRTerminalRuleCall_2_3_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVacationCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"url",
+												lv_url_10_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 4);
+					}
+								({true}?=>(otherlv_11='Contact:'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getVacationCAccess().getContactKeyword_2_4_0());
+								}
+								(
+									(
+										lv_contact_12_0=RULE_STR
+										{
+											newLeafNode(lv_contact_12_0, grammarAccess.getVacationCAccess().getContactSTRTerminalRuleCall_2_4_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVacationCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"contact",
+												lv_contact_12_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 5)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 5);
+					}
+								({true}?=>(otherlv_13='Fin:'
+								{
+									newLeafNode(otherlv_13, grammarAccess.getVacationCAccess().getFinKeyword_2_5_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getVacationCAccess().getDtendDateTParserRuleCall_2_5_1_0());
+										}
+										lv_dtend_14_0=ruleDateT
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getVacationCRule());
+											}
+											set(
+												$current,
+												"dtend",
+												lv_dtend_14_0,
+												"xCalendar.MyDsl.DateT");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 6)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 6);
+					}
+								({true}?=>(otherlv_15='Invites'
+								{
+									newLeafNode(otherlv_15, grammarAccess.getVacationCAccess().getInvitesKeyword_2_6_0());
+								}
+								otherlv_16='{'
+								{
+									newLeafNode(otherlv_16, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_2_6_1());
+								}
+								(
+									(
+										lv_attendee_17_0=RULE_STR
+										{
+											newLeafNode(lv_attendee_17_0, grammarAccess.getVacationCAccess().getAttendeeSTRTerminalRuleCall_2_6_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVacationCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"attendee",
+												lv_attendee_17_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_18=','
+									{
+										newLeafNode(otherlv_18, grammarAccess.getVacationCAccess().getCommaKeyword_2_6_3_0());
+									}
+									(
+										(
+											lv_attendee_19_0=RULE_STR
+											{
+												newLeafNode(lv_attendee_19_0, grammarAccess.getVacationCAccess().getAttendeeSTRTerminalRuleCall_2_6_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getVacationCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"attendee",
+													lv_attendee_19_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_20='}'
+								{
+									newLeafNode(otherlv_20, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_2_6_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 7)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 7);
+					}
+								({true}?=>(otherlv_21='Commentaire'
+								{
+									newLeafNode(otherlv_21, grammarAccess.getVacationCAccess().getCommentaireKeyword_2_7_0());
+								}
+								otherlv_22='{'
+								{
+									newLeafNode(otherlv_22, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_2_7_1());
+								}
+								(
+									(
+										lv_comment_23_0=RULE_STR
+										{
+											newLeafNode(lv_comment_23_0, grammarAccess.getVacationCAccess().getCommentSTRTerminalRuleCall_2_7_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVacationCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"comment",
+												lv_comment_23_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_24=','
+									{
+										newLeafNode(otherlv_24, grammarAccess.getVacationCAccess().getCommaKeyword_2_7_3_0());
+									}
+									(
+										(
+											lv_comment_25_0=RULE_STR
+											{
+												newLeafNode(lv_comment_25_0, grammarAccess.getVacationCAccess().getCommentSTRTerminalRuleCall_2_7_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getVacationCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"comment",
+													lv_comment_25_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_26='}'
+								{
+									newLeafNode(otherlv_26, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_2_7_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 8)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 8);
+					}
+								({true}?=>(otherlv_27='Freebusy'
+								{
+									newLeafNode(otherlv_27, grammarAccess.getVacationCAccess().getFreebusyKeyword_2_8_0());
+								}
+								otherlv_28='{'
+								{
+									newLeafNode(otherlv_28, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_2_8_1());
+								}
+								(
+									(
+										lv_freebusy_29_0=RULE_STR
+										{
+											newLeafNode(lv_freebusy_29_0, grammarAccess.getVacationCAccess().getFreebusySTRTerminalRuleCall_2_8_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVacationCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"freebusy",
+												lv_freebusy_29_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_30=','
+									{
+										newLeafNode(otherlv_30, grammarAccess.getVacationCAccess().getCommaKeyword_2_8_3_0());
+									}
+									(
+										(
+											lv_freebusy_31_0=RULE_STR
+											{
+												newLeafNode(lv_freebusy_31_0, grammarAccess.getVacationCAccess().getFreebusySTRTerminalRuleCall_2_8_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getVacationCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"freebusy",
+													lv_freebusy_31_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_32='}'
+								{
+									newLeafNode(otherlv_32, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_2_8_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 9)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 9);
+					}
+								({true}?=>(otherlv_33='Rstatus'
+								{
+									newLeafNode(otherlv_33, grammarAccess.getVacationCAccess().getRstatusKeyword_2_9_0());
+								}
+								otherlv_34='{'
+								{
+									newLeafNode(otherlv_34, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_2_9_1());
+								}
+								(
+									(
+										lv_rstatus_35_0=RULE_STR
+										{
+											newLeafNode(lv_rstatus_35_0, grammarAccess.getVacationCAccess().getRstatusSTRTerminalRuleCall_2_9_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVacationCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"rstatus",
+												lv_rstatus_35_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_36=','
+									{
+										newLeafNode(otherlv_36, grammarAccess.getVacationCAccess().getCommaKeyword_2_9_3_0());
+									}
+									(
+										(
+											lv_rstatus_37_0=RULE_STR
+											{
+												newLeafNode(lv_rstatus_37_0, grammarAccess.getVacationCAccess().getRstatusSTRTerminalRuleCall_2_9_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getVacationCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"rstatus",
+													lv_rstatus_37_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_38='}'
+								{
+									newLeafNode(otherlv_38, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_2_9_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 10)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 10);
+					}
+								({true}?=>(otherlv_39='X_prop'
+								{
+									newLeafNode(otherlv_39, grammarAccess.getVacationCAccess().getX_propKeyword_2_10_0());
+								}
+								otherlv_40='{'
+								{
+									newLeafNode(otherlv_40, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_2_10_1());
+								}
+								(
+									(
+										lv_x_prop_41_0=RULE_STR
+										{
+											newLeafNode(lv_x_prop_41_0, grammarAccess.getVacationCAccess().getX_propSTRTerminalRuleCall_2_10_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVacationCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"x_prop",
+												lv_x_prop_41_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_42=','
+									{
+										newLeafNode(otherlv_42, grammarAccess.getVacationCAccess().getCommaKeyword_2_10_3_0());
+									}
+									(
+										(
+											lv_x_prop_43_0=RULE_STR
+											{
+												newLeafNode(lv_x_prop_43_0, grammarAccess.getVacationCAccess().getX_propSTRTerminalRuleCall_2_10_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getVacationCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"x_prop",
+													lv_x_prop_43_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_44='}'
+								{
+									newLeafNode(otherlv_44, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_2_10_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 11)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVacationCAccess().getUnorderedGroup_2(), 11);
+					}
+								({true}?=>(otherlv_45='Iana_prop'
+								{
+									newLeafNode(otherlv_45, grammarAccess.getVacationCAccess().getIana_propKeyword_2_11_0());
+								}
+								otherlv_46='{'
+								{
+									newLeafNode(otherlv_46, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_2_11_1());
+								}
+								(
+									(
+										lv_iana_prop_47_0=RULE_STR
+										{
+											newLeafNode(lv_iana_prop_47_0, grammarAccess.getVacationCAccess().getIana_propSTRTerminalRuleCall_2_11_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVacationCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"iana_prop",
+												lv_iana_prop_47_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_48=','
+									{
+										newLeafNode(otherlv_48, grammarAccess.getVacationCAccess().getCommaKeyword_2_11_3_0());
+									}
+									(
+										(
+											lv_iana_prop_49_0=RULE_STR
+											{
+												newLeafNode(lv_iana_prop_49_0, grammarAccess.getVacationCAccess().getIana_propSTRTerminalRuleCall_2_11_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getVacationCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"iana_prop",
+													lv_iana_prop_49_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_50='}'
+								{
+									newLeafNode(otherlv_50, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_2_11_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+					}
+				)
 			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getVacationCAccess().getUnorderedGroup_2())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getVacationCAccess().getUnorderedGroup_2());
+				}
 		)
-		otherlv_4='uid'
+		otherlv_51='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getVacationCAccess().getUidKeyword_4());
-		}
-		(
-			(
-				lv_uid_5_0=RULE_STR
-				{
-					newLeafNode(lv_uid_5_0, grammarAccess.getVacationCAccess().getUidSTRTerminalRuleCall_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVacationCRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"uid",
-						lv_uid_5_0,
-						"xCalendar.MyDsl.STR");
-				}
-			)
-		)
-		(
-			otherlv_6='dtstart'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getVacationCAccess().getDtstartKeyword_6_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getVacationCAccess().getDtstartDateTParserRuleCall_6_1_0());
-					}
-					lv_dtstart_7_0=ruleDateT
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getVacationCRule());
-						}
-						set(
-							$current,
-							"dtstart",
-							lv_dtstart_7_0,
-							"xCalendar.MyDsl.DateT");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_8='organizer'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getVacationCAccess().getOrganizerKeyword_7_0());
-			}
-			(
-				(
-					lv_organizer_9_0=RULE_STR
-					{
-						newLeafNode(lv_organizer_9_0, grammarAccess.getVacationCAccess().getOrganizerSTRTerminalRuleCall_7_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVacationCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"organizer",
-							lv_organizer_9_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_10='url'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getVacationCAccess().getUrlKeyword_8_0());
-			}
-			(
-				(
-					lv_url_11_0=RULE_STR
-					{
-						newLeafNode(lv_url_11_0, grammarAccess.getVacationCAccess().getUrlSTRTerminalRuleCall_8_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVacationCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"url",
-							lv_url_11_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_12='contact'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getVacationCAccess().getContactKeyword_9_0());
-			}
-			(
-				(
-					lv_contact_13_0=RULE_STR
-					{
-						newLeafNode(lv_contact_13_0, grammarAccess.getVacationCAccess().getContactSTRTerminalRuleCall_9_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVacationCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"contact",
-							lv_contact_13_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_14='dtend'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getVacationCAccess().getDtendKeyword_10_0());
-			}
-			(
-				(
-					lv_dtend_15_0=RULE_STR
-					{
-						newLeafNode(lv_dtend_15_0, grammarAccess.getVacationCAccess().getDtendSTRTerminalRuleCall_10_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVacationCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"dtend",
-							lv_dtend_15_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_16='attendee'
-			{
-				newLeafNode(otherlv_16, grammarAccess.getVacationCAccess().getAttendeeKeyword_11_0());
-			}
-			otherlv_17='{'
-			{
-				newLeafNode(otherlv_17, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_11_1());
-			}
-			(
-				(
-					lv_attendee_18_0=RULE_STR
-					{
-						newLeafNode(lv_attendee_18_0, grammarAccess.getVacationCAccess().getAttendeeSTRTerminalRuleCall_11_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVacationCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"attendee",
-							lv_attendee_18_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_19=','
-				{
-					newLeafNode(otherlv_19, grammarAccess.getVacationCAccess().getCommaKeyword_11_3_0());
-				}
-				(
-					(
-						lv_attendee_20_0=RULE_STR
-						{
-							newLeafNode(lv_attendee_20_0, grammarAccess.getVacationCAccess().getAttendeeSTRTerminalRuleCall_11_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getVacationCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"attendee",
-								lv_attendee_20_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_21='}'
-			{
-				newLeafNode(otherlv_21, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_11_4());
-			}
-		)?
-		(
-			otherlv_22='comment'
-			{
-				newLeafNode(otherlv_22, grammarAccess.getVacationCAccess().getCommentKeyword_12_0());
-			}
-			otherlv_23='{'
-			{
-				newLeafNode(otherlv_23, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_12_1());
-			}
-			(
-				(
-					lv_comment_24_0=RULE_STR
-					{
-						newLeafNode(lv_comment_24_0, grammarAccess.getVacationCAccess().getCommentSTRTerminalRuleCall_12_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVacationCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"comment",
-							lv_comment_24_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_25=','
-				{
-					newLeafNode(otherlv_25, grammarAccess.getVacationCAccess().getCommaKeyword_12_3_0());
-				}
-				(
-					(
-						lv_comment_26_0=RULE_STR
-						{
-							newLeafNode(lv_comment_26_0, grammarAccess.getVacationCAccess().getCommentSTRTerminalRuleCall_12_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getVacationCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"comment",
-								lv_comment_26_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_27='}'
-			{
-				newLeafNode(otherlv_27, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_12_4());
-			}
-		)?
-		(
-			otherlv_28='freebusy'
-			{
-				newLeafNode(otherlv_28, grammarAccess.getVacationCAccess().getFreebusyKeyword_13_0());
-			}
-			otherlv_29='{'
-			{
-				newLeafNode(otherlv_29, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_13_1());
-			}
-			(
-				(
-					lv_freebusy_30_0=RULE_STR
-					{
-						newLeafNode(lv_freebusy_30_0, grammarAccess.getVacationCAccess().getFreebusySTRTerminalRuleCall_13_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVacationCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"freebusy",
-							lv_freebusy_30_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_31=','
-				{
-					newLeafNode(otherlv_31, grammarAccess.getVacationCAccess().getCommaKeyword_13_3_0());
-				}
-				(
-					(
-						lv_freebusy_32_0=RULE_STR
-						{
-							newLeafNode(lv_freebusy_32_0, grammarAccess.getVacationCAccess().getFreebusySTRTerminalRuleCall_13_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getVacationCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"freebusy",
-								lv_freebusy_32_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_33='}'
-			{
-				newLeafNode(otherlv_33, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_13_4());
-			}
-		)?
-		(
-			otherlv_34='rstatus'
-			{
-				newLeafNode(otherlv_34, grammarAccess.getVacationCAccess().getRstatusKeyword_14_0());
-			}
-			otherlv_35='{'
-			{
-				newLeafNode(otherlv_35, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_14_1());
-			}
-			(
-				(
-					lv_rstatus_36_0=RULE_STR
-					{
-						newLeafNode(lv_rstatus_36_0, grammarAccess.getVacationCAccess().getRstatusSTRTerminalRuleCall_14_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVacationCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"rstatus",
-							lv_rstatus_36_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_37=','
-				{
-					newLeafNode(otherlv_37, grammarAccess.getVacationCAccess().getCommaKeyword_14_3_0());
-				}
-				(
-					(
-						lv_rstatus_38_0=RULE_STR
-						{
-							newLeafNode(lv_rstatus_38_0, grammarAccess.getVacationCAccess().getRstatusSTRTerminalRuleCall_14_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getVacationCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"rstatus",
-								lv_rstatus_38_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_39='}'
-			{
-				newLeafNode(otherlv_39, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_14_4());
-			}
-		)?
-		(
-			otherlv_40='x_prop'
-			{
-				newLeafNode(otherlv_40, grammarAccess.getVacationCAccess().getX_propKeyword_15_0());
-			}
-			otherlv_41='{'
-			{
-				newLeafNode(otherlv_41, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_15_1());
-			}
-			(
-				(
-					lv_x_prop_42_0=RULE_STR
-					{
-						newLeafNode(lv_x_prop_42_0, grammarAccess.getVacationCAccess().getX_propSTRTerminalRuleCall_15_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVacationCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"x_prop",
-							lv_x_prop_42_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_43=','
-				{
-					newLeafNode(otherlv_43, grammarAccess.getVacationCAccess().getCommaKeyword_15_3_0());
-				}
-				(
-					(
-						lv_x_prop_44_0=RULE_STR
-						{
-							newLeafNode(lv_x_prop_44_0, grammarAccess.getVacationCAccess().getX_propSTRTerminalRuleCall_15_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getVacationCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"x_prop",
-								lv_x_prop_44_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_45='}'
-			{
-				newLeafNode(otherlv_45, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_15_4());
-			}
-		)?
-		(
-			otherlv_46='iana_prop'
-			{
-				newLeafNode(otherlv_46, grammarAccess.getVacationCAccess().getIana_propKeyword_16_0());
-			}
-			otherlv_47='{'
-			{
-				newLeafNode(otherlv_47, grammarAccess.getVacationCAccess().getLeftCurlyBracketKeyword_16_1());
-			}
-			(
-				(
-					lv_iana_prop_48_0=RULE_STR
-					{
-						newLeafNode(lv_iana_prop_48_0, grammarAccess.getVacationCAccess().getIana_propSTRTerminalRuleCall_16_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVacationCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"iana_prop",
-							lv_iana_prop_48_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_49=','
-				{
-					newLeafNode(otherlv_49, grammarAccess.getVacationCAccess().getCommaKeyword_16_3_0());
-				}
-				(
-					(
-						lv_iana_prop_50_0=RULE_STR
-						{
-							newLeafNode(lv_iana_prop_50_0, grammarAccess.getVacationCAccess().getIana_propSTRTerminalRuleCall_16_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getVacationCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"iana_prop",
-								lv_iana_prop_50_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_51='}'
-			{
-				newLeafNode(otherlv_51, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_16_4());
-			}
-		)?
-		otherlv_52='}'
-		{
-			newLeafNode(otherlv_52, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_17());
+			newLeafNode(otherlv_51, grammarAccess.getVacationCAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -5420,316 +6458,394 @@ ruleTimeZoneC returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getTimeZoneCAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='tzid'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getTimeZoneCAccess().getTzidKeyword_2());
-		}
 		(
 			(
-				lv_tzid_3_0=RULE_STR
-				{
-					newLeafNode(lv_tzid_3_0, grammarAccess.getTimeZoneCAccess().getTzidSTRTerminalRuleCall_3_0());
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTimeZoneCRule());
+				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 0);
 					}
-					setWithLastConsumed(
-						$current,
-						"tzid",
-						lv_tzid_3_0,
-						"xCalendar.MyDsl.STR");
-				}
+								({true}?=>(otherlv_3='Tzid:'
+								{
+									newLeafNode(otherlv_3, grammarAccess.getTimeZoneCAccess().getTzidKeyword_2_0_0());
+								}
+								(
+									(
+										lv_tzid_4_0=RULE_STR
+										{
+											newLeafNode(lv_tzid_4_0, grammarAccess.getTimeZoneCAccess().getTzidSTRTerminalRuleCall_2_0_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTimeZoneCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"tzid",
+												lv_tzid_4_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 1);
+					}
+								({true}?=>(otherlv_5='Last_mod:'
+								{
+									newLeafNode(otherlv_5, grammarAccess.getTimeZoneCAccess().getLast_modKeyword_2_1_0());
+								}
+								(
+									(
+										lv_last_mod_6_0=RULE_STR
+										{
+											newLeafNode(lv_last_mod_6_0, grammarAccess.getTimeZoneCAccess().getLast_modSTRTerminalRuleCall_2_1_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTimeZoneCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"last_mod",
+												lv_last_mod_6_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 2);
+					}
+								({true}?=>(otherlv_7='Tzurl:'
+								{
+									newLeafNode(otherlv_7, grammarAccess.getTimeZoneCAccess().getTzurlKeyword_2_2_0());
+								}
+								(
+									(
+										lv_tzurl_8_0=RULE_STR
+										{
+											newLeafNode(lv_tzurl_8_0, grammarAccess.getTimeZoneCAccess().getTzurlSTRTerminalRuleCall_2_2_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTimeZoneCRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"tzurl",
+												lv_tzurl_8_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 3);
+					}
+								({true}?=>(otherlv_9='X_prop'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getTimeZoneCAccess().getX_propKeyword_2_3_0());
+								}
+								otherlv_10='{'
+								{
+									newLeafNode(otherlv_10, grammarAccess.getTimeZoneCAccess().getLeftCurlyBracketKeyword_2_3_1());
+								}
+								(
+									(
+										lv_x_prop_11_0=RULE_STR
+										{
+											newLeafNode(lv_x_prop_11_0, grammarAccess.getTimeZoneCAccess().getX_propSTRTerminalRuleCall_2_3_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTimeZoneCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"x_prop",
+												lv_x_prop_11_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_12=','
+									{
+										newLeafNode(otherlv_12, grammarAccess.getTimeZoneCAccess().getCommaKeyword_2_3_3_0());
+									}
+									(
+										(
+											lv_x_prop_13_0=RULE_STR
+											{
+												newLeafNode(lv_x_prop_13_0, grammarAccess.getTimeZoneCAccess().getX_propSTRTerminalRuleCall_2_3_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getTimeZoneCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"x_prop",
+													lv_x_prop_13_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_14='}'
+								{
+									newLeafNode(otherlv_14, grammarAccess.getTimeZoneCAccess().getRightCurlyBracketKeyword_2_3_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 4);
+					}
+								({true}?=>(otherlv_15='Iana_prop'
+								{
+									newLeafNode(otherlv_15, grammarAccess.getTimeZoneCAccess().getIana_propKeyword_2_4_0());
+								}
+								otherlv_16='{'
+								{
+									newLeafNode(otherlv_16, grammarAccess.getTimeZoneCAccess().getLeftCurlyBracketKeyword_2_4_1());
+								}
+								(
+									(
+										lv_iana_prop_17_0=RULE_STR
+										{
+											newLeafNode(lv_iana_prop_17_0, grammarAccess.getTimeZoneCAccess().getIana_propSTRTerminalRuleCall_2_4_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getTimeZoneCRule());
+											}
+											addWithLastConsumed(
+												$current,
+												"iana_prop",
+												lv_iana_prop_17_0,
+												"xCalendar.MyDsl.STR");
+										}
+									)
+								)
+								(
+									otherlv_18=','
+									{
+										newLeafNode(otherlv_18, grammarAccess.getTimeZoneCAccess().getCommaKeyword_2_4_3_0());
+									}
+									(
+										(
+											lv_iana_prop_19_0=RULE_STR
+											{
+												newLeafNode(lv_iana_prop_19_0, grammarAccess.getTimeZoneCAccess().getIana_propSTRTerminalRuleCall_2_4_3_1_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getTimeZoneCRule());
+												}
+												addWithLastConsumed(
+													$current,
+													"iana_prop",
+													lv_iana_prop_19_0,
+													"xCalendar.MyDsl.STR");
+											}
+										)
+									)
+								)*
+								otherlv_20='}'
+								{
+									newLeafNode(otherlv_20, grammarAccess.getTimeZoneCAccess().getRightCurlyBracketKeyword_2_4_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 5)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 5);
+					}
+								({true}?=>(otherlv_21='Standardc'
+								{
+									newLeafNode(otherlv_21, grammarAccess.getTimeZoneCAccess().getStandardcKeyword_2_5_0());
+								}
+								otherlv_22='{'
+								{
+									newLeafNode(otherlv_22, grammarAccess.getTimeZoneCAccess().getLeftCurlyBracketKeyword_2_5_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getTimeZoneCAccess().getStandardcTzpropParserRuleCall_2_5_2_0());
+										}
+										lv_standardc_23_0=ruletzprop
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getTimeZoneCRule());
+											}
+											add(
+												$current,
+												"standardc",
+												lv_standardc_23_0,
+												"xCalendar.MyDsl.tzprop");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_24=','
+									{
+										newLeafNode(otherlv_24, grammarAccess.getTimeZoneCAccess().getCommaKeyword_2_5_3_0());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getTimeZoneCAccess().getStandardcTzpropParserRuleCall_2_5_3_1_0());
+											}
+											lv_standardc_25_0=ruletzprop
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getTimeZoneCRule());
+												}
+												add(
+													$current,
+													"standardc",
+													lv_standardc_25_0,
+													"xCalendar.MyDsl.tzprop");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+								)*
+								otherlv_26='}'
+								{
+									newLeafNode(otherlv_26, grammarAccess.getTimeZoneCAccess().getRightCurlyBracketKeyword_2_5_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 6)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2(), 6);
+					}
+								({true}?=>(otherlv_27='Daylightc'
+								{
+									newLeafNode(otherlv_27, grammarAccess.getTimeZoneCAccess().getDaylightcKeyword_2_6_0());
+								}
+								otherlv_28='{'
+								{
+									newLeafNode(otherlv_28, grammarAccess.getTimeZoneCAccess().getLeftCurlyBracketKeyword_2_6_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getTimeZoneCAccess().getDaylightcTzpropParserRuleCall_2_6_2_0());
+										}
+										lv_daylightc_29_0=ruletzprop
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getTimeZoneCRule());
+											}
+											add(
+												$current,
+												"daylightc",
+												lv_daylightc_29_0,
+												"xCalendar.MyDsl.tzprop");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_30=','
+									{
+										newLeafNode(otherlv_30, grammarAccess.getTimeZoneCAccess().getCommaKeyword_2_6_3_0());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getTimeZoneCAccess().getDaylightcTzpropParserRuleCall_2_6_3_1_0());
+											}
+											lv_daylightc_31_0=ruletzprop
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getTimeZoneCRule());
+												}
+												add(
+													$current,
+													"daylightc",
+													lv_daylightc_31_0,
+													"xCalendar.MyDsl.tzprop");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+								)*
+								otherlv_32='}'
+								{
+									newLeafNode(otherlv_32, grammarAccess.getTimeZoneCAccess().getRightCurlyBracketKeyword_2_6_4());
+								}
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2());
+					}
+				)
 			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getTimeZoneCAccess().getUnorderedGroup_2());
+				}
 		)
-		(
-			otherlv_4='last_mod'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getTimeZoneCAccess().getLast_modKeyword_4_0());
-			}
-			(
-				(
-					lv_last_mod_5_0=RULE_STR
-					{
-						newLeafNode(lv_last_mod_5_0, grammarAccess.getTimeZoneCAccess().getLast_modSTRTerminalRuleCall_4_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTimeZoneCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"last_mod",
-							lv_last_mod_5_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_6='tzurl'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getTimeZoneCAccess().getTzurlKeyword_5_0());
-			}
-			(
-				(
-					lv_tzurl_7_0=RULE_STR
-					{
-						newLeafNode(lv_tzurl_7_0, grammarAccess.getTimeZoneCAccess().getTzurlSTRTerminalRuleCall_5_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTimeZoneCRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"tzurl",
-							lv_tzurl_7_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_8='x_prop'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getTimeZoneCAccess().getX_propKeyword_6_0());
-			}
-			otherlv_9='{'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getTimeZoneCAccess().getLeftCurlyBracketKeyword_6_1());
-			}
-			(
-				(
-					lv_x_prop_10_0=RULE_STR
-					{
-						newLeafNode(lv_x_prop_10_0, grammarAccess.getTimeZoneCAccess().getX_propSTRTerminalRuleCall_6_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTimeZoneCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"x_prop",
-							lv_x_prop_10_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_11=','
-				{
-					newLeafNode(otherlv_11, grammarAccess.getTimeZoneCAccess().getCommaKeyword_6_3_0());
-				}
-				(
-					(
-						lv_x_prop_12_0=RULE_STR
-						{
-							newLeafNode(lv_x_prop_12_0, grammarAccess.getTimeZoneCAccess().getX_propSTRTerminalRuleCall_6_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getTimeZoneCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"x_prop",
-								lv_x_prop_12_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_13='}'
-			{
-				newLeafNode(otherlv_13, grammarAccess.getTimeZoneCAccess().getRightCurlyBracketKeyword_6_4());
-			}
-		)?
-		(
-			otherlv_14='iana_prop'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getTimeZoneCAccess().getIana_propKeyword_7_0());
-			}
-			otherlv_15='{'
-			{
-				newLeafNode(otherlv_15, grammarAccess.getTimeZoneCAccess().getLeftCurlyBracketKeyword_7_1());
-			}
-			(
-				(
-					lv_iana_prop_16_0=RULE_STR
-					{
-						newLeafNode(lv_iana_prop_16_0, grammarAccess.getTimeZoneCAccess().getIana_propSTRTerminalRuleCall_7_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTimeZoneCRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"iana_prop",
-							lv_iana_prop_16_0,
-							"xCalendar.MyDsl.STR");
-					}
-				)
-			)
-			(
-				otherlv_17=','
-				{
-					newLeafNode(otherlv_17, grammarAccess.getTimeZoneCAccess().getCommaKeyword_7_3_0());
-				}
-				(
-					(
-						lv_iana_prop_18_0=RULE_STR
-						{
-							newLeafNode(lv_iana_prop_18_0, grammarAccess.getTimeZoneCAccess().getIana_propSTRTerminalRuleCall_7_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getTimeZoneCRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"iana_prop",
-								lv_iana_prop_18_0,
-								"xCalendar.MyDsl.STR");
-						}
-					)
-				)
-			)*
-			otherlv_19='}'
-			{
-				newLeafNode(otherlv_19, grammarAccess.getTimeZoneCAccess().getRightCurlyBracketKeyword_7_4());
-			}
-		)?
-		(
-			otherlv_20='standardc'
-			{
-				newLeafNode(otherlv_20, grammarAccess.getTimeZoneCAccess().getStandardcKeyword_8_0());
-			}
-			otherlv_21='{'
-			{
-				newLeafNode(otherlv_21, grammarAccess.getTimeZoneCAccess().getLeftCurlyBracketKeyword_8_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getTimeZoneCAccess().getStandardcTzpropParserRuleCall_8_2_0());
-					}
-					lv_standardc_22_0=ruletzprop
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTimeZoneCRule());
-						}
-						add(
-							$current,
-							"standardc",
-							lv_standardc_22_0,
-							"xCalendar.MyDsl.tzprop");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_23=','
-				{
-					newLeafNode(otherlv_23, grammarAccess.getTimeZoneCAccess().getCommaKeyword_8_3_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getTimeZoneCAccess().getStandardcTzpropParserRuleCall_8_3_1_0());
-						}
-						lv_standardc_24_0=ruletzprop
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getTimeZoneCRule());
-							}
-							add(
-								$current,
-								"standardc",
-								lv_standardc_24_0,
-								"xCalendar.MyDsl.tzprop");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_25='}'
-			{
-				newLeafNode(otherlv_25, grammarAccess.getTimeZoneCAccess().getRightCurlyBracketKeyword_8_4());
-			}
-		)?
-		(
-			otherlv_26='daylightc'
-			{
-				newLeafNode(otherlv_26, grammarAccess.getTimeZoneCAccess().getDaylightcKeyword_9_0());
-			}
-			otherlv_27='{'
-			{
-				newLeafNode(otherlv_27, grammarAccess.getTimeZoneCAccess().getLeftCurlyBracketKeyword_9_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getTimeZoneCAccess().getDaylightcTzpropParserRuleCall_9_2_0());
-					}
-					lv_daylightc_28_0=ruletzprop
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTimeZoneCRule());
-						}
-						add(
-							$current,
-							"daylightc",
-							lv_daylightc_28_0,
-							"xCalendar.MyDsl.tzprop");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_29=','
-				{
-					newLeafNode(otherlv_29, grammarAccess.getTimeZoneCAccess().getCommaKeyword_9_3_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getTimeZoneCAccess().getDaylightcTzpropParserRuleCall_9_3_1_0());
-						}
-						lv_daylightc_30_0=ruletzprop
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getTimeZoneCRule());
-							}
-							add(
-								$current,
-								"daylightc",
-								lv_daylightc_30_0,
-								"xCalendar.MyDsl.tzprop");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_31='}'
-			{
-				newLeafNode(otherlv_31, grammarAccess.getTimeZoneCAccess().getRightCurlyBracketKeyword_9_4());
-			}
-		)?
-		otherlv_32='}'
+		otherlv_33='}'
 		{
-			newLeafNode(otherlv_32, grammarAccess.getTimeZoneCAccess().getRightCurlyBracketKeyword_10());
+			newLeafNode(otherlv_33, grammarAccess.getTimeZoneCAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
 
-RULE_STR : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
+RULE_STR : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 
 RULE_INT : ('0'..'9')+;
-
-RULE_TWO_DIGIT : '0'..'9' '0'..'9';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

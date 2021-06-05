@@ -2,6 +2,7 @@
  */
 package iCal.impl;
 
+import iCal.DateT;
 import iCal.ICalPackage;
 import iCal.VacationC;
 
@@ -9,10 +10,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -28,13 +31,13 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link iCal.impl.VacationCImpl#getOrganizer <em>Organizer</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getContact <em>Contact</em>}</li>
- *   <li>{@link iCal.impl.VacationCImpl#getDtend <em>Dtend</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getAttendee <em>Attendee</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getFreebusy <em>Freebusy</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getRstatus <em>Rstatus</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getX_prop <em>Xprop</em>}</li>
  *   <li>{@link iCal.impl.VacationCImpl#getIana_prop <em>Iana prop</em>}</li>
+ *   <li>{@link iCal.impl.VacationCImpl#getDtend <em>Dtend</em>}</li>
  * </ul>
  *
  * @generated
@@ -101,26 +104,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 	protected String contact = CONTACT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDtend() <em>Dtend</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDtend()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DTEND_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDtend() <em>Dtend</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDtend()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dtend = DTEND_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getAttendee() <em>Attendee</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -179,6 +162,16 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 	 * @ordered
 	 */
 	protected EList<String> iana_prop;
+
+	/**
+	 * The cached value of the '{@link #getDtend() <em>Dtend</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDtend()
+	 * @generated
+	 * @ordered
+	 */
+	protected DateT dtend;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +269,7 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 	 * @generated
 	 */
 	@Override
-	public String getDtend() {
+	public DateT getDtend() {
 		return dtend;
 	}
 
@@ -285,12 +278,54 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setDtend(String newDtend) {
-		String oldDtend = dtend;
+	public NotificationChain basicSetDtend(DateT newDtend, NotificationChain msgs) {
+		DateT oldDtend = dtend;
 		dtend = newDtend;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.VACATION_C__DTEND, oldDtend, dtend));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ICalPackage.VACATION_C__DTEND, oldDtend, newDtend);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDtend(DateT newDtend) {
+		if (newDtend != dtend) {
+			NotificationChain msgs = null;
+			if (dtend != null)
+				msgs = ((InternalEObject) dtend).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - ICalPackage.VACATION_C__DTEND, null, msgs);
+			if (newDtend != null)
+				msgs = ((InternalEObject) newDtend).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - ICalPackage.VACATION_C__DTEND, null, msgs);
+			msgs = basicSetDtend(newDtend, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.VACATION_C__DTEND, newDtend, newDtend));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ICalPackage.VACATION_C__DTEND:
+			return basicSetDtend(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -385,8 +420,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 			return getUrl();
 		case ICalPackage.VACATION_C__CONTACT:
 			return getContact();
-		case ICalPackage.VACATION_C__DTEND:
-			return getDtend();
 		case ICalPackage.VACATION_C__ATTENDEE:
 			return getAttendee();
 		case ICalPackage.VACATION_C__COMMENT:
@@ -399,6 +432,8 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 			return getX_prop();
 		case ICalPackage.VACATION_C__IANA_PROP:
 			return getIana_prop();
+		case ICalPackage.VACATION_C__DTEND:
+			return getDtend();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -420,9 +455,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 			return;
 		case ICalPackage.VACATION_C__CONTACT:
 			setContact((String) newValue);
-			return;
-		case ICalPackage.VACATION_C__DTEND:
-			setDtend((String) newValue);
 			return;
 		case ICalPackage.VACATION_C__ATTENDEE:
 			getAttendee().clear();
@@ -448,6 +480,9 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 			getIana_prop().clear();
 			getIana_prop().addAll((Collection<? extends String>) newValue);
 			return;
+		case ICalPackage.VACATION_C__DTEND:
+			setDtend((DateT) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -469,9 +504,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 		case ICalPackage.VACATION_C__CONTACT:
 			setContact(CONTACT_EDEFAULT);
 			return;
-		case ICalPackage.VACATION_C__DTEND:
-			setDtend(DTEND_EDEFAULT);
-			return;
 		case ICalPackage.VACATION_C__ATTENDEE:
 			getAttendee().clear();
 			return;
@@ -489,6 +521,9 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 			return;
 		case ICalPackage.VACATION_C__IANA_PROP:
 			getIana_prop().clear();
+			return;
+		case ICalPackage.VACATION_C__DTEND:
+			setDtend((DateT) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -508,8 +543,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 			return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
 		case ICalPackage.VACATION_C__CONTACT:
 			return CONTACT_EDEFAULT == null ? contact != null : !CONTACT_EDEFAULT.equals(contact);
-		case ICalPackage.VACATION_C__DTEND:
-			return DTEND_EDEFAULT == null ? dtend != null : !DTEND_EDEFAULT.equals(dtend);
 		case ICalPackage.VACATION_C__ATTENDEE:
 			return attendee != null && !attendee.isEmpty();
 		case ICalPackage.VACATION_C__COMMENT:
@@ -522,6 +555,8 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 			return x_prop != null && !x_prop.isEmpty();
 		case ICalPackage.VACATION_C__IANA_PROP:
 			return iana_prop != null && !iana_prop.isEmpty();
+		case ICalPackage.VACATION_C__DTEND:
+			return dtend != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -543,8 +578,6 @@ public class VacationCImpl extends ComponentRequiredImpl implements VacationC {
 		result.append(url);
 		result.append(", contact: ");
 		result.append(contact);
-		result.append(", dtend: ");
-		result.append(dtend);
 		result.append(", attendee: ");
 		result.append(attendee);
 		result.append(", comment: ");

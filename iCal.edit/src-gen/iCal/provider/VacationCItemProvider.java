@@ -47,13 +47,13 @@ public class VacationCItemProvider extends ComponentRequiredItemProvider {
 			addOrganizerPropertyDescriptor(object);
 			addUrlPropertyDescriptor(object);
 			addContactPropertyDescriptor(object);
-			addDtendPropertyDescriptor(object);
 			addAttendeePropertyDescriptor(object);
 			addCommentPropertyDescriptor(object);
 			addFreebusyPropertyDescriptor(object);
 			addRstatusPropertyDescriptor(object);
 			addX_propPropertyDescriptor(object);
 			addIana_propPropertyDescriptor(object);
+			addDtendPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -118,8 +118,7 @@ public class VacationCItemProvider extends ComponentRequiredItemProvider {
 						getResourceLocator(), getString("_UI_VacationC_dtend_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_VacationC_dtend_feature",
 								"_UI_VacationC_type"),
-						ICalPackage.Literals.VACATION_C__DTEND, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						ICalPackage.Literals.VACATION_C__DTEND, true, false, false, null, null, null));
 	}
 
 	/**
@@ -247,7 +246,7 @@ public class VacationCItemProvider extends ComponentRequiredItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((VacationC) object).getDtstamp();
+		String label = ((VacationC) object).getUid();
 		return label == null || label.length() == 0 ? getString("_UI_VacationC_type")
 				: getString("_UI_VacationC_type") + " " + label;
 	}
@@ -267,13 +266,13 @@ public class VacationCItemProvider extends ComponentRequiredItemProvider {
 		case ICalPackage.VACATION_C__ORGANIZER:
 		case ICalPackage.VACATION_C__URL:
 		case ICalPackage.VACATION_C__CONTACT:
-		case ICalPackage.VACATION_C__DTEND:
 		case ICalPackage.VACATION_C__ATTENDEE:
 		case ICalPackage.VACATION_C__COMMENT:
 		case ICalPackage.VACATION_C__FREEBUSY:
 		case ICalPackage.VACATION_C__RSTATUS:
 		case ICalPackage.VACATION_C__XPROP:
 		case ICalPackage.VACATION_C__IANA_PROP:
+		case ICalPackage.VACATION_C__DTEND:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

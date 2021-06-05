@@ -1,0 +1,13 @@
+Enregistrer sous: "VacationExemple"
+VacationC{
+	Date: Lundi 7 Mars 2021 a 12 heure 30 et 01s
+	Fin: Mardi 30 Juillet 2021 a 13h 21 et 03s
+	Organisateur: "Yasmine"
+	Contact: "Maxime Jerome"
+	Invites{"yasmine.ben-fredj@etu.unice.fr","maxime.jerome@etu.unice.fr"}
+	Identifiant: "id"
+	URL: "https://github.com/theoricien"
+	Commentaire{"comment1","comment2"}
+}
+
+

@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
@@ -45,15 +47,17 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 	@Override
 	public Boolean caseiCalFormat(iCalFormat object) 
 	{
-		File file = new File(object.getFileName()+".ics"); 
+		File file = new File(parseString(object.getFileName())+".ics"); 
         file.setWritable(true);
         file.setReadable(true);
+
 		try 
 		{
 			pw = new PrintWriter(file);
 			doSwitch(object.getCalendar());
+
 			pw.close();
-			System.err.println("Fichier génerer à : "+file.getAbsolutePath());
+			System.out.println("Fichier génerer à : "+file.getAbsolutePath());
 		} 
 		catch (FileNotFoundException e) 
 		{
@@ -63,89 +67,132 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 		return true;
 	}
 	
-	public String parseDate (DateT date)
-	{
-		int day = date.getDay();
-		AMonthT amonth = date.getMonth();
+	public Boolean caseMonthT(MonthT monthT) {
 		String month = "";
-		if (amonth instanceof MonthT)
+		int month_index = monthT.getValue();
+		month = Integer.toString((month_index % 12) + 1);
+		if (month.length() == 1)
 		{
-			int month_index = ((MonthT) amonth).getValue();
-			month = Integer.toString((month_index % 12) + 1);
-			if (month.length() == 1)
-			{
-				month = "0" + month;
-			}
-		} else {
-			String val = ((MonthNameT) amonth).getValue();
-			if (val.equals("Janvier"))
-			{ month = "01"; }
-			else if (val.equals("Fevrier"))
-			{ month = "02"; }
-			else if (val.equals("Mars"))
-			{ month = "03"; }
-			else if (val.equals("Avril"))
-			{ month = "04"; }
-			else if (val.equals("Mai"))
-			{ month = "05"; }
-			else if (val.equals("Juin"))
-			{ month = "06"; }
-			else if (val.equals("Juillet"))
-			{ month = "07"; }
-			else if (val.equals("Aout"))
-			{ month = "08"; }
-			else if (val.equals("Septembre"))
-			{ month = "09"; }
-			else if (val.equals("Octobre"))
-			{ month = "10"; }
-			else if (val.equals("Novembre"))
-			{ month = "11"; }
-			else if (val.equals("Decembre"))
-			{ month = "12"; }
+			month = "0" + month;
+		}
+		pw.print(month);
+		return true;
+	}
+	
+	public Boolean caseMonthNameT(MonthNameT nameM) {
+		String month = "";
+		String val = nameM.getValue();
+		
+		if (val.equals("Janvier"))
+		{ month = "01"; }
+		else if (val.equals("Fevrier"))
+		{ month = "02"; }
+		else if (val.equals("Mars"))
+		{ month = "03"; }
+		else if (val.equals("Avril"))
+		{ month = "04"; }
+		else if (val.equals("Mai"))
+		{ month = "05"; }
+		else if (val.equals("Juin"))
+		{ month = "06"; }
+		else if (val.equals("Juillet"))
+		{ month = "07"; }
+		else if (val.equals("Aout"))
+		{ month = "08"; }
+		else if (val.equals("Septembre"))
+		{ month = "09"; }
+		else if (val.equals("Octobre"))
+		{ month = "10"; }
+		else if (val.equals("Novembre"))
+		{ month = "11"; }
+		else if (val.equals("Decembre"))
+		{ month = "12"; }
+		pw.print(month);
+				
+		return true;
+	}
+	
+	public Boolean caseDateT (DateT date)
+	{
+		//Year
+		if (date.getYear() == null)
+		{ pw.print("2021");}
+		else 
+		{ pw.print(Integer.toString(date.getYear()));}
+		
+		//Month
+		if (date.getMonth() != null )
+		{
+			doSwitch(date.getMonth());
+			} 
+		else
+		{pw.print("00");}
+		
+		//Day
+		if (date.getDay() == null)
+		{ pw.print("01");}
+		else 
+		{ 
+			if (Integer.toString(date.getDay()).length() == 1)
+			{pw.print("0" +Integer.toString(date.getDay()));}
+			else {pw.print(Integer.toString(date.getDay()));}
 		}
 		
-		String year = "";
+		//Separation
+		pw.print("T");
 		
-		if (date.getYear() == null)
-		{ year = "2021"; }
-		else 
-		{ year = Integer.toString(date.getYear()); }
-		
-		String hours = "";
-		
+		//Hour
 		if (date.getHours() == null)
-		{ hours = "00"; }
+		{ pw.print("00");}
 		else 
-		{ hours = Integer.toString(date.getHours()); }
+		{ 		
+			if (Integer.toString(date.getHours()).length() == 1)
+			{pw.print("0" +Integer.toString(date.getHours()));}
+			else {pw.print(Integer.toString(date.getHours()));}
+		}
 		
-		String minutes = "";
-		
+		//Minute
 		if (date.getMinutes() == null)
-		{ minutes = "00"; }
+		{ pw.print("00");}
 		else 
-		{ minutes = Integer.toString(date.getMinutes()); }
-		
-		String seconds = "";
-		
+		{ 
+			if (Integer.toString(date.getMinutes()).length() == 1)
+			{pw.print("0" +Integer.toString(date.getMinutes()));}
+			else {pw.print(Integer.toString(date.getMinutes()));}
+			}
+
+		//Second
 		if (date.getSeconds() == null)
-		{ seconds = "00"; }
+		{ pw.print("00");}
 		else 
-		{ seconds = Integer.toString(date.getSeconds()); }
+		{ 
+			if (Integer.toString(date.getSeconds()).length() == 1)
+			{pw.print("0" +Integer.toString(date.getSeconds()));}
+			else {pw.print(Integer.toString(date.getSeconds()));}
+			}
 		
-		Date d = new Date();  
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
-        String format = year + "-" + month + "-" + day + "-" + hours + ":" + minutes + ":" + seconds;
-        
-        return formatter.format(format);         
+		//Fin Date
+		pw.println("Z");
+		
+        return true;
+
+    
+	}
+	
+	public String parseString(String s ) {
+		return s.substring(1,s.length()-1);
 	}
 	
 	public String dtstamp ()
 	{
 		Date d = new Date();
 		Timestamp ts = new Timestamp(d.getTime());  
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
-        
-        return formatter.format(ts);      
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy MM dd:HH mm ss.");
+        String date = formatter.format(ts).replace(" ", "");
+        date = date.replace(":", "T");
+        date = date.replace(".", "Z");
+
+        return date;      
 	}
 
 	@Override
@@ -156,25 +203,62 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 		{ pw.println("UID:" + object.getUid()); }
 		else
 		{ pw.println("UID:" + UUID.randomUUID().toString()); }
-		
-		pw.println("DTSTAMP:" + this.dtstamp());
-		pw.println("DTSTART:" + this.parseDate(object.getDtstart()));
-		
-		if (object.getDtend() != null)
-		{ pw.println("DTEND:" + this.parseDate(object.getDtend())); }
-		
-		if (object.getSummary() != null)
-		{ pw.println("SUMMARY:" + object.getSummary()); }
-		
-		//pw.println("CLASS:" + object.getClass_());
 
-		//pw.println("DESCRIPTION:" + object.getDescription());
-		//pw.println("STATUS:" + object.getStatus());
-		//pw.println("URL:" + object.getUrl());
-		//pw.println("PRIORITY:" + object.getPriority());
-		//pw.println("TRANSP:" + object.getTransp());
-		//pw.println("RRULE:"+object.getRrule());
+		pw.println("DTSTAMP:" + this.dtstamp());
+
+		if (object.getDtstart() != null)
+		{ 
+			pw.print("DTSTART:" );
+			doSwitch(object.getDtstart());
+		}
+
+		if (object.getDtend() != null)
+		{ 
+			pw.print("DTEND:");
+			doSwitch(object.getDtend()); 
+		}
+
+		if (object.getSummary() != null)
+		{pw.println("SUMMARY:" + this.parseString(object.getSummary())); }
+
+		if(object.getLocation()!=null)
+		{pw.println("LOCATION:"+this.parseString(object.getLocation()));}
+
+		if(object.getClass_()!=null)
+		{pw.println("CLASS:" + this.parseString(object.getClass_()));}
+
+		if( object.getDescription() != null)
+		{pw.println("DESCRIPTION:" + object.getDescription());}
+
+		if( object.getStatus() != null)
+		{pw.println("STATUS:" + object.getStatus());}
 		
+		if( object.getUrl() != null)
+		{pw.println("URL:" + object.getUrl());}
+		
+		if( object.getPriority() != null)
+		{pw.println("PRIORITY:" + object.getPriority());}
+		
+		if( object.getTransp() != null)
+		{pw.println("TRANSP:" + object.getTransp());}
+
+		if( object.getRrule().size() > 0 )
+		{
+			pw.println("RRULE:");
+			int x = 0;
+			for(String s : object.getRrule())
+			{
+				if(x == 0) {
+					pw.print(s);
+					x = 1;
+				}
+				else {
+					pw.print(","+ s) ;
+				}
+			}
+			pw.println("");
+		}
+
 		if (object.getCategories() != null && object.getCategories().size() > 0)
 		{
 			pw.print("CATEGORIES:");
@@ -187,7 +271,7 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 					x = 1;
 				}
 				else {
-					pw.print(", "+ s) ;
+					pw.print(","+ s) ;
 				}
 			}
 			pw.println("");
@@ -198,42 +282,68 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 			doSwitch(c);
 		}
 		pw.println("END:VEVENT");
+
 		return true;
 	}
 
 	@Override
 	public Boolean caseToDoC(ToDoC object) {
 		pw.println("BEGIN:VTODO");
-		pw.println("UID:"+object.getUid());
-		pw.println("DTSTAMP:"+object.getDtstamp());
-		pw.println("DTSTART:"+object.getDtstart());
-		pw.println("DUE:"+object.getDtend());
-		pw.println("SUMMARY:"+object.getSummary());
-		pw.println("CLASS:"+object.getClass_());
-		pw.println("DESCRIPTION:"+object.getDescription());
-		pw.println("SUMMARY:"+object.getSummary());
-		pw.println("STATUS:"+object.getStatus());
-		pw.println("URL:"+object.getUrl());
-		pw.println("PRIORITY:"+object.getPriority());
-		pw.println("RRULE:"+object.getRrule());
-
-		pw.print("CATEGORIES:");
-		int x = 0;
-		for(String s : object.getCategories())
-		{
-			if(x == 0) {
-				pw.print(s);
-				x = 1;
+		
+		if(object.getUid() != null){pw.println("UID:"+object.getUid());}
+		
+		pw.println("DTSTAMP:"+this.dtstamp());
+		
+		if(object.getDtstart() != null) {
+		pw.print("DTSTART:");
+		doSwitch(object.getDtstart());}
+		
+		if(object.getDue() != null) {
+		pw.print("DUE:");
+		doSwitch(object.getDue());}
+		
+		if(object.getSummary() != null) {pw.println("SUMMARY:"+this.parseString(object.getSummary()));}
+		
+		if(object.getClass_() != null) {pw.println("CLASS:"+object.getClass_());}
+		
+		if(object.getDescription() != null) {pw.println("DESCRIPTION:"+this.parseString(object.getDescription()));}
+		
+		if(object.getStatus() != null) {pw.println("STATUS:"+object.getStatus());}
+		
+		if(object.getUrl() != null) {pw.println("URL:"+this.parseString(object.getUrl()));}
+		
+		if(object.getPriority() != null) {pw.println("PRIORITY:"+this.parseString(object.getPriority()));}
+		
+		if(object.getRrule().size() > 0) {
+			pw.print("RRULE:");
+			int x = 0;
+			for(String r : object.getRrule())
+			{
+				if(x == 0) {
+					pw.print(this.parseString(r));
+					x = 1;
+				}
+				else {pw.print(","+ this.parseString(r)) ;}
 			}
-			else {
-				pw.print(", "+ s) ;
-			}
+			pw.println("");
 		}
 
-		for(AlarmC c : object.getAlarmc())
-		{
-			doSwitch(c);
+		if(object.getCategories().size() > 0 ) {
+			pw.print("CATEGORIES:");
+			int x = 0;
+			for(String s : object.getCategories())
+			{
+				if(x == 0) {
+					pw.print(this.parseString(s));
+					x = 1;
+				}
+				else {pw.print(","+ this.parseString(s)) ;}
+			}
+			pw.println("");
 		}
+
+		for(AlarmC c : object.getAlarmc()){doSwitch(c);}
+		
 		pw.println("END:VTODO");
 		return true;
 	}
@@ -242,40 +352,38 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 	public Boolean caseCalendar(Calendar object) 
 	{
 		pw.println("BEGIN:VCALENDAR");
-		pw.println("VERSION:2.0");
 		pw.println("PRODID:-//Software Engineering//Projet M1 1.0//FR");
-		//pw.println("METHOD:"+object.getMethod());
-		//pw.println("VERSION:"+object.getVersion());
-		//pw.println("CALSCALE:"+object.getCalscale());
+		
+		if(object.getMethod() != null) pw.println("METHOD:"+object.getMethod());
+		if(object.getVersion() == null) 
+		{pw.println("VERSION:2.0");}
+		else {pw.println("VERSION:"+object.getVersion());}
+		
+		if(object.getCalscale() != null) {pw.println("CALSCALE:"+object.getCalscale());}
 
 		for(Component c : object.getComponent())
 		{
-			doSwitch(c);
+			doSwitch(c);	
 		}
 
 		pw.println("END:VCALENDAR");
 		return true;
 	}
 
-	@Override
-	public Boolean caseComponentAction(ComponentAction object) {
-		// TODO Auto-generated method stub
-		return super.caseComponentAction(object);
-	}
 
 	@Override
 	public Boolean caseJournalC(JournalC object) {
 		pw.println("BEGIN:VJOURNAL");
-		pw.println("UID:"+object.getUid());
-		pw.println("DTSTAMP:"+object.getDtstamp());
-		pw.println("DTSTART:"+object.getDtstart());
-		pw.println("SUMMARY:"+object.getSummary());
-		pw.println("DESCRIPTION:"+object.getDescription());
-		pw.println("SUMMARY:"+object.getSummary());
-		pw.println("STATUS:"+object.getStatus());
-		pw.println("URL:"+object.getUrl());
+		if(object.getUid()!=null)pw.println("UID:"+object.getUid());
+		pw.println("DTSTAMP:"+this.dtstamp());
+		if(object.getDtstart()!=null) {
+		pw.print("DTSTART:");
+		doSwitch(object.getDtstart());}
+		if(object.getDescription()!=null)pw.println("DESCRIPTION:"+object.getDescription());
+		if(object.getSummary()!=null)pw.println("SUMMARY:"+this.parseString(object.getSummary()));
+		if(object.getStatus()!=null)pw.println("STATUS:"+object.getStatus());
+		if(object.getUrl()!=null)pw.println("URL:"+object.getUrl());
 
-		
 		for(String s : object.getX_prop())
 		{
 			pw.print(s);
@@ -289,19 +397,34 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 	public Boolean caseVacationC(VacationC object) {
 		pw.println("BEGIN:VFREEBUSY");
 
-		pw.println("ORGANIZER:"+object.getOrganizer());
-		pw.println("CONTACT:"+object.getContact());
-		pw.println("ATTENDEE:"+object.getAttendee());
-		pw.println("DTSTART:"+object.getDtstart());
-		pw.println("DTEND:"+object.getDtend());
-		pw.println("DTSTAMP:"+object.getDtstamp());
+		if(object.getOrganizer()!=null)pw.println("ORGANIZER:"+object.getOrganizer());
+		if(object.getContact()!=null)pw.println("CONTACT:"+object.getContact());
+		
+		if(object.getAttendee().size() == 1) {pw.println("ATTENDEE:"+object.getAttendee().get(0));}
+		else if(object.getAttendee().size() > 1){
+			pw.println("ATTENDEE");
+			for(String s : object.getAttendee()) {
+				pw.println(";"+s);
+			}
+		}
+		
+		if(object.getDtstart()!=null) {
+		pw.print("DTSTART:");
+		doSwitch(object.getDtstart());}
+		
+		if(object.getDtend()!=null) {
+		pw.print("DTEND:");
+		doSwitch(object.getDtend());}
+		
+		pw.println("DTSTAMP:"+this.dtstamp());
+		
 		for(String s : object.getFreebusy())
 		{
 			pw.println("FREEBUSY:"+s);
 		}
-		pw.println("URL:"+object.getUrl());
-		pw.println("UID:"+object.getUid());
-		pw.println("COMMENT:"+object.getComment());
+		if(object.getUrl()!=null)pw.println("URL:"+object.getUrl());
+		if(object.getUid()!=null)pw.println("UID:"+object.getUid());
+		if(object.getComment()!=null)pw.println("COMMENT:"+object.getComment());
 
 		pw.println("END:VFREEBUSY");
 
@@ -318,8 +441,8 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 	public Boolean caseTimeZoneC(TimeZoneC object) {
 		pw.println("BEGIN:VTIMEZONE");
 
-		pw.println("TZID:"+object.getTzid());
-		pw.println("TZUR:"+object.getTzurl());
+		if(object.getTzid()!=null)pw.println("TZID:"+object.getTzid());
+		if(object.getTzurl()!=null)pw.println("TZUR:"+object.getTzurl());
 		for(tzprop c : object.getStandardc())
 		{
 			pw.println("BEGIN:STANDARD");
@@ -341,30 +464,27 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 
 	@Override
 	public Boolean casetzprop(tzprop object) {
-		pw.println("TZOFFSETTO:"+object.getTzoffseto());
-		pw.println("TZOFFSETFROM:"+object.getTzoffsetfrom());
-		pw.println("DTSTART;"+object.getDtstart());
-		pw.println("RRULE:"+object.getRrule());
-		for(tzpropOptional c : object.getOpt())
-		{
-			doSwitch(c);
-		}
+		if(object.getTzoffseto()!= null) {pw.println("TZOFFSETTO:"+object.getTzoffseto());}
+		if(object.getTzoffsetfrom()!= null) {pw.println("TZOFFSETFROM:"+object.getTzoffsetfrom());}
+		if(object.getDtstart()!= null) {pw.println("DTSTART;"+object.getDtstart());}
+		if(object.getRrule() != null) {pw.println("RRULE:"+object.getRrule());}
+		for(tzpropOptional c : object.getOpt()){doSwitch(c);}
 		return true;
 	}
 
 	@Override
 	public Boolean caseAlarmC(AlarmC object) {
+
 		pw.println("BEGIN:VALARM");
-		pw.println("DESCRIPTION:"+object.getDescription());
+		if(object.getDescription() != null){pw.println("DESCRIPTION:"+object.getDescription());}
+		
 		pw.println("TRIGGER;"+object.getTrigger());
-		pw.println("DURATION:"+object.getAction()); //todo
 		pw.println("ACTION:"+object.getAction());
-		pw.println("ATTACH;"+object.getAttach());
-		doSwitch(object.getTime());
-
+		if(object.getAttach()!= null ){pw.println("ATTACH;"+object.getAttach());}
+		if(object.getTime() != null){doSwitch(object.getTime());}
 		doSwitch(object.getType());
-
 		pw.println("END:VALARM");
+
 		return true;
 	}
 
@@ -378,35 +498,50 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 
 	@Override
 	public Boolean caseComponentAlarmAudioProperty(ComponentAlarmAudioProperty object) {
-		pw.println("ATTACH;"+object.getAttach());
+		if(object.getAttach()!=null)pw.println("ATTACH:"+object.getAttach());
 		return true;
 	}
 
 	@Override
 	public Boolean caseComponentAlarmDispProperty(ComponentAlarmDispProperty object) {
-		pw.println("DESCRIPTION:"+object.getDescription());
+		if(object.getDescription()!=null)pw.println("DESCRIPTION:"+object.getDescription());
 		return true;
 	}
 
 	@Override
 	public Boolean caseComponentAlarmEmailProperty(ComponentAlarmEmailProperty object) {
-		pw.println("ATTACH;"+object.getAttach());
-		pw.println("ATTENDEE:"+object.getAttendee());
-		pw.println("DESCRIPTION:"+object.getDescription());
-
+		if(object.getAttach().size() == 1) {pw.println("ATTACH:"+object.getAttach().get(0));}
+		else if(object.getAttach().size() > 1){
+			pw.println("ATTACH");
+			for(String s : object.getAttach()) {
+				pw.println(";"+s);
+			}
+		}
+		
+		if(object.getAttendee().size() == 1) {pw.println("ATTENDEE:"+object.getAttendee().get(0));}
+		else if(object.getAttendee().size() > 1){
+			pw.println("ATTENDEE");
+			for(String s : object.getAttendee()) {
+				pw.println(";"+s);
+			}
+		}
+		if(object.getDescription()!=null)pw.println("DESCRIPTION:"+object.getDescription());
 		return true;
 	}
 
 
 	@Override
 	public Boolean casetzpropOptional(tzpropOptional object) {
-		pw.println("TZNAME:"+object.getTzname());
-		pw.println("RDATE:"+object.getRdate());
-		pw.println("COMMENT:"+object.getComment());
-
+		if(object.getTzname()!=null)pw.println("TZNAME:"+object.getTzname());
+		if(object.getRdate()!=null)pw.println("RDATE:"+object.getRdate());
+		if(object.getComment()!=null)pw.println("COMMENT:"+object.getComment());
 		return true;
 	}
-
+	
+	@Override
+	public Boolean caseComponentAction(ComponentAction object) {
+		return super.caseComponentAction(object);
+	}
 
 	
 	

@@ -5,7 +5,7 @@ import "http://www.example.org/iCal"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 iCalFormat returns iCalFormat:
-	'Enregistrer sous: ' fileName=STR "\r\n"
+	'Enregistrer sous: ' fileName=STR
 	calendar=Calendar
 ;
 
@@ -19,25 +19,19 @@ AlarmType returns AlarmType:
 ;
 
 Calendar returns Calendar:
-	component+=Component ( "\r\n" component+=Component )*
+	component+=Component 
+	(component+=Component )*
 ;
 
-terminal STR returns String:
-	'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
-	"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+
+terminal STR:
+	'"' ( '\\' ( 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' ) | !('\\'|'"') )* '"' |
+	"'" ( '\\' ( 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' ) | !('\\'|"'") )* "'" 
 ;
 
 @Override 
-terminal INT returns ecore::EInt:
+terminal INT  returns ecore::EInt:
     ('0'..'9')+
-;
-
-Integer returns Integer:
-	INT
-;
-
-terminal TWO_DIGIT returns ecore::EInt:
-    ('0'..'9') ('0'..'9')
 ;
 
 Month returns AMonthT:
@@ -45,19 +39,23 @@ Month returns AMonthT:
 ;
 
 MonthNameT returns MonthNameT:
-	value=("Janvier" | "Fevrier" | "Mars" | "Avril" | "Mai" | "Juin" | "Juillet" | "Aout" | "Septembre" | "Octobre" | "Novembre" | "Decembre" |
-	"janvier" | "fevrier" | "mars" | "avril" | "mai" | "juin" | "juillet" | "aout" | "septembre" | "octobre" | "novembre" | "decembre")
+	value=("Janvier" | "Fevrier" | "Mars" | "Avril" | "Mai" | "Juin" | "Juillet" | "Aout" | "Septembre" | "Octobre" | "Novembre" | "Decembre" ) 
 ;
 
+
 MonthT returns MonthT:
-	value=TWO_DIGIT
+	value=INT
 ;
 
 DateT returns DateT:
-	(day_name=STR)? day=Integer month=Month (year=Integer)? (("à " | "a ")? (hours=Integer)("h" | ":" | "heure ")
-		((minutes=Integer)("m" | "mn" | "min" | "minutes" | ":")?)?
-		((" et ")?(seconds=Integer)("s" | "sec" | "secondes")?)?
+	(day_name=DayName)? day=INT month=Month (year=INT)? ((" a ")? (hours=INT)("h" | ":" | " heure ")
+		((minutes=INT)("m" | "mn" | "min" | " minutes" | ":")?)?
+		((" et ")?(seconds=INT)("s" | "sec" | " secondes ")?)?
 	)?
+;
+
+Classification returns String:
+	"PUBLIC" | "PRIVATE" | "CONFIDENTIAL"
 ;
 
 Status returns String:
@@ -68,186 +66,188 @@ EventStatus returns String:
 	Status | "Complété" | "En cours"
 ;
 
-EventC returns EventC:
-	'RDV {'
-		'Date: ' dtstart=DateT
-		("Identifiant: " uid=STR)?
-		('Organisateur: ' organizer=STR)?
-		('Objet: ' summary=STR)?
-		('URL: ' url=STR)?
-		('Attachements: ' attach+=STR ( "," attach+=STR)* )?
-		('Invités: ' attendee+=STR ( "," attendee+=STR)* )?
-		('Catégories: ' categories+=STR ( "," categories+=STR)* )?
-		('Commentaire: ' comment+=STR ( "," comment+=STR)* )?
-		('Contact: ' contact+=STR ( "," contact+=STR)* )?
-		('Status: ' rstatus+=EventStatus ( "," rstatus+=EventStatus)* )?
-		('Relié à: ' related+=STR ( "," related+=STR)* )?
-		('resources: ' resources+=STR ( "," resources+=STR)* )?
-		('Description: ' description=STR)?
-		('Priorité: ' priority=STR)?
-		('Lieu: ' location=STR)?
-		('Fin: ' dtend=DateT)?
-		('Rappel: ' alarmc+=AlarmC ( "," alarmc+=AlarmC)* )?
-		"\r\n"
-	'}'
+DayName returns String:
+	"Lundi" | "Mardi" | "Mercredi" | "Jeudi" | "Vendredi" | "Samedi" | "Dimanche" 
 ;
+
+EventC returns EventC:
+	'EventC'
+	'{'
+		('Date:'dtstart=DateT
+&		('Identifiant:'uid=STR)?
+&		('Organisateur:'organizer=STR)?
+&		('Objet:'summary=STR)?
+&		('URL:'url=STR)?
+&		('Attachements:'attach+=STR (","attach+=STR)*)?
+&		('Invites:'attendee+=STR (","attendee+=STR)*)?
+&		('Categories:'categories+=STR (","categories+=STR)*)?
+&		('Commentaire:'comment+=STR (","comment+=STR)* )?
+&		('Contact:' contact+=STR (","contact+=STR)*)?
+&		('Status:'rstatus+=EventStatus (","rstatus+=EventStatus)*)?
+&		('Relier a:'related+=STR (","related+=STR)* )?
+&		('Resources:'resources+=STR (","resources+=STR)*)?
+&		('Description:'description=STR)?
+&		('Priorite:'priority=STR)?
+&		('Lieu:'location=STR)?
+&		('Fin:'dtend=DateT)?
+&       ('Classe:'class=Classification)?
+&		('Alarmes:'alarmc+=AlarmC (","alarmc+=AlarmC)*)?)
+	'}';
 
 AlarmC returns AlarmC:
 	'AlarmC'
 	'{'
-		'action' action=STR
-		'trigger' trigger=STR
-		('attach' attach=STR)?
-		('description' description=STR)?
-		'type' type=AlarmType
-		('time' time=ComponentAlarmTime)?
+		('Action:'action=STR
+&		'Trigger:'trigger=STR
+&		('Attachements:'attach=STR)?
+&		('Description:'description=STR)?
+&		'Type:'type=AlarmType
+&		('Temps:'time=ComponentAlarmTime)?)
 	'}';
 
 tzprop returns tzprop:
 	'tzprop'
 	'{'
-		'dtstart' dtstart=STR
-		'tzoffseto' tzoffseto=STR
-		'tzoffsetfrom' tzoffsetfrom=STR
-		('rrule' rrule=STR)?
-		('opt' '{' opt+=tzpropOptional ( "," opt+=tzpropOptional)* '}' )?
+		('Date:'dtstart=STR
+&		'Tzoffseto:'tzoffseto=STR
+&		'Tzoffsetfrom:'tzoffsetfrom=STR
+&		('Rrule:'rrule=STR)?
+&		('Opt''{'opt+=tzpropOptional (","opt+=tzpropOptional)* '}')?)
 	'}';
 
 tzpropOptional returns tzpropOptional:
 	{tzpropOptional}
 	'tzpropOptional'
 	'{'
-		('comment' comment=STR)?
-		('rdate' rdate=STR)?
-		('tzname' tzname=STR)?
-		('x_prop' x_prop=STR)?
-		('iana_prop' iana_prop=STR)?
+		(('Commentaire:'comment=STR)?
+&		('Rdate:'rdate=STR)?
+&		('Tzname:'tzname=STR)?
+&		('X_prop:'x_prop=STR)?
+&		('Iana_prop:'iana_prop=STR)?)
 	'}';
 
 ComponentAlarmTime returns ComponentAlarmTime:
 	{ComponentAlarmTime}
 	'ComponentAlarmTime'
 	'{'
-		('duration' duration=STR)?
-		('repeat' repeat=STR)?
+		(('Duree:'duration=STR)?
+&		('Repeter:'repeat=STR)?)
 	'}';
 
 ComponentAlarmAudioProperty returns ComponentAlarmAudioProperty:
 	{ComponentAlarmAudioProperty}
 	'ComponentAlarmAudioProperty'
 	'{'
-		('attach' attach=STR)?
+		('Attachements:'attach=STR)?
 	'}';
 
 ComponentAlarmDispProperty returns ComponentAlarmDispProperty:
 	'ComponentAlarmDispProperty'
 	'{'
-		'description' description=STR
+		'Description:' description=STR
 	'}';
 
 ComponentAlarmEmailProperty returns ComponentAlarmEmailProperty:
 	'ComponentAlarmEmailProperty'
 	'{'
-		'attendee' '{' attendee+=STR ( "," attendee+=STR)* '}' 
-		'description' description=STR
-		('attach' '{' attach+=STR ( "," attach+=STR)* '}' )?
+		('Invites''{'attendee+=STR ( "," attendee+=STR)*'}'
+&		'Description:'description=STR
+&		('Attachements''{'attach+=STR ( "," attach+=STR)* '}')?)
 	'}';
 
 ToDoC returns ToDoC:
 	'ToDoC'
 	'{'
-		'dtstamp' dtstamp=STR
-		'uid' uid=STR
-		('dtstart' dtstart=DateT)?
-		('class' class=STR)?
-		('created' created=STR)?
-		('last_mod' last_mod=STR)?
-		('organizer' organizer=STR)?
-		('seq' seq=STR)?
-		('status' status=STR)?
-		('summary' summary=STR)?
-		('url' url=STR)?
-		('recurid' recurid=STR)?
-		('rrule' '{' rrule+=STR ( "," rrule+=STR)* '}' )?
-		('attach' '{' attach+=STR ( "," attach+=STR)* '}' )?
-		('attendee' '{' attendee+=STR ( "," attendee+=STR)* '}' )?
-		('categories' '{' categories+=STR ( "," categories+=STR)* '}' )?
-		('comment' '{' comment+=STR ( "," comment+=STR)* '}' )?
-		('contact' '{' contact+=STR ( "," contact+=STR)* '}' )?
-		('exdate' '{' exdate+=STR ( "," exdate+=STR)* '}' )?
-		('rstatus' '{' rstatus+=STR ( "," rstatus+=STR)* '}' )?
-		('related' '{' related+=STR ( "," related+=STR)* '}' )?
-		('resources' '{' resources+=STR ( "," resources+=STR)* '}' )?
-		('rdate' '{' rdate+=STR ( "," rdate+=STR)* '}' )?
-		('x_prop' '{' x_prop+=STR ( "," x_prop+=STR)* '}' )?
-		('iana_prop' '{' iana_prop+=STR ( "," iana_prop+=STR)* '}' )?
-		('description' description=STR)?
-		('completed' completed=STR)?
-		('priority' priority=STR)?
-		('geo' geo=STR)?
-		('location' location=STR)?
-		('dtend' dtend=DateT)?
-		('alarmc' '{' alarmc+=AlarmC ( "," alarmc+=AlarmC)* '}' )?
+		(('Dtstamp:' dtstamp=DateT)?
+&		'Identifiant:'uid=STR
+&		'Due:'due=DateT
+&		('Date:'dtstart=DateT)?
+&       ('Classe:'class=Classification)?
+&		('Cree le:'created=STR)?
+&		('Last_mod:'last_mod=STR)?
+&		('Organisateur:'organizer=STR)?
+&		('Seq:'seq=STR)?
+&		('Status:'status=STR)?
+&		('Objet:'summary=STR)?
+&		('URL:'url=STR)?
+&		('Recurid:'recurid=STR)?
+&		('Rrule''{'rrule+=STR ( "," rrule+=STR)*'}')?
+&		('Attachements''{'attach+=STR ( "," attach+=STR)*'}')?
+&		('Invites''{'attendee+=STR ( "," attendee+=STR)*'}')?
+&		('Categories''{'categories+=STR ( "," categories+=STR)*'}')?
+&		('Commentaire''{'comment+=STR ( "," comment+=STR)*'}')?
+&		('Contact''{'contact+=STR ( "," contact+=STR)*'}')?
+&		('Exdate''{'exdate+=STR ( "," exdate+=STR)*'}')?
+&		('Rstatus''{'rstatus+=STR ( "," rstatus+=STR)*'}')?
+&		('Relier a''{'related+=STR ( "," related+=STR)*'}')?
+&		('Resources''{'resources+=STR ( "," resources+=STR)*'}')?
+&		('Rdate''{'rdate+=STR (","rdate+=STR)*'}' )?
+&		('X_prop''{'x_prop+=STR (","x_prop+=STR)*'}')?
+&		('Iana_prop''{'iana_prop+=STR (","iana_prop+=STR)*'}')?
+&		('Description:'description=STR)?
+&		('Completee:'completed=STR)?
+&		('Priorite:'priority=STR)?
+&		('Geo:'geo=STR)?
+&		('Lieu:'location=STR)?
+&		('Alarmes:'alarmc+=AlarmC (","alarmc+=AlarmC)* )?)
 	'}';
 
 JournalC returns JournalC:
 	'JournalC'
 	'{'
-		'dtstamp' dtstamp=STR
-		'uid' uid=STR
-		('dtstart' dtstart=DateT)?
-		('class' class=STR)?
-		('created' created=STR)?
-		('last_mod' last_mod=STR)?
-		('organizer' organizer=STR)?
-		('seq' seq=STR)?
-		('status' status=STR)?
-		('summary' summary=STR)?
-		('url' url=STR)?
-		('recurid' recurid=STR)?
-		('rrule' '{' rrule+=STR ( "," rrule+=STR)* '}' )?
-		('attach' '{' attach+=STR ( "," attach+=STR)* '}' )?
-		('attendee' '{' attendee+=STR ( "," attendee+=STR)* '}' )?
-		('categories' '{' categories+=STR ( "," categories+=STR)* '}' )?
-		('comment' '{' comment+=STR ( "," comment+=STR)* '}' )?
-		('contact' '{' contact+=STR ( "," contact+=STR)* '}' )?
-		('exdate' '{' exdate+=STR ( "," exdate+=STR)* '}' )?
-		('rstatus' '{' rstatus+=STR ( "," rstatus+=STR)* '}' )?
-		('related' '{' related+=STR ( "," related+=STR)* '}' )?
-		('resources' '{' resources+=STR ( "," resources+=STR)* '}' )?
-		('rdate' '{' rdate+=STR ( "," rdate+=STR)* '}' )?
-		('x_prop' '{' x_prop+=STR ( "," x_prop+=STR)* '}' )?
-		('iana_prop' '{' iana_prop+=STR ( "," iana_prop+=STR)* '}' )?
-		('description' description=STR)?
+		('Identifiant:'uid=STR
+&		('Date:'dtstart=DateT)?
+&       ('Classe:'class=Classification)?
+&		('Cree le:'created=STR)?
+&		('Last_mod:'last_mod=STR)?
+&		('Organisateur:'organizer=STR)?
+&		('Seq:'seq=STR)?
+&		('Status:'status=STR)?
+&		('Objet:'summary=STR)?
+&		('URL:'url=STR)?
+&		('Recurid:'recurid=STR)?
+&		('Rrule''{'rrule+=STR (","rrule+=STR)*'}')?
+&		('Attachements''{'attach+=STR (","attach+=STR)*'}')?
+&		('Invites''{'attendee+=STR (","attendee+=STR)*'}')?
+&		('Categories''{'categories+=STR (","categories+=STR)*'}')?
+&		('Commentaire''{'comment+=STR (","comment+=STR)*'}')?
+&		('Contact''{'contact+=STR (","contact+=STR)*'}')?
+&		('Exdate''{'exdate+=STR (","exdate+=STR)*'}')?
+&		('Rstatus''{'rstatus+=STR (","rstatus+=STR)*'}')?
+&		('Relier a''{'related+=STR (","related+=STR)*'}')?
+&		('Resources''{'resources+=STR ( "," resources+=STR)*'}')?
+&		('Rdate''{'rdate+=STR (","rdate+=STR)*'}')?
+&		('X_prop''{'x_prop+=STR (","x_prop+=STR)*'}')?
+&		('Iana_prop''{'iana_prop+=STR (","iana_prop+=STR)*'}')?
+&		('Description:'description=STR)?)
 	'}';
 
 VacationC returns VacationC:
 	'VacationC'
 	'{'
-		'dtstamp' dtstamp=STR
-		'uid' uid=STR
-		('dtstart' dtstart=DateT)?
-		('organizer' organizer=STR)?
-		('url' url=STR)?
-		('contact' contact=STR)?
-		('dtend' dtend=STR)?
-		('attendee' '{' attendee+=STR ( "," attendee+=STR)* '}' )?
-		('comment' '{' comment+=STR ( "," comment+=STR)* '}' )?
-		('freebusy' '{' freebusy+=STR ( "," freebusy+=STR)* '}' )?
-		('rstatus' '{' rstatus+=STR ( "," rstatus+=STR)* '}' )?
-		('x_prop' '{' x_prop+=STR ( "," x_prop+=STR)* '}' )?
-		('iana_prop' '{' iana_prop+=STR ( "," iana_prop+=STR)* '}' )?
+		('Identifiant:'uid=STR
+&		('Date:'dtstart=DateT)?
+&		('Organisateur:'organizer=STR)?
+&		('URL:'url=STR)?
+&		('Contact:'contact=STR)?
+&		('Fin:'dtend=DateT)?
+&		('Invites''{'attendee+=STR (","attendee+=STR)*'}')?
+&		('Commentaire''{'comment+=STR (","comment+=STR)*'}')?
+&		('Freebusy''{'freebusy+=STR (","freebusy+=STR)*'}')?
+&		('Rstatus''{'rstatus+=STR (","rstatus+=STR)*'}')?
+&		('X_prop''{' x_prop+=STR ("," x_prop+=STR)*'}')?
+&		('Iana_prop''{'iana_prop+=STR (","iana_prop+=STR)*'}')?)
 	'}';
 
 TimeZoneC returns TimeZoneC:
 	'TimeZoneC'
 	'{'
-		'tzid' tzid=STR
-		('last_mod' last_mod=STR)?
-		('tzurl' tzurl=STR)?
-		('x_prop' '{' x_prop+=STR ( "," x_prop+=STR)* '}' )?
-		('iana_prop' '{' iana_prop+=STR ( "," iana_prop+=STR)* '}' )?
-		('standardc' '{' standardc+=tzprop ( "," standardc+=tzprop)* '}' )?
-		('daylightc' '{' daylightc+=tzprop ( "," daylightc+=tzprop)* '}' )?
+		('Tzid:'tzid=STR
+&		('Last_mod:'last_mod=STR)?
+&		('Tzurl:'tzurl=STR)?
+&		('X_prop''{'x_prop+=STR (","x_prop+=STR)* '}' )?
+&		('Iana_prop''{' iana_prop+=STR (","iana_prop+=STR)*'}')?
+&		('Standardc''{'standardc+=tzprop (","standardc+=tzprop)* '}')?
+&		('Daylightc''{'daylightc+=tzprop (","daylightc+=tzprop)* '}')?)
 	'}';
 

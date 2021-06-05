@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link iCal.impl.ToDoCImpl#getGeo <em>Geo</em>}</li>
  *   <li>{@link iCal.impl.ToDoCImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link iCal.impl.ToDoCImpl#getAlarmc <em>Alarmc</em>}</li>
- *   <li>{@link iCal.impl.ToDoCImpl#getDtend <em>Dtend</em>}</li>
+ *   <li>{@link iCal.impl.ToDoCImpl#getDue <em>Due</em>}</li>
  * </ul>
  *
  * @generated
@@ -132,14 +132,14 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 	protected EList<AlarmC> alarmc;
 
 	/**
-	 * The cached value of the '{@link #getDtend() <em>Dtend</em>}' containment reference.
+	 * The cached value of the '{@link #getDue() <em>Due</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDtend()
+	 * @see #getDue()
 	 * @generated
 	 * @ordered
 	 */
-	protected DateT dtend;
+	protected DateT due;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,8 +274,8 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 	 * @generated
 	 */
 	@Override
-	public DateT getDtend() {
-		return dtend;
+	public DateT getDue() {
+		return due;
 	}
 
 	/**
@@ -283,12 +283,12 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDtend(DateT newDtend, NotificationChain msgs) {
-		DateT oldDtend = dtend;
-		dtend = newDtend;
+	public NotificationChain basicSetDue(DateT newDue, NotificationChain msgs) {
+		DateT oldDue = due;
+		due = newDue;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ICalPackage.TO_DO_C__DTEND,
-					oldDtend, newDtend);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ICalPackage.TO_DO_C__DUE,
+					oldDue, newDue);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -303,20 +303,20 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 	 * @generated
 	 */
 	@Override
-	public void setDtend(DateT newDtend) {
-		if (newDtend != dtend) {
+	public void setDue(DateT newDue) {
+		if (newDue != due) {
 			NotificationChain msgs = null;
-			if (dtend != null)
-				msgs = ((InternalEObject) dtend).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - ICalPackage.TO_DO_C__DTEND, null, msgs);
-			if (newDtend != null)
-				msgs = ((InternalEObject) newDtend).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - ICalPackage.TO_DO_C__DTEND, null, msgs);
-			msgs = basicSetDtend(newDtend, msgs);
+			if (due != null)
+				msgs = ((InternalEObject) due).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ICalPackage.TO_DO_C__DUE,
+						null, msgs);
+			if (newDue != null)
+				msgs = ((InternalEObject) newDue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ICalPackage.TO_DO_C__DUE,
+						null, msgs);
+			msgs = basicSetDue(newDue, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.TO_DO_C__DTEND, newDtend, newDtend));
+			eNotify(new ENotificationImpl(this, Notification.SET, ICalPackage.TO_DO_C__DUE, newDue, newDue));
 	}
 
 	/**
@@ -329,8 +329,8 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 		switch (featureID) {
 		case ICalPackage.TO_DO_C__ALARMC:
 			return ((InternalEList<?>) getAlarmc()).basicRemove(otherEnd, msgs);
-		case ICalPackage.TO_DO_C__DTEND:
-			return basicSetDtend(null, msgs);
+		case ICalPackage.TO_DO_C__DUE:
+			return basicSetDue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -353,8 +353,8 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 			return getLocation();
 		case ICalPackage.TO_DO_C__ALARMC:
 			return getAlarmc();
-		case ICalPackage.TO_DO_C__DTEND:
-			return getDtend();
+		case ICalPackage.TO_DO_C__DUE:
+			return getDue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -384,8 +384,8 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 			getAlarmc().clear();
 			getAlarmc().addAll((Collection<? extends AlarmC>) newValue);
 			return;
-		case ICalPackage.TO_DO_C__DTEND:
-			setDtend((DateT) newValue);
+		case ICalPackage.TO_DO_C__DUE:
+			setDue((DateT) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -414,8 +414,8 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 		case ICalPackage.TO_DO_C__ALARMC:
 			getAlarmc().clear();
 			return;
-		case ICalPackage.TO_DO_C__DTEND:
-			setDtend((DateT) null);
+		case ICalPackage.TO_DO_C__DUE:
+			setDue((DateT) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -439,8 +439,8 @@ public class ToDoCImpl extends ComponentActionImpl implements ToDoC {
 			return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
 		case ICalPackage.TO_DO_C__ALARMC:
 			return alarmc != null && !alarmc.isEmpty();
-		case ICalPackage.TO_DO_C__DTEND:
-			return dtend != null;
+		case ICalPackage.TO_DO_C__DUE:
+			return due != null;
 		}
 		return super.eIsSet(featureID);
 	}

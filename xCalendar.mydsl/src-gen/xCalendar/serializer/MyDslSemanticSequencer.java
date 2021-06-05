@@ -111,13 +111,13 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         action=STR 
-	 *         trigger=STR 
-	 *         attach=STR? 
-	 *         description=STR? 
-	 *         type=AlarmType 
-	 *         time=ComponentAlarmTime?
-	 *     )
+	 *         action=STR | 
+	 *         trigger=STR | 
+	 *         attach=STR | 
+	 *         description=STR | 
+	 *         type=AlarmType | 
+	 *         time=ComponentAlarmTime
+	 *     )+
 	 */
 	protected void sequence_AlarmC(ISerializationContext context, AlarmC semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -174,7 +174,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ComponentAlarmEmailProperty returns ComponentAlarmEmailProperty
 	 *
 	 * Constraint:
-	 *     (attendee+=STR attendee+=STR* description=STR (attach+=STR attach+=STR*)?)
+	 *     ((attendee+=STR attendee+=STR*) | description=STR | (attach+=STR attach+=STR*))+
 	 */
 	protected void sequence_ComponentAlarmEmailProperty(ISerializationContext context, ComponentAlarmEmailProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -186,7 +186,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ComponentAlarmTime returns ComponentAlarmTime
 	 *
 	 * Constraint:
-	 *     (duration=STR? repeat=STR?)
+	 *     (duration=STR | repeat=STR)*
 	 */
 	protected void sequence_ComponentAlarmTime(ISerializationContext context, ComponentAlarmTime semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -198,7 +198,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     DateT returns DateT
 	 *
 	 * Constraint:
-	 *     (day_name=STR? day=Integer month=Month year=Integer? (hours=Integer minutes=Integer? seconds=Integer?)?)
+	 *     (day_name=DayName? day=INT month=Month year=INT? (hours=INT minutes=INT? seconds=INT?)?)
 	 */
 	protected void sequence_DateT(ISerializationContext context, DateT semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -212,25 +212,26 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         dtstart=DateT 
-	 *         uid=STR? 
-	 *         organizer=STR? 
-	 *         summary=STR? 
-	 *         url=STR? 
-	 *         (attach+=STR attach+=STR*)? 
-	 *         (attendee+=STR attendee+=STR*)? 
-	 *         (categories+=STR categories+=STR*)? 
-	 *         (comment+=STR comment+=STR*)? 
-	 *         (contact+=STR contact+=STR*)? 
-	 *         (rstatus+=EventStatus rstatus+=EventStatus*)? 
-	 *         (related+=STR related+=STR*)? 
-	 *         (resources+=STR resources+=STR*)? 
-	 *         description=STR? 
-	 *         priority=STR? 
-	 *         location=STR? 
-	 *         dtend=DateT? 
-	 *         (alarmc+=AlarmC alarmc+=AlarmC*)?
-	 *     )
+	 *         dtstart=DateT | 
+	 *         uid=STR | 
+	 *         organizer=STR | 
+	 *         summary=STR | 
+	 *         url=STR | 
+	 *         (attach+=STR attach+=STR*) | 
+	 *         (attendee+=STR attendee+=STR*) | 
+	 *         (categories+=STR categories+=STR*) | 
+	 *         (comment+=STR comment+=STR*) | 
+	 *         (contact+=STR contact+=STR*) | 
+	 *         (rstatus+=EventStatus rstatus+=EventStatus*) | 
+	 *         (related+=STR related+=STR*) | 
+	 *         (resources+=STR resources+=STR*) | 
+	 *         description=STR | 
+	 *         priority=STR | 
+	 *         location=STR | 
+	 *         dtend=DateT | 
+	 *         class=Classification | 
+	 *         (alarmc+=AlarmC alarmc+=AlarmC*)
+	 *     )+
 	 */
 	protected void sequence_EventC(ISerializationContext context, EventC semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -244,33 +245,32 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         dtstamp=STR 
-	 *         uid=STR 
-	 *         dtstart=DateT? 
-	 *         class=STR? 
-	 *         created=STR? 
-	 *         last_mod=STR? 
-	 *         organizer=STR? 
-	 *         seq=STR? 
-	 *         status=STR? 
-	 *         summary=STR? 
-	 *         url=STR? 
-	 *         recurid=STR? 
-	 *         (rrule+=STR rrule+=STR*)? 
-	 *         (attach+=STR attach+=STR*)? 
-	 *         (attendee+=STR attendee+=STR*)? 
-	 *         (categories+=STR categories+=STR*)? 
-	 *         (comment+=STR comment+=STR*)? 
-	 *         (contact+=STR contact+=STR*)? 
-	 *         (exdate+=STR exdate+=STR*)? 
-	 *         (rstatus+=STR rstatus+=STR*)? 
-	 *         (related+=STR related+=STR*)? 
-	 *         (resources+=STR resources+=STR*)? 
-	 *         (rdate+=STR rdate+=STR*)? 
-	 *         (x_prop+=STR x_prop+=STR*)? 
-	 *         (iana_prop+=STR iana_prop+=STR*)? 
-	 *         description=STR?
-	 *     )
+	 *         uid=STR | 
+	 *         dtstart=DateT | 
+	 *         class=Classification | 
+	 *         created=STR | 
+	 *         last_mod=STR | 
+	 *         organizer=STR | 
+	 *         seq=STR | 
+	 *         status=STR | 
+	 *         summary=STR | 
+	 *         url=STR | 
+	 *         recurid=STR | 
+	 *         (rrule+=STR rrule+=STR*) | 
+	 *         (attach+=STR attach+=STR*) | 
+	 *         (attendee+=STR attendee+=STR*) | 
+	 *         (categories+=STR categories+=STR*) | 
+	 *         (comment+=STR comment+=STR*) | 
+	 *         (contact+=STR contact+=STR*) | 
+	 *         (exdate+=STR exdate+=STR*) | 
+	 *         (rstatus+=STR rstatus+=STR*) | 
+	 *         (related+=STR related+=STR*) | 
+	 *         (resources+=STR resources+=STR*) | 
+	 *         (rdate+=STR rdate+=STR*) | 
+	 *         (x_prop+=STR x_prop+=STR*) | 
+	 *         (iana_prop+=STR iana_prop+=STR*) | 
+	 *         description=STR
+	 *     )+
 	 */
 	protected void sequence_JournalC(ISerializationContext context, JournalC semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -295,19 +295,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         value='Septembre' | 
 	 *         value='Octobre' | 
 	 *         value='Novembre' | 
-	 *         value='Decembre' | 
-	 *         value='janvier' | 
-	 *         value='fevrier' | 
-	 *         value='mars' | 
-	 *         value='avril' | 
-	 *         value='mai' | 
-	 *         value='juin' | 
-	 *         value='juillet' | 
-	 *         value='aout' | 
-	 *         value='septembre' | 
-	 *         value='octobre' | 
-	 *         value='novembre' | 
-	 *         value='decembre'
+	 *         value='Decembre'
 	 *     )
 	 */
 	protected void sequence_MonthNameT(ISerializationContext context, MonthNameT semanticObject) {
@@ -321,7 +309,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     MonthT returns MonthT
 	 *
 	 * Constraint:
-	 *     value=TWO_DIGIT
+	 *     value=INT
 	 */
 	protected void sequence_MonthT(ISerializationContext context, MonthT semanticObject) {
 		if (errorAcceptor != null) {
@@ -329,7 +317,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ICalPackage.Literals.MONTH_T__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMonthTAccess().getValueTWO_DIGITTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getMonthTAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -341,14 +329,14 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         tzid=STR 
-	 *         last_mod=STR? 
-	 *         tzurl=STR? 
-	 *         (x_prop+=STR x_prop+=STR*)? 
-	 *         (iana_prop+=STR iana_prop+=STR*)? 
-	 *         (standardc+=tzprop standardc+=tzprop*)? 
-	 *         (daylightc+=tzprop daylightc+=tzprop*)?
-	 *     )
+	 *         tzid=STR | 
+	 *         last_mod=STR | 
+	 *         tzurl=STR | 
+	 *         (x_prop+=STR x_prop+=STR*) | 
+	 *         (iana_prop+=STR iana_prop+=STR*) | 
+	 *         (standardc+=tzprop standardc+=tzprop*) | 
+	 *         (daylightc+=tzprop daylightc+=tzprop*)
+	 *     )+
 	 */
 	protected void sequence_TimeZoneC(ISerializationContext context, TimeZoneC semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -362,39 +350,39 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         dtstamp=STR 
-	 *         uid=STR 
-	 *         dtstart=DateT? 
-	 *         class=STR? 
-	 *         created=STR? 
-	 *         last_mod=STR? 
-	 *         organizer=STR? 
-	 *         seq=STR? 
-	 *         status=STR? 
-	 *         summary=STR? 
-	 *         url=STR? 
-	 *         recurid=STR? 
-	 *         (rrule+=STR rrule+=STR*)? 
-	 *         (attach+=STR attach+=STR*)? 
-	 *         (attendee+=STR attendee+=STR*)? 
-	 *         (categories+=STR categories+=STR*)? 
-	 *         (comment+=STR comment+=STR*)? 
-	 *         (contact+=STR contact+=STR*)? 
-	 *         (exdate+=STR exdate+=STR*)? 
-	 *         (rstatus+=STR rstatus+=STR*)? 
-	 *         (related+=STR related+=STR*)? 
-	 *         (resources+=STR resources+=STR*)? 
-	 *         (rdate+=STR rdate+=STR*)? 
-	 *         (x_prop+=STR x_prop+=STR*)? 
-	 *         (iana_prop+=STR iana_prop+=STR*)? 
-	 *         description=STR? 
-	 *         completed=STR? 
-	 *         priority=STR? 
-	 *         geo=STR? 
-	 *         location=STR? 
-	 *         dtend=DateT? 
-	 *         (alarmc+=AlarmC alarmc+=AlarmC*)?
-	 *     )
+	 *         dtstamp=DateT | 
+	 *         uid=STR | 
+	 *         due=DateT | 
+	 *         dtstart=DateT | 
+	 *         class=Classification | 
+	 *         created=STR | 
+	 *         last_mod=STR | 
+	 *         organizer=STR | 
+	 *         seq=STR | 
+	 *         status=STR | 
+	 *         summary=STR | 
+	 *         url=STR | 
+	 *         recurid=STR | 
+	 *         (rrule+=STR rrule+=STR*) | 
+	 *         (attach+=STR attach+=STR*) | 
+	 *         (attendee+=STR attendee+=STR*) | 
+	 *         (categories+=STR categories+=STR*) | 
+	 *         (comment+=STR comment+=STR*) | 
+	 *         (contact+=STR contact+=STR*) | 
+	 *         (exdate+=STR exdate+=STR*) | 
+	 *         (rstatus+=STR rstatus+=STR*) | 
+	 *         (related+=STR related+=STR*) | 
+	 *         (resources+=STR resources+=STR*) | 
+	 *         (rdate+=STR rdate+=STR*) | 
+	 *         (x_prop+=STR x_prop+=STR*) | 
+	 *         (iana_prop+=STR iana_prop+=STR*) | 
+	 *         description=STR | 
+	 *         completed=STR | 
+	 *         priority=STR | 
+	 *         geo=STR | 
+	 *         location=STR | 
+	 *         (alarmc+=AlarmC alarmc+=AlarmC*)
+	 *     )+
 	 */
 	protected void sequence_ToDoC(ISerializationContext context, ToDoC semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -408,20 +396,19 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         dtstamp=STR 
-	 *         uid=STR 
-	 *         dtstart=DateT? 
-	 *         organizer=STR? 
-	 *         url=STR? 
-	 *         contact=STR? 
-	 *         dtend=STR? 
-	 *         (attendee+=STR attendee+=STR*)? 
-	 *         (comment+=STR comment+=STR*)? 
-	 *         (freebusy+=STR freebusy+=STR*)? 
-	 *         (rstatus+=STR rstatus+=STR*)? 
-	 *         (x_prop+=STR x_prop+=STR*)? 
-	 *         (iana_prop+=STR iana_prop+=STR*)?
-	 *     )
+	 *         uid=STR | 
+	 *         dtstart=DateT | 
+	 *         organizer=STR | 
+	 *         url=STR | 
+	 *         contact=STR | 
+	 *         dtend=DateT | 
+	 *         (attendee+=STR attendee+=STR*) | 
+	 *         (comment+=STR comment+=STR*) | 
+	 *         (freebusy+=STR freebusy+=STR*) | 
+	 *         (rstatus+=STR rstatus+=STR*) | 
+	 *         (x_prop+=STR x_prop+=STR*) | 
+	 *         (iana_prop+=STR iana_prop+=STR*)
+	 *     )+
 	 */
 	protected void sequence_VacationC(ISerializationContext context, VacationC semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -444,7 +431,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getICalFormatAccess().getFileNameSTRTerminalRuleCall_1_0(), semanticObject.getFileName());
-		feeder.accept(grammarAccess.getICalFormatAccess().getCalendarCalendarParserRuleCall_3_0(), semanticObject.getCalendar());
+		feeder.accept(grammarAccess.getICalFormatAccess().getCalendarCalendarParserRuleCall_2_0(), semanticObject.getCalendar());
 		feeder.finish();
 	}
 	
@@ -454,7 +441,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     tzpropOptional returns tzpropOptional
 	 *
 	 * Constraint:
-	 *     (comment=STR? rdate=STR? tzname=STR? x_prop=STR? iana_prop=STR?)
+	 *     (comment=STR | rdate=STR | tzname=STR | x_prop=STR | iana_prop=STR)*
 	 */
 	protected void sequence_tzpropOptional(ISerializationContext context, tzpropOptional semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -466,7 +453,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     tzprop returns tzprop
 	 *
 	 * Constraint:
-	 *     (dtstart=STR tzoffseto=STR tzoffsetfrom=STR rrule=STR? (opt+=tzpropOptional opt+=tzpropOptional*)?)
+	 *     (dtstart=STR | tzoffseto=STR | tzoffsetfrom=STR | rrule=STR | (opt+=tzpropOptional opt+=tzpropOptional*))+
 	 */
 	protected void sequence_tzprop(ISerializationContext context, tzprop semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

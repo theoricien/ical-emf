@@ -177,7 +177,7 @@ public class EventCItemProvider extends ComponentActionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EventC) object).getDtstamp();
+		String label = ((EventC) object).getUid();
 		return label == null || label.length() == 0 ? getString("_UI_EventC_type")
 				: getString("_UI_EventC_type") + " " + label;
 	}
