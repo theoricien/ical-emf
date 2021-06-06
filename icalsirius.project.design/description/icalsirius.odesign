@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="icalsirius" version="12.0.0.2017041100">
+  <ownedViewpoints name="icalendarViewpoint">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="IcalendarDiagram" domainClass="iCal::iCalFormat" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <nodeMappings name="CalendarNode" semanticCandidatesExpression="aql: self.calendar" domainClass="iCal::Calendar">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="iCalendar" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="EventNode" semanticCandidatesExpression="aql: self.calendar.component" domainClass="iCal::EventC">
+          <borderedNodeMappings name="DateNode" semanticCandidatesExpression="[dtstart/]" domainClass="iCal::DateT">
+            <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:day_name" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" showIcon="false" labelExpression="Event" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="JornalNode" semanticCandidatesExpression="aql: self.calendar.component" domainClass="iCal::JournalC">
+          <borderedNodeMappings name="DateNode" semanticCandidatesExpression="[dtstart/]" domainClass="iCal::DateT">
+            <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:day_name" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" showIcon="false" labelExpression="Journal" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ToDoNode" semanticCandidatesExpression="aql: self.calendar.component" domainClass="iCal::ToDoC">
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" showIcon="false" labelExpression="ToDo" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="VacationNode" semanticCandidatesExpression="aql: self.calendar.component" domainClass="iCal::VacationC">
+          <borderedNodeMappings name="DateNode" semanticCandidatesExpression="[dtstart/]" domainClass="iCal::DateT">
+            <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:day_name" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" showIcon="false" labelExpression="Vacation" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="AlarmNode" semanticCandidatesExpression="aql: self.calendar.component" domainClass="iCal::AlarmC">
+          <borderedNodeMappings name="DateNode" semanticCandidatesExpression="[time/]" domainClass="iCal::ComponentAlarmTime">
+            <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:repeat" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" showIcon="false" labelExpression="Alarm" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="TimeZoneNode" semanticCandidatesExpression="aql: self.calendar.component" domainClass="iCal::TimeZoneC">
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" showIcon="false" labelExpression="TimeZone" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="IcalendarTable" domainClass="iCal::iCalFormat">
+      <ownedLineMappings name="EventLine" domainClass="iCal::EventC" headerLabelExpression="Event">
+        <ownedSubLines name="Eventalarme" domainClass="iCal::AlarmC" headerLabelExpression="Alarme de l'Event "/>
+      </ownedLineMappings>
+      <ownedLineMappings name="AlarmLine" domainClass="iCal::AlarmC" headerLabelExpression="Alarm"/>
+      <ownedLineMappings name="ToDoLine" domainClass="iCal::ToDoC" headerLabelExpression="To Do">
+        <ownedSubLines name="ToDoalarme" domainClass="iCal::AlarmC" headerLabelExpression="Alarme du To Do "/>
+      </ownedLineMappings>
+      <ownedLineMappings name="JournalLine" domainClass="iCal::JournalC" headerLabelExpression="Journal "/>
+      <ownedLineMappings name="TimeZoneLine" domainClass="iCal::TimeZoneC" headerLabelExpression="Time Zone"/>
+      <ownedLineMappings name="VacationLine" domainClass="iCal::VacationC" headerLabelExpression="Vacance ">
+        <ownedSubLines name="FreeBuzy" domainClass="String_Class" semanticCandidatesExpression="[freebusy/]" headerLabelExpression="FreeBusy"/>
+      </ownedLineMappings>
+      <ownedColumnMappings name="DateDebut" headerLabelExpression="Date de Debut" canEdit="true" featureName="dtstart" labelExpression="[dtstart. day_name+' '+dtstart. day+' '+dtstart.month+' '+dtstart.month_name+' '+dtstart.year/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="DateFin" headerLabelExpression="Date de Fin" featureName="dtend" labelExpression="[dtend.day_name+' '+dtend. day+' '+dtend.month+' '+dtend.month_name+' '+dtend.year/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="UID" headerLabelExpression="UID" featureName="uid" labelExpression="[uid/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Organizer" headerLabelExpression="Organisateur" featureName="organizer" labelExpression="[organizer/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Status" headerLabelExpression="Status" featureName="status" labelExpression="[status/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Contact" headerLabelExpression="Contact" featureName="contact" labelExpression="[contact/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Classe" headerLabelExpression="Classe" featureName="class" labelExpression="[class/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Lieu" headerLabelExpression="Lieu" featureName="location" labelExpression="[location/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Object" headerLabelExpression="Object" featureName="summary" labelExpression="[summary/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Description" headerLabelExpression="Description" featureName="description" labelExpression="[description/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Commentaire" headerLabelExpression="Commentaire" featureName="comment" labelExpression="[comment/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="attendee" headerLabelExpression="Invités " featureName="attendee" labelExpression="[attendee/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Priorité" headerLabelExpression="Priorité" featureName="priority" labelExpression="[priority/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="GEO" headerLabelExpression="GEO" featureName="geo" labelExpression="[geo/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="lastMod" headerLabelExpression="Derniere modification" featureName="last_mod" labelExpression="[last_mod/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Attach" headerLabelExpression="Piece Joint" featureName="attach" labelExpression="[attach/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="URL" headerLabelExpression="URL" featureName="url" labelExpression="[url/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Resources" headerLabelExpression="Resources" featureName="resources" labelExpression="[resources/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="Transparent" headerLabelExpression="Transparent" featureName="transp" labelExpression="[transp/]">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+        </defaultBackground>
+      </ownedColumnMappings>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="icalsirius.project.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

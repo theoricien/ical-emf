@@ -86,10 +86,6 @@ public class ICalFactoryImpl extends EFactoryImpl implements ICalFactory {
 			return createtzpropOptional();
 		case ICalPackage.DATE_T:
 			return createDateT();
-		case ICalPackage.MONTH_T:
-			return createMonthT();
-		case ICalPackage.MONTH_NAME_T:
-			return createMonthNameT();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -296,28 +292,6 @@ public class ICalFactoryImpl extends EFactoryImpl implements ICalFactory {
 	public DateT createDateT() {
 		DateTImpl dateT = new DateTImpl();
 		return dateT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MonthT createMonthT() {
-		MonthTImpl monthT = new MonthTImpl();
-		return monthT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MonthNameT createMonthNameT() {
-		MonthNameTImpl monthNameT = new MonthNameTImpl();
-		return monthNameT;
 	}
 
 	/**

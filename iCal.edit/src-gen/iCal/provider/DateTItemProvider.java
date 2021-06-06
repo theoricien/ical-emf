@@ -62,6 +62,7 @@ public class DateTItemProvider extends ItemProviderAdapter implements IEditingDo
 			addHoursPropertyDescriptor(object);
 			addMinutesPropertyDescriptor(object);
 			addSecondsPropertyDescriptor(object);
+			addMonth_namePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -157,6 +158,22 @@ public class DateTItemProvider extends ItemProviderAdapter implements IEditingDo
 	}
 
 	/**
+	 * This adds a property descriptor for the Month name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMonth_namePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DateT_month_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DateT_month_name_feature",
+								"_UI_DateT_type"),
+						ICalPackage.Literals.DATE_T__MONTH_NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -238,6 +255,7 @@ public class DateTItemProvider extends ItemProviderAdapter implements IEditingDo
 		case ICalPackage.DATE_T__HOURS:
 		case ICalPackage.DATE_T__MINUTES:
 		case ICalPackage.DATE_T__SECONDS:
+		case ICalPackage.DATE_T__MONTH_NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case ICalPackage.DATE_T__MONTH:
@@ -258,11 +276,8 @@ public class DateTItemProvider extends ItemProviderAdapter implements IEditingDo
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(ICalPackage.Literals.DATE_T__MONTH, ICalFactory.eINSTANCE.createMonthT()));
-
-		newChildDescriptors.add(
-				createChildParameter(ICalPackage.Literals.DATE_T__MONTH, ICalFactory.eINSTANCE.createMonthNameT()));
+		newChildDescriptors.add(createChildParameter(ICalPackage.Literals.DATE_T__MONTH,
+				ICalFactory.eINSTANCE.createFromString(ICalPackage.Literals.INTEGER, "0")));
 	}
 
 	/**

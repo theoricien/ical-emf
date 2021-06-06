@@ -237,231 +237,6 @@ ruleAlarmType returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleMonth
-entryRuleMonth returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getMonthRule()); }
-	iv_ruleMonth=ruleMonth
-	{ $current=$iv_ruleMonth.current; }
-	EOF;
-
-// Rule Month
-ruleMonth returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getMonthAccess().getMonthTParserRuleCall_0());
-		}
-		this_MonthT_0=ruleMonthT
-		{
-			$current = $this_MonthT_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getMonthAccess().getMonthNameTParserRuleCall_1());
-		}
-		this_MonthNameT_1=ruleMonthNameT
-		{
-			$current = $this_MonthNameT_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleMonthNameT
-entryRuleMonthNameT returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getMonthNameTRule()); }
-	iv_ruleMonthNameT=ruleMonthNameT
-	{ $current=$iv_ruleMonthNameT.current; }
-	EOF;
-
-// Rule MonthNameT
-ruleMonthNameT returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_value_0_1='Janvier'
-				{
-					newLeafNode(lv_value_0_1, grammarAccess.getMonthNameTAccess().getValueJanvierKeyword_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_1, null);
-				}
-				    |
-				lv_value_0_2='Fevrier'
-				{
-					newLeafNode(lv_value_0_2, grammarAccess.getMonthNameTAccess().getValueFevrierKeyword_0_1());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_2, null);
-				}
-				    |
-				lv_value_0_3='Mars'
-				{
-					newLeafNode(lv_value_0_3, grammarAccess.getMonthNameTAccess().getValueMarsKeyword_0_2());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_3, null);
-				}
-				    |
-				lv_value_0_4='Avril'
-				{
-					newLeafNode(lv_value_0_4, grammarAccess.getMonthNameTAccess().getValueAvrilKeyword_0_3());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_4, null);
-				}
-				    |
-				lv_value_0_5='Mai'
-				{
-					newLeafNode(lv_value_0_5, grammarAccess.getMonthNameTAccess().getValueMaiKeyword_0_4());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_5, null);
-				}
-				    |
-				lv_value_0_6='Juin'
-				{
-					newLeafNode(lv_value_0_6, grammarAccess.getMonthNameTAccess().getValueJuinKeyword_0_5());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_6, null);
-				}
-				    |
-				lv_value_0_7='Juillet'
-				{
-					newLeafNode(lv_value_0_7, grammarAccess.getMonthNameTAccess().getValueJuilletKeyword_0_6());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_7, null);
-				}
-				    |
-				lv_value_0_8='Aout'
-				{
-					newLeafNode(lv_value_0_8, grammarAccess.getMonthNameTAccess().getValueAoutKeyword_0_7());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_8, null);
-				}
-				    |
-				lv_value_0_9='Septembre'
-				{
-					newLeafNode(lv_value_0_9, grammarAccess.getMonthNameTAccess().getValueSeptembreKeyword_0_8());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_9, null);
-				}
-				    |
-				lv_value_0_10='Octobre'
-				{
-					newLeafNode(lv_value_0_10, grammarAccess.getMonthNameTAccess().getValueOctobreKeyword_0_9());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_10, null);
-				}
-				    |
-				lv_value_0_11='Novembre'
-				{
-					newLeafNode(lv_value_0_11, grammarAccess.getMonthNameTAccess().getValueNovembreKeyword_0_10());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_11, null);
-				}
-				    |
-				lv_value_0_12='Decembre'
-				{
-					newLeafNode(lv_value_0_12, grammarAccess.getMonthNameTAccess().getValueDecembreKeyword_0_11());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMonthNameTRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_12, null);
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleMonthT
-entryRuleMonthT returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getMonthTRule()); }
-	iv_ruleMonthT=ruleMonthT
-	{ $current=$iv_ruleMonthT.current; }
-	EOF;
-
-// Rule MonthT
-ruleMonthT returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			lv_value_0_0=RULE_INT
-			{
-				newLeafNode(lv_value_0_0, grammarAccess.getMonthTAccess().getValueINTTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getMonthTRule());
-				}
-				setWithLastConsumed(
-					$current,
-					"value",
-					lv_value_0_0,
-					"xCalendar.MyDsl.INT");
-			}
-		)
-	)
-;
-
 // Entry rule entryRuleDateT
 entryRuleDateT returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getDateTRule()); }
@@ -517,28 +292,45 @@ ruleDateT returns [EObject current=null]
 		)
 		(
 			(
+				lv_month_2_0=RULE_INT
 				{
-					newCompositeNode(grammarAccess.getDateTAccess().getMonthMonthParserRuleCall_2_0());
+					newLeafNode(lv_month_2_0, grammarAccess.getDateTAccess().getMonthINTTerminalRuleCall_2_0());
 				}
-				lv_month_2_0=ruleMonth
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDateTRule());
+						$current = createModelElement(grammarAccess.getDateTRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"month",
 						lv_month_2_0,
-						"xCalendar.MyDsl.Month");
-					afterParserOrEnumRuleCall();
+						"xCalendar.MyDsl.INT");
 				}
 			)
-		)
+		)?
 		(
 			(
-				lv_year_3_0=RULE_INT
+				lv_month_name_3_0=RULE_STR
 				{
-					newLeafNode(lv_year_3_0, grammarAccess.getDateTAccess().getYearINTTerminalRuleCall_3_0());
+					newLeafNode(lv_month_name_3_0, grammarAccess.getDateTAccess().getMonth_nameSTRTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDateTRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"month_name",
+						lv_month_name_3_0,
+						"xCalendar.MyDsl.STR");
+				}
+			)
+		)?
+		(
+			(
+				lv_year_4_0=RULE_INT
+				{
+					newLeafNode(lv_year_4_0, grammarAccess.getDateTAccess().getYearINTTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -547,23 +339,23 @@ ruleDateT returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"year",
-						lv_year_3_0,
+						lv_year_4_0,
 						"xCalendar.MyDsl.INT");
 				}
 			)
 		)?
 		(
 			(
-				otherlv_4=' a '
+				otherlv_5=' a '
 				{
-					newLeafNode(otherlv_4, grammarAccess.getDateTAccess().getAKeyword_4_0());
+					newLeafNode(otherlv_5, grammarAccess.getDateTAccess().getAKeyword_5_0());
 				}
 			)?
 			(
 				(
-					lv_hours_5_0=RULE_INT
+					lv_hours_6_0=RULE_INT
 					{
-						newLeafNode(lv_hours_5_0, grammarAccess.getDateTAccess().getHoursINTTerminalRuleCall_4_1_0());
+						newLeafNode(lv_hours_6_0, grammarAccess.getDateTAccess().getHoursINTTerminalRuleCall_5_1_0());
 					}
 					{
 						if ($current==null) {
@@ -572,33 +364,33 @@ ruleDateT returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"hours",
-							lv_hours_5_0,
+							lv_hours_6_0,
 							"xCalendar.MyDsl.INT");
 					}
 				)
 			)
 			(
-				otherlv_6='h'
+				otherlv_7='h'
 				{
-					newLeafNode(otherlv_6, grammarAccess.getDateTAccess().getHKeyword_4_2_0());
+					newLeafNode(otherlv_7, grammarAccess.getDateTAccess().getHKeyword_5_2_0());
 				}
 				    |
-				otherlv_7=':'
+				otherlv_8=':'
 				{
-					newLeafNode(otherlv_7, grammarAccess.getDateTAccess().getColonKeyword_4_2_1());
+					newLeafNode(otherlv_8, grammarAccess.getDateTAccess().getColonKeyword_5_2_1());
 				}
 				    |
-				otherlv_8=' heure '
+				otherlv_9=' heure '
 				{
-					newLeafNode(otherlv_8, grammarAccess.getDateTAccess().getHeureKeyword_4_2_2());
+					newLeafNode(otherlv_9, grammarAccess.getDateTAccess().getHeureKeyword_5_2_2());
 				}
 			)
 			(
 				(
 					(
-						lv_minutes_9_0=RULE_INT
+						lv_minutes_10_0=RULE_INT
 						{
-							newLeafNode(lv_minutes_9_0, grammarAccess.getDateTAccess().getMinutesINTTerminalRuleCall_4_3_0_0());
+							newLeafNode(lv_minutes_10_0, grammarAccess.getDateTAccess().getMinutesINTTerminalRuleCall_5_3_0_0());
 						}
 						{
 							if ($current==null) {
@@ -607,50 +399,50 @@ ruleDateT returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"minutes",
-								lv_minutes_9_0,
+								lv_minutes_10_0,
 								"xCalendar.MyDsl.INT");
 						}
 					)
 				)
 				(
-					otherlv_10='m'
+					otherlv_11='m'
 					{
-						newLeafNode(otherlv_10, grammarAccess.getDateTAccess().getMKeyword_4_3_1_0());
+						newLeafNode(otherlv_11, grammarAccess.getDateTAccess().getMKeyword_5_3_1_0());
 					}
 					    |
-					otherlv_11='mn'
+					otherlv_12='mn'
 					{
-						newLeafNode(otherlv_11, grammarAccess.getDateTAccess().getMnKeyword_4_3_1_1());
+						newLeafNode(otherlv_12, grammarAccess.getDateTAccess().getMnKeyword_5_3_1_1());
 					}
 					    |
-					otherlv_12='min'
+					otherlv_13='min'
 					{
-						newLeafNode(otherlv_12, grammarAccess.getDateTAccess().getMinKeyword_4_3_1_2());
+						newLeafNode(otherlv_13, grammarAccess.getDateTAccess().getMinKeyword_5_3_1_2());
 					}
 					    |
-					otherlv_13=' minutes'
+					otherlv_14=' minutes'
 					{
-						newLeafNode(otherlv_13, grammarAccess.getDateTAccess().getMinutesKeyword_4_3_1_3());
+						newLeafNode(otherlv_14, grammarAccess.getDateTAccess().getMinutesKeyword_5_3_1_3());
 					}
 					    |
-					otherlv_14=':'
+					otherlv_15=':'
 					{
-						newLeafNode(otherlv_14, grammarAccess.getDateTAccess().getColonKeyword_4_3_1_4());
+						newLeafNode(otherlv_15, grammarAccess.getDateTAccess().getColonKeyword_5_3_1_4());
 					}
 				)?
 			)?
 			(
 				(
-					otherlv_15=' et '
+					otherlv_16=' et '
 					{
-						newLeafNode(otherlv_15, grammarAccess.getDateTAccess().getEtKeyword_4_4_0());
+						newLeafNode(otherlv_16, grammarAccess.getDateTAccess().getEtKeyword_5_4_0());
 					}
 				)?
 				(
 					(
-						lv_seconds_16_0=RULE_INT
+						lv_seconds_17_0=RULE_INT
 						{
-							newLeafNode(lv_seconds_16_0, grammarAccess.getDateTAccess().getSecondsINTTerminalRuleCall_4_4_1_0());
+							newLeafNode(lv_seconds_17_0, grammarAccess.getDateTAccess().getSecondsINTTerminalRuleCall_5_4_1_0());
 						}
 						{
 							if ($current==null) {
@@ -659,25 +451,25 @@ ruleDateT returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"seconds",
-								lv_seconds_16_0,
+								lv_seconds_17_0,
 								"xCalendar.MyDsl.INT");
 						}
 					)
 				)
 				(
-					otherlv_17='s'
+					otherlv_18='s'
 					{
-						newLeafNode(otherlv_17, grammarAccess.getDateTAccess().getSKeyword_4_4_2_0());
+						newLeafNode(otherlv_18, grammarAccess.getDateTAccess().getSKeyword_5_4_2_0());
 					}
 					    |
-					otherlv_18='sec'
+					otherlv_19='sec'
 					{
-						newLeafNode(otherlv_18, grammarAccess.getDateTAccess().getSecKeyword_4_4_2_1());
+						newLeafNode(otherlv_19, grammarAccess.getDateTAccess().getSecKeyword_5_4_2_1());
 					}
 					    |
-					otherlv_19=' secondes '
+					otherlv_20=' secondes '
 					{
-						newLeafNode(otherlv_19, grammarAccess.getDateTAccess().getSecondesKeyword_4_4_2_2());
+						newLeafNode(otherlv_20, grammarAccess.getDateTAccess().getSecondesKeyword_5_4_2_2());
 					}
 				)?
 			)?
@@ -6932,7 +6724,7 @@ ruleTimeZoneC returns [EObject current=null]
 	)
 ;
 
-RULE_STR : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
+RULE_STR : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\''|'Janvier'|'Fevrier'|'Mars'|'Avril'|'Mai'|'Juin'|'Juillet'|'Aout'|'Septembre'|'Octobre'|'Novembre'|'Decembre');
 
 RULE_INT : ('0'..'9')+;
 

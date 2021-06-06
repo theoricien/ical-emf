@@ -2147,22 +2147,13 @@ public interface ICalPackage extends EPackage {
 	int DATE_T__DAY_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Month</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_T__MONTH = 2;
-
-	/**
 	 * The feature id for the '<em><b>Year</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_T__YEAR = 3;
+	int DATE_T__YEAR = 2;
 
 	/**
 	 * The feature id for the '<em><b>Hours</b></em>' attribute.
@@ -2171,7 +2162,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_T__HOURS = 4;
+	int DATE_T__HOURS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Minutes</b></em>' attribute.
@@ -2180,7 +2171,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_T__MINUTES = 5;
+	int DATE_T__MINUTES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Seconds</b></em>' attribute.
@@ -2189,7 +2180,25 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_T__SECONDS = 6;
+	int DATE_T__SECONDS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Month</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T__MONTH = 6;
+
+	/**
+	 * The feature id for the '<em><b>Month name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_T__MONTH_NAME = 7;
 
 	/**
 	 * The number of structural features of the '<em>Date T</em>' class.
@@ -2198,7 +2207,7 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_T_FEATURE_COUNT = 7;
+	int DATE_T_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Date T</em>' class.
@@ -2210,108 +2219,6 @@ public interface ICalPackage extends EPackage {
 	int DATE_T_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link iCal.impl.AMonthTImpl <em>AMonth T</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see iCal.impl.AMonthTImpl
-	 * @see iCal.impl.ICalPackageImpl#getAMonthT()
-	 * @generated
-	 */
-	int AMONTH_T = 20;
-
-	/**
-	 * The number of structural features of the '<em>AMonth T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AMONTH_T_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>AMonth T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AMONTH_T_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link iCal.impl.MonthTImpl <em>Month T</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see iCal.impl.MonthTImpl
-	 * @see iCal.impl.ICalPackageImpl#getMonthT()
-	 * @generated
-	 */
-	int MONTH_T = 19;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONTH_T__VALUE = AMONTH_T_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Month T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONTH_T_FEATURE_COUNT = AMONTH_T_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Month T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONTH_T_OPERATION_COUNT = AMONTH_T_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link iCal.impl.MonthNameTImpl <em>Month Name T</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see iCal.impl.MonthNameTImpl
-	 * @see iCal.impl.ICalPackageImpl#getMonthNameT()
-	 * @generated
-	 */
-	int MONTH_NAME_T = 21;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONTH_NAME_T__VALUE = AMONTH_T_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Month Name T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONTH_NAME_T_FEATURE_COUNT = AMONTH_T_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Month Name T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONTH_NAME_T_OPERATION_COUNT = AMONTH_T_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '<em>String</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2319,7 +2226,7 @@ public interface ICalPackage extends EPackage {
 	 * @see iCal.impl.ICalPackageImpl#getString()
 	 * @generated
 	 */
-	int STRING = 22;
+	int STRING = 19;
 
 	/**
 	 * The meta object id for the '<em>Integer</em>' data type.
@@ -2329,7 +2236,7 @@ public interface ICalPackage extends EPackage {
 	 * @see iCal.impl.ICalPackageImpl#getInteger()
 	 * @generated
 	 */
-	int INTEGER = 23;
+	int INTEGER = 20;
 
 	/**
 	 * The meta object id for the '<em>Float</em>' data type.
@@ -2339,7 +2246,7 @@ public interface ICalPackage extends EPackage {
 	 * @see iCal.impl.ICalPackageImpl#getFloat()
 	 * @generated
 	 */
-	int FLOAT = 24;
+	int FLOAT = 21;
 
 	/**
 	 * Returns the meta object for class '{@link iCal.iCalFormat <em>iCal Format</em>}'.
@@ -3533,15 +3440,26 @@ public interface ICalPackage extends EPackage {
 	EAttribute getDateT_Day_name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link iCal.DateT#getMonth <em>Month</em>}'.
+	 * Returns the meta object for the attribute '{@link iCal.DateT#getMonth <em>Month</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Month</em>'.
+	 * @return the meta object for the attribute '<em>Month</em>'.
 	 * @see iCal.DateT#getMonth()
 	 * @see #getDateT()
 	 * @generated
 	 */
-	EReference getDateT_Month();
+	EAttribute getDateT_Month();
+
+	/**
+	 * Returns the meta object for the attribute '{@link iCal.DateT#getMonth_name <em>Month name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Month name</em>'.
+	 * @see iCal.DateT#getMonth_name()
+	 * @see #getDateT()
+	 * @generated
+	 */
+	EAttribute getDateT_Month_name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link iCal.DateT#getYear <em>Year</em>}'.
@@ -3586,58 +3504,6 @@ public interface ICalPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDateT_Seconds();
-
-	/**
-	 * Returns the meta object for class '{@link iCal.MonthT <em>Month T</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Month T</em>'.
-	 * @see iCal.MonthT
-	 * @generated
-	 */
-	EClass getMonthT();
-
-	/**
-	 * Returns the meta object for the attribute '{@link iCal.MonthT#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see iCal.MonthT#getValue()
-	 * @see #getMonthT()
-	 * @generated
-	 */
-	EAttribute getMonthT_Value();
-
-	/**
-	 * Returns the meta object for class '{@link iCal.AMonthT <em>AMonth T</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>AMonth T</em>'.
-	 * @see iCal.AMonthT
-	 * @generated
-	 */
-	EClass getAMonthT();
-
-	/**
-	 * Returns the meta object for class '{@link iCal.MonthNameT <em>Month Name T</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Month Name T</em>'.
-	 * @see iCal.MonthNameT
-	 * @generated
-	 */
-	EClass getMonthNameT();
-
-	/**
-	 * Returns the meta object for the attribute '{@link iCal.MonthNameT#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see iCal.MonthNameT#getValue()
-	 * @see #getMonthNameT()
-	 * @generated
-	 */
-	EAttribute getMonthNameT_Value();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
@@ -4614,12 +4480,20 @@ public interface ICalPackage extends EPackage {
 		EAttribute DATE_T__DAY_NAME = eINSTANCE.getDateT_Day_name();
 
 		/**
-		 * The meta object literal for the '<em><b>Month</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Month</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATE_T__MONTH = eINSTANCE.getDateT_Month();
+		EAttribute DATE_T__MONTH = eINSTANCE.getDateT_Month();
+
+		/**
+		 * The meta object literal for the '<em><b>Month name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_T__MONTH_NAME = eINSTANCE.getDateT_Month_name();
 
 		/**
 		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
@@ -4652,52 +4526,6 @@ public interface ICalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATE_T__SECONDS = eINSTANCE.getDateT_Seconds();
-
-		/**
-		 * The meta object literal for the '{@link iCal.impl.MonthTImpl <em>Month T</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see iCal.impl.MonthTImpl
-		 * @see iCal.impl.ICalPackageImpl#getMonthT()
-		 * @generated
-		 */
-		EClass MONTH_T = eINSTANCE.getMonthT();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MONTH_T__VALUE = eINSTANCE.getMonthT_Value();
-
-		/**
-		 * The meta object literal for the '{@link iCal.impl.AMonthTImpl <em>AMonth T</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see iCal.impl.AMonthTImpl
-		 * @see iCal.impl.ICalPackageImpl#getAMonthT()
-		 * @generated
-		 */
-		EClass AMONTH_T = eINSTANCE.getAMonthT();
-
-		/**
-		 * The meta object literal for the '{@link iCal.impl.MonthNameTImpl <em>Month Name T</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see iCal.impl.MonthNameTImpl
-		 * @see iCal.impl.ICalPackageImpl#getMonthNameT()
-		 * @generated
-		 */
-		EClass MONTH_NAME_T = eINSTANCE.getMonthNameT();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MONTH_NAME_T__VALUE = eINSTANCE.getMonthNameT_Value();
 
 		/**
 		 * The meta object literal for the '<em>String</em>' data type.

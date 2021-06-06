@@ -20,7 +20,8 @@ AlarmType returns AlarmType:
 
 terminal STR:
 	'"' ( '\\' ( 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' ) | !('\\'|'"') )* '"' |
-	"'" ( '\\' ( 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' ) | !('\\'|"'") )* "'" 
+	"'" ( '\\' ( 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' ) | !('\\'|"'") )* "'" |
+	"Janvier" | "Fevrier" | "Mars" | "Avril" | "Mai" | "Juin" | "Juillet" | "Aout" | "Septembre" | "Octobre" | "Novembre" | "Decembre" 
 ;
 
 @Override 
@@ -28,21 +29,8 @@ terminal INT  returns ecore::EInt:
     ('0'..'9')+
 ;
 
-Month returns AMonthT:
-	MonthT | MonthNameT
-;
-
-MonthNameT returns MonthNameT:
-	value=("Janvier" | "Fevrier" | "Mars" | "Avril" | "Mai" | "Juin" | "Juillet" | "Aout" | "Septembre" | "Octobre" | "Novembre" | "Decembre" ) 
-;
-
-
-MonthT returns MonthT:
-	value=INT
-;
-
 DateT returns DateT:
-	(day_name=DayName)? day=INT month=Month (year=INT)? ((" a ")? (hours=INT)("h" | ":" | " heure ")
+	(day_name=DayName)? day=INT (month=INT)? (month_name=STR)? (year=INT)? ((" a ")? (hours=INT)("h" | ":" | " heure ")
 		((minutes=INT)("m" | "mn" | "min" | " minutes" | ":")?)?
 		((" et ")?(seconds=INT)("s" | "sec" | " secondes ")?)?
 	)?

@@ -157,24 +157,6 @@ public interface ICalFactory extends EFactory {
 	DateT createDateT();
 
 	/**
-	 * Returns a new object of class '<em>Month T</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Month T</em>'.
-	 * @generated
-	 */
-	MonthT createMonthT();
-
-	/**
-	 * Returns a new object of class '<em>Month Name T</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Month Name T</em>'.
-	 * @generated
-	 */
-	MonthNameT createMonthNameT();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

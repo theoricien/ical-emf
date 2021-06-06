@@ -2,7 +2,6 @@
  */
 package iCal.impl;
 
-import iCal.AMonthT;
 import iCal.AlarmC;
 import iCal.AlarmType;
 import iCal.Calendar;
@@ -18,8 +17,6 @@ import iCal.EventC;
 import iCal.ICalFactory;
 import iCal.ICalPackage;
 import iCal.JournalC;
-import iCal.MonthNameT;
-import iCal.MonthT;
 import iCal.TimeZoneC;
 import iCal.ToDoC;
 import iCal.VacationC;
@@ -174,27 +171,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	private EClass dateTEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass monthTEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass aMonthTEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass monthNameTEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1387,47 +1363,7 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getDateT_Month() {
-		return (EReference) dateTEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDateT_Year() {
-		return (EAttribute) dateTEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDateT_Hours() {
-		return (EAttribute) dateTEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDateT_Minutes() {
-		return (EAttribute) dateTEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDateT_Seconds() {
+	public EAttribute getDateT_Month() {
 		return (EAttribute) dateTEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1437,8 +1373,8 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMonthT() {
-		return monthTEClass;
+	public EAttribute getDateT_Month_name() {
+		return (EAttribute) dateTEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1447,8 +1383,8 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMonthT_Value() {
-		return (EAttribute) monthTEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDateT_Year() {
+		return (EAttribute) dateTEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1457,8 +1393,8 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getAMonthT() {
-		return aMonthTEClass;
+	public EAttribute getDateT_Hours() {
+		return (EAttribute) dateTEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1467,8 +1403,8 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMonthNameT() {
-		return monthNameTEClass;
+	public EAttribute getDateT_Minutes() {
+		return (EAttribute) dateTEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1477,8 +1413,8 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMonthNameT_Value() {
-		return (EAttribute) monthNameTEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDateT_Seconds() {
+		return (EAttribute) dateTEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1669,19 +1605,12 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		dateTEClass = createEClass(DATE_T);
 		createEAttribute(dateTEClass, DATE_T__DAY);
 		createEAttribute(dateTEClass, DATE_T__DAY_NAME);
-		createEReference(dateTEClass, DATE_T__MONTH);
 		createEAttribute(dateTEClass, DATE_T__YEAR);
 		createEAttribute(dateTEClass, DATE_T__HOURS);
 		createEAttribute(dateTEClass, DATE_T__MINUTES);
 		createEAttribute(dateTEClass, DATE_T__SECONDS);
-
-		monthTEClass = createEClass(MONTH_T);
-		createEAttribute(monthTEClass, MONTH_T__VALUE);
-
-		aMonthTEClass = createEClass(AMONTH_T);
-
-		monthNameTEClass = createEClass(MONTH_NAME_T);
-		createEAttribute(monthNameTEClass, MONTH_NAME_T__VALUE);
+		createEAttribute(dateTEClass, DATE_T__MONTH);
+		createEAttribute(dateTEClass, DATE_T__MONTH_NAME);
 
 		// Create data types
 		stringEDataType = createEDataType(STRING);
@@ -1729,8 +1658,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 		componentAlarmAudioPropertyEClass.getESuperTypes().add(this.getAlarmType());
 		componentAlarmDispPropertyEClass.getESuperTypes().add(this.getAlarmType());
 		componentAlarmEmailPropertyEClass.getESuperTypes().add(this.getAlarmType());
-		monthTEClass.getESuperTypes().add(this.getAMonthT());
-		monthNameTEClass.getESuperTypes().add(this.getAMonthT());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(iCalFormatEClass, iCalFormat.class, "iCalFormat", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1990,9 +1917,6 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDateT_Day_name(), this.getString(), "day_name", null, 0, 1, DateT.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDateT_Month(), this.getAMonthT(), null, "month", null, 1, 1, DateT.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEAttribute(getDateT_Year(), this.getInteger(), "year", null, 0, 1, DateT.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDateT_Hours(), this.getInteger(), "hours", null, 0, 1, DateT.class, !IS_TRANSIENT,
@@ -2001,16 +1925,9 @@ public class ICalPackageImpl extends EPackageImpl implements ICalPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDateT_Seconds(), this.getInteger(), "seconds", null, 0, 1, DateT.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(monthTEClass, MonthT.class, "MonthT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMonthT_Value(), this.getInteger(), "value", null, 1, 1, MonthT.class, !IS_TRANSIENT,
+		initEAttribute(getDateT_Month(), this.getInteger(), "month", null, 0, 1, DateT.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(aMonthTEClass, AMonthT.class, "AMonthT", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(monthNameTEClass, MonthNameT.class, "MonthNameT", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMonthNameT_Value(), this.getString(), "value", null, 1, 1, MonthNameT.class, !IS_TRANSIENT,
+		initEAttribute(getDateT_Month_name(), this.getString(), "month_name", null, 0, 1, DateT.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types

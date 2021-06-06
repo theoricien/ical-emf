@@ -114,106 +114,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//ComponentAlarmEmailProperty
 		public RuleCall getComponentAlarmEmailPropertyParserRuleCall_2() { return cComponentAlarmEmailPropertyParserRuleCall_2; }
 	}
-	public class MonthElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.Month");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cMonthTParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cMonthNameTParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//Month AMonthT:
-		//	MonthT | MonthNameT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//MonthT | MonthNameT
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//MonthT
-		public RuleCall getMonthTParserRuleCall_0() { return cMonthTParserRuleCall_0; }
-		
-		//MonthNameT
-		public RuleCall getMonthNameTParserRuleCall_1() { return cMonthNameTParserRuleCall_1; }
-	}
-	public class MonthNameTElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.MonthNameT");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cValueAlternatives_0 = (Alternatives)cValueAssignment.eContents().get(0);
-		private final Keyword cValueJanvierKeyword_0_0 = (Keyword)cValueAlternatives_0.eContents().get(0);
-		private final Keyword cValueFevrierKeyword_0_1 = (Keyword)cValueAlternatives_0.eContents().get(1);
-		private final Keyword cValueMarsKeyword_0_2 = (Keyword)cValueAlternatives_0.eContents().get(2);
-		private final Keyword cValueAvrilKeyword_0_3 = (Keyword)cValueAlternatives_0.eContents().get(3);
-		private final Keyword cValueMaiKeyword_0_4 = (Keyword)cValueAlternatives_0.eContents().get(4);
-		private final Keyword cValueJuinKeyword_0_5 = (Keyword)cValueAlternatives_0.eContents().get(5);
-		private final Keyword cValueJuilletKeyword_0_6 = (Keyword)cValueAlternatives_0.eContents().get(6);
-		private final Keyword cValueAoutKeyword_0_7 = (Keyword)cValueAlternatives_0.eContents().get(7);
-		private final Keyword cValueSeptembreKeyword_0_8 = (Keyword)cValueAlternatives_0.eContents().get(8);
-		private final Keyword cValueOctobreKeyword_0_9 = (Keyword)cValueAlternatives_0.eContents().get(9);
-		private final Keyword cValueNovembreKeyword_0_10 = (Keyword)cValueAlternatives_0.eContents().get(10);
-		private final Keyword cValueDecembreKeyword_0_11 = (Keyword)cValueAlternatives_0.eContents().get(11);
-		
-		//MonthNameT:
-		//	value=("Janvier" | "Fevrier" | "Mars" | "Avril" | "Mai" | "Juin" | "Juillet" | "Aout" | "Septembre" | "Octobre" |
-		//	"Novembre" | "Decembre");
-		@Override public ParserRule getRule() { return rule; }
-		
-		//value=("Janvier" | "Fevrier" | "Mars" | "Avril" | "Mai" | "Juin" | "Juillet" | "Aout" | "Septembre" | "Octobre" |
-		//"Novembre" | "Decembre")
-		public Assignment getValueAssignment() { return cValueAssignment; }
-		
-		//("Janvier" | "Fevrier" | "Mars" | "Avril" | "Mai" | "Juin" | "Juillet" | "Aout" | "Septembre" | "Octobre" | "Novembre" |
-		//"Decembre")
-		public Alternatives getValueAlternatives_0() { return cValueAlternatives_0; }
-		
-		//"Janvier"
-		public Keyword getValueJanvierKeyword_0_0() { return cValueJanvierKeyword_0_0; }
-		
-		//"Fevrier"
-		public Keyword getValueFevrierKeyword_0_1() { return cValueFevrierKeyword_0_1; }
-		
-		//"Mars"
-		public Keyword getValueMarsKeyword_0_2() { return cValueMarsKeyword_0_2; }
-		
-		//"Avril"
-		public Keyword getValueAvrilKeyword_0_3() { return cValueAvrilKeyword_0_3; }
-		
-		//"Mai"
-		public Keyword getValueMaiKeyword_0_4() { return cValueMaiKeyword_0_4; }
-		
-		//"Juin"
-		public Keyword getValueJuinKeyword_0_5() { return cValueJuinKeyword_0_5; }
-		
-		//"Juillet"
-		public Keyword getValueJuilletKeyword_0_6() { return cValueJuilletKeyword_0_6; }
-		
-		//"Aout"
-		public Keyword getValueAoutKeyword_0_7() { return cValueAoutKeyword_0_7; }
-		
-		//"Septembre"
-		public Keyword getValueSeptembreKeyword_0_8() { return cValueSeptembreKeyword_0_8; }
-		
-		//"Octobre"
-		public Keyword getValueOctobreKeyword_0_9() { return cValueOctobreKeyword_0_9; }
-		
-		//"Novembre"
-		public Keyword getValueNovembreKeyword_0_10() { return cValueNovembreKeyword_0_10; }
-		
-		//"Decembre"
-		public Keyword getValueDecembreKeyword_0_11() { return cValueDecembreKeyword_0_11; }
-	}
-	public class MonthTElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.MonthT");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-		
-		//MonthT:
-		//	value=INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//value=INT
-		public Assignment getValueAssignment() { return cValueAssignment; }
-		
-		//INT
-		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
-	}
 	public class DateTElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.DateT");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -222,42 +122,44 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cDayAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cDayINTTerminalRuleCall_1_0 = (RuleCall)cDayAssignment_1.eContents().get(0);
 		private final Assignment cMonthAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cMonthMonthParserRuleCall_2_0 = (RuleCall)cMonthAssignment_2.eContents().get(0);
-		private final Assignment cYearAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cYearINTTerminalRuleCall_3_0 = (RuleCall)cYearAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cAKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cHoursAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cHoursINTTerminalRuleCall_4_1_0 = (RuleCall)cHoursAssignment_4_1.eContents().get(0);
-		private final Alternatives cAlternatives_4_2 = (Alternatives)cGroup_4.eContents().get(2);
-		private final Keyword cHKeyword_4_2_0 = (Keyword)cAlternatives_4_2.eContents().get(0);
-		private final Keyword cColonKeyword_4_2_1 = (Keyword)cAlternatives_4_2.eContents().get(1);
-		private final Keyword cHeureKeyword_4_2_2 = (Keyword)cAlternatives_4_2.eContents().get(2);
-		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
-		private final Assignment cMinutesAssignment_4_3_0 = (Assignment)cGroup_4_3.eContents().get(0);
-		private final RuleCall cMinutesINTTerminalRuleCall_4_3_0_0 = (RuleCall)cMinutesAssignment_4_3_0.eContents().get(0);
-		private final Alternatives cAlternatives_4_3_1 = (Alternatives)cGroup_4_3.eContents().get(1);
-		private final Keyword cMKeyword_4_3_1_0 = (Keyword)cAlternatives_4_3_1.eContents().get(0);
-		private final Keyword cMnKeyword_4_3_1_1 = (Keyword)cAlternatives_4_3_1.eContents().get(1);
-		private final Keyword cMinKeyword_4_3_1_2 = (Keyword)cAlternatives_4_3_1.eContents().get(2);
-		private final Keyword cMinutesKeyword_4_3_1_3 = (Keyword)cAlternatives_4_3_1.eContents().get(3);
-		private final Keyword cColonKeyword_4_3_1_4 = (Keyword)cAlternatives_4_3_1.eContents().get(4);
-		private final Group cGroup_4_4 = (Group)cGroup_4.eContents().get(4);
-		private final Keyword cEtKeyword_4_4_0 = (Keyword)cGroup_4_4.eContents().get(0);
-		private final Assignment cSecondsAssignment_4_4_1 = (Assignment)cGroup_4_4.eContents().get(1);
-		private final RuleCall cSecondsINTTerminalRuleCall_4_4_1_0 = (RuleCall)cSecondsAssignment_4_4_1.eContents().get(0);
-		private final Alternatives cAlternatives_4_4_2 = (Alternatives)cGroup_4_4.eContents().get(2);
-		private final Keyword cSKeyword_4_4_2_0 = (Keyword)cAlternatives_4_4_2.eContents().get(0);
-		private final Keyword cSecKeyword_4_4_2_1 = (Keyword)cAlternatives_4_4_2.eContents().get(1);
-		private final Keyword cSecondesKeyword_4_4_2_2 = (Keyword)cAlternatives_4_4_2.eContents().get(2);
+		private final RuleCall cMonthINTTerminalRuleCall_2_0 = (RuleCall)cMonthAssignment_2.eContents().get(0);
+		private final Assignment cMonth_nameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMonth_nameSTRTerminalRuleCall_3_0 = (RuleCall)cMonth_nameAssignment_3.eContents().get(0);
+		private final Assignment cYearAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cYearINTTerminalRuleCall_4_0 = (RuleCall)cYearAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cAKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cHoursAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cHoursINTTerminalRuleCall_5_1_0 = (RuleCall)cHoursAssignment_5_1.eContents().get(0);
+		private final Alternatives cAlternatives_5_2 = (Alternatives)cGroup_5.eContents().get(2);
+		private final Keyword cHKeyword_5_2_0 = (Keyword)cAlternatives_5_2.eContents().get(0);
+		private final Keyword cColonKeyword_5_2_1 = (Keyword)cAlternatives_5_2.eContents().get(1);
+		private final Keyword cHeureKeyword_5_2_2 = (Keyword)cAlternatives_5_2.eContents().get(2);
+		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
+		private final Assignment cMinutesAssignment_5_3_0 = (Assignment)cGroup_5_3.eContents().get(0);
+		private final RuleCall cMinutesINTTerminalRuleCall_5_3_0_0 = (RuleCall)cMinutesAssignment_5_3_0.eContents().get(0);
+		private final Alternatives cAlternatives_5_3_1 = (Alternatives)cGroup_5_3.eContents().get(1);
+		private final Keyword cMKeyword_5_3_1_0 = (Keyword)cAlternatives_5_3_1.eContents().get(0);
+		private final Keyword cMnKeyword_5_3_1_1 = (Keyword)cAlternatives_5_3_1.eContents().get(1);
+		private final Keyword cMinKeyword_5_3_1_2 = (Keyword)cAlternatives_5_3_1.eContents().get(2);
+		private final Keyword cMinutesKeyword_5_3_1_3 = (Keyword)cAlternatives_5_3_1.eContents().get(3);
+		private final Keyword cColonKeyword_5_3_1_4 = (Keyword)cAlternatives_5_3_1.eContents().get(4);
+		private final Group cGroup_5_4 = (Group)cGroup_5.eContents().get(4);
+		private final Keyword cEtKeyword_5_4_0 = (Keyword)cGroup_5_4.eContents().get(0);
+		private final Assignment cSecondsAssignment_5_4_1 = (Assignment)cGroup_5_4.eContents().get(1);
+		private final RuleCall cSecondsINTTerminalRuleCall_5_4_1_0 = (RuleCall)cSecondsAssignment_5_4_1.eContents().get(0);
+		private final Alternatives cAlternatives_5_4_2 = (Alternatives)cGroup_5_4.eContents().get(2);
+		private final Keyword cSKeyword_5_4_2_0 = (Keyword)cAlternatives_5_4_2.eContents().get(0);
+		private final Keyword cSecKeyword_5_4_2_1 = (Keyword)cAlternatives_5_4_2.eContents().get(1);
+		private final Keyword cSecondesKeyword_5_4_2_2 = (Keyword)cAlternatives_5_4_2.eContents().get(2);
 		
 		//DateT:
-		//	day_name=DayName? day=INT month=Month year=INT? (" a "? hours=INT ("h" | ":" | " heure ") (minutes=INT ("m" | "mn" |
-		//	"min" | " minutes" | ":")?)? (" et "? seconds=INT ("s" | "sec" | " secondes ")?)?)?;
+		//	day_name=DayName? day=INT month=INT? month_name=STR? year=INT? (" a "? hours=INT ("h" | ":" | " heure ") (minutes=INT
+		//	("m" | "mn" | "min" | " minutes" | ":")?)? (" et "? seconds=INT ("s" | "sec" | " secondes ")?)?)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//day_name=DayName? day=INT month=Month year=INT? (" a "? hours=INT ("h" | ":" | " heure ") (minutes=INT ("m" | "mn" |
-		//"min" | " minutes" | ":")?)? (" et "? seconds=INT ("s" | "sec" | " secondes ")?)?)?
+		//day_name=DayName? day=INT month=INT? month_name=STR? year=INT? (" a "? hours=INT ("h" | ":" | " heure ") (minutes=INT
+		//("m" | "mn" | "min" | " minutes" | ":")?)? (" et "? seconds=INT ("s" | "sec" | " secondes ")?)?)?
 		public Group getGroup() { return cGroup; }
 		
 		//day_name=DayName?
@@ -272,93 +174,99 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//INT
 		public RuleCall getDayINTTerminalRuleCall_1_0() { return cDayINTTerminalRuleCall_1_0; }
 		
-		//month=Month
+		//month=INT?
 		public Assignment getMonthAssignment_2() { return cMonthAssignment_2; }
 		
-		//Month
-		public RuleCall getMonthMonthParserRuleCall_2_0() { return cMonthMonthParserRuleCall_2_0; }
+		//INT
+		public RuleCall getMonthINTTerminalRuleCall_2_0() { return cMonthINTTerminalRuleCall_2_0; }
+		
+		//month_name=STR?
+		public Assignment getMonth_nameAssignment_3() { return cMonth_nameAssignment_3; }
+		
+		//STR
+		public RuleCall getMonth_nameSTRTerminalRuleCall_3_0() { return cMonth_nameSTRTerminalRuleCall_3_0; }
 		
 		//year=INT?
-		public Assignment getYearAssignment_3() { return cYearAssignment_3; }
+		public Assignment getYearAssignment_4() { return cYearAssignment_4; }
 		
 		//INT
-		public RuleCall getYearINTTerminalRuleCall_3_0() { return cYearINTTerminalRuleCall_3_0; }
+		public RuleCall getYearINTTerminalRuleCall_4_0() { return cYearINTTerminalRuleCall_4_0; }
 		
 		//(" a "? hours=INT ("h" | ":" | " heure ") (minutes=INT ("m" | "mn" | "min" | " minutes" | ":")?)? (" et "? seconds=INT
 		//("s" | "sec" | " secondes ")?)?)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//" a "?
-		public Keyword getAKeyword_4_0() { return cAKeyword_4_0; }
+		public Keyword getAKeyword_5_0() { return cAKeyword_5_0; }
 		
 		//hours=INT
-		public Assignment getHoursAssignment_4_1() { return cHoursAssignment_4_1; }
+		public Assignment getHoursAssignment_5_1() { return cHoursAssignment_5_1; }
 		
 		//INT
-		public RuleCall getHoursINTTerminalRuleCall_4_1_0() { return cHoursINTTerminalRuleCall_4_1_0; }
+		public RuleCall getHoursINTTerminalRuleCall_5_1_0() { return cHoursINTTerminalRuleCall_5_1_0; }
 		
 		//("h" | ":" | " heure ")
-		public Alternatives getAlternatives_4_2() { return cAlternatives_4_2; }
+		public Alternatives getAlternatives_5_2() { return cAlternatives_5_2; }
 		
 		//"h"
-		public Keyword getHKeyword_4_2_0() { return cHKeyword_4_2_0; }
+		public Keyword getHKeyword_5_2_0() { return cHKeyword_5_2_0; }
 		
 		//":"
-		public Keyword getColonKeyword_4_2_1() { return cColonKeyword_4_2_1; }
+		public Keyword getColonKeyword_5_2_1() { return cColonKeyword_5_2_1; }
 		
 		//" heure "
-		public Keyword getHeureKeyword_4_2_2() { return cHeureKeyword_4_2_2; }
+		public Keyword getHeureKeyword_5_2_2() { return cHeureKeyword_5_2_2; }
 		
 		//(minutes=INT ("m" | "mn" | "min" | " minutes" | ":")?)?
-		public Group getGroup_4_3() { return cGroup_4_3; }
+		public Group getGroup_5_3() { return cGroup_5_3; }
 		
 		//minutes=INT
-		public Assignment getMinutesAssignment_4_3_0() { return cMinutesAssignment_4_3_0; }
+		public Assignment getMinutesAssignment_5_3_0() { return cMinutesAssignment_5_3_0; }
 		
 		//INT
-		public RuleCall getMinutesINTTerminalRuleCall_4_3_0_0() { return cMinutesINTTerminalRuleCall_4_3_0_0; }
+		public RuleCall getMinutesINTTerminalRuleCall_5_3_0_0() { return cMinutesINTTerminalRuleCall_5_3_0_0; }
 		
 		//("m" | "mn" | "min" | " minutes" | ":")?
-		public Alternatives getAlternatives_4_3_1() { return cAlternatives_4_3_1; }
+		public Alternatives getAlternatives_5_3_1() { return cAlternatives_5_3_1; }
 		
 		//"m"
-		public Keyword getMKeyword_4_3_1_0() { return cMKeyword_4_3_1_0; }
+		public Keyword getMKeyword_5_3_1_0() { return cMKeyword_5_3_1_0; }
 		
 		//"mn"
-		public Keyword getMnKeyword_4_3_1_1() { return cMnKeyword_4_3_1_1; }
+		public Keyword getMnKeyword_5_3_1_1() { return cMnKeyword_5_3_1_1; }
 		
 		//"min"
-		public Keyword getMinKeyword_4_3_1_2() { return cMinKeyword_4_3_1_2; }
+		public Keyword getMinKeyword_5_3_1_2() { return cMinKeyword_5_3_1_2; }
 		
 		//" minutes"
-		public Keyword getMinutesKeyword_4_3_1_3() { return cMinutesKeyword_4_3_1_3; }
+		public Keyword getMinutesKeyword_5_3_1_3() { return cMinutesKeyword_5_3_1_3; }
 		
 		//":"
-		public Keyword getColonKeyword_4_3_1_4() { return cColonKeyword_4_3_1_4; }
+		public Keyword getColonKeyword_5_3_1_4() { return cColonKeyword_5_3_1_4; }
 		
 		//(" et "? seconds=INT ("s" | "sec" | " secondes ")?)?
-		public Group getGroup_4_4() { return cGroup_4_4; }
+		public Group getGroup_5_4() { return cGroup_5_4; }
 		
 		//" et "?
-		public Keyword getEtKeyword_4_4_0() { return cEtKeyword_4_4_0; }
+		public Keyword getEtKeyword_5_4_0() { return cEtKeyword_5_4_0; }
 		
 		//seconds=INT
-		public Assignment getSecondsAssignment_4_4_1() { return cSecondsAssignment_4_4_1; }
+		public Assignment getSecondsAssignment_5_4_1() { return cSecondsAssignment_5_4_1; }
 		
 		//INT
-		public RuleCall getSecondsINTTerminalRuleCall_4_4_1_0() { return cSecondsINTTerminalRuleCall_4_4_1_0; }
+		public RuleCall getSecondsINTTerminalRuleCall_5_4_1_0() { return cSecondsINTTerminalRuleCall_5_4_1_0; }
 		
 		//("s" | "sec" | " secondes ")?
-		public Alternatives getAlternatives_4_4_2() { return cAlternatives_4_4_2; }
+		public Alternatives getAlternatives_5_4_2() { return cAlternatives_5_4_2; }
 		
 		//"s"
-		public Keyword getSKeyword_4_4_2_0() { return cSKeyword_4_4_2_0; }
+		public Keyword getSKeyword_5_4_2_0() { return cSKeyword_5_4_2_0; }
 		
 		//"sec"
-		public Keyword getSecKeyword_4_4_2_1() { return cSecKeyword_4_4_2_1; }
+		public Keyword getSecKeyword_5_4_2_1() { return cSecKeyword_5_4_2_1; }
 		
 		//" secondes "
-		public Keyword getSecondesKeyword_4_4_2_2() { return cSecondesKeyword_4_4_2_2; }
+		public Keyword getSecondesKeyword_5_4_2_2() { return cSecondesKeyword_5_4_2_2; }
 	}
 	public class ClassificationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.Classification");
@@ -4088,9 +3996,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final AlarmTypeElements pAlarmType;
 	private final TerminalRule tSTR;
 	private final TerminalRule tINT;
-	private final MonthElements pMonth;
-	private final MonthNameTElements pMonthNameT;
-	private final MonthTElements pMonthT;
 	private final DateTElements pDateT;
 	private final ClassificationElements pClassification;
 	private final StatusElements pStatus;
@@ -4124,9 +4029,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pAlarmType = new AlarmTypeElements();
 		this.tSTR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.STR");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.INT");
-		this.pMonth = new MonthElements();
-		this.pMonthNameT = new MonthNameTElements();
-		this.pMonthT = new MonthTElements();
 		this.pDateT = new DateTElements();
 		this.pClassification = new ClassificationElements();
 		this.pStatus = new StatusElements();
@@ -4207,7 +4109,9 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//terminal STR:
 	//	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | '"'))* '"' |
-	//	"'" ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | "'"))* "'";
+	//	"'" ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | "'"))* "'" |
+	//	"Janvier" | "Fevrier" | "Mars" | "Avril" | "Mai" | "Juin" | "Juillet" | "Aout" | "Septembre" | "Octobre" | "Novembre"
+	//	| "Decembre";
 	public TerminalRule getSTRRule() {
 		return tSTR;
 	}
@@ -4219,40 +4123,9 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return tINT;
 	}
 	
-	//Month AMonthT:
-	//	MonthT | MonthNameT;
-	public MonthElements getMonthAccess() {
-		return pMonth;
-	}
-	
-	public ParserRule getMonthRule() {
-		return getMonthAccess().getRule();
-	}
-	
-	//MonthNameT:
-	//	value=("Janvier" | "Fevrier" | "Mars" | "Avril" | "Mai" | "Juin" | "Juillet" | "Aout" | "Septembre" | "Octobre" |
-	//	"Novembre" | "Decembre");
-	public MonthNameTElements getMonthNameTAccess() {
-		return pMonthNameT;
-	}
-	
-	public ParserRule getMonthNameTRule() {
-		return getMonthNameTAccess().getRule();
-	}
-	
-	//MonthT:
-	//	value=INT;
-	public MonthTElements getMonthTAccess() {
-		return pMonthT;
-	}
-	
-	public ParserRule getMonthTRule() {
-		return getMonthTAccess().getRule();
-	}
-	
 	//DateT:
-	//	day_name=DayName? day=INT month=Month year=INT? (" a "? hours=INT ("h" | ":" | " heure ") (minutes=INT ("m" | "mn" |
-	//	"min" | " minutes" | ":")?)? (" et "? seconds=INT ("s" | "sec" | " secondes ")?)?)?;
+	//	day_name=DayName? day=INT month=INT? month_name=STR? year=INT? (" a "? hours=INT ("h" | ":" | " heure ") (minutes=INT
+	//	("m" | "mn" | "min" | " minutes" | ":")?)? (" et "? seconds=INT ("s" | "sec" | " secondes ")?)?)?;
 	public DateTElements getDateTAccess() {
 		return pDateT;
 	}

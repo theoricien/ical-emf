@@ -14,8 +14,6 @@ import iCal.DateT;
 import iCal.EventC;
 import iCal.ICalPackage;
 import iCal.JournalC;
-import iCal.MonthNameT;
-import iCal.MonthT;
 import iCal.TimeZoneC;
 import iCal.ToDoC;
 import iCal.VacationC;
@@ -74,12 +72,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case ICalPackage.JOURNAL_C:
 				sequence_JournalC(context, (JournalC) semanticObject); 
-				return; 
-			case ICalPackage.MONTH_NAME_T:
-				sequence_MonthNameT(context, (MonthNameT) semanticObject); 
-				return; 
-			case ICalPackage.MONTH_T:
-				sequence_MonthT(context, (MonthT) semanticObject); 
 				return; 
 			case ICalPackage.TIME_ZONE_C:
 				sequence_TimeZoneC(context, (TimeZoneC) semanticObject); 
@@ -198,7 +190,14 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     DateT returns DateT
 	 *
 	 * Constraint:
-	 *     (day_name=DayName? day=INT month=Month year=INT? (hours=INT minutes=INT? seconds=INT?)?)
+	 *     (
+	 *         day_name=DayName? 
+	 *         day=INT 
+	 *         month=INT? 
+	 *         month_name=STR? 
+	 *         year=INT? 
+	 *         (hours=INT minutes=INT? seconds=INT?)?
+	 *     )
 	 */
 	protected void sequence_DateT(ISerializationContext context, DateT semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -274,51 +273,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_JournalC(ISerializationContext context, JournalC semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Month returns MonthNameT
-	 *     MonthNameT returns MonthNameT
-	 *
-	 * Constraint:
-	 *     (
-	 *         value='Janvier' | 
-	 *         value='Fevrier' | 
-	 *         value='Mars' | 
-	 *         value='Avril' | 
-	 *         value='Mai' | 
-	 *         value='Juin' | 
-	 *         value='Juillet' | 
-	 *         value='Aout' | 
-	 *         value='Septembre' | 
-	 *         value='Octobre' | 
-	 *         value='Novembre' | 
-	 *         value='Decembre'
-	 *     )
-	 */
-	protected void sequence_MonthNameT(ISerializationContext context, MonthNameT semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Month returns MonthT
-	 *     MonthT returns MonthT
-	 *
-	 * Constraint:
-	 *     value=INT
-	 */
-	protected void sequence_MonthT(ISerializationContext context, MonthT semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ICalPackage.Literals.MONTH_T__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ICalPackage.Literals.MONTH_T__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMonthTAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
-		feeder.finish();
 	}
 	
 	

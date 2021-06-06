@@ -178,18 +178,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="DateT">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="day_name" eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="month" lowerBound="1" eType="#//AMonthT"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hours" eType="#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minutes" eType="#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="seconds" eType="#//Integer"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MonthT" eSuperTypes="#//AMonthT">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//Integer"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AMonthT" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MonthNameT" eSuperTypes="#//AMonthT">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month_name" eType="#//String"/>
   </eClassifiers>
 </ecore:EPackage>

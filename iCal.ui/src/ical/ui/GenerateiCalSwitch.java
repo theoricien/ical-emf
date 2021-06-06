@@ -67,9 +67,8 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 		return true;
 	}
 	
-	public Boolean caseMonthT(MonthT monthT) {
+	public Boolean parseIntMonth(int month_index ) {
 		String month = "";
-		int month_index = monthT.getValue();
 		month = Integer.toString((month_index % 12) + 1);
 		if (month.length() == 1)
 		{
@@ -79,9 +78,8 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 		return true;
 	}
 	
-	public Boolean caseMonthNameT(MonthNameT nameM) {
+	public Boolean parseStringMonth(String val) {
 		String month = "";
-		String val = nameM.getValue();
 		
 		if (val.equals("Janvier"))
 		{ month = "01"; }
@@ -121,12 +119,9 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 		{ pw.print(Integer.toString(date.getYear()));}
 		
 		//Month
-		if (date.getMonth() != null )
-		{
-			doSwitch(date.getMonth());
-			} 
-		else
-		{pw.print("00");}
+		if (date.getMonth() != null ){parseIntMonth(date.getMonth());} 
+		else if (date.getMonth_name() != null) {parseStringMonth(date.getMonth_name());}
+		else {pw.print("00");}
 		
 		//Day
 		if (date.getDay() == null)
@@ -228,19 +223,19 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 		{pw.println("CLASS:" + this.parseString(object.getClass_()));}
 
 		if( object.getDescription() != null)
-		{pw.println("DESCRIPTION:" + object.getDescription());}
+		{pw.println("DESCRIPTION:" + this.parseString(object.getDescription()));}
 
 		if( object.getStatus() != null)
 		{pw.println("STATUS:" + object.getStatus());}
 		
 		if( object.getUrl() != null)
-		{pw.println("URL:" + object.getUrl());}
+		{pw.println("URL:" + this.parseString(object.getUrl()));}
 		
 		if( object.getPriority() != null)
-		{pw.println("PRIORITY:" + object.getPriority());}
+		{pw.println("PRIORITY:" + this.parseString(object.getPriority()));}
 		
 		if( object.getTransp() != null)
-		{pw.println("TRANSP:" + object.getTransp());}
+		{pw.println("TRANSP:" + this.parseString(object.getTransp()));}
 
 		if( object.getRrule().size() > 0 )
 		{
@@ -249,11 +244,11 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 			for(String s : object.getRrule())
 			{
 				if(x == 0) {
-					pw.print(s);
+					pw.print(this.parseString(s));
 					x = 1;
 				}
 				else {
-					pw.print(","+ s) ;
+					pw.print(","+ this.parseString(s)) ;
 				}
 			}
 			pw.println("");
@@ -267,11 +262,11 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 			for(String s : object.getCategories())
 			{
 				if(x == 0) {
-					pw.print(s);
+					pw.print(this.parseString(s));
 					x = 1;
 				}
 				else {
-					pw.print(","+ s) ;
+					pw.print(","+ this.parseString(s)) ;
 				}
 			}
 			pw.println("");
@@ -290,7 +285,7 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 	public Boolean caseToDoC(ToDoC object) {
 		pw.println("BEGIN:VTODO");
 		
-		if(object.getUid() != null){pw.println("UID:"+object.getUid());}
+		if(object.getUid() != null){pw.println("UID:"+this.parseString(object.getUid()));}
 		
 		pw.println("DTSTAMP:"+this.dtstamp());
 		
@@ -373,13 +368,13 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 	@Override
 	public Boolean caseJournalC(JournalC object) {
 		pw.println("BEGIN:VJOURNAL");
-		if(object.getUid()!=null) pw.println("UID:"+object.getUid());
+		if(object.getUid()!=null) pw.println("UID:"+this.parseString(object.getUid()));
 		pw.println("DTSTAMP:"+this.dtstamp());
 		if(object.getDtstart()!=null) { pw.print("DTSTART:");doSwitch(object.getDtstart());}
-		if(object.getDescription()!=null)pw.println("DESCRIPTION:"+object.getDescription());
+		if(object.getDescription()!=null)pw.println("DESCRIPTION:"+this.parseString(object.getDescription()));
 		if(object.getSummary()!=null)pw.println("SUMMARY:"+this.parseString(object.getSummary()));
-		if(object.getStatus()!=null)pw.println("STATUS:"+object.getStatus());
-		if(object.getUrl()!=null)pw.println("URL:"+object.getUrl());
+		if(object.getStatus()!=null)pw.println("STATUS:"+this.parseString(object.getStatus()));
+		if(object.getUrl()!=null)pw.println("URL:"+this.parseString(object.getUrl()));
 
 		for(String s : object.getX_prop())
 		{
@@ -394,8 +389,8 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 	public Boolean caseVacationC(VacationC object) {
 		pw.println("BEGIN:VFREEBUSY");
 
-		if(object.getOrganizer()!=null)pw.println("ORGANIZER:"+object.getOrganizer());
-		if(object.getContact()!=null)pw.println("CONTACT:"+object.getContact());
+		if(object.getOrganizer()!=null)pw.println("ORGANIZER:"+this.parseString(object.getOrganizer()));
+		if(object.getContact()!=null)pw.println("CONTACT:"+this.parseString(object.getContact()));
 		
 		if(object.getAttendee().size() == 1) {pw.println("ATTENDEE:"+object.getAttendee().get(0));}
 		else if(object.getAttendee().size() > 1){
@@ -419,8 +414,8 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 		{
 			pw.println("FREEBUSY:"+s);
 		}
-		if(object.getUrl()!=null)pw.println("URL:"+object.getUrl());
-		if(object.getUid()!=null)pw.println("UID:"+object.getUid());
+		if(object.getUrl()!=null)pw.println("URL:"+this.parseString(object.getUrl()));
+		if(object.getUid()!=null)pw.println("UID:"+this.parseString(object.getUid()));
 		if(object.getComment()!=null)pw.println("COMMENT:"+object.getComment());
 
 		pw.println("END:VFREEBUSY");
@@ -438,8 +433,8 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 	public Boolean caseTimeZoneC(TimeZoneC object) {
 		pw.println("BEGIN:VTIMEZONE");
 
-		if(object.getTzid()!=null)pw.println("TZID:"+object.getTzid());
-		if(object.getTzurl()!=null)pw.println("TZUR:"+object.getTzurl());
+		if(object.getTzid()!=null)pw.println("TZID:"+this.parseString(object.getTzid()));
+		if(object.getTzurl()!=null)pw.println("TZUR:"+this.parseString(object.getTzurl()));
 		for(tzprop c : object.getStandardc())
 		{
 			pw.println("BEGIN:STANDARD");
@@ -461,10 +456,10 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 
 	@Override
 	public Boolean casetzprop(tzprop object) {
-		if(object.getTzoffseto()!= null) {pw.println("TZOFFSETTO:"+object.getTzoffseto());}
-		if(object.getTzoffsetfrom()!= null) {pw.println("TZOFFSETFROM:"+object.getTzoffsetfrom());}
-		if(object.getDtstart()!= null) {pw.println("DTSTART;"+object.getDtstart());}
-		if(object.getRrule() != null) {pw.println("RRULE:"+object.getRrule());}
+		if(object.getTzoffseto()!= null) {pw.println("TZOFFSETTO:"+this.parseString(object.getTzoffseto()));}
+		if(object.getTzoffsetfrom()!= null) {pw.println("TZOFFSETFROM:"+this.parseString(object.getTzoffsetfrom()));}
+		if(object.getDtstart()!= null) {pw.println("DTSTART;"+this.parseString(object.getDtstart()));}
+		if(object.getRrule() != null) {pw.println("RRULE:"+this.parseString(object.getRrule()));}
 		for(tzpropOptional c : object.getOpt()){doSwitch(c);}
 		return true;
 	}
@@ -475,9 +470,9 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 		pw.println("BEGIN:VALARM");
 		if(object.getDescription() != null){pw.println("DESCRIPTION:"+object.getDescription());}
 		
-		pw.println("TRIGGER;"+object.getTrigger());
-		pw.println("ACTION:"+object.getAction());
-		if(object.getAttach()!= null ){pw.println("ATTACH;"+object.getAttach());}
+		pw.println("TRIGGER;"+this.parseString(object.getTrigger()));
+		pw.println("ACTION:"+this.parseString(object.getAction()));
+		if(object.getAttach()!= null ){pw.println("ATTACH;"+this.parseString(object.getAttach()));}
 		if(object.getTime() != null){doSwitch(object.getTime());}
 		doSwitch(object.getType());
 		pw.println("END:VALARM");
@@ -487,51 +482,51 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 
 	@Override
 	public Boolean caseComponentAlarmTime(ComponentAlarmTime object) {
-		if(object.getDuration()!="") pw.println("DURATION:"+object.getDuration());
-		if(object.getRepeat()!="") pw.println("REPEAT:"+object.getRepeat());
+		if(object.getDuration()!="") pw.println("DURATION:"+this.parseString(object.getDuration()));
+		if(object.getRepeat()!="") pw.println("REPEAT:"+this.parseString(object.getRepeat()));
 
 		return true;
 	}
 
 	@Override
 	public Boolean caseComponentAlarmAudioProperty(ComponentAlarmAudioProperty object) {
-		if(object.getAttach()!=null)pw.println("ATTACH:"+object.getAttach());
+		if(object.getAttach()!=null)pw.println("ATTACH:"+this.parseString(object.getAttach()));
 		return true;
 	}
 
 	@Override
 	public Boolean caseComponentAlarmDispProperty(ComponentAlarmDispProperty object) {
-		if(object.getDescription()!=null)pw.println("DESCRIPTION:"+object.getDescription());
+		if(object.getDescription()!=null)pw.println("DESCRIPTION:"+this.parseString(object.getDescription()));
 		return true;
 	}
 
 	@Override
 	public Boolean caseComponentAlarmEmailProperty(ComponentAlarmEmailProperty object) {
-		if(object.getAttach().size() == 1) {pw.println("ATTACH:"+object.getAttach().get(0));}
+		if(object.getAttach().size() == 1) {pw.println("ATTACH:"+this.parseString(object.getAttach().get(0)));}
 		else if(object.getAttach().size() > 1){
 			pw.println("ATTACH");
 			for(String s : object.getAttach()) {
-				pw.println(";"+s);
+				pw.println(";"+this.parseString(s));
 			}
 		}
 		
-		if(object.getAttendee().size() == 1) {pw.println("ATTENDEE:"+object.getAttendee().get(0));}
+		if(object.getAttendee().size() == 1) {pw.println("ATTENDEE:"+this.parseString(object.getAttendee().get(0)));}
 		else if(object.getAttendee().size() > 1){
 			pw.println("ATTENDEE");
 			for(String s : object.getAttendee()) {
-				pw.println(";"+s);
+				pw.println(";"+this.parseString(s));
 			}
 		}
-		if(object.getDescription()!=null)pw.println("DESCRIPTION:"+object.getDescription());
+		if(object.getDescription()!=null)pw.println("DESCRIPTION:"+this.parseString(object.getDescription()));
 		return true;
 	}
 
 
 	@Override
 	public Boolean casetzpropOptional(tzpropOptional object) {
-		if(object.getTzname()!=null)pw.println("TZNAME:"+object.getTzname());
-		if(object.getRdate()!=null)pw.println("RDATE:"+object.getRdate());
-		if(object.getComment()!=null)pw.println("COMMENT:"+object.getComment());
+		if(object.getTzname()!=null)pw.println("TZNAME:"+this.parseString(object.getTzname()));
+		if(object.getRdate()!=null)pw.println("RDATE:"+this.parseString(object.getRdate()));
+		if(object.getComment()!=null)pw.println("COMMENT:"+this.parseString(object.getComment()));
 		return true;
 	}
 	

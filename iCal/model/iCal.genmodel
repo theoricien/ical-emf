@@ -136,18 +136,12 @@
     <genClasses ecoreClass="iCal.ecore#//DateT">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/day"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/day_name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iCal.ecore#//DateT/month"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/year"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/hours"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/minutes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/seconds"/>
-    </genClasses>
-    <genClasses ecoreClass="iCal.ecore#//MonthT">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//MonthT/value"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="iCal.ecore#//AMonthT"/>
-    <genClasses ecoreClass="iCal.ecore#//MonthNameT">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//MonthNameT/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iCal.ecore#//DateT/month_name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

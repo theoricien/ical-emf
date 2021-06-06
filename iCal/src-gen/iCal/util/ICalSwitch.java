@@ -237,31 +237,6 @@ public class ICalSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ICalPackage.MONTH_T: {
-			MonthT monthT = (MonthT) theEObject;
-			T result = caseMonthT(monthT);
-			if (result == null)
-				result = caseAMonthT(monthT);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ICalPackage.AMONTH_T: {
-			AMonthT aMonthT = (AMonthT) theEObject;
-			T result = caseAMonthT(aMonthT);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ICalPackage.MONTH_NAME_T: {
-			MonthNameT monthNameT = (MonthNameT) theEObject;
-			T result = caseMonthNameT(monthNameT);
-			if (result == null)
-				result = caseAMonthT(monthNameT);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -549,51 +524,6 @@ public class ICalSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDateT(DateT object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Month T</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Month T</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMonthT(MonthT object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>AMonth T</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>AMonth T</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAMonthT(AMonthT object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Month Name T</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Month Name T</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMonthNameT(MonthNameT object) {
 		return null;
 	}
 
