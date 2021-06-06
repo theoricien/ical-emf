@@ -1,41 +1,44 @@
 Enregistrer sous: "EventAndTodDo"
-EventC{
-	Date: Lundi 7 Mars 2021 a 12 heure 30 et 01s
-	Fin: Mardi 30 Juillet 2021 a 13h 21 et 03sec
-	Objet: "Devoir"
-	Organisateur: "Yasmine"
-	Commentaire: "Xtext est Genial"
-	Lieu: "Valbonne"
-	Classe: CONFIDENTIAL
-	Status: En cours
-	Contact: "Maxime Jerome","Yasmine BenFredj"
-	Alarmes: 
-		AlarmC{
-			Trigger: "trigger"
-				Action: "action"
-				Type: 
-					ComponentAlarmDispProperty{
-						Description: "description"
-					}
-		}
-}
-
-ToDoC{
-	Identifiant: "identifiant"
-	Due: Mardi 30 Juillet 2021 a 13h 21 et 03s	
-	Date: Dimanche 22 Juin 2021 a 15h 30
-	Lieu: "Nice"
-	Description:"Un petit todo pour tester"
-	Contact{ "Toto"}
-	Resources{"ressources1", "ressources2"}
-	Alarmes: 
-		AlarmC{
-			Trigger: "declancheur"
-				Action: "action2"
-				Type: 
-					ComponentAlarmDispProperty{
-						Description: "description2"
-					}
-		}
+Calendar{ 
+	Version: "2.0"
+	EventC{
+		Date: Lundi 7 Mars 2021 a 12 heure 30 et 01s
+		Fin: Mardi 30 Juillet 2021 a 13h 21 et 03sec
+		Objet: "Devoir"
+		Organisateur: "Yasmine"
+		Commentaire: "Xtext est Genial"
+		Lieu: "Valbonne"
+		Classe: CONFIDENTIAL
+		Status: En cours
+		Contact: "Maxime Jerome","Yasmine BenFredj"
+		Alarmes: 
+			AlarmC{
+				Trigger: "trigger"
+					Action: "action"
+					Type: 
+						ComponentAlarmDispProperty{
+							Description: "description"
+						}
+			}
+	}
+	
+	ToDoC{
+		Identifiant: "identifiant"
+		Due: Mardi 30 Juillet 2021 a 13h 21 et 03s	
+		Date: Dimanche 22 Juin 2021 a 15h 30
+		Lieu: "Nice"
+		Description:"Un petit todo pour tester"
+		Contact{ "Toto"}
+		Resources{"ressources1", "ressources2"}
+		Alarmes: 
+			AlarmC{
+				Trigger: "declancheur"
+					Action: "action2"
+					Type: 
+						ComponentAlarmDispProperty{
+							Description: "description2"
+						}
+			}
+	}
 }
 
