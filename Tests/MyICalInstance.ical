@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iCal:iCalFormat xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iCal="http://www.example.org/iCal" fileName="&quot;OneIcalTest&quot;">
+  <calendar prodid="&quot;-//Software Engineering//Projet M1 1.0//FR&quot;" version="&quot;2.0&quot;">
+    <component xsi:type="iCal:EventC" class="&quot;ETUDE&quot;" description="&quot;Un test&quot;">
+      <dtstart day="3" day_name="Mardi" year="2021" hours="16" minutes="30" seconds="0">
+        <month xsi:type="iCal:MonthT" value="7"/>
+      </dtstart>
+      <alarmc action="&quot;Rien&quot;" trigger="&quot;declancheur&quot;" attach="&quot;fghj.ghjk@yahoo.fr&quot;">
+        <type xsi:type="iCal:ComponentAlarmAudioProperty" attach="&quot;attach&quot;"/>
+      </alarmc>
+      <dtend day="6" day_name="Mardi" year="2021" hours="3" minutes="2" seconds="22">
+        <month xsi:type="iCal:MonthT" value="3"/>
+      </dtend>
+    </component>
+    <component xsi:type="iCal:ToDoC" class="&quot;Etude&quot;">
+      <dtstart day="30" day_name="lundi" year="2021" hours="14" minutes="15" seconds="33">
+        <month xsi:type="iCal:MonthT" value="7"/>
+      </dtstart>
+      <comment>&quot;commentaire 1 &quot;</comment>
+      <comment>&quot;commentaire2&quot;</comment>
+      <alarmc action="&quot;action1&quot;" trigger="&quot;trigger&quot;" attach="&quot;attach&quot;">
+        <type xsi:type="iCal:ComponentAlarmEmailProperty" description="&quot;description&quot;">
+          <attendee>&quot;attendee&quot;</attendee>
+        </type>
+        <time duration="&quot;5&quot;" repeat="&quot;5&quot;"/>
+      </alarmc>
+      <due day="3" year="2021" hours="23" minutes="3" seconds="33">
+        <month xsi:type="iCal:MonthT" value="9"/>
+      </due>
+    </component>
+    <component xsi:type="iCal:JournalC" class="&quot;class&quot;">
+      <dtstart day="2" day_name="Dimanche" year="2021" hours="6" minutes="44" seconds="44">
+        <month xsi:type="iCal:MonthT" value="7"/>
+      </dtstart>
+    </component>
+    <component xsi:type="iCal:VacationC">
+      <dtstart day="19" day_name="Lundi" year="2023" hours="5" minutes="19" seconds="0">
+        <month xsi:type="iCal:MonthT" value="3"/>
+      </dtstart>
+    </component>
+    <component xsi:type="iCal:TimeZoneC" tzid="&quot;tzid&quot;" tzurl="&quot;tzur&quot;">
+      <standardc dtstart="&quot;20213005T220033Z&quot;" tzoffseto="&quot;offseto&quot;" tzoffsetfrom="&quot;from&quot;" rrule="&quot;rrule&quot;"/>
+      <daylightc dtstart="&quot;20213005T220033Z&quot;" tzoffseto="&quot;to&quot;" tzoffsetfrom="&quot;from&quot;" rrule="&quot;rule&quot;"/>
+    </component>
+    <component xsi:type="iCal:AlarmC" action="&quot;action&quot;" trigger="&quot;Trigger&quot;" attach="&quot;Attach&quot;">
+      <type xsi:type="iCal:ComponentAlarmAudioProperty" attach="&quot;attach&quot;"/>
+      <time duration="3" repeat="5"/>
+    </component>
+    <component xsi:type="iCal:AlarmC" action="&quot;action&quot;" trigger="&quot;trigger&quot;" attach="&quot;attach&quot;">
+      <type xsi:type="iCal:ComponentAlarmEmailProperty" description="&quot;descrpt&quot;">
+        <attendee>&quot;attendee&quot;</attendee>
+        <attach>&quot;attach&quot;</attach>
+        <attach>&quot;attach2&quot;</attach>
+      </type>
+    </component>
+  </calendar>
+</iCal:iCalFormat>

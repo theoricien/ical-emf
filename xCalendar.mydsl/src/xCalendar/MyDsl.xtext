@@ -13,14 +13,8 @@ Component returns Component:
 	EventC | ToDoC | JournalC | VacationC | TimeZoneC | AlarmC;
 
 
-
 AlarmType returns AlarmType:
 	ComponentAlarmAudioProperty | ComponentAlarmDispProperty | ComponentAlarmEmailProperty
-;
-
-Calendar returns Calendar:
-	component+=Component 
-	(component+=Component )*
 ;
 
 
@@ -69,6 +63,16 @@ EventStatus returns String:
 DayName returns String:
 	"Lundi" | "Mardi" | "Mercredi" | "Jeudi" | "Vendredi" | "Samedi" | "Dimanche" 
 ;
+
+Calendar returns Calendar:
+	'Calendar'
+	'{'
+		("Version:"version=STR)?
+		("ProdId:"prodid=STR)?
+		("Methode:"method=STR)?
+		("Calscale:"calscale=STR)?
+		(component+=Component)+ 
+	'}';
 
 EventC returns EventC:
 	'EventC'

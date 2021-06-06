@@ -352,19 +352,18 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 	public Boolean caseCalendar(Calendar object) 
 	{
 		pw.println("BEGIN:VCALENDAR");
-		pw.println("PRODID:-//Software Engineering//Projet M1 1.0//FR");
 		
-		if(object.getMethod() != null) pw.println("METHOD:"+object.getMethod());
-		if(object.getVersion() == null) 
-		{pw.println("VERSION:2.0");}
-		else {pw.println("VERSION:"+object.getVersion());}
+		if(object.getProdid() != null) {pw.println("PRODID:"+this.parseString(object.getProdid()));}
+		else {pw.println("PRODID:-//Software Engineering//Projet M1 1.0//FR");}
 		
-		if(object.getCalscale() != null) {pw.println("CALSCALE:"+object.getCalscale());}
+		if(object.getMethod() != null) pw.println("METHOD:"+this.parseString(object.getMethod()));
+		
+		if(object.getVersion() == null) {pw.println("VERSION:2.0");}
+		else {pw.println("VERSION:"+this.parseString(object.getVersion()));}
+		
+		if(object.getCalscale() != null) {pw.println("CALSCALE:"+this.parseString(object.getCalscale()));}
 
-		for(Component c : object.getComponent())
-		{
-			doSwitch(c);	
-		}
+		for(Component c : object.getComponent()){doSwitch(c);}
 
 		pw.println("END:VCALENDAR");
 		return true;
@@ -374,11 +373,9 @@ public class GenerateiCalSwitch extends ICalSwitch<Boolean> {
 	@Override
 	public Boolean caseJournalC(JournalC object) {
 		pw.println("BEGIN:VJOURNAL");
-		if(object.getUid()!=null)pw.println("UID:"+object.getUid());
+		if(object.getUid()!=null) pw.println("UID:"+object.getUid());
 		pw.println("DTSTAMP:"+this.dtstamp());
-		if(object.getDtstart()!=null) {
-		pw.print("DTSTART:");
-		doSwitch(object.getDtstart());}
+		if(object.getDtstart()!=null) { pw.print("DTSTART:");doSwitch(object.getDtstart());}
 		if(object.getDescription()!=null)pw.println("DESCRIPTION:"+object.getDescription());
 		if(object.getSummary()!=null)pw.println("SUMMARY:"+this.parseString(object.getSummary()));
 		if(object.getStatus()!=null)pw.println("STATUS:"+object.getStatus());

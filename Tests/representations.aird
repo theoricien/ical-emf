@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:iCal="http://www.example.org/iCal" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_xoO3QMagEeuTaeEYVcZk2Q" selectedViews="_EjsIwMauEeumkesrWfyAUg" version="14.3.1.202003261200">
+    <semanticResources>XText.mysm</semanticResources>
+    <semanticResources>journalTest.mysm</semanticResources>
+    <semanticResources>MyICalInstance.ical</semanticResources>
+    <semanticResources>manyComponentTest.mysm</semanticResources>
+    <semanticResources>EventTest.mysm</semanticResources>
+    <semanticResources>VacationTest.mysm</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_EjsIwMauEeumkesrWfyAUg">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_kaAn0sazEeumkesrWfyAUg" name="EventTestIcalendarDiagram" repPath="#_kaAn0MazEeumkesrWfyAUg" changeId="5b8d1c92-8fc2-4016-9550-cbdf89e57f74">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']"/>
+        <target xmi:type="iCal:iCalFormat" href="EventTest.mysm#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_5QV9gcazEeumkesrWfyAUg" name="AllComponentIcalendarDiagram" repPath="#_5QVWcMazEeumkesrWfyAUg" changeId="5e1cca96-4ec5-41cc-a81b-f2c6720efd6b">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']"/>
+        <target xmi:type="iCal:iCalFormat" href="MyICalInstance.ical#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_kaAn0MazEeumkesrWfyAUg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_kaB18MazEeumkesrWfyAUg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_kaB18cazEeumkesrWfyAUg" type="Sirius" element="_kaAn0MazEeumkesrWfyAUg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_Mj2Ohca0EeumkesrWfyAUg" type="2001" element="_MhYwY8a0EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_Mj21kMa0EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Mj21kca0EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_JfcM4Ma1EeumkesrWfyAUg" type="3003" element="_Jc7EYMa1EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_JfcM4ca1EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JfcM4sa1EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Mj2Ohsa0EeumkesrWfyAUg" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Mj2Oh8a0EeumkesrWfyAUg" x="195" y="120" width="121" height="76"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_J47HEMa5EeumkesrWfyAUg" visible="false" type="2001" element="_J2VtIMa5EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_J47uIMa5EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_J47uIca5EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J488QMa5EeumkesrWfyAUg" type="3016" element="_J2aloMa5EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_J488Qca5EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J488Qsa5EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_J47HEca5EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J47HEsa5EeumkesrWfyAUg" x="285" y="188" width="150" height="90"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_gi92Fca5EeumkesrWfyAUg" type="2001" element="_gi5koMa5EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_gi92GMa5EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_gi92Gca5EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_WuWPcMa7EeumkesrWfyAUg" type="3016" element="_Wr-Q4Ma7EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_WuWPcca7EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WuWPcsa7EeumkesrWfyAUg"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tQJhEMa-EeumkesrWfyAUg" type="3001" element="_tOn3E8a-EeumkesrWfyAUg">
+            <children xmi:type="notation:Node" xmi:id="_tQKIIMa-EeumkesrWfyAUg" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_tQKIIca-EeumkesrWfyAUg" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_tQQOwMa-EeumkesrWfyAUg" type="3017" element="_tOpFMMa-EeumkesrWfyAUg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_tQQOwca-EeumkesrWfyAUg" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tQQOwsa-EeumkesrWfyAUg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tQJhEca-EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tQJhEsa-EeumkesrWfyAUg" x="-45" width="53" height="38"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_gi92Fsa5EeumkesrWfyAUg" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gi92F8a5EeumkesrWfyAUg" x="60" y="45" width="106" height="61"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_kaB18sazEeumkesrWfyAUg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_kaDEEsazEeumkesrWfyAUg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_kaDEE8azEeumkesrWfyAUg"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_MhYwY8a0EeumkesrWfyAUg" name="iCalendar" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:Calendar" href="EventTest.mysm#//@calendar"/>
+      <semanticElements xmi:type="iCal:Calendar" href="EventTest.mysm#//@calendar"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_Jc7EYMa1EeumkesrWfyAUg" labelSize="10" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="114,73,110" labelPosition="node" color="217,196,215">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='CalendarNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='CalendarNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_J2VtIMa5EeumkesrWfyAUg" name="Component" visible="false" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:EventC" href="EventTest.mysm#//@calendar/@component.0"/>
+      <semanticElements xmi:type="iCal:EventC" href="EventTest.mysm#//@calendar/@component.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_J2aloMa5EeumkesrWfyAUg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" labelPosition="node" color="238,201,142">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gi5koMa5EeumkesrWfyAUg" name="Event" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:EventC" href="EventTest.mysm#//@calendar/@component.0"/>
+      <semanticElements xmi:type="iCal:EventC" href="EventTest.mysm#//@calendar/@component.0"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_tOn3E8a-EeumkesrWfyAUg" name="Jeudi" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="iCal:DateT" href="EventTest.mysm#//@calendar/@component.0/@dtstart"/>
+        <semanticElements xmi:type="iCal:DateT" href="EventTest.mysm#//@calendar/@component.0/@dtstart"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Lozenge" uid="_tOpFMMa-EeumkesrWfyAUg" showIcon="false" borderColor="224,133,3" labelPosition="node" color="252,175,62">
+          <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='EventNode']/@borderedNodeMappings[name='DateNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='EventNode']/@borderedNodeMappings[name='DateNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_Wr-Q4Ma7EeumkesrWfyAUg" labelSize="12" showIcon="false" borderColor="39,76,114" labelPosition="node" color="194,239,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='EventNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='EventNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_kaAn0cazEeumkesrWfyAUg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer"/>
+    <target xmi:type="iCal:iCalFormat" href="EventTest.mysm#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_5QVWcMazEeumkesrWfyAUg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_5QWkkMazEeumkesrWfyAUg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_5QWkkcazEeumkesrWfyAUg" type="Sirius" element="_5QVWcMazEeumkesrWfyAUg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_Md2UMsa0EeumkesrWfyAUg" type="2001" element="_MbC30Ma0EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_Md27QMa0EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Md27Qca0EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_JUHtsMa1EeumkesrWfyAUg" type="3003" element="_JR6uQMa1EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_JUHtsca1EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JUHtssa1EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Md2UM8a0EeumkesrWfyAUg" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Md2UNMa0EeumkesrWfyAUg" x="120" y="45" width="121" height="61"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_J-KzcMa5EeumkesrWfyAUg" visible="false" type="2001" element="_J7nOsMa5EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_J-LagMa5EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_J-Lagca5EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J-Mop8a5EeumkesrWfyAUg" type="3016" element="_J7oc0Ma5EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_J-MoqMa5EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-Moqca5EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_J-Kzcca5EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-Kzcsa5EeumkesrWfyAUg" x="-30" y="-15" width="122" height="77"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_J-Lagsa5EeumkesrWfyAUg" visible="false" type="2001" element="_J7pD4ca5EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_J-Lahca5EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_J-Lahsa5EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J-Moqsa5EeumkesrWfyAUg" type="3016" element="_J7qSAMa5EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_J-Moq8a5EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-MorMa5EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_J-Lag8a5EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-LahMa5EeumkesrWfyAUg" x="105" y="-23" width="121" height="46"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_J-Lah8a5EeumkesrWfyAUg" visible="false" type="2001" element="_J7q5EMa5EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_J-MBkMa5EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_J-MBkca5EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J-NPsMa5EeumkesrWfyAUg" type="3016" element="_J7sHMMa5EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_J-NPsca5EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-NPssa5EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_J-LaiMa5EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-Laica5EeumkesrWfyAUg" x="285" y="-15" width="121" height="46"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_J-MBksa5EeumkesrWfyAUg" visible="false" type="2001" element="_J7suQMa5EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_J-MBlca5EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_J-MBlsa5EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J-NPs8a5EeumkesrWfyAUg" type="3016" element="_J7t8YMa5EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_J-NPtMa5EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-NPtca5EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_J-MBk8a5EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-MBlMa5EeumkesrWfyAUg" x="450" y="-30" width="30" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_J-MBl8a5EeumkesrWfyAUg" visible="false" type="2001" element="_J7t8Ysa5EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_J-MBmsa5EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_J-MBm8a5EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J-NPtsa5EeumkesrWfyAUg" type="3016" element="_J7vxkMa5EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_J-NPt8a5EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-NPuMa5EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_J-MBmMa5EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-MBmca5EeumkesrWfyAUg" x="330" y="68" width="91" height="38"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_J-MBnMa5EeumkesrWfyAUg" visible="false" type="2001" element="_J7vxksa5EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_J-MooMa5EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_J-Mooca5EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J-NPuca5EeumkesrWfyAUg" type="3016" element="_J7w_sMa5EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_J-NPusa5EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-NPu8a5EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_J-MBnca5EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-MBnsa5EeumkesrWfyAUg" x="555" y="-15" width="30" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_J-Moosa5EeumkesrWfyAUg" visible="false" type="2001" element="_J7w_ssa5EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_J-Mopca5EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_J-Mopsa5EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J-N2wMa5EeumkesrWfyAUg" type="3016" element="_J7yN0Ma5EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_J-N2wca5EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-N2wsa5EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_J-Moo8a5EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J-MopMa5EeumkesrWfyAUg" x="645" y="-15" width="30" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ggJLkMa5EeumkesrWfyAUg" type="2001" element="_gdpRMsa5EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_ggJyoMa5EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ggJyoca5EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_WySUQMa7EeumkesrWfyAUg" type="3016" element="_WxXHMMa7EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_WySUQca7EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WySUQsa7EeumkesrWfyAUg"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tS56IMa-EeumkesrWfyAUg" type="3001" element="_tS1osMa-EeumkesrWfyAUg">
+            <children xmi:type="notation:Node" xmi:id="_tS56I8a-EeumkesrWfyAUg" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_tS56JMa-EeumkesrWfyAUg" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_tS6hMMa-EeumkesrWfyAUg" type="3017" element="_tS1osca-EeumkesrWfyAUg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_tS6hMca-EeumkesrWfyAUg" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tS6hMsa-EeumkesrWfyAUg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tS56Ica-EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tS56Isa-EeumkesrWfyAUg" x="-45" width="53" height="30"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ggJLkca5EeumkesrWfyAUg" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ggJLksa5EeumkesrWfyAUg" x="-75" y="-45" width="91" height="61"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_5yAmgMa7EeumkesrWfyAUg" type="2001" element="_5x8VEsa7EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_5yAmg8a7EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_5yAmhMa7EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__vOL0Ma7EeumkesrWfyAUg" type="3016" element="__sqAAsa7EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="__vOL0ca7EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__vOL0sa7EeumkesrWfyAUg"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_G27uAMa_EeumkesrWfyAUg" type="3001" element="_G2dz9Ma_EeumkesrWfyAUg">
+            <children xmi:type="notation:Node" xmi:id="_G27uA8a_EeumkesrWfyAUg" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_G27uBMa_EeumkesrWfyAUg" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_G28VEMa_EeumkesrWfyAUg" type="3017" element="_G2ebAMa_EeumkesrWfyAUg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_G28VEca_EeumkesrWfyAUg" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G28VEsa_EeumkesrWfyAUg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_G27uAca_EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G27uAsa_EeumkesrWfyAUg" x="-60" width="68" height="30"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_5yAmgca7EeumkesrWfyAUg" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5yAmgsa7EeumkesrWfyAUg" x="60" y="-120" width="91" height="61"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_QqtckMa8EeumkesrWfyAUg" type="2001" element="_QoMUEMa8EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_Qqtck8a8EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_QquDoMa8EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_VPKfMMa8EeumkesrWfyAUg" type="3016" element="_VMu2Rsa8EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_VPKfMca8EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VPKfMsa8EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Qqtckca8EeumkesrWfyAUg" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qqtcksa8EeumkesrWfyAUg" x="360" y="-30" width="106" height="61"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_o4iSgMa8EeumkesrWfyAUg" type="2001" element="_o2C_Nsa8EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_o4iSg8a8EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_o4iShMa8EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_0zV3oMa8EeumkesrWfyAUg" type="3016" element="_0wzhAsa8EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_0zV3oca8EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0zV3osa8EeumkesrWfyAUg"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_G28VE8a_EeumkesrWfyAUg" type="3001" element="_G2g3QMa_EeumkesrWfyAUg">
+            <children xmi:type="notation:Node" xmi:id="_G28VFsa_EeumkesrWfyAUg" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_G28VF8a_EeumkesrWfyAUg" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_G28VGMa_EeumkesrWfyAUg" type="3017" element="_G2g3Qca_EeumkesrWfyAUg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_G28VGca_EeumkesrWfyAUg" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G28VGsa_EeumkesrWfyAUg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_G28VFMa_EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G28VFca_EeumkesrWfyAUg" x="-60" width="68" height="30"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_o4iSgca8EeumkesrWfyAUg" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o4iSgsa8EeumkesrWfyAUg" x="-120" y="60" width="91" height="61"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HxEs8Ma9EeumkesrWfyAUg" type="2001" element="_Hui9Zca9EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_HxEs88a9EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HxEs9Ma9EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HxFUAMa9EeumkesrWfyAUg" type="3016" element="_HujkcMa9EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HxFUAca9EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HxFUAsa9EeumkesrWfyAUg"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m6Jg8MbBEeumkesrWfyAUg" type="3001" element="_m3tQ-cbBEeumkesrWfyAUg">
+            <children xmi:type="notation:Node" xmi:id="_m6Jg88bBEeumkesrWfyAUg" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_m6Jg9MbBEeumkesrWfyAUg" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_m6Jg9cbBEeumkesrWfyAUg" type="3017" element="_m3w7UMbBEeumkesrWfyAUg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_m6Jg9sbBEeumkesrWfyAUg" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m6Jg98bBEeumkesrWfyAUg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_m6Jg8cbBEeumkesrWfyAUg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m6Jg8sbBEeumkesrWfyAUg" x="-30" width="38" height="30"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HxEs8ca9EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HxEs8sa9EeumkesrWfyAUg" x="300" y="120" width="106" height="46"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HxEs9ca9EeumkesrWfyAUg" type="2001" element="_Hujkcsa9EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_HxEs-Ma9EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HxEs-ca9EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HxFUA8a9EeumkesrWfyAUg" type="3016" element="_HukLgMa9EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HxFUBMa9EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HxFUBca9EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HxEs9sa9EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HxEs98a9EeumkesrWfyAUg" x="225" y="-75" width="91" height="46"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_jro6YMa9EeumkesrWfyAUg" type="2001" element="_jrESrsa9EeumkesrWfyAUg">
+          <children xmi:type="notation:Node" xmi:id="_jro6Y8a9EeumkesrWfyAUg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_jro6ZMa9EeumkesrWfyAUg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_jrphcMa9EeumkesrWfyAUg" type="3016" element="_jrE5sMa9EeumkesrWfyAUg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_jrphcca9EeumkesrWfyAUg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jrphcsa9EeumkesrWfyAUg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_jro6Yca9EeumkesrWfyAUg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jro6Ysa9EeumkesrWfyAUg" x="-30" y="150" width="136" height="76"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_5QWkksazEeumkesrWfyAUg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_5Qa2AMazEeumkesrWfyAUg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_5Qa2AcazEeumkesrWfyAUg"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_MbC30Ma0EeumkesrWfyAUg" name="iCalendar" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:Calendar" href="MyICalInstance.ical#//@calendar"/>
+      <semanticElements xmi:type="iCal:Calendar" href="MyICalInstance.ical#//@calendar"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_JR6uQMa1EeumkesrWfyAUg" labelSize="10" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="114,73,110" labelPosition="node" color="217,196,215">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='CalendarNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='CalendarNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_J7nOsMa5EeumkesrWfyAUg" name="Component" visible="false" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:EventC" href="MyICalInstance.ical#//@calendar/@component.0"/>
+      <semanticElements xmi:type="iCal:EventC" href="MyICalInstance.ical#//@calendar/@component.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_J7oc0Ma5EeumkesrWfyAUg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" labelPosition="node" color="238,201,142">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_J7pD4ca5EeumkesrWfyAUg" name="Component" visible="false" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:ToDoC" href="MyICalInstance.ical#//@calendar/@component.1"/>
+      <semanticElements xmi:type="iCal:ToDoC" href="MyICalInstance.ical#//@calendar/@component.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_J7qSAMa5EeumkesrWfyAUg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" labelPosition="node" color="238,201,142">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_J7q5EMa5EeumkesrWfyAUg" name="Component" visible="false" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:JournalC" href="MyICalInstance.ical#//@calendar/@component.2"/>
+      <semanticElements xmi:type="iCal:JournalC" href="MyICalInstance.ical#//@calendar/@component.2"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_J7sHMMa5EeumkesrWfyAUg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" labelPosition="node" color="238,201,142">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_J7suQMa5EeumkesrWfyAUg" name="Component" visible="false" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:VacationC" href="MyICalInstance.ical#//@calendar/@component.3"/>
+      <semanticElements xmi:type="iCal:VacationC" href="MyICalInstance.ical#//@calendar/@component.3"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_J7t8YMa5EeumkesrWfyAUg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" labelPosition="node" color="238,201,142">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_J7t8Ysa5EeumkesrWfyAUg" name="Component" visible="false" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:TimeZoneC" href="MyICalInstance.ical#//@calendar/@component.4"/>
+      <semanticElements xmi:type="iCal:TimeZoneC" href="MyICalInstance.ical#//@calendar/@component.4"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_J7vxkMa5EeumkesrWfyAUg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" labelPosition="node" color="238,201,142">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_J7vxksa5EeumkesrWfyAUg" name="Component" visible="false" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:AlarmC" href="MyICalInstance.ical#//@calendar/@component.5"/>
+      <semanticElements xmi:type="iCal:AlarmC" href="MyICalInstance.ical#//@calendar/@component.5"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_J7w_sMa5EeumkesrWfyAUg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" labelPosition="node" color="238,201,142">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_J7w_ssa5EeumkesrWfyAUg" name="Component" visible="false" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:AlarmC" href="MyICalInstance.ical#//@calendar/@component.6"/>
+      <semanticElements xmi:type="iCal:AlarmC" href="MyICalInstance.ical#//@calendar/@component.6"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_J7yN0Ma5EeumkesrWfyAUg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" labelPosition="node" color="238,201,142">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gdpRMsa5EeumkesrWfyAUg" name="Event" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:EventC" href="MyICalInstance.ical#//@calendar/@component.0"/>
+      <semanticElements xmi:type="iCal:EventC" href="MyICalInstance.ical#//@calendar/@component.0"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_tS1osMa-EeumkesrWfyAUg" name="Mardi" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="iCal:DateT" href="MyICalInstance.ical#//@calendar/@component.0/@dtstart"/>
+        <semanticElements xmi:type="iCal:DateT" href="MyICalInstance.ical#//@calendar/@component.0/@dtstart"/>
+        <ownedStyle xmi:type="diagram:Lozenge" uid="_tS1osca-EeumkesrWfyAUg" showIcon="false" borderColor="224,133,3" labelPosition="node" color="252,175,62">
+          <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='EventNode']/@borderedNodeMappings[name='DateNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='EventNode']/@borderedNodeMappings[name='DateNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_WxXHMMa7EeumkesrWfyAUg" labelSize="12" showIcon="false" borderColor="39,76,114" labelPosition="node" color="194,239,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='EventNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='EventNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_5x8VEsa7EeumkesrWfyAUg" name="Journal" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:JournalC" href="MyICalInstance.ical#//@calendar/@component.2"/>
+      <semanticElements xmi:type="iCal:JournalC" href="MyICalInstance.ical#//@calendar/@component.2"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_G2dz9Ma_EeumkesrWfyAUg" name="Dimanche" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="iCal:DateT" href="MyICalInstance.ical#//@calendar/@component.2/@dtstart"/>
+        <semanticElements xmi:type="iCal:DateT" href="MyICalInstance.ical#//@calendar/@component.2/@dtstart"/>
+        <ownedStyle xmi:type="diagram:Lozenge" uid="_G2ebAMa_EeumkesrWfyAUg" showIcon="false" borderColor="224,133,3" labelPosition="node" color="252,175,62">
+          <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='JornalNode']/@borderedNodeMappings[name='DateNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='JornalNode']/@borderedNodeMappings[name='DateNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="__sqAAsa7EeumkesrWfyAUg" labelSize="12" showIcon="false" borderColor="154,103,23" labelPosition="node" color="238,201,142">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='JornalNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='JornalNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_QoMUEMa8EeumkesrWfyAUg" name="ToDo" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:ToDoC" href="MyICalInstance.ical#//@calendar/@component.1"/>
+      <semanticElements xmi:type="iCal:ToDoC" href="MyICalInstance.ical#//@calendar/@component.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_VMu2Rsa8EeumkesrWfyAUg" labelSize="12" showIcon="false" borderColor="77,137,20" labelPosition="node" color="204,242,166">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ToDoNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='ToDoNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_o2C_Nsa8EeumkesrWfyAUg" name="Vacation" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:VacationC" href="MyICalInstance.ical#//@calendar/@component.3"/>
+      <semanticElements xmi:type="iCal:VacationC" href="MyICalInstance.ical#//@calendar/@component.3"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_G2g3QMa_EeumkesrWfyAUg" name="Lundi" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="iCal:DateT" href="MyICalInstance.ical#//@calendar/@component.3/@dtstart"/>
+        <semanticElements xmi:type="iCal:DateT" href="MyICalInstance.ical#//@calendar/@component.3/@dtstart"/>
+        <ownedStyle xmi:type="diagram:Lozenge" uid="_G2g3Qca_EeumkesrWfyAUg" showIcon="false" borderColor="224,133,3" labelPosition="node" color="252,175,62">
+          <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='VacationNode']/@borderedNodeMappings[name='DateNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='VacationNode']/@borderedNodeMappings[name='DateNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_0wzhAsa8EeumkesrWfyAUg" labelSize="12" showIcon="false" borderColor="214,197,66" labelPosition="node" color="255,245,181">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='VacationNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='VacationNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Hui9Zca9EeumkesrWfyAUg" name="Alarm" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:AlarmC" href="MyICalInstance.ical#//@calendar/@component.5"/>
+      <semanticElements xmi:type="iCal:AlarmC" href="MyICalInstance.ical#//@calendar/@component.5"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_m3tQ-cbBEeumkesrWfyAUg" name="5" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="iCal:ComponentAlarmTime" href="MyICalInstance.ical#//@calendar/@component.5/@time"/>
+        <semanticElements xmi:type="iCal:ComponentAlarmTime" href="MyICalInstance.ical#//@calendar/@component.5/@time"/>
+        <ownedStyle xmi:type="diagram:Lozenge" uid="_m3w7UMbBEeumkesrWfyAUg" showIcon="false" borderColor="136,136,136" labelPosition="node" color="138,226,52">
+          <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='AlarmNode']/@borderedNodeMappings[name='DateNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='AlarmNode']/@borderedNodeMappings[name='DateNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_HujkcMa9EeumkesrWfyAUg" labelSize="12" showIcon="false" borderColor="156,12,12" labelPosition="node" color="246,139,139">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='AlarmNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='AlarmNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Hujkcsa9EeumkesrWfyAUg" name="Alarm" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:AlarmC" href="MyICalInstance.ical#//@calendar/@component.6"/>
+      <semanticElements xmi:type="iCal:AlarmC" href="MyICalInstance.ical#//@calendar/@component.6"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_HukLgMa9EeumkesrWfyAUg" labelSize="12" showIcon="false" borderColor="156,12,12" labelPosition="node" color="246,139,139">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='AlarmNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='AlarmNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_jrESrsa9EeumkesrWfyAUg" name="TimeZone" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="iCal:TimeZoneC" href="MyICalInstance.ical#//@calendar/@component.4"/>
+      <semanticElements xmi:type="iCal:TimeZoneC" href="MyICalInstance.ical#//@calendar/@component.4"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_jrE5sMa9EeumkesrWfyAUg" labelSize="12" showIcon="false" borderColor="69,69,69" labelPosition="node" color="209,209,209">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='TimeZoneNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer/@nodeMappings[name='TimeZoneNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_5QV9gMazEeumkesrWfyAUg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/icalsirius.project.design/description/icalsirius.odesign#//@ownedViewpoints[name='icalendarViewpoint']/@ownedRepresentations[name='IcalendarDiagram']/@defaultLayer"/>
+    <target xmi:type="iCal:iCalFormat" href="MyICalInstance.ical#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

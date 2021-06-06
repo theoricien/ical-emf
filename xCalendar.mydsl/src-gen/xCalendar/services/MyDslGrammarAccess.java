@@ -114,34 +114,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//ComponentAlarmEmailProperty
 		public RuleCall getComponentAlarmEmailPropertyParserRuleCall_2() { return cComponentAlarmEmailPropertyParserRuleCall_2; }
 	}
-	public class CalendarElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.Calendar");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cComponentAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cComponentComponentParserRuleCall_0_0 = (RuleCall)cComponentAssignment_0.eContents().get(0);
-		private final Assignment cComponentAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cComponentComponentParserRuleCall_1_0 = (RuleCall)cComponentAssignment_1.eContents().get(0);
-		
-		//Calendar:
-		//	component+=Component
-		//	component+=Component*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//component+=Component component+=Component*
-		public Group getGroup() { return cGroup; }
-		
-		//component+=Component
-		public Assignment getComponentAssignment_0() { return cComponentAssignment_0; }
-		
-		//Component
-		public RuleCall getComponentComponentParserRuleCall_0_0() { return cComponentComponentParserRuleCall_0_0; }
-		
-		//component+=Component*
-		public Assignment getComponentAssignment_1() { return cComponentAssignment_1; }
-		
-		//Component
-		public RuleCall getComponentComponentParserRuleCall_1_0() { return cComponentComponentParserRuleCall_1_0; }
-	}
 	public class MonthElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.Month");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -495,6 +467,105 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//"Dimanche"
 		public Keyword getDimancheKeyword_6() { return cDimancheKeyword_6; }
+	}
+	public class CalendarElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.Calendar");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCalendarKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cVersionKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cVersionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cVersionSTRTerminalRuleCall_2_1_0 = (RuleCall)cVersionAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cProdIdKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cProdidAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cProdidSTRTerminalRuleCall_3_1_0 = (RuleCall)cProdidAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cMethodeKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cMethodAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cMethodSTRTerminalRuleCall_4_1_0 = (RuleCall)cMethodAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCalscaleKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cCalscaleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cCalscaleSTRTerminalRuleCall_5_1_0 = (RuleCall)cCalscaleAssignment_5_1.eContents().get(0);
+		private final Assignment cComponentAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cComponentComponentParserRuleCall_6_0 = (RuleCall)cComponentAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//Calendar:
+		//	'Calendar'
+		//	'{' ("Version:" version=STR)? ("ProdId:" prodid=STR)? ("Methode:" method=STR)? ("Calscale:" calscale=STR)?
+		//	component+=Component+
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Calendar' '{' ("Version:" version=STR)? ("ProdId:" prodid=STR)? ("Methode:" method=STR)? ("Calscale:" calscale=STR)?
+		//component+=Component+ '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'Calendar'
+		public Keyword getCalendarKeyword_0() { return cCalendarKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//("Version:" version=STR)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//"Version:"
+		public Keyword getVersionKeyword_2_0() { return cVersionKeyword_2_0; }
+		
+		//version=STR
+		public Assignment getVersionAssignment_2_1() { return cVersionAssignment_2_1; }
+		
+		//STR
+		public RuleCall getVersionSTRTerminalRuleCall_2_1_0() { return cVersionSTRTerminalRuleCall_2_1_0; }
+		
+		//("ProdId:" prodid=STR)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//"ProdId:"
+		public Keyword getProdIdKeyword_3_0() { return cProdIdKeyword_3_0; }
+		
+		//prodid=STR
+		public Assignment getProdidAssignment_3_1() { return cProdidAssignment_3_1; }
+		
+		//STR
+		public RuleCall getProdidSTRTerminalRuleCall_3_1_0() { return cProdidSTRTerminalRuleCall_3_1_0; }
+		
+		//("Methode:" method=STR)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//"Methode:"
+		public Keyword getMethodeKeyword_4_0() { return cMethodeKeyword_4_0; }
+		
+		//method=STR
+		public Assignment getMethodAssignment_4_1() { return cMethodAssignment_4_1; }
+		
+		//STR
+		public RuleCall getMethodSTRTerminalRuleCall_4_1_0() { return cMethodSTRTerminalRuleCall_4_1_0; }
+		
+		//("Calscale:" calscale=STR)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//"Calscale:"
+		public Keyword getCalscaleKeyword_5_0() { return cCalscaleKeyword_5_0; }
+		
+		//calscale=STR
+		public Assignment getCalscaleAssignment_5_1() { return cCalscaleAssignment_5_1; }
+		
+		//STR
+		public RuleCall getCalscaleSTRTerminalRuleCall_5_1_0() { return cCalscaleSTRTerminalRuleCall_5_1_0; }
+		
+		//component+=Component+
+		public Assignment getComponentAssignment_6() { return cComponentAssignment_6; }
+		
+		//Component
+		public RuleCall getComponentComponentParserRuleCall_6_0() { return cComponentComponentParserRuleCall_6_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class EventCElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.EventC");
@@ -4015,7 +4086,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final ICalFormatElements pICalFormat;
 	private final ComponentElements pComponent;
 	private final AlarmTypeElements pAlarmType;
-	private final CalendarElements pCalendar;
 	private final TerminalRule tSTR;
 	private final TerminalRule tINT;
 	private final MonthElements pMonth;
@@ -4026,6 +4096,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final StatusElements pStatus;
 	private final EventStatusElements pEventStatus;
 	private final DayNameElements pDayName;
+	private final CalendarElements pCalendar;
 	private final EventCElements pEventC;
 	private final AlarmCElements pAlarmC;
 	private final TzpropElements pTzprop;
@@ -4051,7 +4122,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pICalFormat = new ICalFormatElements();
 		this.pComponent = new ComponentElements();
 		this.pAlarmType = new AlarmTypeElements();
-		this.pCalendar = new CalendarElements();
 		this.tSTR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.STR");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "xCalendar.MyDsl.INT");
 		this.pMonth = new MonthElements();
@@ -4062,6 +4132,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pStatus = new StatusElements();
 		this.pEventStatus = new EventStatusElements();
 		this.pDayName = new DayNameElements();
+		this.pCalendar = new CalendarElements();
 		this.pEventC = new EventCElements();
 		this.pAlarmC = new AlarmCElements();
 		this.pTzprop = new TzpropElements();
@@ -4132,17 +4203,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getAlarmTypeRule() {
 		return getAlarmTypeAccess().getRule();
-	}
-	
-	//Calendar:
-	//	component+=Component
-	//	component+=Component*;
-	public CalendarElements getCalendarAccess() {
-		return pCalendar;
-	}
-	
-	public ParserRule getCalendarRule() {
-		return getCalendarAccess().getRule();
 	}
 	
 	//terminal STR:
@@ -4239,6 +4299,19 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getDayNameRule() {
 		return getDayNameAccess().getRule();
+	}
+	
+	//Calendar:
+	//	'Calendar'
+	//	'{' ("Version:" version=STR)? ("ProdId:" prodid=STR)? ("Methode:" method=STR)? ("Calscale:" calscale=STR)?
+	//	component+=Component+
+	//	'}';
+	public CalendarElements getCalendarAccess() {
+		return pCalendar;
+	}
+	
+	public ParserRule getCalendarRule() {
+		return getCalendarAccess().getRule();
 	}
 	
 	//EventC:

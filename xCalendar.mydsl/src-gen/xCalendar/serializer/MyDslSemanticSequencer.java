@@ -129,7 +129,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Calendar returns Calendar
 	 *
 	 * Constraint:
-	 *     (component+=Component component+=Component*)
+	 *     (version=STR? prodid=STR? method=STR? calscale=STR? component+=Component+)
 	 */
 	protected void sequence_Calendar(ISerializationContext context, Calendar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -43,11 +43,15 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEventStatusAccess().getAlternatives(), "rule__EventStatus__Alternatives");
 			builder.put(grammarAccess.getDayNameAccess().getAlternatives(), "rule__DayName__Alternatives");
 			builder.put(grammarAccess.getICalFormatAccess().getGroup(), "rule__ICalFormat__Group__0");
-			builder.put(grammarAccess.getCalendarAccess().getGroup(), "rule__Calendar__Group__0");
 			builder.put(grammarAccess.getDateTAccess().getGroup(), "rule__DateT__Group__0");
 			builder.put(grammarAccess.getDateTAccess().getGroup_4(), "rule__DateT__Group_4__0");
 			builder.put(grammarAccess.getDateTAccess().getGroup_4_3(), "rule__DateT__Group_4_3__0");
 			builder.put(grammarAccess.getDateTAccess().getGroup_4_4(), "rule__DateT__Group_4_4__0");
+			builder.put(grammarAccess.getCalendarAccess().getGroup(), "rule__Calendar__Group__0");
+			builder.put(grammarAccess.getCalendarAccess().getGroup_2(), "rule__Calendar__Group_2__0");
+			builder.put(grammarAccess.getCalendarAccess().getGroup_3(), "rule__Calendar__Group_3__0");
+			builder.put(grammarAccess.getCalendarAccess().getGroup_4(), "rule__Calendar__Group_4__0");
+			builder.put(grammarAccess.getCalendarAccess().getGroup_5(), "rule__Calendar__Group_5__0");
 			builder.put(grammarAccess.getEventCAccess().getGroup(), "rule__EventC__Group__0");
 			builder.put(grammarAccess.getEventCAccess().getGroup_2_0(), "rule__EventC__Group_2_0__0");
 			builder.put(grammarAccess.getEventCAccess().getGroup_2_1(), "rule__EventC__Group_2_1__0");
@@ -228,8 +232,6 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTimeZoneCAccess().getGroup_2_6_3(), "rule__TimeZoneC__Group_2_6_3__0");
 			builder.put(grammarAccess.getICalFormatAccess().getFileNameAssignment_1(), "rule__ICalFormat__FileNameAssignment_1");
 			builder.put(grammarAccess.getICalFormatAccess().getCalendarAssignment_2(), "rule__ICalFormat__CalendarAssignment_2");
-			builder.put(grammarAccess.getCalendarAccess().getComponentAssignment_0(), "rule__Calendar__ComponentAssignment_0");
-			builder.put(grammarAccess.getCalendarAccess().getComponentAssignment_1(), "rule__Calendar__ComponentAssignment_1");
 			builder.put(grammarAccess.getMonthNameTAccess().getValueAssignment(), "rule__MonthNameT__ValueAssignment");
 			builder.put(grammarAccess.getMonthTAccess().getValueAssignment(), "rule__MonthT__ValueAssignment");
 			builder.put(grammarAccess.getDateTAccess().getDay_nameAssignment_0(), "rule__DateT__Day_nameAssignment_0");
@@ -239,6 +241,11 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDateTAccess().getHoursAssignment_4_1(), "rule__DateT__HoursAssignment_4_1");
 			builder.put(grammarAccess.getDateTAccess().getMinutesAssignment_4_3_0(), "rule__DateT__MinutesAssignment_4_3_0");
 			builder.put(grammarAccess.getDateTAccess().getSecondsAssignment_4_4_1(), "rule__DateT__SecondsAssignment_4_4_1");
+			builder.put(grammarAccess.getCalendarAccess().getVersionAssignment_2_1(), "rule__Calendar__VersionAssignment_2_1");
+			builder.put(grammarAccess.getCalendarAccess().getProdidAssignment_3_1(), "rule__Calendar__ProdidAssignment_3_1");
+			builder.put(grammarAccess.getCalendarAccess().getMethodAssignment_4_1(), "rule__Calendar__MethodAssignment_4_1");
+			builder.put(grammarAccess.getCalendarAccess().getCalscaleAssignment_5_1(), "rule__Calendar__CalscaleAssignment_5_1");
+			builder.put(grammarAccess.getCalendarAccess().getComponentAssignment_6(), "rule__Calendar__ComponentAssignment_6");
 			builder.put(grammarAccess.getEventCAccess().getDtstartAssignment_2_0_1(), "rule__EventC__DtstartAssignment_2_0_1");
 			builder.put(grammarAccess.getEventCAccess().getUidAssignment_2_1_1(), "rule__EventC__UidAssignment_2_1_1");
 			builder.put(grammarAccess.getEventCAccess().getOrganizerAssignment_2_2_1(), "rule__EventC__OrganizerAssignment_2_2_1");

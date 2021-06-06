@@ -237,63 +237,6 @@ ruleAlarmType returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleCalendar
-entryRuleCalendar returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getCalendarRule()); }
-	iv_ruleCalendar=ruleCalendar
-	{ $current=$iv_ruleCalendar.current; }
-	EOF;
-
-// Rule Calendar
-ruleCalendar returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCalendarAccess().getComponentComponentParserRuleCall_0_0());
-				}
-				lv_component_0_0=ruleComponent
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCalendarRule());
-					}
-					add(
-						$current,
-						"component",
-						lv_component_0_0,
-						"xCalendar.MyDsl.Component");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCalendarAccess().getComponentComponentParserRuleCall_1_0());
-				}
-				lv_component_1_0=ruleComponent
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCalendarRule());
-					}
-					add(
-						$current,
-						"component",
-						lv_component_1_0,
-						"xCalendar.MyDsl.Component");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-	)
-;
-
 // Entry rule entryRuleMonth
 entryRuleMonth returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getMonthRule()); }
@@ -911,6 +854,152 @@ ruleDayName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getDayNameAccess().getDimancheKeyword_6());
+		}
+	)
+;
+
+// Entry rule entryRuleCalendar
+entryRuleCalendar returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCalendarRule()); }
+	iv_ruleCalendar=ruleCalendar
+	{ $current=$iv_ruleCalendar.current; }
+	EOF;
+
+// Rule Calendar
+ruleCalendar returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Calendar'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCalendarAccess().getCalendarKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCalendarAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			otherlv_2='Version:'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getCalendarAccess().getVersionKeyword_2_0());
+			}
+			(
+				(
+					lv_version_3_0=RULE_STR
+					{
+						newLeafNode(lv_version_3_0, grammarAccess.getCalendarAccess().getVersionSTRTerminalRuleCall_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCalendarRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"version",
+							lv_version_3_0,
+							"xCalendar.MyDsl.STR");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_4='ProdId:'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getCalendarAccess().getProdIdKeyword_3_0());
+			}
+			(
+				(
+					lv_prodid_5_0=RULE_STR
+					{
+						newLeafNode(lv_prodid_5_0, grammarAccess.getCalendarAccess().getProdidSTRTerminalRuleCall_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCalendarRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"prodid",
+							lv_prodid_5_0,
+							"xCalendar.MyDsl.STR");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_6='Methode:'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getCalendarAccess().getMethodeKeyword_4_0());
+			}
+			(
+				(
+					lv_method_7_0=RULE_STR
+					{
+						newLeafNode(lv_method_7_0, grammarAccess.getCalendarAccess().getMethodSTRTerminalRuleCall_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCalendarRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"method",
+							lv_method_7_0,
+							"xCalendar.MyDsl.STR");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_8='Calscale:'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getCalendarAccess().getCalscaleKeyword_5_0());
+			}
+			(
+				(
+					lv_calscale_9_0=RULE_STR
+					{
+						newLeafNode(lv_calscale_9_0, grammarAccess.getCalendarAccess().getCalscaleSTRTerminalRuleCall_5_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCalendarRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"calscale",
+							lv_calscale_9_0,
+							"xCalendar.MyDsl.STR");
+					}
+				)
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCalendarAccess().getComponentComponentParserRuleCall_6_0());
+				}
+				lv_component_10_0=ruleComponent
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCalendarRule());
+					}
+					add(
+						$current,
+						"component",
+						lv_component_10_0,
+						"xCalendar.MyDsl.Component");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+		otherlv_11='}'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getCalendarAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
